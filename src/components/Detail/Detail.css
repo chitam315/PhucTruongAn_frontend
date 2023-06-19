@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-type-product {
+  border: 1px solid #ccc;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-type-product.clicked {
+  border-color: var(--mainColor);
+  background: #fdf7b5;
+}
+.checkbox-type {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #7e7e7e;
+  margin-right: 10px;
+  display: block;
+}
+
+.btn-type-product:hover,
+.btn-type-product.clicked .icon-checkbox {
+  opacity: 1;
+}
+.icon-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  color: rgb(0, 221, 55);
+}
+
+.btn-quantity {
+  border: 1px solid #c7c7c7;
+  padding: 8px 10px;
+  color: var(--mainColor);
+  font-size: 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-quantity:hover {
+  border-color: var(--mainColor);
+}
+
+.text-quantity {
+  border: 1px solid #c7c7c7;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
