@@ -7,7 +7,6 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { BsPlusLg } from "react-icons/bs";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
-
 import "./Detail.css";
 import DetailInfor from "./DetailInfor";
 
@@ -63,19 +62,21 @@ export default function DetailProduct() {
           </div>
           <div className="col-md-5">
             <span className="font-bold text-[1.5em] text-[var(--mainColor)]">
-              1.690.000d
+              1.690.000 <span>đ</span>
             </span>
             <div className="flex flex-wrap">
-              <label htmlFor="type" className="btn-type-product clicked ">
+              <label htmlFor="type">
                 <input type="radio" name="type" id="type" className="hidden" />
-                <div className="flex items-center relative">
-                  <div className="relative w-[12px] h-[12px] mr-[7px]">
-                    <span className="checkbox-type"></span>
-                    <AiFillCheckCircle className="absolute icon-checkbox" />
+                <div className="btn-type-product">
+                  <div className="flex items-center relative">
+                    <div className="relative w-[12px] h-[12px] mr-[7px]">
+                      <span className="checkbox-type"></span>
+                      <AiFillCheckCircle className="absolute icon-checkbox" />
+                    </div>
+                    <p>300W</p>
                   </div>
-                  <p>300W</p>
+                  <p className="text-[var(--red)]">1.390.000</p>
                 </div>
-                <span className="text-[var(--red)]">1.390.000d</span>
               </label>
               <label htmlFor="type2" className="btn-type-product">
                 <input type="radio" name="type" id="type2" className="hidden" />
@@ -198,9 +199,8 @@ export default function DetailProduct() {
             </div>
           </div>
         </Row>
-        
-        <DetailInfor/>
-        
+
+        <DetailInfor />
       </Row>
     </CardMain>
   );
