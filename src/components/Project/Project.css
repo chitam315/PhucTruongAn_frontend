@@ -1,0 +1,182 @@
+* {
+  font-family: "Quicksand", sans-serif;
+}
+.content-project {
+  background: var(--lightLeftColBackground);
+}
+.col-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+.col-right .contentWarp {
+  flex: 1 0 auto;
+}
+.breadcrumbs {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+.container,
+.container-fluid {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1370px;
+  }
+}
+.rounded-10 {
+  border-radius: 10px !important;
+}
+.ratio3by2 {
+  padding-bottom: calc(100% * 2 / 3);
+}
+.aspect {
+  height: 0;
+}
+.lastest-articles .large-article-info {
+  color: #fff;
+  bottom: 0;
+}
+.lastest-articles .large-article-info .title_blo {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.title_blo a {
+  font-size: 1.1rem;
+}
+.line_2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  -webkit-line-clamp: 2;
+  height: calc(21px * 2);
+  line-height: 21px;
+}
+.line-color {
+  color: #fff;
+}
+a.line_2:hover {
+  color: #f5c013;
+}
+.line_1 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  -webkit-line-clamp: 1;
+  height: calc(21px * 1);
+  line-height: 21px;
+}
+a,
+a:hover {
+  text-decoration: none;
+  transition: 0.3s all ease;
+}
+a {
+  color: var(--textColor);
+}
+@media (min-width: 768px) {
+  .blog-item-list {
+    margin-bottom: 10px !important;
+  }
+}
+/***************/
+
+.blog-name {
+  font-size: 24px;
+}
+.blog-list ul li {
+  min-width: 25%;
+  flex: 0 0 25%;
+}
+.blog-list ul li .image {
+  width: 3rem;
+  height: 3rem;
+  min-width: 48px;
+}
+a,
+a:hover {
+  text-decoration: none;
+  transition: 0.3s all ease;
+}
+a {
+  color: var(--textColor);
+}
+.blog-list ul li .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img {
+  max-width: 100%;
+}
+.blog-list ul li .text h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0;
+}
+.blog-list ul li .text span {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+/* ************* */
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1370px;
+  }
+}
+.m_white_bg_module {
+  background: #fff;
+}
+.blog-name {
+  font-size: 24px;
+}
+.custom-article-item .custom-article-item_info .tags {
+  gap: 5px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.custom-article-item .custom-article-item_info .item_tags {
+  color: #854d0e;
+  transition: all 0.3s ease;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  font-size: 12px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+.item_tags {
+  background-color: #f5c013;
+}
+.custom-article-item_info {
+  margin-top: 12px;
+}
+/* Thiết lập thanh cuộn cho một phần tử có lớp tên "scrollable-container" */
+.tags {
+  overflow: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá kích thước của phần tử */
+  max-height: 300px; /* Thiết lập chiều cao tối đa cho phần tử */
+}
+
+/* Tùy chỉnh kiểu dáng của thanh cuộn dọc */
+.tags::-webkit-scrollbar {
+  height: 3px;
+  width: 6px; /* Độ rộng của thanh cuộn */
+}
+
+.tags::-webkit-scrollbar-thumb {
+  background-color: #2d0cc4; /* Màu nền của thanh cuộn */
+  border-radius: 4px; /* Bo tròn góc của thanh cuộn */
+}
+
+.tags::-webkit-scrollbar-track {
+  background-color: #c5bfbf; /* Màu nền của phần nằm ngoài thanh cuộn */
+}

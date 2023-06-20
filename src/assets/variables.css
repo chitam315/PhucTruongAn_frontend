@@ -1,0 +1,20 @@
+:root {
+  --menuWidth: calc(100% - 20px);
+  --leftColBackground: #fff;
+  --lightLeftColBackground: #f3f3f3;
+  --darkLeftColBackground: #22272b;
+  --mainColor: #0039a0;
+  --mainColor2: #0447c2;
+  --menuHover: #f9c136;
+  --accentColor1: #929292;
+  --accentColor2: #ffb600;
+  --textColor: #4c4c4c;
+  --toastSuccessBg: #d1e7dd;
+  --toastSuccessCl: #0f5132;
+  --toastWarningBg: #fff3cd;
+  --toastWarningCl: #664d03;
+  --toastErrorBg: #f8d7da;
+  --toastErrorCl: #842029;
+  --toastSystemBg: #d3d3d4;
+  --toastSystemCl: #141619;
+}

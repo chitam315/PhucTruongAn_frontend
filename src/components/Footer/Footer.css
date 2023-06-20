@@ -1,0 +1,55 @@
+footer .footer-left .footer-title {
+  font-size: 20px;
+}
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+.mb-2,
+.my-2 {
+  margin-bottom: 0.5rem !important;
+}
+.position-relative {
+  position: relative !important;
+}
+footer ul.links {
+  padding: 0;
+  list-style: none;
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+a.phone {
+  font-size: 22px;
+  color: red;
+  font-weight: 500;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: var(--textColor);
+}
