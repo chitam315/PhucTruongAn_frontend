@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/variables.css";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import "./Footer.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 // Import các biểu tượng cần thiết
 library.add(faUser, faEnvelope);
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <div class="col-right position-relative">
       <footer className="bg-white pt-5">
@@ -350,4 +350,4 @@ export const Footer = () => {
       </footer>
     </div>
   );
-};
+}

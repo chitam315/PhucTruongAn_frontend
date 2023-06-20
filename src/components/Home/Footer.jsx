@@ -1,11 +1,11 @@
-import { Container, Row, Col } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import shopeeImg from "../../assets/ImagesLink/shopee_mall.png"
-import lazmallImg from "../../assets/ImagesLink/lazmall.png"
-import senmallImg from "../../assets/ImagesLink/senmall.png"
-import tikiImg from "../../assets/ImagesLink/tiki.png"
-import facebookImg from "../../assets/ImagesLink/facebook.png"
-import zaloImg from "../../assets/ImagesLink/zalo.png"
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import shopeeImg from "../../assets/ImagesLink/shopee_mall.png";
+import lazmallImg from "../../assets/ImagesLink/lazmall.png";
+import senmallImg from "../../assets/ImagesLink/senmall.png";
+import tikiImg from "../../assets/ImagesLink/tiki.png";
+import facebookImg from "../../assets/ImagesLink/facebook.png";
+import zaloImg from "../../assets/ImagesLink/zalo.png";
 
 export default function Footer() {
   return (
@@ -76,14 +76,14 @@ export default function Footer() {
 
       <Container>
         <p>Kết nối với chúng tôi</p>
-       <div className="display-flex">
-         <img src={shopeeImg} alt="" />
-         <img src={lazmallImg} alt="" />
-         <img src={senmallImg} alt="" />
-         <img src={tikiImg} alt="" />
-         <img src={facebookImg} alt="" />
-         <img src={zaloImg} alt="" />
-       </div>
+        <div className="display-flex">
+          <img src={shopeeImg} alt="" />
+          <img src={lazmallImg} alt="" />
+          <img src={senmallImg} alt="" />
+          <img src={tikiImg} alt="" />
+          <img src={facebookImg} alt="" />
+          <img src={zaloImg} alt="" />
+        </div>
       </Container>
       <Container>
         <Link to="">Hướng dẫn mua hàng</Link>
@@ -92,9 +92,10 @@ export default function Footer() {
         <Link to="">Điều khoản dịch vụ</Link>
       </Container>
       <Container>
-        <div>Bản quyền thuộc về <span>công ty cổ phần tp solar</span></div>
+        <div>
+          Bản quyền thuộc về <span>công ty cổ phần tp solar</span>
+        </div>
       </Container>
-
     </div>
   );
 }
