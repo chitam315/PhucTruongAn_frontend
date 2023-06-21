@@ -24,9 +24,12 @@
   --toastSystemBg: #d3d3d4;
   --toastSystemCl: #141619;
   --warning: #ffc107;
-  --green:#00b907;
+  --green: #00b907;
+  --font-name: "SVN-Circular";
 }
-
+.table > :not(caption) > * > * {
+  border-bottom-width: 0;
+}
 .bg-main {
   background: #f2f2f2;
 }
@@ -78,9 +81,6 @@
   100% {
     height: 0;
   }
-
-
-
 }
 .ban {
   pointer-events: none;
