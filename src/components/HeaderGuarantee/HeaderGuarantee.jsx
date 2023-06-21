@@ -3,6 +3,8 @@ import "../Guarantee/Guarantee.css";
 import ModalTraCuuHanBaoHanh from "../Modal/ModalTraCuuHanBaoHanh";
 import ModalTraCuuBaoHanh from "../Modal/ModalTraCuuBaoHanh";
 import ModalActiveGuarantee from "../Modal/ModalActiveGuarantee";
+import ModalWarrantyClaim from "../Modal/ModalWarrantyClaim";
+import WarrantyStation from "../WarrantyStation/WarrantyStation";
 const HeaderGuarantee = () => {
   return (
     <>
@@ -42,9 +44,9 @@ const HeaderGuarantee = () => {
           </div>
         </div>
       </div>
-      <div className="menu">
-        <div className="container w-[1200px]">
-          <ul className="flex justify-between h-[50px] items-center uppercase text-[16px] font-bold text-[#101C2C]">
+      <div className="menu ">
+        <div className="container w-[1200px] ">
+          <ul className="flex justify-between h-[50px] items-center uppercase text-[16px] font-bold text-[#101C2C] list-none">
             <li>
               <a href="#0" data-type="warrantylookup">
                 <ModalTraCuuHanBaoHanh
@@ -63,7 +65,10 @@ const HeaderGuarantee = () => {
             </li>
             <li>
               <a href="#0" data-type="warrantysend">
-                Yêu cầu bảo hành
+                <ModalWarrantyClaim
+                  name={"Yêu cầu bảo hành"}
+                  content={"test content"}
+                />
               </a>
             </li>
             <li>
@@ -75,7 +80,9 @@ const HeaderGuarantee = () => {
               </a>
             </li>
             <li>
-              <a href="/Guest/Support">Trạm bảo hành</a>
+              <a href="/Guest/Support" onClick={WarrantyStation}>
+                Trạm bảo hành
+              </a>
             </li>
             <li>
               <a href="/Guest/Intro">Chính sách và hướng dẫn</a>

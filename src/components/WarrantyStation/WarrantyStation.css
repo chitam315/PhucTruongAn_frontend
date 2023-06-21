@@ -1,0 +1,68 @@
+.support {
+  min-height: calc(100vh - 260px);
+}
+.support .list {
+  min-height: 300px;
+}
+.support ul {
+  margin: 0 0 15px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.support .filter button {
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+  background-color: #101c2c;
+  text-align: center;
+  text-transform: uppercase;
+}
+.support .filter button:hover {
+  background-color: red;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.support li {
+  width: calc(33% - 52px);
+  /* height: 125px; */
+  line-height: 1.5;
+  margin: 15px 15px 0;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+}
+.support li label {
+  color: #61b846;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+  padding: 0;
+}
+.support li span {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #262626;
+  text-align: justify;
+  display: block;
+}
+.support li a {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #262626;
+  display: block;
+}

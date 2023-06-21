@@ -6,6 +6,8 @@ import DetailProductPage from "./pages/DetailProductPage";
 import Guarantee from "./components/Guarantee/Guarantee";
 import CartPage from "./pages/CartPage";
 import PayingPage from "./pages/PayingPage";
+import WarrantyStation from "./components/WarrantyStation/WarrantyStation";
+import WarrantyPolicyHome from "./components/WarrantyPolicy/WarrantyPolicyHome";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route index path="/baohanh" element={<Guarantee />}></Route>
         <Route index path="/cart" element={<CartPage />} />
         <Route index path="/paying" element={<PayingPage />} />
+        <Route index path="/Guest/Support" element={<WarrantyStation />} />
+        <Route index path="/Guest/Intro" element={<WarrantyPolicyHome />} />
       </Routes>
     </BrowserRouter>
   );

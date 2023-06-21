@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { FaWindowClose } from "react-icons/fa";
 
-const ModalActiveGuarantee = ({ name, content }) => {
+const ModalWarrantyClaim = ({ name, content }) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState(content);
@@ -28,7 +28,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
   return (
     <>
       <div
-        className="w-fit text-[black] uppercase hover:bg-translate"
+        className="w-fit text-[black] uppercase hover:bg-translate "
         type="primary"
         onClick={showModal}
       >
@@ -50,10 +50,13 @@ const ModalActiveGuarantee = ({ name, content }) => {
             <FaWindowClose />
           </div>
           <h2 className="uppercase text-[26px] font-bold">
-            Kích hoạt bảo hành
+            Gửi yêu cầu bảo hành
           </h2>
           <p className="text-[16px] py-[12px] text-center">
-            Chức năng kích hoạt bảo hành từ mã bảo hành
+            Quý khách có yêu cầu về Bảo hành / Bảo trì sản phẩm, vui lòng điền
+            đầy đủ thông tin dưới đây và gửi về cho chúng tôi. Nhân viên chăm
+            sóc khách hàng sẽ liên hệ với quý khách để hỗ trợ trong thời gian
+            sớm nhất.
           </p>
           {/* <table className="table">
             <tbody>
@@ -108,58 +111,30 @@ const ModalActiveGuarantee = ({ name, content }) => {
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
-          <div class="row w-full flex justify-between items-center">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Thành phố
-            </label>
-            <select
-              class="form-select form-select-sm mb-3 w-[calc(100%-190px)] m-[10px]"
-              id="city"
-              aria-label=".form-select-sm"
-            >
-              <option value="" selected>
-                Chọn tỉnh thành
-              </option>{" "}
-            </select>
-
-            {/* <select className="w-[160px]">
-              <option value="" selected>
-                Chọn thành phố
-              </option>
-              <option value="TPHCM">An Giang</option>
-              <option value="Hanoi">Hà Nội</option>
-              <option value="Danang">Đà Nẵng</option>
-              <option value="Camau">Cà Mau</option>
-              <option value="Cantho">Cần Thơ</option>
-            </select> */}
-          </div>
-          <div class="row w-full flex justify-between items-center">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Thành phố
-            </label>
-            <select
-              class="form-select form-select-sm mb-3  w-[calc(100%-190px)] m-[10px]"
-              id="district"
-              aria-label=".form-select-sm"
-            >
-              <option value="" selected>
-                Chọn quận huyện
-              </option>
-            </select>
-          </div>
           <div class="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Địa chỉ
+              Địa chi
             </label>
             <input
               required
               type="text"
-              placeholder="Địa chỉ"
+              placeholder="Tên khách hàng"
+              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+            />
+          </div>
+          <div class="row w-full justify-between items-center">
+            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
+              Mô tả lỗi
+            </label>
+            <input
+              required
+              type="text"
+              placeholder="Tên khách hàng"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
           <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
-            kích hoạt
+            Gưi yêu cầu
           </button>
         </div>
       </Modal>
@@ -167,4 +142,4 @@ const ModalActiveGuarantee = ({ name, content }) => {
   );
 };
 
-export default ModalActiveGuarantee;
+export default ModalWarrantyClaim;
