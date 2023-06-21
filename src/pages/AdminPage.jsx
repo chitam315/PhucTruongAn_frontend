@@ -24,28 +24,6 @@ listCategory.map((category) => {
     })
 })
 
-// Sample Data for the table
-// const dataSource = [
-//     { key: '1', username: 'Gourav', age: 10 },
-//     { key: '2', username: 'Kartik', age: 20 },
-//     { key: '3', username: 'Madhu', age: 30 },
-//     { key: '4', username: 'Karu', age: 40 },
-//     { key: '5', username: 'Dinesh', age: 50 },
-// ];
-
-// Sample Columns data
-// const columns = [
-//     {
-//         title: 'Username',
-//         dataIndex: 'username',
-//         key: 'username',
-//     },
-//     {
-//         title: 'Age',
-//         dataIndex: 'age',
-//         key: 'age',
-//     },
-// ];
 const columns = [
     {
         title: 'Number',
