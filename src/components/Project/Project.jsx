@@ -4,9 +4,7 @@ import "../../assets/variables.css";
 import Header from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import "./Project.css";
-import pic1 from "../../assets/project/du-an-va-hoat-dong-4160f6fa-39ca-49aa-93f8-2a32b5b1aca8.webp";
-import pic2 from "../../assets/project/tro-thanh-dai-ly-den-nang-luong-mat-troi-cuc-de.webp";
-import pic3 from "../../assets/project/hoi-cho-trien-lam-2023.webp";
+
 export default function Project() {
   return (
     <>

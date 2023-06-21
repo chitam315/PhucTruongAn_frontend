@@ -1,207 +1,344 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import CardMain from "../Card/CardMain";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { BsPlusLg } from "react-icons/bs";
+import { BsPlusLg, BsPlusCircle, BsCheckCircleFill } from "react-icons/bs";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
+import { FiPhoneCall } from "react-icons/fi";
 import "./Detail.css";
 import DetailInfor from "./DetailInfor";
 
 export default function DetailProduct() {
+  //Increment & Decrement INPUT QUANTITY
+  const [count, setCount] = useState(1);
+  const decrementCount = () => {
+    if (count > 1) setCount(count - 1);
+  };
+
+  const incrementCount = () => {
+    if (count < 99) setCount(count + 1);
+  };
+  //Checkbox compare
+  const [checkboxCompare, setCheckboxCompare] = useState(0);
+
+  //Handle button copy
+  const [textCopy, setTextCopy] = useState("Sao chép");
+  const changeTextBtnCopy = () => {
+    navigator.clipboard.writeText("FREESHIP");
+    setTextCopy("Đã lưu");
+    setTimeout(() => {
+      setTextCopy("Sao chép");
+    }, 1500);
+  };
+
   return (
-    <CardMain>
-      <Row>
-        <div className="col-12 h_pr mb-3">
-          <h1 className="product-name font-weight-bold mb-2 d-inline-flex mr-3">
-            [600W] Đèn Đường Liền Thể Năng Lượng Mặt Trời TP Solar TP-D600N Mẫu
-            Mới Nhất 3 Mặt Đèn
-          </h1>
-          <label className="align-items-center border compare-label d-inline-flex m-0 position-relative px-2 py-1 rounded-10">
-            <input
-              type="checkbox"
-              className="compare-checkbox d-none"
-              value="/den-duong-lien-the-nang-luong-mat-tp-d600"
-              data-type="Đèn Đường"
-            />
-            <span className="compare-checkbox mr-1 position-relative"></span>
-            So sánh
-          </label>
-        </div>
+    <>
+      <CardMain>
         <Row>
-          <div className="col-md-4 relative">
-            <div className="absolute rounded-[10px] border-2 border-solid border-[var(--mainColor)] z-[1000] top-[60%] left-[10%] w-[70px] h-[70px] flex items-center p-[10px]">
-              <img
-                src="https://www.befunky.com/images/prismic/1f427434-7ca0-46b2-b5d1-7d31843859b6_funky-focus-red-flower-field-after.jpeg?auto=avif,webp&format=jpg&width=863"
-                alt=""
+          <div className="col-12 flex items-center gap-2">
+            <h1 className="font-medium mb-2 text-[1.1em]">
+              [600W] Đèn Đường Liền Thể Năng Lượng Mặt Trời TP Solar TP-D600N
+              Mẫu Mới Nhất 3 Mặt Đèn
+            </h1>
+            <label from="checkbox-compare">
+              <input
+                type="checkbox"
+                className="hidden detail-input-compare"
+                value="/"
+                id="checkbox-compare"
+                data-type=""
+                onChange={e=>{
+                  if (e.target.checked) {
+                    setCheckboxCompare(1);
+                  } else {
+                    setCheckboxCompare(0);
+                  }
+                }}
               />
-            </div>
-            <Carousel
-              showThumbs={true}
-              showIndicators={false}
-              swipeable={true}
-              useKeyboardArrows={true}
-              showArrows={false}
-              showStatus={false}
-            >
-              <div className="ban">
-                <img src="https://www.befunky.com/images/prismic/1f427434-7ca0-46b2-b5d1-7d31843859b6_funky-focus-red-flower-field-after.jpeg?auto=avif,webp&format=jpg&width=863" />
-              </div>
-              <div>
-                <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
-              </div>
-              <div>
-                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" />
-              </div>
-              <div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRGMyCheCstEGpAjhx7BdorHds4MY5zqBLyfExf2GsnEOWYdvvpsgxpaWsTpyzRbkbmzQ&usqp=CAU" />
-              </div>
-            </Carousel>
-          </div>
-          <div className="col-md-5">
-            <span className="font-bold text-[1.5em] text-[var(--mainColor)]">
-              1.690.000 <span>đ</span>
-            </span>
-            <div className="flex flex-wrap">
-              <label htmlFor="type">
-                <input type="radio" name="type" id="type" className="hidden" />
-                <div className="btn-type-product">
-                  <div className="flex items-center relative">
-                    <div className="relative w-[12px] h-[12px] mr-[7px]">
-                      <span className="checkbox-type"></span>
-                      <AiFillCheckCircle className="absolute icon-checkbox" />
-                    </div>
-                    <p>300W</p>
-                  </div>
-                  <p className="text-[var(--red)]">1.390.000</p>
-                </div>
-              </label>
-              <label htmlFor="type2" className="btn-type-product">
-                <input type="radio" name="type" id="type2" className="hidden" />
-                <div className="flex items-center">
-                  <div className="relative w-[12px] h-[12px] mr-[7px]">
-                    <span className="checkbox-type"></span>
-                    <AiFillCheckCircle className="absolute icon-checkbox" />
-                  </div>
-                  <span>450W</span>
-                </div>
-                <span>1.690.000d</span>
-              </label>
-              <label htmlFor="type3" className="btn-type-product">
-                <input type="radio" name="type" id="type3" className="hidden" />
-                <div className="flex items-center">
-                  <div className="relative w-[12px] h-[12px] mr-[7px]">
-                    <span className="checkbox-type"></span>
-                    <AiFillCheckCircle className="absolute icon-checkbox" />
-                  </div>
-                  <span>600W</span>
-                </div>
-                <span>1.890.000d</span>
-              </label>
-            </div>
-            <div className="flex items-center gap-2 mt-[15px]">
-              <span className="text-[1.2em] font-bold mr-[30px]">Số lượng</span>
-              <div className="btn-quantity">
-                <AiOutlineMinus />
-              </div>
-              <div className="btn-quantity">
-                <BsPlusLg />
-              </div>
-              <input type="text" className="text-quantity" />
-            </div>
-            <div className="flex items-center justify-center gap-3 mt-[20px]">
-              <div className="w-[75%] flex items-center flex-col bg-[var(--mainColor)] text-white py-[10px] rounded-[15px] cursor-pointer">
-                <p className="uppercase font-bold">mua ngay</p>
-                <p>(Giao hàng miễn phí tận nơi)</p>
-              </div>
-              <div className="w-[25%] bg-[var(--menuHover)] border-2 flex items-center flex-col border-solid py-[10px] border-[var(--mainColor)] text-[var(--mainColor)] cursor-pointer rounded-[15px]">
-                <GiShoppingCart className="text-[1.6em]" />
-                <p className="text-white">Thêm vào giỏ</p>
-              </div>
-            </div>
-            <div className="bg-[var(--mainColor)] p-[30px] mt-[20px]">
-              <p className="text-white font-bold text-[1.2em]">
-                Đặt hàng nhanh
-              </p>
-
-              <div class="customer-name row">
-                <div class="col-12 mb-[20px]">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="contact[Name]"
-                    placeholder="Họ tên"
-                    required=""
-                  />
-                </div>
-                <div class="col-12 mb-[20px]">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    name="contact[Phone]"
-                    placeholder="Số điện thoại"
-                    required=""
-                  />
-                </div>
-                <div class="flex">
-                  <div className="relative w-100 font-bold text-[1.2em] text-white text-center py-[10px] cursor-pointer bg-[#ed9301] box-border">
-                    Đặt hàng
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="flex items-center border-main rounded-[10px] p-[10px]">
-              <img
-                src={require("../../assets/Icon/consultant.png")}
-                alt=""
-                className="w-[50px] h-[50px]"
-              />
-              <p className="text-[1.1em] ml-[15px]">
-                Gọi ngay{" "}
-                <span className="text-[1.2em] font-bold text-[var(--mainColor)]">
-                  0363 993 993
-                </span>{" "}
-                để được tư vấn tốt nhất!
-              </p>
-            </div>
-            <div className="border-gray rounded-[10px] p-[10px] text-[1.1em] mt-[20px]">
-              <p>
-                Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
-              </p>
-              <p>
-                Thương hiệu: <span className="text-[#00b907]">TP Solar</span>
-              </p>
-              <p>
-                Loại: <span className="text-[#00b907]">Đèn Đường</span>
-              </p>
-            </div>
-            <div className="relative border-main-dashed rounded-[10px] mt-[35px] px-[20px] py-[30px]">
-              <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-15%] left-[8%] py-[2px] px-[15px] text-[var(--mainColor)]">
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/icon/100/463/111/themes/889675/assets/gift.gif?1686880710266"
-                  alt=""
-                />
-                <span className="text-capitalize text-[1.3em] font-medium ml-[10px]">
-                  Mã giảm giá
+              <div className="rounded-[10px] flex items-center border-gray cursor-pointer gap-1 text-[var(--mainColor)] text-[1em] py-[3px] px-[5px]">
+                <span>
+                  {checkboxCompare === 0 ? (
+                    <BsPlusCircle />
+                  ) : (
+                    <BsCheckCircleFill />
+                  )}
                 </span>
+                <span>So sánh</span>
               </div>
-              <p>
-                Nhập mã <b className="uppercase">freeship</b> để được miễn phí
-                ship đơn giản từ 200k
-              </p>
-              <div className="hover-border-main font-bold text-[1.2em] rounded-[30px] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]">
-                Sao chép
+            </label>
+          </div>
+          <Row>
+            <div className="col-lg-4 col-tb-5 col-tbs-12 relative">
+              <div className="bg-white cursor-pointer absolute rounded-[10px] overflow-hidden border-2 border-solid border-[var(--mainColor)] z-[1000] top-[60%] left-[10%] w-[60px] h-[60px] flex items-center p-[10px]">
+                <img src={require("../../assets/Icon/youtube.png")} alt="" />
+              </div>
+              <Carousel
+                showThumbs={true}
+                showIndicators={false}
+                swipeable={true}
+                useKeyboardArrows={true}
+                showArrows={true}
+                showStatus={false}
+              >
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/5.jpg?v=1685090766457"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/u500-optimized-cefcccf4-29f7-41dc-ad9b-ce0f1536b919.png?v=1685090779840"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
+                    alt=""
+                  />
+                </div>
+              </Carousel>
+            </div>
+            <div className="col-lg-5 col-tb-7 col-tbs-12">
+              <span className="font-bold text-[1.5em] text-[var(--mainColor)]">
+                1.690.000 <span>đ</span>
+              </span>
+              <div className="flex flex-wrap mt-[15px]">
+                <label htmlFor="type">
+                  <input
+                    type="radio"
+                    name="type"
+                    id="type"
+                    className="hidden"
+                  />
+                  <div className="btn-type-product">
+                    <div className="flex items-center relative">
+                      <div className="relative w-[14px] h-[14px] mr-[7px]">
+                        <span className="checkbox-type"></span>
+                        <AiFillCheckCircle className="absolute icon-checkbox" />
+                      </div>
+                      <p className="">300W</p>
+                    </div>
+                    <p className="text-[var(--red)]">1.390.000</p>
+                  </div>
+                </label>
+                <label htmlFor="type2">
+                  <input
+                    type="radio"
+                    name="type"
+                    id="type2"
+                    className="hidden"
+                  />
+                  <div className="btn-type-product">
+                    <div className="flex items-center relative">
+                      <div className="relative w-[14px] h-[14px] mr-[7px]">
+                        <span className="checkbox-type"></span>
+                        <AiFillCheckCircle className="absolute icon-checkbox" />
+                      </div>
+                      <p className="">450W</p>
+                    </div>
+                    <p className="text-[var(--red)]">1.690.000</p>
+                  </div>
+                </label>
+                <label htmlFor="type3">
+                  <input
+                    type="radio"
+                    name="type"
+                    id="type3"
+                    className="hidden"
+                  />
+                  <div className="btn-type-product">
+                    <div className="flex items-center relative">
+                      <div className="relative w-[14px] h-[14px] mr-[7px]">
+                        <span className="checkbox-type"></span>
+                        <AiFillCheckCircle className="absolute icon-checkbox" />
+                      </div>
+                      <p className="">600W</p>
+                    </div>
+                    <p className="text-[var(--red)]">1.890.000</p>
+                  </div>
+                </label>
+              </div>
+              <div className="flex items-center gap-2 mt-[15px]">
+                <span className="text-[1.2em] font-bold mr-[30px]">
+                  Số lượng
+                </span>
+                <div className="btn-quantity" onClick={decrementCount}>
+                  <AiOutlineMinus />
+                </div>
+                <div className="btn-quantity" onClick={incrementCount}>
+                  <BsPlusLg />
+                </div>
+                <input
+                  type="text"
+                  className="text-quantity"
+                  name="quantity"
+                  value={count}
+                  maxLength="2"
+                  id="number-quantity"
+                  autoComplete="off"
+                  min="1"
+                  onChange={(event, e) => {
+                    const value = Number(event.target.value);
+                    setCount(value);
+                  }}
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                />
+              </div>
+              <div className="flex items-center justify-center gap-3 mt-[20px]">
+                <div className="w-[70%] col-tb-6 flex items-center flex-col bg-[var(--mainColor)] text-white py-[10px] rounded-[15px] cursor-pointer relative hover-overlay-main">
+                  <div className="hover-overlay"></div>
+                  <p className="uppercase font-bold">mua ngay</p>
+                  <p>(Giao hàng miễn phí tận nơi)</p>
+                </div>
+                <div className="w-[30%] col-tb-6 bg-[var(--menuHover)] border-2 flex items-center flex-col border-solid py-[10px] border-[var(--mainColor)] text-[var(--mainColor)] cursor-pointer rounded-[15px] hover-blue-white">
+                  <GiShoppingCart className="text-[1.6em]" />
+                  <p className="text-white">Thêm vào giỏ</p>
+                </div>
+              </div>
+              <div className="bg-[var(--main)] p-[30px] mt-[20px]">
+                <p className="text-white font-bold text-[1.2em] mb-[10px]">
+                  Đặt hàng nhanh
+                </p>
+
+                <div className="customer-name row">
+                  <div className="col-12 mb-[20px]">
+                    <input
+                      type="text"
+                      className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
+                      name="contact[Name]"
+                      placeholder="Họ tên"
+                      required=""
+                    />
+                  </div>
+                  <div className="col-12 mb-[20px]">
+                    <input
+                      type="text"
+                      name="quantity"
+                      className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
+                      placeholder="Số điện thoại"
+                      required=""
+                    />
+                  </div>
+                  <div className="flex">
+                    <div className="relative w-100 font-bold text-[1.2em] text-white text-center py-[10px] cursor-pointer bg-[#ed9301] box-border relative hover-overlay-main">
+                      Đặt hàng
+                      <div className="hover-overlay"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            <div className="col-lg-3 col-tb-12 col-tbs-12">
+              <div className="flex items-center border-main rounded-[10px] p-[10px]">
+                <img
+                  src={require("../../assets/Icon/consultant.png")}
+                  alt=""
+                  className="w-[50px] h-[50px]"
+                />
+                <p className="text-[1.1em] ml-[15px]">
+                  Gọi ngay{" "}
+                  <span className="text-[1.2em] font-bold text-[var(--mainColor)]">
+                    0363 993 993
+                  </span>{" "}
+                  để được tư vấn tốt nhất!
+                </p>
+              </div>
+              <div className="border-gray rounded-[10px] p-[10px] text-[1.1em] mt-[20px]">
+                <p>
+                  Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
+                </p>
+                <p>
+                  Thương hiệu: <span className="text-[#00b907]">TP Solar</span>
+                </p>
+                <p>
+                  Loại: <span className="text-[#00b907]">Đèn Đường</span>
+                </p>
+              </div>
+              <div className="relative border-main-dashed rounded-[10px] mt-[35px] px-[20px] py-[30px]">
+                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-15%] left-[8%] py-[2px] px-[15px] text-[var(--mainColor)]">
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/icon/100/463/111/themes/889675/assets/gift.gif?1686880710266"
+                    alt=""
+                  />
+                  <span className="text-capitalize text-[1.3em] font-medium ml-[10px]">
+                    Mã giảm giá
+                  </span>
+                </div>
+                <p>
+                  Nhập mã <b className="uppercase">freeship</b> để được miễn phí
+                  ship đơn giản từ 200k
+                </p>
+                <div
+                  className="select-none hover-border-main font-bold text-[1.2em] rounded-[30px] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
+                  id="btnCopy"
+                  onClick={changeTextBtnCopy}
+                >
+                  {textCopy}
+                </div>
+              </div>
+            </div>
+          </Row>
+          <DetailInfor />
         </Row>
-
-        <DetailInfor />
-      </Row>
-    </CardMain>
+      </CardMain>
+      <div className="justify-between items-center gap-2 sticky-bottom p-[10px] d-lg-none d-sm-flex">
+        <div className="border-red cursor-pointer rounded-[10px] py-[3px] w-[35%] flex flex-col items-center relative">
+          <img
+            src="https://bizweb.dktcdn.net/thumb/small/100/463/111/themes/889675/assets/hotline.png?1686880710266"
+            alt=""
+          />
+          <span className="font-bold text-[1.1em]">Liên hệ</span>
+          <div className="flex justify-between absolute top-[-130%] left-[15%] gap-2  p-[10px] bg-white rounded-[10px] card-shadow">
+            <a href="/detail" className="btn-call">
+              <FiPhoneCall />
+            </a>
+            <a href="/detail" className="btn-call">
+              <div className="bg-white rounded-[5px] w-fit overflow-hidden flex justify-center items-center">
+                <img
+                  src={require("../../assets/Icon/zalo.png")}
+                  alt=""
+                  className="w-[25px] h-[25px]"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+        <div className="flex flex-col items-center w-100 uppercase bg-[var(--menuHover)] cursor-pointer rounded-[10px] py-[25px] hover-bdr-yellow">
+          <span className="font-bold text-[1.1em] text-white inline">
+            Thêm vào giỏ
+          </span>
+        </div>
+        <div className="flex flex-col items-center w-[55%] uppercase bg-[var(--mainColor)] cursor-pointer rounded-[10px] py-[25px] hover-bdr-blue">
+          <span className="font-bold text-[1.1em] text-white">Mua ngay</span>
+        </div>
+      </div>
+    </>
   );
 }

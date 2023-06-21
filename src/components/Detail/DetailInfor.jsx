@@ -1,16 +1,55 @@
 import { Row } from "react-bootstrap";
-import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import {
+  MdOutlineKeyboardDoubleArrowDown,
+  MdOutlineKeyboardDoubleArrowUp,
+} from "react-icons/md";
+import ItemProductRelative from "../Items/ItemProductRelative";
+import { useState } from "react";
 
 export default function DetailInfor() {
+  const [moreDetail, setMoreDetail] = useState(0);
+
+  const showDetail = () => {
+    setMoreDetail(1);
+  };
+
+  const hideDetail = () => {
+    setMoreDetail(0);
+  };
+
   return (
     <Row className="mt-[30px]">
-      <div className="col-md-9">
-        <div className="card-shadow w-100 rounded-[10px] p-[15px] relative pb-[100px]">
-          <div className="absolute w-100 bottom-0 flex items-center justify-center p-[20px]">
-            <div className="btn-shadow relative ">
+      <div className={`col-md-9 col-tb-12 ${moreDetail === 0 ? "h-fit" : ""}`}>
+        <div
+          className={`card-shadow w-100 rounded-[10px] pb-[100px] p-[15px] relative overflow-hidden ${
+            moreDetail === 0 ? "h-[500px]" : "h-fit"
+          }`}
+        >
+          <div className={`absolute w-100 bottom-0 p-[20px] ${ moreDetail === 0 ? "card-btn-seemore" : "h-[200px]" }`}>
+            {moreDetail === 0 ? (
+              <div
+                className="btn-shadow relative h-fit w-fit bg-white btn-center"
+                onClick={showDetail}
+              >
+                <span className="pr-[30px]">Xem thêm</span>
+                <MdOutlineKeyboardDoubleArrowDown />
+              </div>
+            ) : (
+              <div
+                className="btn-shadow relative h-fit w-fit bg-white btn-center"
+                onClick={hideDetail}
+              >
+                <span className="pr-[30px]">Thu gọn</span>
+                <MdOutlineKeyboardDoubleArrowUp />
+              </div>
+            )}
+            {/* <div
+              className="btn-shadow relative h-fit w-fit bg-white btn-center"
+              onClick={showDetail}
+            >
               <span className="pr-[30px]">Xem thêm</span>
               <MdOutlineKeyboardDoubleArrowDown />
-            </div>
+            </div> */}
           </div>
 
           <p className="font-bold text-[1.1em]">
@@ -48,8 +87,19 @@ export default function DetailInfor() {
             />
           </p>
         </div>
+        <div className="card-shadow w-100 rounded-[10px] p-[15px] relative">
+          <p className="font-bold text-[1.1em]">Sản phẩm liên quan</p>
+          <div className="p-15px">
+            <Row className=" m-0">
+              <ItemProductRelative />
+              <ItemProductRelative />
+              <ItemProductRelative />
+              <ItemProductRelative />
+            </Row>
+          </div>
+        </div>
       </div>
-      <div className="col-md-3">
+      <div className="col-md-3 col-tb-12 h-fit">
         <div className="card-shadow w-100 rounded-[10px] p-[8px]">
           <p className="font-bold text-[1.1em] p-[10px]">Thông số kĩ thuật</p>
           <div className="rounded-[10px] overflow-hidden border-gray">
@@ -57,8 +107,7 @@ export default function DetailInfor() {
               border="1"
               cellpadding="1"
               cellspacing="1"
-              className="text-[0.8em] width-100"
-              class="table table-striped mb-0"
+              className="text-[0.8em] width-100 table table-striped mb-0"
             >
               <tbody>
                 <tr>
