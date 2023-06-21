@@ -22,7 +22,7 @@ function App() {
         <Route index path="/paying" element={<PayingPage />} />
         <Route index path="/Guest/Support" element={<WarrantyStation />} />
         <Route index path="/Guest/Intro" element={<WarrantyPolicyHome />} />
-        <Route index path="/admin-page" element={} />
+        <Route index path="/admin-page" element={AdminPage} />
       </Routes>
     </BrowserRouter>
   );
