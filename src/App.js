@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage";
 import PayingPage from "./pages/PayingPage";
 import WarrantyStation from "./components/WarrantyStation/WarrantyStation";
 import WarrantyPolicyHome from "./components/WarrantyPolicy/WarrantyPolicyHome";
+import AdminPage from './pages/AdminPage'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route index path="/paying" element={<PayingPage />} />
         <Route index path="/Guest/Support" element={<WarrantyStation />} />
         <Route index path="/Guest/Intro" element={<WarrantyPolicyHome />} />
+        <Route index path="/admin-page" element={} />
       </Routes>
     </BrowserRouter>
   );
