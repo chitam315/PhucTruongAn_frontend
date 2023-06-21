@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* .detail-input-compare:checked +div span svg:first-child {
+  display: none !important;
+}
+.detail-input-compare:checked +div span svg:last-child {
+  display: inline;
+} */
 .btn-type-product {
   border: 1px solid #ccc;
   font-size: 1em;
@@ -15,33 +20,48 @@
   margin-right: 10px;
   cursor: pointer;
   user-select: none;
+  transition: 0.5s;
 }
 
-.btn-type-product.clicked {
+.btn-type-product:hover .relative p,
+input:checked[type="radio"] + .btn-type-product .relative p {
+  color: var(--mainColor);
+}
+
+.btn-type-product:hover,
+input:checked[type="radio"] + .btn-type-product {
   border-color: var(--mainColor);
   background: #fdf7b5;
 }
+
+.btn-type-product:hover .icon-checkbox,
+input:checked[type="radio"] + .btn-type-product .icon-checkbox {
+  opacity: 1;
+}
+
+.btn-type-product:hover .checkbox-type,
+input:checked[type="radio"] + .btn-type-product .checkbox-type {
+  opacity: 0;
+}
+
 .checkbox-type {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 1px solid #7e7e7e;
   margin-right: 10px;
   display: block;
 }
 
-.btn-type-product:hover,
-.btn-type-product.clicked .icon-checkbox {
-  opacity: 1;
-}
 .icon-checkbox {
   position: absolute;
   top: 0;
   left: 0;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   opacity: 0;
   color: rgb(0, 221, 55);
+  transition: 0.5s;
 }
 
 .btn-quantity {
@@ -61,6 +81,15 @@
   border: 1px solid #c7c7c7;
   padding: 7px 15px;
   border-radius: 5px;
+  width: 90px;
+  max-lines: 1;
+}
+
+.form-control:focus,
+.text:focus,
+.text-quantity:focus {
+  border: 1px solid #c7c7c7;
+  outline: none !important;
 }
 
 .box-border {
@@ -68,11 +97,16 @@
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .table-striped tbody tr:nth-of-type(even) {
   background: #f9f9f9;
+}
+
+.card-btn-seemore {
+  background: linear-gradient(360deg, #fff 100px, transparent);
+  height: 200px;
 }
 
 .btn-shadow {
@@ -118,3 +152,133 @@
   }
 }
 
+.btn-center {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+}
+
+.hover-blue-white:hover {
+  background: var(--mainColor);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #ffffff54;
+  transition: 0.2s;
+}
+.hover-overlay-main {
+  overflow: hidden;
+}
+
+.hover-overlay-main:hover .hover-overlay {
+  animation: animateOverlay 1s;
+}
+
+@keyframes animateOverlay {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 110%;
+  }
+}
+
+.btn-call {
+  background: var(--mainColor);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+li.slide div {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  user-select: none;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+li.slide div img {
+  /* width: 100%; */
+  /* height: 100%; */
+  /* background-size: cover; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.thumbs-wrapper {
+  margin: 25px 0 0 0 !important;
+}
+
+li.thumb {
+  width: 100px !important;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+li.thumb:hover,
+li.thumb.selected {
+  border: 3px solid var(--mainColor) !important;
+}
+li.thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.carousel-slider button {
+  top: 45% !important;
+  bottom: 40% !important;
+  background: #c2c2c2 !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 5px #5a5a5a;
+}
+
+.carousel-slider button::before {
+  width: 15px !important;
+  height: 15px !important;
+  border-top: 2px solid #000 !important;
+  border-left: 2px solid #000 !important;
+  border-right: 2px solid transparent !important;
+  border-bottom: 2px solid transparent !important;
+  background: transparent !important;
+}
+.carousel-slider button:first-child::before {
+  transform: rotate(315deg);
+}
+.carousel-slider button:last-child::before {
+  transform: rotate(135deg);
+}
+.carousel-slider button:first-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.carousel-slider button:last-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
