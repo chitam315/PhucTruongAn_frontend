@@ -57,7 +57,7 @@ export default function Footer() {
           </Col>
           <Col>
             <p>Phương thức thanh toán</p>
-            <div class="flex">
+            <div className="flex">
               <img
                 src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/payment-1.png?1685679333702"
                 data-src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/payment-1.png?1685679333702"

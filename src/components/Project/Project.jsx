@@ -11,7 +11,7 @@ export default function Project() {
   return (
     <>
       <Header></Header>
-      <div class="col-right position-relative content-project">
+      <div className="col-right position-relative content-project">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">
             <div className="container position-relative">

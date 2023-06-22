@@ -76,14 +76,14 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
-          <div class="row">
+          <div className="row">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
               Mã bảo hành *
             </label>
             <input
               type="text"
               placeholder="Nhập mã bảo hành"
-              class="center w-[160px]"
+              className="center w-[160px]"
             />
           </div>
           <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[3px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
