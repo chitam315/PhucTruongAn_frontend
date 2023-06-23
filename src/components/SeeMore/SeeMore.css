@@ -1,0 +1,33 @@
+.filter-result-item {
+  background: var(--mainColor);
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.filter-result-item:hover {
+    background: #878787;
+}
+
+.filter-result-item span {
+  border-radius: 50%;
+  background: #fff;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.filter-result-item span svg:last-child path {
+  stroke: #ff0000;
+  font-size: 3em;
+}
+
+

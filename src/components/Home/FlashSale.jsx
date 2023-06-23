@@ -9,7 +9,7 @@ export default function FlashSale() {
 
   return (
     <>
-      <div className="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
+      <div>
         <div className="container">
           <div className="bg-flash pb-[15px] rounded-[10px]">
             <div className="flex-center py-[10px] px-[15px]">
@@ -25,21 +25,17 @@ export default function FlashSale() {
               </div>
               <div className="flex-center banner-flash relative w-auto">
                 <p className="uppercase text-[1em] text-white">{text1}</p>
-                <p className="uppercase text-[1em] text-white absolute top-[-10px] left-[-200px] w-[500px]">{text2}</p>
+                {/* <p className="uppercase text-[1em] text-white absolute top-[-10px] left-[-200px] w-[500px]">{text2}</p> */}
               </div>
               <div className="w-[200px]"></div>
             </div>
-            <div className="row select-none">
-              <div className="col-12">
-                <Container>
-                  <Row>
-                    <ItemProductSale />
-                    <ItemProductSale />
-                    <ItemProductSale />
-                    <ItemProductSale />
-                    <ItemProductSale />
-                  </Row>
-                </Container>
+            <div className="row select-none px-[15px]">
+              <div className="flex flex-wrap">
+                <ItemProductSale />
+                <ItemProductSale />
+                <ItemProductSale />
+                <ItemProductSale />
+                <ItemProductSale />
               </div>
             </div>
           </div>

@@ -8,8 +8,13 @@ import "./Project.css";
 export default function Project() {
   return (
     <>
+<<<<<<< HEAD
       {/* <Header></Header> */}
       <div class="col-right position-relative content-project">
+=======
+      <Header></Header>
+      <div className="col-right position-relative content-project">
+>>>>>>> 31b5f5103ea9e358d477974b33a491c47f00187c
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">
             <div className="container position-relative">

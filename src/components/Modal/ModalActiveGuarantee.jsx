@@ -76,14 +76,23 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
+<<<<<<< HEAD
           <div class="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
+=======
+          <div className="row">
+            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
+>>>>>>> 31b5f5103ea9e358d477974b33a491c47f00187c
               Mã bảo hành *
             </label>
             <input
               type="text"
               placeholder="Nhập mã bảo hành"
+<<<<<<< HEAD
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+=======
+              className="center w-[160px]"
+>>>>>>> 31b5f5103ea9e358d477974b33a491c47f00187c
             />
           </div>
           <div class="row w-full justify-between items-center">

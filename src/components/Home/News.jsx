@@ -5,7 +5,7 @@ export default function News() {
   return (
     <CardHome title="dự án và hoạt động">
       <div className="row">
-        <div className="col-12 col-md-6">
+        <div className="col-md-6 col-tbs-12">
           <div className="item_grid mb-3 mb-md-0">
             <div className="relative">
               <a href="/" title="" className="">
@@ -48,10 +48,10 @@ export default function News() {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-md-6 col-tbs-12">
           {NewsData.map((item, index) => (
             <article className="blog-item-list clearfix mb-3 row" id={index}>
-              <div className="col-4 col-lg-3 pr-0 ">
+              <div className="col-4 col-lg-3 mr-0">
                 <a
                   href="#news"
                   className="w-[160px] overflow-hidden block rounded-[10px]"

@@ -1,43 +1,213 @@
 import { Row } from "react-bootstrap";
+import { GrClose } from "react-icons/gr";
+import { FaLongArrowAltRight } from "react-icons/fa";
+// import { AiFillCheckCircle, AiOutlineShoppingCart } from "react-icons/ai";
 import CardMain from "../Card/CardMain";
 import ItemProduct from "../Items/ItemProduct";
+import "./SeeMore.css";
+import { useEffect, useState } from "react";
+import { arrayCategory, arrayProduct } from "./DataViDu";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 export default function SeeMore() {
+  const [dataItem, setDataItem] = useState([]);
+  const [dataDefault, setDataDefault] = useState([]);
+  const [dataAZ, setDataAZ] = useState([]);
+  const [dataZA, setDataZA] = useState([]);
+  const [dataGoUp, setDataGoUp] = useState([]);
+  const [dataGoDown, setDataGoDown] = useState([]);
+  const [dataDateNew, setDataDateNew] = useState([]);
+  const [dataDateOld, setDataDateOld] = useState([]);
+
+  useEffect(() => {
+    setDataItem(arrayProduct);
+  }, []);
+
+  function sortDefault() {
+    var arr = dataItem.sort(function (a, b) {
+      return a.id === b.id ? 0 : a.id < b.id ? -1 : 1;
+    });
+    setDataDefault(arr);
+    setDataItem(dataDefault);
+  }
+
+  function sortAZ() {
+    var arrAZ = dataItem.sort(function (a, b) {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+    setDataAZ(arrAZ);
+    setDataItem(dataAZ);
+  }
+  function sortZA() {
+    var arrZA = dataItem.sort(function (a, b) {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return 1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return -1;
+      }
+      return 0;
+    });
+    setDataZA(arrZA);
+    setDataItem(dataZA);
+  }
+  function sortPriceGoUp() {
+    const arrPriceGoUp = dataItem.sort(function (a, b) {
+      if (a.price > b.price) return 1;
+      if (a.price < b.price) return -1;
+      return 0;
+    });
+    setDataGoUp(arrPriceGoUp);
+    setDataItem(dataGoUp);
+  }
+
+  function sortPriceGoDown() {
+    const arrPriceGoDown = dataItem.sort(function (a, b) {
+      return b.price - a.price;
+    });
+    setDataGoDown(arrPriceGoDown);
+    setDataItem(dataGoDown);
+  }
+
+  function sortDateNew() {
+    var arrDateNew = dataItem.sort(
+      (a, b) =>
+        new Date(...b.date.split("/").reverse()) -
+        new Date(...a.date.split("/").reverse())
+    );
+    setDataDateNew(arrDateNew);
+    setDataItem(dataDateNew);
+  }
+
+  function sortDateOld() {
+    var arrDateOld = dataItem.sort(
+      (a, b) =>
+        new Date(...a.date.split("/").reverse()) -
+        new Date(...b.date.split("/").reverse())
+    );
+    setDataDateOld(arrDateOld);
+    setDataItem(dataDateOld);
+  }
+
+  const [minPrice, setMinPrice] = useState("1200000");
+  const [maxPrice, setMaxPrice] = useState("2300000");
+  const [model, setModel] = useState("TP Solar");
+  const [category, setCategory] = useState([]);
+  const [addCategory, setAddCategory] = useState([]);
+
+  function delItemCategory(item) {
+    //Xóa item fliter loại sản phẩm
+    const val = item;
+    const newArr = category.filter((i) => i !== val);
+    setCategory(newArr);
+
+    //Ẩn trang thái checked của loại sản phẩm
+    const iClass = document.getElementsByClassName("id-check-category");
+    for (var i = 0; i < iClass.length; i++) {
+      if (iClass[i].value === item) {
+        iClass[i].click();
+      }
+    }
+  }
+  function deleteAllItem() {
+    setMinPrice("");
+    setMaxPrice("");
+    setModel("");
+    setCategory([]);
+  }
+
   return (
     <CardMain>
       <Row>
         <div className="col-12 col-lg-3">
-          <div className="sidebar sidebar_mobi m-0 p-2 p-lg-0 mt-lg-1 d-flex flex-column">
-            {/* <div className="heading d-none">
-              <div className="h2 title-head font-weight-bold big text-uppercase mt-2 mb-0">
-                Bộ lọc sản phẩm
-              </div>
-              <p className="font-italic pt-2 pb-2 mb-0">
-                Giúp lọc nhanh sản phẩm bạn tìm kiếm
-              </p>
-            </div> */}
+          <div className="">
             <div className="aside-filter mb-3 modal-open w-100 pr-0 pr-md-2 clearfix">
               <div className="filter-container row">
-                <aside className="aside-item filter-price mb-3 col-12 col-sm-12 col-lg-12">
+                <aside className="col-12 col-sm-12 col-lg-12">
+                  {model !== "" || category.length !== 0 || minPrice !== "" ? (
+                    <div className="bg-[#6f42c1] rounded-[10px] px-[10px] py-[16px] text-white mb-[20px]">
+                      <p className="font-bold text-[1em] mb-[8px]">Lọc theo:</p>
+                      <div className="flex flex-wrap gap-2 text-white text-[1em]">
+                        {model !== "" ? (
+                          <p
+                            className="filter-result-item"
+                            onClick={() => setModel("")}
+                          >
+                            {model}
+                            <span>
+                              <GrClose />
+                            </span>
+                          </p>
+                        ) : (
+                          <></>
+                        )}
+                        {category.length !== 0 ? (
+                          category.map((item, index) => (
+                            <p
+                              className="filter-result-item"
+                              onClick={() => delItemCategory(item)}
+                              key={index}
+                            >
+                              {item}
+                              <span>
+                                <GrClose />
+                              </span>
+                            </p>
+                          ))
+                        ) : (
+                          <></>
+                        )}
+                        {minPrice !== "" ? (
+                          <p
+                            className="filter-result-item"
+                            onClick={() => setMinPrice("")}
+                          >
+                            {minPrice}{" "}
+                            <FaLongArrowAltRight className="px-[3px]" />{" "}
+                            {maxPrice}
+                            <span>
+                              <GrClose />
+                            </span>
+                          </p>
+                        ) : (
+                          <></>
+                        )}
+                        <p
+                          className="filter-result-item"
+                          onClick={deleteAllItem}
+                        >
+                          Xóa hết
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                   <div className="text-[1.2em] pb-[10px] font-bold">
                     Lọc giá
                   </div>
                   <div className="aside-content filter-group mb-1">
                     <div className="row">
-                      <div className="col-6 col-lg-12 col-xl-6">
-                        <label for="">
+                      <div className="col-6">
+                        <label>
                           <input
                             type="text"
-                            className="form-control rounded-[10px]"
+                            className="rounded-[10px] w-100 p-[5px] border-gray"
                             placeholder="Giá tối thiểu"
                           />
                         </label>
                       </div>
-                      <div className="col-6 col-lg-12 col-xl-6">
-                        <label for="">
+                      <div className="col-6">
+                        <label>
                           <input
                             type="text"
-                            className="form-control rounded-[10px]"
+                            className="rounded-[10px] w-100 p-[5px] border-gray"
                             placeholder="Giá tối đa"
                           />
                         </label>
@@ -45,7 +215,7 @@ export default function SeeMore() {
                     </div>
                   </div>
                   <a
-                    className="btn-clr-main mt-[15px] w-fit"
+                    className="btn-clr-main mt-[15px] w-fit hover:text-white"
                     href="#btn"
                     data-value=""
                   >
@@ -57,65 +227,40 @@ export default function SeeMore() {
                     Thương hiệu
                   </div>
                   <div className="aside-content filter-group">
-                    <ul className="filter-vendor filter-grid list-unstyled m-0">
-                      <li className="filter-item filter-item--check-box  ">
-                        <label
-                          className="d-flex align-items-baseline m-0 tp-solar"
-                          data-filter="tp solar"
-                          for="filter-tp-solar"
-                        >
-                          <input
-                            type="checkbox"
-                            id="filter-tp-solar"
-                            className="d-none"
-                            onchange="toggleFilter(this)"
-                            data-group="Hãng"
-                            data-field="vendor"
-                            value="(TP Solar)"
-                            data-operator="OR"
-                          />
-                          <span className="btn-main">TP Solar</span>
-                        </label>
-                      </li>
-                    </ul>
+                    <label className="flex">
+                      <input type="checkbox" className="d-none" />
+                      <span className="btn-main">TP Solar</span>
+                    </label>
                   </div>
                 </aside>
-                <aside className="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
+                <div>
                   <div className="text-[1.2em] pb-[10px] font-bold">Loại</div>
-                  <div className="aside-content filter-group">
-                    <ul className="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
-                      <li className="filter-item filter-item--check-box">
-                        <label
-                          className="d-flex align-items-baseline m-0"
-                          data-filter="đèn đường"
-                          for="filter-den-duong"
-                        >
-                          <input
-                            type="checkbox"
-                            id="filter-den-duong"
-                            className="d-none"
-                            data-group="Loại"
-                            data-field="product_type"
-                            data-operator="OR"
-                          />
-                          <span className="btn-main text-capitalize">
-                            Đèn đường
-                          </span>
-                        </label>
-                      </li>
-                    </ul>
+                  <div className="flex flex-wrap gap-2" id="card-category">
+                    {arrayCategory.map((item, index) => (
+                      <label key={index}>
+                        <input
+                          type="checkbox"
+                          className="hidden id-check-category"
+                          value={item.category}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              const val = category;
+                              setAddCategory(val.push(item.category));
+                              setCategory(val);
+                            } else {
+                              delItemCategory(item.category);
+                            }
+                          }}
+                        />
+                        <span className="btn-main text-capitalize flex">
+                          {item.category}
+                        </span>
+                      </label>
+                    ))}
                   </div>
-                </aside>
+                </div>
               </div>
             </div>
-            {/* <div className="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">
-              <div className="filter-container__selected-filter-header d-flex clearfix pt-1 pb-1">
-                <b className="filter-container__selected-filter-header-title text-white position-relative">
-                  Lọc theo:
-                </b>
-              </div>
-              <ul className="filter-container__selected-filter-list pl-0 m-0 list-unstyled d-block w-100 position-relative clearfix"></ul>
-            </div> */}
 
             <a
               className="py-[12px] px-[25px] text-center font-bold uppercase text-white text-[1.2em] bg-[var(--mainColor)] tag-trip relative w-fit"
@@ -132,45 +277,46 @@ export default function SeeMore() {
                 Sắp xếp:
               </span>
 
-              <label className="flex items-center btn-main">
+              <label onClick={() => sortDefault()}>
                 <input type="radio" name="sortBy" className="hidden" />
-                <span>Mặc định</span>
+                <span className="flex items-center btn-main">Mặc định</span>
               </label>
 
-              <label>
+              <label onClick={() => sortAZ()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">A → Z</span>
               </label>
 
-              <label>
+              <label onClick={() => sortZA()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">Z → A</span>
               </label>
 
-              <label>
+              <label onClick={() => sortPriceGoUp()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">Giá tăng dần</span>
               </label>
 
-              <label>
+              <label onClick={() => sortPriceGoDown()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">Giá giảm dần</span>
               </label>
 
-              <label>
+              <label onClick={() => sortDateNew()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">Mới nhất</span>
               </label>
 
-              <label>
+              <label onClick={() => sortDateOld()}>
                 <input type="radio" className="hidden" name="sortBy" />
                 <span className="flex items-center btn-main">Cũ nhất</span>
               </label>
             </div>
           </div>
           <Row>
-            <ItemProduct/>
-            <ItemProduct/>
+            {dataItem.map((item, index) => (
+              <ItemProduct item={item} index={index} />
+            ))}
           </Row>
         </div>
       </Row>

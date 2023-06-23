@@ -11,7 +11,7 @@ export default function Media() {
     <>
       <Container className="pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
-          <h2 class="uppercase font-bold relative text-[1.5em] mb-[15px]">
+          <h2 className="uppercase font-bold relative text-[1.5em] mb-[15px]">
             <a
               href="den-duong-lien-the-nang-luong-mat-troi"
               title="Đèn đường liền thể"
@@ -28,10 +28,10 @@ export default function Media() {
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
-            containerClass="carousel-container"
+            containerclassName="carousel-container"
             removeArrowOnDeviceType={["desktop"]}
-            // dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
+            // dotListclassName="custom-dot-list-style"
+            // itemclassName="carousel-item-padding-40-px"
           >
             {arr.map((item, index) => (
               <a href="/" key={index} className="w-100 h-auto p-[15px]">
