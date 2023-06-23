@@ -7,17 +7,25 @@ import "../components/Home/HomePage.css";
 import Category from "../components/Home/Category";
 import News from "../components/Home/News";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import CarouselSlice from "../components/Carousel/CarouselSlice";
+
+import Slidebar from "../components/Slidebar/Slidebar";
+
 
 export default function HomePage() {
   return (
     <div className="bg-main">
+      <Header />
+      <CarouselSlice />
+      <Slidebar />
       <FlashSale />
       <Category />
       <Media />
       <Feedback />
       <CustomerUsed />
       <News />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
