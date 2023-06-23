@@ -21,7 +21,7 @@ export default function ItemProductRelative() {
           </Link>
           <div className="ml-[10px]">
             <Link to="/detail">
-              <p className="font-bold text-[1em]">
+              <p className="font-bold text-[0.9em]">
                 [250W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U250 Chiếu Sáng 360
                 Độ
               </p>

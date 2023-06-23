@@ -66,3 +66,12 @@ export const arrayCategory = [
     category:"Đèn huỳnh quang"
   },
 ]
+
+export const arrayModel = [
+  {
+    model:"TP Solar"
+  },
+  {
+    model:"TP Moon"
+  },
+]

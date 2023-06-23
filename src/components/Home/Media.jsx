@@ -8,7 +8,7 @@ export default function Media() {
   const arr = MediaData;
   console.log(arr[1]);
   return (
-    <>
+    <div className=" mt-[25px]">
       <Container className="pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <h2 className="uppercase font-bold relative text-[1.5em] mb-[15px]">
@@ -45,7 +45,7 @@ export default function Media() {
           </Carousel>
         </div>
       </Container>
-    </>
+    </div>
   );
 }
 

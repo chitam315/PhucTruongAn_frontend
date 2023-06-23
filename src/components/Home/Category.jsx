@@ -5,8 +5,8 @@ import ItemProduct from "../Items/ItemProduct";
 
 export default function Category() {
   return (
-    <div>
-      <div className="container pt-[20px]">
+    <div className="mt-[25px]">
+      <div className="container pt-[20px] mt-[25px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">
@@ -30,13 +30,13 @@ export default function Category() {
             <div className="col-xl-9 col-lg-8 col-12 order-lg-2">
               {/* <div className="flex flex-wrap p-[-5px] flex-row"> */}
               <Row>
-              {arrayProduct.map((item, index)=>(
-                  <ItemProduct item={item} index={index}/>
+                {arrayProduct.map((item, index) => (
+                  <ItemProduct item={item} index={index} />
                 ))}
               </Row>
             </div>
             <div className="col-xl-3 col-lg-4 col-12 order-lg-1">
-              <div className="b_product p-2 pr-lg-0 d-flex flex-lg-column">
+              <div className="b_product p-2 pr-lg-0 d-flex flex-lg-column gap-2">
                 <a
                   href="/"
                   title=""
@@ -66,6 +66,7 @@ export default function Category() {
           </div>
         </div>
       </div>
+      <div className="mt-[25px]"></div>
       <div className="container pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
@@ -86,19 +87,17 @@ export default function Category() {
             </a>
           </div>
 
-          <div className="row items-center">
+          <div className="row items-center ">
             <div className="col-xl-9 col-lg-8 col-12 order-lg-1">
               {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
               <Row>
-                {arrayProduct.map((item, index)=>(
-                  <ItemProduct item={item} index={index}/>
+                {arrayProduct.map((item, index) => (
+                  <ItemProduct item={item} index={index} />
                 ))}
-                
-                
               </Row>
             </div>
             <div className="col-xl-3 col-lg-4 col-12 order-lg-2">
-              <div className="b_product p-2 pr-lg-0 d-flex flex-lg-column">
+              <div className="b_product p-2 pr-lg-0 d-flex flex-lg-column gap-2">
                 <a
                   href="/"
                   title=""
@@ -174,4 +173,3 @@ const arrayProduct = [
     watt: "490W",
   },
 ];
-

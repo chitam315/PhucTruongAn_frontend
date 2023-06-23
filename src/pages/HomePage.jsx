@@ -7,6 +7,7 @@ import "../components/Home/HomePage.css";
 import Category from "../components/Home/Category";
 import News from "../components/Home/News";
 import Footer from "../components/Footer/Footer";
+import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <CustomerUsed />
       <News />
       <Footer/>
+      <NavigationBottom/>
     </div>
   );
 }

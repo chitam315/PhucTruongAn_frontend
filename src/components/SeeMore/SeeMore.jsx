@@ -1,13 +1,12 @@
 import { Row } from "react-bootstrap";
 import { GrClose } from "react-icons/gr";
 import { FaLongArrowAltRight } from "react-icons/fa";
-// import { AiFillCheckCircle, AiOutlineShoppingCart } from "react-icons/ai";
+
 import CardMain from "../Card/CardMain";
 import ItemProduct from "../Items/ItemProduct";
 import "./SeeMore.css";
 import { useEffect, useState } from "react";
-import { arrayCategory, arrayProduct } from "./DataViDu";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
 
 export default function SeeMore() {
   const [dataItem, setDataItem] = useState([]);
@@ -95,9 +94,9 @@ export default function SeeMore() {
     setDataItem(dataDateOld);
   }
 
-  const [minPrice, setMinPrice] = useState("1200000");
-  const [maxPrice, setMaxPrice] = useState("2300000");
-  const [model, setModel] = useState("TP Solar");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [model, setModel] = useState([]);
   const [category, setCategory] = useState([]);
   const [addCategory, setAddCategory] = useState([]);
 
@@ -115,12 +114,50 @@ export default function SeeMore() {
       }
     }
   }
-  function deleteAllItem() {
+
+  function delItemModel(item) {
+    //Xóa item fliter thuong hieu
+    const val = item;
+    const newArr = model.filter((i) => i !== val);
+    setModel(newArr);
+
+    //Ẩn trang thái checked của thuong hieu
+    const iClass = document.getElementsByClassName("id-check-model");
+    for (var i = 0; i < iClass.length; i++) {
+      if (iClass[i].value === item) {
+        iClass[i].click();
+      }
+    }
+  }
+  function deleteAllItem(e) {
+    e.preventDefault();
     setMinPrice("");
     setMaxPrice("");
-    setModel("");
+    setModel([]);
+    // const modelClass = document.getElementsByClassName("id-check-model");
+    // for (var i = 0; i < modelClass.length; i++) {
+    //   if (modelClass[i].checked) {
+    //     modelClass[i].click();
+    //   }
+    // }
+
     setCategory([]);
+    // const cateClass = document.getElementsByClassName("id-check-category");
+    // for (var j = 0; j < cateClass.length; j++) {
+    //   if (cateClass[j].checked) {
+    //     cateClass[j].click();
+    //   }
+    // }
   }
+
+  const clickFilterPrice = () => {
+    const i = document.getElementById("price-min").value;
+    const j = document.getElementById("price-max").value;
+    if (i !== "" && j !== "") {
+      setMinPrice(i);
+      setMaxPrice(j);
+    }
+  };
 
   return (
     <CardMain>
@@ -130,23 +167,28 @@ export default function SeeMore() {
             <div className="aside-filter mb-3 modal-open w-100 pr-0 pr-md-2 clearfix">
               <div className="filter-container row">
                 <aside className="col-12 col-sm-12 col-lg-12">
-                  {model !== "" || category.length !== 0 || minPrice !== "" ? (
+                  {model.length !== 0 ||
+                  category.length !== 0 ||
+                  minPrice !== "" ? (
                     <div className="bg-[#6f42c1] rounded-[10px] px-[10px] py-[16px] text-white mb-[20px]">
                       <p className="font-bold text-[1em] mb-[8px]">Lọc theo:</p>
                       <div className="flex flex-wrap gap-2 text-white text-[1em]">
-                        {model !== "" ? (
-                          <p
-                            className="filter-result-item"
-                            onClick={() => setModel("")}
-                          >
-                            {model}
-                            <span>
-                              <GrClose />
-                            </span>
-                          </p>
+                        {model.length !== 0 ? (
+                          model.map((item, index) => (
+                            <p
+                              className="filter-result-item"
+                              onClick={() => delItemModel(item)}
+                            >
+                              {item}
+                              <span>
+                                <GrClose />
+                              </span>
+                            </p>
+                          ))
                         ) : (
                           <></>
                         )}
+
                         {category.length !== 0 ? (
                           category.map((item, index) => (
                             <p
@@ -168,8 +210,8 @@ export default function SeeMore() {
                             className="filter-result-item"
                             onClick={() => setMinPrice("")}
                           >
-                            {minPrice}{" "}
-                            <FaLongArrowAltRight className="px-[3px]" />{" "}
+                            {minPrice}
+                            <FaLongArrowAltRight className="px-[3px]" />
                             {maxPrice}
                             <span>
                               <GrClose />
@@ -189,6 +231,7 @@ export default function SeeMore() {
                   ) : (
                     <></>
                   )}
+
                   <div className="text-[1.2em] pb-[10px] font-bold">
                     Lọc giá
                   </div>
@@ -198,8 +241,12 @@ export default function SeeMore() {
                         <label>
                           <input
                             type="text"
-                            className="rounded-[10px] w-100 p-[5px] border-gray"
+                            className="rounded-[10px] block w-100 p-[5px] border-gray bg-white focus:bg-white"
                             placeholder="Giá tối thiểu"
+                            // onChange={onChangeFilterPrice}
+                            name="minP"
+                            id="price-min"
+                            required
                           />
                         </label>
                       </div>
@@ -207,32 +254,52 @@ export default function SeeMore() {
                         <label>
                           <input
                             type="text"
-                            className="rounded-[10px] w-100 p-[5px] border-gray"
+                            className="rounded-[10px] w-100 p-[5px] border-gray bg-white focus:bg-white"
                             placeholder="Giá tối đa"
+                            // onChange={onChangeFilterPrice}
+                            name="maxP"
+                            id="price-max"
+                            required
                           />
                         </label>
                       </div>
                     </div>
                   </div>
-                  <a
-                    className="btn-clr-main mt-[15px] w-fit hover:text-white"
-                    href="#btn"
-                    data-value=""
+                  <div
+                    className="btn-clr-main mt-[15px] w-fit hover:text-white "
+                    onClick={clickFilterPrice}
                   >
                     Áp dụng
-                  </a>
+                  </div>
                 </aside>
-                <aside className="aside-item filter-vendor mb-3 col-12 col-sm-4 col-lg-12">
+                <div className="mt-[20px] col-12 col-sm-4 col-lg-12">
                   <div className="text-[1.2em] pb-[10px] font-bold">
                     Thương hiệu
                   </div>
-                  <div className="aside-content filter-group">
-                    <label className="flex">
-                      <input type="checkbox" className="d-none" />
-                      <span className="btn-main">TP Solar</span>
-                    </label>
+                  <div className="gap-2 flex items-center">
+                    {arrayModel.map((item, index) => (
+                      <label className="flex">
+                        <input
+                          type="checkbox"
+                          className="hidden id-check-model"
+                          value={item.model}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              const val = model;
+                              setAddCategory(val.push(item.model));
+                              setModel(val);
+                            } else {
+                              delItemModel(item.model);
+                            }
+                          }}
+                        />
+                        <span className="btn-main text-capitalize flex">
+                          {item.model}
+                        </span>
+                      </label>
+                    ))}
                   </div>
-                </aside>
+                </div>
                 <div>
                   <div className="text-[1.2em] pb-[10px] font-bold">Loại</div>
                   <div className="flex flex-wrap gap-2" id="card-category">
@@ -278,7 +345,13 @@ export default function SeeMore() {
               </span>
 
               <label onClick={() => sortDefault()}>
-                <input type="radio" name="sortBy" className="hidden" />
+                <input
+                  type="radio"
+                  name="sortBy"
+                  className="hidden"
+                  defaultChecked
+                  id="check-default"
+                />
                 <span className="flex items-center btn-main">Mặc định</span>
               </label>
 

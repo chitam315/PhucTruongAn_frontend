@@ -5,6 +5,7 @@ import {
 } from "react-icons/md";
 import ItemProductRelative from "../Items/ItemProductRelative";
 import { useState } from "react";
+import ModalSpecification from "../Modal/ModalSpecification";
 
 export default function DetailInfor() {
   const [moreDetail, setMoreDetail] = useState(0);
@@ -141,7 +142,8 @@ export default function DetailInfor() {
               </tbody>
             </table>
           </div>
-          <div className="btn-shadow mt-[15px]">Xem chi tiết cấu hình</div>
+          <ModalSpecification/>
+          
         </div>
       </div>
     </Row>

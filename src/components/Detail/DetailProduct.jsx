@@ -10,6 +10,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
 import "./Detail.css";
 import DetailInfor from "./DetailInfor";
+import ModalVideo from "../Modal/ModalVideo";
 
 export default function DetailProduct() {
   //Increment & Decrement INPUT QUANTITY
@@ -50,7 +51,7 @@ export default function DetailProduct() {
                 value="/"
                 id="checkbox-compare"
                 data-type=""
-                onChange={e=>{
+                onChange={(e) => {
                   if (e.target.checked) {
                     setCheckboxCompare(1);
                   } else {
@@ -72,9 +73,7 @@ export default function DetailProduct() {
           </div>
           <Row>
             <div className="col-lg-4 col-tb-5 col-tbs-12 relative">
-              <div className="bg-white cursor-pointer absolute rounded-[10px] overflow-hidden border-2 border-solid border-[var(--mainColor)] z-[1000] top-[60%] left-[10%] w-[60px] h-[60px] flex items-center p-[10px]">
-                <img src={require("../../assets/Icon/youtube.png")} alt="" />
-              </div>
+              <ModalVideo />
               <Carousel
                 showThumbs={true}
                 showIndicators={false}
@@ -139,9 +138,9 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="">300W</p>
+                      <p className="text-[0.8em]">300W</p>
                     </div>
-                    <p className="text-[var(--red)]">1.390.000</p>
+                    <p className="text-[var(--red)] text-[0.8em]">1.390.000</p>
                   </div>
                 </label>
                 <label htmlFor="type2">
@@ -157,9 +156,9 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="">450W</p>
+                      <p className="text-[0.8em]">450W</p>
                     </div>
-                    <p className="text-[var(--red)]">1.690.000</p>
+                    <p className="text-[var(--red)] text-[0.8em]">1.690.000</p>
                   </div>
                 </label>
                 <label htmlFor="type3">
@@ -175,9 +174,9 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="">600W</p>
+                      <p className="text-[0.8em]">600W</p>
                     </div>
-                    <p className="text-[var(--red)]">1.890.000</p>
+                    <p className="text-[var(--red)] text-[0.8em]">1.890.000</p>
                   </div>
                 </label>
               </div>
@@ -262,15 +261,15 @@ export default function DetailProduct() {
                   alt=""
                   className="w-[50px] h-[50px]"
                 />
-                <p className="text-[1.1em] ml-[15px]">
+                <p className="text-[0.9em] ml-[15px]">
                   Gọi ngay{" "}
-                  <span className="text-[1.2em] font-bold text-[var(--mainColor)]">
+                  <span className="text-[1.1em] font-bold text-[var(--mainColor)]">
                     0363 993 993
                   </span>{" "}
                   để được tư vấn tốt nhất!
                 </p>
               </div>
-              <div className="border-gray rounded-[10px] p-[10px] text-[1.1em] mt-[20px]">
+              <div className="border-gray rounded-[10px] p-[10px] text-[1em] mt-[20px]">
                 <p>
                   Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
                 </p>
@@ -282,21 +281,22 @@ export default function DetailProduct() {
                 </p>
               </div>
               <div className="relative border-main-dashed rounded-[10px] mt-[35px] px-[20px] py-[30px]">
-                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-15%] left-[8%] py-[2px] px-[15px] text-[var(--mainColor)]">
+                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-12%] left-[6%] py-[2px] px-[15px] text-[var(--mainColor)]">
                   <img
                     src="https://bizweb.dktcdn.net/thumb/icon/100/463/111/themes/889675/assets/gift.gif?1686880710266"
+                    className="w-[20px]"
                     alt=""
                   />
-                  <span className="text-capitalize text-[1.3em] font-medium ml-[10px]">
+                  <span className="text-capitalize text-[1em] font-medium ml-[10px]">
                     Mã giảm giá
                   </span>
                 </div>
-                <p>
+                <p className="text-[0.8em]">
                   Nhập mã <b className="uppercase">freeship</b> để được miễn phí
                   ship đơn giản từ 200k
                 </p>
                 <div
-                  className="select-none hover-border-main font-bold text-[1.2em] rounded-[30px] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
+                  className="select-none hover-border-main font-bold text-[1em] rounded-[30px] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
                   id="btnCopy"
                   onClick={changeTextBtnCopy}
                 >
