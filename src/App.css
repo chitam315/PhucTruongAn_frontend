@@ -266,9 +266,12 @@ input:checked[type="checkbox"] + .btn-main,
   background: #fff;
 }
 
+<<<<<<< HEAD
+=======
 .col-5w {
   width: 20%;
 }
+>>>>>>> 31b5f5103ea9e358d477974b33a491c47f00187c
 
 
 
@@ -360,6 +363,8 @@ input:checked[type="checkbox"] + .btn-main,
     width: 100%;
   }
 }
+<<<<<<< HEAD
+=======
 
 @media only screen and (max-width: 577px) {
   .d-sm-flex {
@@ -402,3 +407,4 @@ input:checked[type="checkbox"] + .btn-main,
     width: 100%;
   }
 }
+>>>>>>> 31b5f5103ea9e358d477974b33a491c47f00187c

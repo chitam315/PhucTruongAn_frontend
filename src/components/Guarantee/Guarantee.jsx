@@ -100,7 +100,7 @@ export default function Guarantee() {
               </p>
             </li>
             <li>
-              <a href="/Guest/Intro">
+              <a href="/Guest/Intro/chinh-sach-bao-hanh">
                 <img
                   data-src="https://cdn.phanmembaohanh.vn/data/Template/cd93576e-0980-4708-a20f-8fe4893b35f1//images/huong-dan.png?h=82"
                   src="https://cdn.phanmembaohanh.vn/data/Template/cd93576e-0980-4708-a20f-8fe4893b35f1//images/huong-dan.png?h=82"
