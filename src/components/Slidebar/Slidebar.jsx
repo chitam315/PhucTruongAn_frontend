@@ -30,6 +30,9 @@ const Slidebar = () => {
             </div>
         
         </Carousel>
+
+
+        
     );
 };
 export default Slidebar;

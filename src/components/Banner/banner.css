@@ -1,0 +1,11 @@
+.banner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia layout thành 4 cột có chiều rộng bằng nhau */
+    grid-gap: 10px; /* Khoảng cách giữa các cột */
+  }
+  
+  .grid-banner {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
