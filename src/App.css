@@ -40,7 +40,7 @@ body {
 }
 
 .shadow-top-10 {
-  box-shadow: 0px 10px 5px #ccc;
+  box-shadow: 0px 15px 5px #ff0000;
 }
 
 .radius-top {
@@ -111,7 +111,7 @@ input:hover[type="text"] {
   color: var(--mainColor) !important;
 }
 
-<<<<<<< HEAD .hover-overlay:hover {
+.hover-overlay:hover {
   animation: animateHoverOverlay 0.5s linear;
 }
 
@@ -270,7 +270,15 @@ input:checked[type="checkbox"] + .btn-main,
   width: 20%;
 }
 
+
+
 @media only screen and (max-width: 1300px) {
+  .d-tb-none {
+    display: none;
+  }
+  .d-tb-show {
+    display: block;
+  }
   .col-tb-1 {
     width: 8.33%;
   }

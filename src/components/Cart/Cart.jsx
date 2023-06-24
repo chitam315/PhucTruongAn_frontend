@@ -20,6 +20,8 @@ export default function Cart() {
           <div className="col-9 col-tb-12">
             <ItemCart />
             <ItemCart />
+            <ItemCart />
+            <ItemCart />
           </div>
           <div className="col-3 col-tb-12">
             <div className="relative border-main-dashed rounded-[10px] mt-[35px] px-[20px] py-[30px]">

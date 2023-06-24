@@ -8,6 +8,7 @@ import Category from "../components/Home/Category";
 import News from "../components/Home/News";
 import Footer from "../components/Footer/Footer";
 import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
+import SliderLeft from "../components/NavigationBottom/SliderLeft";
 
 export default function HomePage() {
   return (
