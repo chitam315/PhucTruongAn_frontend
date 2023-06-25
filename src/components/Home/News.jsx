@@ -5,7 +5,7 @@ export default function News() {
   return (
     <CardHome title="dự án và hoạt động">
       <div className="row">
-        <div className="col-md-6 col-tbs-12">
+        <div className="col-6 col-tbm-12">
           <div className="item_grid mb-3 mb-md-0">
             <div className="relative">
               <a href="/" title="" className="">
@@ -48,33 +48,37 @@ export default function News() {
             </div>
           </div>
         </div>
-        <div className="col-md-6 col-tbs-12">
+        <div className="col-6 col-tbm-12">
           {NewsData.map((item, index) => (
-            <article className="blog-item-list clearfix mb-3 row" id={index}>
-              <div className="col-4 col-lg-3 mr-0">
-                <a
-                  href="#news"
-                  className="w-[160px] overflow-hidden block rounded-[10px]"
-                  title={item.image}
-                >
-                  <img
+            <div className="flex" id={index}>
+              <a className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"  href="#news">
+                <img
                     src={item.image}
                     alt=""
-                    className="w-100 h-100 zoom-image"
+                    className="w-100 h-fit zoom-image"
                   />
-                </a>
-              </div>
-              <div className="col-8 col-lg-9">
+              </a>
+              {/* <div className="col-9 py-[10px] pr-[10px]">
                 <h3 className="font-bold text-[1.1em]">
-                  <a className="line-1" href="#title" title="">
+                  <a className="line-1 block" href="#title" title="">
                     {item.title}
                   </a>
                 </h3>
                 <div className="text-[1em] text-[#5e5e5e] ">{item.date}</div>
 
                 <div className="line-2 h-auto text-justify">{item.content}</div>
+              </div> */}
+              <div className="w-[calc(100%-150px)] py-[10px]">
+                <h3 className="font-bold text-[1.1em]">
+                  <a className="line-1" href="#title" title="">
+                    {item.title}
+                  </a>
+                </h3>
+                <div className="text-[1em] text-[#5e5e5e]">{item.date}</div>
+
+                <div className="line-2">{item.content}</div>
               </div>
-            </article>
+            </div>
           ))}
 
           <div className="text-center w-100">

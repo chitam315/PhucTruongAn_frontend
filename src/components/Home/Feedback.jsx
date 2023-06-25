@@ -26,8 +26,8 @@ export default function Feedback() {
           renderButtonGroupOutside={true}
           removeArrowOnDeviceType={["desktop", "mobile", "tablet"]}
         >
-          {arr.map((item, key) => (
-            <div className="card-shadow p-[20px] m-[5px] select-none">
+          {arr.map((item, index) => (
+            <div className="card-shadow p-[20px] m-[5px] select-none" key={index}>
               <div className="flex items-center">
                 <img
                   src={item.avatar}

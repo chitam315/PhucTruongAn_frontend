@@ -129,25 +129,24 @@ export default function SeeMore() {
       }
     }
   }
-  function deleteAllItem(e) {
-    e.preventDefault();
+  function deleteAllItem() {
     setMinPrice("");
     setMaxPrice("");
     setModel([]);
-    // const modelClass = document.getElementsByClassName("id-check-model");
-    // for (var i = 0; i < modelClass.length; i++) {
-    //   if (modelClass[i].checked) {
-    //     modelClass[i].click();
-    //   }
-    // }
-
     setCategory([]);
-    // const cateClass = document.getElementsByClassName("id-check-category");
-    // for (var j = 0; j < cateClass.length; j++) {
-    //   if (cateClass[j].checked) {
-    //     cateClass[j].click();
-    //   }
-    // }
+    const modelClass = document.getElementsByClassName("id-check-model");
+    for (var i = 0; i < modelClass.length; i++) {
+      if (modelClass[i].checked) {
+        modelClass[i].click();
+      }
+    }
+
+    const cateClass = document.getElementsByClassName("id-check-category");
+    for (var j = 0; j < cateClass.length; j++) {
+      if (cateClass[j].checked) {
+        cateClass[j].click();
+      }
+    }
   }
 
   const clickFilterPrice = () => {
@@ -156,6 +155,8 @@ export default function SeeMore() {
     if (i !== "" && j !== "") {
       setMinPrice(i);
       setMaxPrice(j);
+      const ij = dataItem.filter((p) => p.price >= i && p.price <= j);
+      setDataItem(ij);
     }
   };
 
@@ -220,12 +221,12 @@ export default function SeeMore() {
                         ) : (
                           <></>
                         )}
-                        <p
+                        {/* <p
                           className="filter-result-item"
                           onClick={deleteAllItem}
                         >
                           Xóa hết
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   ) : (
@@ -388,7 +389,7 @@ export default function SeeMore() {
           </div>
           <Row>
             {dataItem.map((item, index) => (
-              <ItemProduct item={item} index={index} />
+              <ItemProduct item={item} index={index} width="w[25%]" />
             ))}
           </Row>
         </div>

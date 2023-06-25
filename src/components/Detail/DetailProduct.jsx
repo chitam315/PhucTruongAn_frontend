@@ -11,6 +11,8 @@ import { FiPhoneCall } from "react-icons/fi";
 import "./Detail.css";
 import DetailInfor from "./DetailInfor";
 import ModalVideo from "../Modal/ModalVideo";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function DetailProduct() {
   //Increment & Decrement INPUT QUANTITY
@@ -35,8 +37,31 @@ export default function DetailProduct() {
     }, 1500);
   };
 
+  //Add to cart
+  const toastOptions = {
+    position: "top-center",
+    autoClose: 1500,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  };
+
+  const addToCart = async (event) => {
+    event.preventDefault();
+    try {
+      toast.success("Thêm sản phẩm vào giỏ hàng thành công", toastOptions);
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        "Lỗi server, vui lòng liên hệ phòng chăm sóc khách hàng",
+        toastOptions
+      );
+    }
+  };
+
   return (
     <>
+      <ToastContainer />
       <CardMain>
         <Row>
           <div className="col-12 flex items-center gap-2">
@@ -216,7 +241,10 @@ export default function DetailProduct() {
                   <p className="uppercase font-bold">mua ngay</p>
                   <p>(Giao hàng miễn phí tận nơi)</p>
                 </div>
-                <div className="w-[30%] col-tb-6 bg-[var(--menuHover)] border-2 flex items-center flex-col border-solid py-[10px] border-[var(--mainColor)] text-[var(--mainColor)] cursor-pointer rounded-[15px] hover-blue-white">
+                <div
+                  className="w-[30%] col-tb-6 bg-[var(--menuHover)] border-2 flex items-center flex-col border-solid py-[10px] border-[var(--mainColor)] text-[var(--mainColor)] cursor-pointer rounded-[15px] hover-blue-white"
+                  onClick={addToCart}
+                >
                   <GiShoppingCart className="text-[1.6em]" />
                   <p className="text-white">Thêm vào giỏ</p>
                 </div>

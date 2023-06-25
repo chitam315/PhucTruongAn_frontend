@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
+    <div className='d-tb d-tbs-none'>
       <div className='text-2xl font-semibold bg-blue-700 '>
         <h2 className='font-bold text-xl text-center'>CÔNG TY TNHH ĐIỆN CÔNG NGHIỆP PHÚC TRƯỜNG AN
 

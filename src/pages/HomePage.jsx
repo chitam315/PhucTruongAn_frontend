@@ -7,16 +7,12 @@ import "../components/Home/HomePage.css";
 import Category from "../components/Home/Category";
 import News from "../components/Home/News";
 import Footer from "../components/Footer/Footer";
-<<<<<<< HEAD
 import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
 import SliderLeft from "../components/NavigationBottom/SliderLeft";
-=======
 import Header from "../components/Header/Header";
 import CarouselSlice from "../components/Carousel/CarouselSlice";
 
 import Slidebar from "../components/Slidebar/Slidebar";
-
->>>>>>> fc8228aa3f97efe8629f3abf9f04edcc2a366510
 
 export default function HomePage() {
   return (
@@ -30,12 +26,8 @@ export default function HomePage() {
       <Feedback />
       <CustomerUsed />
       <News />
-<<<<<<< HEAD
-      <Footer/>
-      <NavigationBottom/>
-=======
       <Footer />
->>>>>>> fc8228aa3f97efe8629f3abf9f04edcc2a366510
+      <NavigationBottom />
     </div>
   );
 }

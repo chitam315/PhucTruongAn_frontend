@@ -37,7 +37,7 @@ export default function ItemProductRelative() {
             <label className="flex items-center checkbox-compare relative cursor-pointer">
               <input type="checkbox" name="" id="" className=" cursor-pointer" />
               <AiFillCheckCircle className="absolute w-[17px] h-[17px] text-[#3246ff] hidden" />
-              <p className="text-black">So sánh</p>
+              <p className="text-black p-0">So sánh</p>
             </label>
           </div>
         </div>

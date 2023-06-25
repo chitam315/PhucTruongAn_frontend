@@ -2,8 +2,24 @@ import { Row, Col } from "react-bootstrap";
 import poster1 from "../../assets/Poster/poster1.png";
 import poster2 from "../../assets/Poster/poster2.png";
 import ItemProduct from "../Items/ItemProduct";
+import { Link } from "react-router-dom";
+import ItemProduct6 from "../Items/ItemProduct6";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { apiGetProduct } from "../../service/authAPI";
 
 export default function Category() {
+  const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     const res = await axios.get(apiGetProduct);
+  //     setProducts(res.data);
+  //   };
+  //   fetchProduct();
+  // }, [products]);
+  // console.log(products);
+
   return (
     <div className="mt-[25px]">
       <div className="container pt-[20px] mt-[25px]">
@@ -17,13 +33,13 @@ export default function Category() {
                 Đèn đường liền thể
               </a>
             </h2>
-            <a
+            <Link
               className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-              href="/"
+              to="/see-more"
               title="Xem thêm"
             >
               Xem thêm
-            </a>
+            </Link>
           </div>
 
           <div className="row items-center">
@@ -78,13 +94,13 @@ export default function Category() {
                 Đèn ufo sáng 360 độ
               </a>
             </h2>
-            <a
+            <Link
               className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-              href="/"
+              to="/see-more"
               title="Xem thêm"
             >
               Xem thêm
-            </a>
+            </Link>
           </div>
 
           <div className="row items-center ">
@@ -123,6 +139,108 @@ export default function Category() {
                   />
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[25px]"></div>
+      <div className="container pt-[20px]">
+        <div className=" bg-white rounded-[15px] p-[1.5em]">
+          <div className="flex-center">
+            <h2 className="uppercase font-bold relative text-[1.5em]">
+              <a
+                href="den-duong-lien-the-nang-luong-mat-troi"
+                title="Đèn đường liền thể"
+              >
+                Đèn pha
+              </a>
+            </h2>
+            <Link
+              className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
+              to="/see-more"
+              title="Xem thêm"
+            >
+              Xem thêm
+            </Link>
+          </div>
+
+          <div className="row items-center ">
+            <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
+              <Row>
+                {arrayProduct.map((item, index) => (
+                  <ItemProduct6 item={item} index={index} />
+                ))}
+              </Row>
+            </div>
+          </div>
+          <img
+            src={require("../../assets/Banner/banner-discount.png")}
+            alt=""
+          />
+        </div>
+      </div>
+      <div className="mt-[25px]"></div>
+      <div className="container pt-[20px]">
+        <div className=" bg-white rounded-[15px] p-[1.5em]">
+          <div className="flex-center">
+            <h2 className="uppercase font-bold relative text-[1.5em]">
+              <a
+                href="den-duong-lien-the-nang-luong-mat-troi"
+                title="Đèn đường liền thể"
+              >
+                Đèn đường bàn chải
+              </a>
+            </h2>
+            <Link
+              className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
+              to="/see-more"
+              title="Xem thêm"
+            >
+              Xem thêm
+            </Link>
+          </div>
+
+          <div className="row items-center ">
+            <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
+              {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
+              <Row>
+                {arrayProduct.map((item, index) => (
+                  <ItemProduct6 item={item} index={index} />
+                ))}
+              </Row>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[25px]"></div>
+      <div className="container pt-[20px]">
+        <div className=" bg-white rounded-[15px] p-[1.5em]">
+          <div className="flex-center">
+            <h2 className="uppercase font-bold relative text-[1.5em]">
+              <a
+                href="den-duong-lien-the-nang-luong-mat-troi"
+                title="Đèn đường liền thể"
+              >
+                Đèn vườn
+              </a>
+            </h2>
+            <Link
+              className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
+              to="/see-more"
+              title="Xem thêm"
+            >
+              Xem thêm
+            </Link>
+          </div>
+
+          <div className="row items-center ">
+            <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
+              {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
+              <Row>
+                {arrayProduct.map((item, index) => (
+                  <ItemProduct6 item={item} index={index} />
+                ))}
+              </Row>
             </div>
           </div>
         </div>
@@ -167,6 +285,14 @@ const arrayProduct = [
   {
     name: "[490W] Đèn Đường Liền Thể Năng Lượng Mặt Trời TP Solar",
     price: 1690000,
+    model: "TP Solar",
+    category: "Đèn biển",
+    date: "12/03/2023",
+    watt: "490W",
+  },
+  {
+    name: "[490W] Đèn Đường Liền Thể Năng Lượng Mặt Trời TP Solar",
+    price: 4000000,
     model: "TP Solar",
     category: "Đèn biển",
     date: "12/03/2023",

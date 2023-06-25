@@ -10,7 +10,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <div className="col-right position-relative">
+    <div className="col-right position-relative mt-[30px]">
       <footer className="bg-white pt-5">
         <div className="foo_mid mb-4">
           <div className="container">
