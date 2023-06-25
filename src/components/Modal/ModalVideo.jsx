@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
 import { FaWindowClose } from "react-icons/fa";
-import ReactPlayer from "react-player/youtube";
+// import ReactPlayer from "react-player/youtube";
 
 const ModalVideo = ({ name, content }) => {
   const [open, setOpen] = useState(false);
@@ -54,11 +54,11 @@ const ModalVideo = ({ name, content }) => {
           <h2 className="text-[1.2em] mb-[30px]">Video</h2>
           <span className="w-100 h-[1px] block bg-[#ccc] my-[10px]"></span>
           <div className="w-100">
-            <ReactPlayer
+            {/* <ReactPlayer */}
               controls={true}
               width="100%"
               url="https://www.youtube.com/watch?v=UlUkFrtAc6I"
-            />
+            {/* /> */}
           </div>
         </div>
       </Modal>
