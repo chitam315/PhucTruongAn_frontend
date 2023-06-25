@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemProductSale() {
   return (
+<<<<<<< HEAD
     <div className="w-[100%] p-[10px]">
       <div className=" rounded-10 shadow-md bg-white rounded-[10px] h-100 relative p-[8px] block card-product">
         <div className="cursor-pointer cart-appear z-[10] text-[1.8em] text-white absolute right-[-15%] top-[45%] rounded-[50%] bg-[var(--mainColor)] p-[8px]">
@@ -22,6 +23,13 @@ export default function ItemProductSale() {
         <Link to="/detail">
           <div className="tag-status-sold uppercase flex justify-center text-white select-none">
             <span className="z-[100] text-[0.8em]">Đã bán: 3996</span>
+=======
+    <div className="col-5w col-tb-4 col-tbs-6 col-sm-6 p-minus-10">
+      <div className="p-[10px]">
+        <div className="rounded-10 shadow-md bg-white rounded-[10px] h-100 relative p-[8px] block card-product">
+          <div className="cursor-pointer cart-appear z-[10] text-[1.8em] text-white absolute right-[-15%] top-[47%] rounded-[50%] bg-[var(--mainColor)] p-[8px]">
+            <AiOutlineShoppingCart />
+>>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
           </div>
           <p className="text-black text-[16px] font-bold  h-[56px] name-product">
             [600W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U600RGB Chiếu Sáng
@@ -35,11 +43,26 @@ export default function ItemProductSale() {
           </div>
         </Link>
 
+<<<<<<< HEAD
         <label className="flex items-center checkbox-compare relative cursor-pointer w-fit">
           <input type="checkbox" className="cursor-pointer" />
           <AiFillCheckCircle className="absolute top-[16%] w-[17px] h-[17px] text-[#3246ff] hidden" />
           <p className="p-0">So sánh</p>
         </label>
+=======
+            <label className="flex items-center checkbox-compare relative cursor-pointer w-fit">
+              <input
+                type="checkbox"
+                name="check"
+                id=""
+                className="cursor-pointer"
+              />
+              <AiFillCheckCircle className="absolute w-[17px] h-[17px] text-[#3246ff] hidden" />
+              <p>So sánh</p>
+            </label>
+          </div>
+        </div>
+>>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
       </div>
     </div>
   );
