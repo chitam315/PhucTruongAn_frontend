@@ -81,7 +81,7 @@ const HeaderGuarantee = () => {
             </li>
             <li>
               <a
-                href="/Guest/Support"
+                href="/guest/support"
                 onClick={WarrantyStation}
                 className="hover:text-[green]"
               >
@@ -89,7 +89,10 @@ const HeaderGuarantee = () => {
               </a>
             </li>
             <li>
-              <a href="/Guest/Intro" className="hover:text-[green]">
+              <a
+                href="/guest/intro/chinh-sach-bao-hanh"
+                className="hover:text-[green]"
+              >
                 Chính sách và hướng dẫn
               </a>
             </li>
