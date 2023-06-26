@@ -21,7 +21,7 @@ export default function ItemProductRelative() {
           </Link>
           <div className="ml-[10px]">
             <Link to="/detail">
-              <p className="font-bold text-[1em]">
+              <p className="font-bold text-[0.9em]">
                 [250W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U250 Chiếu Sáng 360
                 Độ
               </p>
@@ -37,7 +37,7 @@ export default function ItemProductRelative() {
             <label className="flex items-center checkbox-compare relative cursor-pointer">
               <input type="checkbox" name="" id="" className=" cursor-pointer" />
               <AiFillCheckCircle className="absolute w-[17px] h-[17px] text-[#3246ff] hidden" />
-              <p className="text-black">So sánh</p>
+              <p className="text-black p-0">So sánh</p>
             </label>
           </div>
         </div>

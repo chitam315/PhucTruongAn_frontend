@@ -2,15 +2,15 @@ import React from "react";
 import "../../assets/variables.css";
 // import "bootstrap/dist/css/bootstrap.css";
 import "./Footer.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { BsFillTelephoneFill } from "react-icons/bs";
 // Import các biểu tượng cần thiết
-library.add(faUser, faEnvelope);
+// library.add(faUser, faEnvelope);
 
 export default function Footer() {
   return (
-    <div class="col-right position-relative">
+    <div className="col-right position-relative mt-[30px]">
       <footer className="bg-white pt-5">
         <div className="foo_mid mb-4">
           <div className="container">

@@ -13,7 +13,26 @@
 }
 
 .bg-flash {
-  background: linear-gradient(var(--red) 0%, var(--accentColor2));
+  background: linear-gradient(
+    45deg,
+    var(--red),
+    var(--accentColor2),
+    var(--red)
+  );
+  background-size: 300% 100%;
+  animation: fireAnimation 5s infinite;
+  /* background: linear-gradient(var(--red) 0%, var(--accentColor2)); */
+}
+@keyframes fireAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .gap-15 {
@@ -62,11 +81,6 @@
 
 body:hover .cart-appear {
   transition: 0.5s all ease;
-}
-
-.img-product {
-  overflow-clip-margin: content-box;
-  overflow: clip;
 }
 
 .img-product:hover {
@@ -201,4 +215,44 @@ body:hover .cart-appear {
 .react-multi-carousel-track li {
   width: calc(100% / 7);
   height: 100%;
+}
+
+.bg-flash .react-multi-carousel-list button {
+  background: #e1e1e18a;
+  height: 60px;
+}
+
+.bg-flash .react-multi-carousel-list .react-multiple-carousel__arrow--left {
+  left: 0;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.bg-flash .react-multi-carousel-list .react-multiple-carousel__arrow--right {
+  right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.bg-flash .react-multi-carousel-list button::before {
+  position: absolute;
+  color: transparent;
+  top: 35%;
+  width: 20px !important;
+  height: 20px !important;
+  background: transparent !important;
+  right: 20%;
+  border-top: 2px solid #000 !important;
+  border-left: 2px solid #000 !important;
+  border-right: 2px solid transparent !important;
+  border-bottom: 2px solid transparent !important;
+}
+
+.bg-flash .react-multiple-carousel__arrow--right::before {
+  transform: rotate(130deg);
+}
+.bg-flash .react-multiple-carousel__arrow--left::before {
+  transform: rotate(310deg);
 }

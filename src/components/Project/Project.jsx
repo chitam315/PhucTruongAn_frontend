@@ -1,14 +1,14 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import "../../assets/variables.css";
-import Header from "../Header/Header";
-import { Footer } from "../Footer/Footer";
+
+import Footer from "../Footer/Footer";
 import "./Project.css";
 
 export default function Project() {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <div class="col-right position-relative content-project">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">

@@ -2,14 +2,13 @@ import React from "react";
 import "./IntroducePage.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../assets/variables.css";
-import Header from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { Container } from "react-bootstrap";
 import tpsolar from "../../assets/introduce/den-nang-luong-mat-troi-tp-solar.webp";
 const IntroducePage = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <Container className="m-auto"> */}
      
       <div className="col-right position-relative container-introduce">

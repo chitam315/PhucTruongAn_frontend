@@ -16,7 +16,7 @@ export default function CustomerUsed() {
           removeArrowOnDeviceType={["desktop","mobile","tablet"]}
         >
           {imgCustomer.map((image,index)=>(
-            <a href="#feedback" className="p-[5px] block ban cursor-pointer">
+            <a href="#feedback" className="p-[5px] block ban cursor-pointer" key={index}>
               <img src={image.url} alt={image.url} id={index} className="rounded-[10px]  cursor-pointer"/>
             </a>
           ))}
