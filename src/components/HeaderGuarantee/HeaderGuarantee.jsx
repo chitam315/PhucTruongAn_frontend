@@ -58,7 +58,7 @@ const HeaderGuarantee = () => {
             <li>
               <a href="#0" data-type="warrantyactive">
                 <ModalActiveGuarantee
-                  name={"Tra cứu hạn bảo hành"}
+                  name={"Kích hoạt bảo hành"}
                   content={"test content"}
                 />
               </a>

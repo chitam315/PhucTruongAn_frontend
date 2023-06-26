@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
-=======
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
   
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -279,18 +276,15 @@ input:checked[type="checkbox"] + .btn-main,
 .col-5w {
   width: 20%;
 }
-<<<<<<< HEAD
 .col-4w {
   width: 25%;
 }
 .col-6w {
   width: calc(100% / 6);
 }
-=======
 
 
 
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
 @media only screen and (max-width: 1300px) {
   .d-tb-none {
     display: none;

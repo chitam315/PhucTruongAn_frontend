@@ -7,11 +7,8 @@ import "../components/Home/HomePage.css";
 import Category from "../components/Home/Category";
 import News from "../components/Home/News";
 import Footer from "../components/Footer/Footer";
-<<<<<<< HEAD
 import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
 import SliderLeft from "../components/NavigationBottom/SliderLeft";
-=======
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
 import Header from "../components/Header/Header";
 import CarouselSlice from "../components/Carousel/CarouselSlice";
 
@@ -20,10 +17,7 @@ import Banner from "../components/Banner/Banner";
 import Slidebarnew from "../components/Slidebar/Slidebarnew";
 import { CategoryHome } from "../components/CategoryHome/CategoryHome";
 
-<<<<<<< HEAD
-=======
 
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
 export default function HomePage() {
   return (
     <div className="bg-main">
@@ -40,10 +34,7 @@ export default function HomePage() {
       <CustomerUsed />
       <News />
       <Footer />
-<<<<<<< HEAD
       <NavigationBottom />
-=======
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
     </div>
   );
 }

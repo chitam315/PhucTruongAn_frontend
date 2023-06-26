@@ -8,9 +8,7 @@ import CartPage from "./pages/CartPage";
 import PayingPage from "./pages/PayingPage";
 import WarrantyStation from "./components/WarrantyStation/WarrantyStation";
 import WarrantyPolicyHome from "./components/WarrantyPolicy/WarrantyPolicyHome";
-<<<<<<< HEAD
 import AdminPage from './pages/AdminPage'
-=======
 import WarrantyPolicy from "./components/WarrantyPolicy/WarrantyPolicy";
 import PrivacyPolicy from "./components/WarrantyPolicy/PrivacyPolicy";
 import ShippingPolicy from "./components/WarrantyPolicy/ShippingPolicy";
@@ -20,7 +18,6 @@ import PaymentPolicy from "./components/WarrantyPolicy/PaymentPolicy";
 import InspectionPolicy from "./components/WarrantyPolicy/InspectionPolicy";
 import Project from "./components/Project/Project";
 import SignUp from "./components/SignUp/SignUp";
->>>>>>> 8a90a0b7bd5f888ffcce2cc9e58600bdf6d64594
 
 function App() {
   return (
@@ -34,10 +31,8 @@ function App() {
         <Route index path="/paying" element={<PayingPage />} />
         <Route index path="/project" element={<Project />} />
         <Route index path="/Guest/Support" element={<WarrantyStation />} />
-<<<<<<< HEAD
         <Route index path="/Guest/Intro" element={<WarrantyPolicyHome />} />
         <Route index path="/admin-page" element={<AdminPage/>} />
-=======
         <Route
           index
           path="/Guest/Intro/chinh-sach-bao-hanh"
@@ -69,7 +64,6 @@ function App() {
         <Route index path="/cart" element={<CartPage/>} />
         <Route index path="/paying" element={<PayingPage/>} />
 
->>>>>>> 8a90a0b7bd5f888ffcce2cc9e58600bdf6d64594
       </Routes>
     </BrowserRouter>
   );
