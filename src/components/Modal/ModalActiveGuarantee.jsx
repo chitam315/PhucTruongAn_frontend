@@ -161,8 +161,9 @@ const ModalActiveGuarantee = ({ name, content }) => {
             <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
               kích hoạt
             </button>
-          </div>
-        </div>
+            </div>
+        {/* </div> */}
+        
       </Modal>
     </>
   );

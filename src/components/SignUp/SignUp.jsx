@@ -142,7 +142,7 @@ export default function SignUp() {
                 <div class="d-flex align-items-center justify-content-center">
                   <a
                     href="javascript:void(0)"
-                    class="social-login--facebook"
+                    className="social-login--facebook"
                     onclick="loginFacebook()"
                   >
                     <img
@@ -154,7 +154,7 @@ export default function SignUp() {
                   </a>
                   <a
                     href="javascript:void(0)"
-                    class="social-login--google"
+                    className="social-login--google"
                     onclick="loginGoogle()"
                   >
                     <img
