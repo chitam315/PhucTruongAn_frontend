@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -6,46 +6,47 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar, Table } from "antd";
 import { listCategory } from "../mockData";
+import {TableCustom} from '../components/TableCustom'
 
 const { Header, Sider, Content } = Layout;
 
-var dataSource = []
-var index = 1
+// var dataSource = []
+// var index = 1
 
-listCategory.map((category) => {
-    category.listProduct.map((product) => {
-        dataSource.push({
-            key: index,
-            category: category.category,
-            name: product.name,
-            price: product.price
-        })
-        index++
-    })
-})
+// listCategory.map((category) => {
+//     category.listProduct.map((product) => {
+//         dataSource.push({
+//             key: index,
+//             category: category.category,
+//             name: product.name,
+//             price: product.price
+//         })
+//         index++
+//     })
+// })
 
-const columns = [
-    {
-        title: 'Number',
-        dataIndex: 'key',
-        key: 'key'
-    },
-    {
-        title: 'Product name',
-        dataIndex: 'name',
-        key: 'name'
-    },
-    {
-        title: 'Category',
-        dataIndex: 'category',
-        key: 'category'
-    },
-    {
-        title: 'Price',
-        dataIndex: 'price',
-        key: 'price'
-    },
-]
+// const columns = [
+//     {
+//         title: 'Number',
+//         dataIndex: 'key',
+//         key: 'key'
+//     },
+//     {
+//         title: 'Product name',
+//         dataIndex: 'name',
+//         key: 'name'
+//     },
+//     {
+//         title: 'Category',
+//         dataIndex: 'category',
+//         key: 'category'
+//     },
+//     {
+//         title: 'Price',
+//         dataIndex: 'price',
+//         key: 'price'
+//     },
+// ]
 
 const AdminPage = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -53,11 +54,18 @@ const AdminPage = () => {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  useEffect(() => {
+    const addProEle = document.getElementById("menuSideBarAdminPage")
+    console.log(addProEle);
+    console.log(addProEle.querySelector("li"));
+  },[])
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
+          id="menuSideBarAdminPage"
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
@@ -102,7 +110,8 @@ const AdminPage = () => {
             background: colorBgContainer,
           }}
         >
-          <Table dataSource={dataSource} columns={columns} />
+          {/* <Table dataSource={dataSource} columns={columns} /> */}
+          <TableCustom listCategory={listCategory}/>
         </Content>
       </Layout>
     </Layout>
