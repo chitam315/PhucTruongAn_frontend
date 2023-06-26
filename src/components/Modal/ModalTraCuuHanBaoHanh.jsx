@@ -28,7 +28,7 @@ const ModalTraCuuHanBaoHanh = ({ name, content }) => {
   return (
     <>
       <div
-        className="w-fit text-[black] uppercase hover:bg-translate"
+        className="w-fit text-[black] uppercase hover:bg-translate hover:text-[green]"
         type="primary"
         onClick={showModal}
       >

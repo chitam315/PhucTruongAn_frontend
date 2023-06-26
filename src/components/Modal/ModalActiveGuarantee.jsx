@@ -28,7 +28,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
   return (
     <>
       <div
-        className="w-fit text-[black] uppercase hover:bg-translate"
+        className="w-fit text-[black] uppercase hover:bg-translate hover:text-[green]"
         type="primary"
         onClick={showModal}
       >
@@ -122,7 +122,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </option>{" "}
             </select>
 
-              {/* <select className="w-[160px]">
+            {/* <select className="w-[160px]">
               <option value="" selected>
                 Chọn thành phố
               </option>
@@ -132,38 +132,37 @@ const ModalActiveGuarantee = ({ name, content }) => {
               <option value="Camau">Cà Mau</option>
               <option value="Cantho">Cần Thơ</option>
             </select> */}
-            </div>
-            <div class="row w-full flex justify-between items-center">
-              <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-                Thành phố
-              </label>
-              <select
-                class="form-select form-select-sm mb-3  w-[calc(100%-190px)] m-[10px]"
-                id="district"
-                aria-label=".form-select-sm"
-              >
-                <option value="" selected>
-                  Chọn quận huyện
-                </option>
-              </select>
-            </div>
-            <div class="row w-full justify-between items-center">
-              <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-                Địa chỉ
-              </label>
-              <input
-                required
-                type="text"
-                placeholder="Địa chỉ"
-                class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-              />
-            </div>
-            <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
-              kích hoạt
-            </button>
-            </div>
+          </div>
+          <div class="row w-full flex justify-between items-center">
+            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
+              Thành phố
+            </label>
+            <select
+              class="form-select form-select-sm mb-3  w-[calc(100%-190px)] m-[10px]"
+              id="district"
+              aria-label=".form-select-sm"
+            >
+              <option value="" selected>
+                Chọn quận huyện
+              </option>
+            </select>
+          </div>
+          <div class="row w-full justify-between items-center">
+            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
+              Địa chỉ
+            </label>
+            <input
+              required
+              type="text"
+              placeholder="Địa chỉ"
+              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+            />
+          </div>
+          <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
+            kích hoạt
+          </button>
+        </div>
         {/* </div> */}
-        
       </Modal>
     </>
   );
