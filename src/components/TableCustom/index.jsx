@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import ButtonHandleLoading from "../ButtonHandleLoading";
-// import { ModalCustom } from "../Modal/ModalCustom";
-// import { ModalCustom1 } from "../Modal/ModalCustom1";
+import React from "react";
 import { ModalFlowbite } from "../ModalAndBtn/Modal";
 import { Btn } from "../ModalAndBtn/Btn";
 import Field from "../Field";
@@ -34,10 +31,10 @@ export const TableCustom = ({ listCategory }) => {
   listCategory.map((category) => {
     category.listProduct.map((product) => {
       dataSource.push({
-        number: index,
-        name: product.name,
-        category: category.category,
-        price: product.price,
+        Số: index,
+        Tên: product.name,
+        Loại: category.category,
+        Giá: product.price,
       });
       index++;
     });
@@ -50,7 +47,7 @@ export const TableCustom = ({ listCategory }) => {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               {Object.keys(dataSource[0]).map((ele, i) => (
-                <th scope="col" className="px-6 py-3" key={i}>
+                <th scope="col" className="px-6 py-3 text-center" key={i}>
                   {ele}
                 </th>
               ))}
@@ -65,12 +62,12 @@ export const TableCustom = ({ listCategory }) => {
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white "
+                    className="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white  text-center"
                   >
-                    {ele.number}
+                    {ele.Số}
                   </th>
                   <td className="px-6 py-4 flex justify-between items-center">
-                    <p>{ele.name}</p>
+                    <p>{ele.Tên}</p>
                     <div className="flex">
                       <Btn
                         style={{
@@ -96,8 +93,8 @@ export const TableCustom = ({ listCategory }) => {
                       </Btn>
                     </div>
                   </td>
-                  <td className="px-6 py-4">{ele.category}</td>
-                  <td className="px-6 py-4">{ele.price}</td>
+                  <td className="px-6 py-4 text-center">{ele.Loại}</td>
+                  <td className="px-6 py-4 text-center">{ele.Giá}</td>
                 </tr>
               );
             })}
@@ -108,6 +105,7 @@ export const TableCustom = ({ listCategory }) => {
       <ModalFlowbite
         modalID={"modalDelete"}
         titleModal={"Bạn có chắc chắn muốn xoá sản phẩm này"}
+        // key={"modalDelete"}
       >
         <h3 className="p-4">Nếu bạn đồng ý thì sản phẩm này sẽ được xoá vĩnh viễn</h3>
       </ModalFlowbite>
@@ -115,12 +113,13 @@ export const TableCustom = ({ listCategory }) => {
       <ModalFlowbite
         modalID={"modalEdit"}
         titleModal={"Bạn đang chỉnh sữa sản phẩm này"}
+        // key={"modalEdit"}
       >
         <div className="form flex flex-col gap-3 my-5 w-4/5 mx-auto">
           <Field
             customField={{ display: "flex", justifyContent: "space-between" }}
             style={{
-              width: "60%",
+              width: "75%",
               display: "block",
               borderRadius: "0px",
               padding: "10px",
@@ -131,7 +130,7 @@ export const TableCustom = ({ listCategory }) => {
           <Field
             customField={{ display: "flex", justifyContent: "space-between" }}
             style={{
-              width: "60%",
+              width: "75%",
               display: "block",
               borderRadius: "0px",
               padding: "10px",
@@ -144,7 +143,7 @@ export const TableCustom = ({ listCategory }) => {
             label="Loại"
             renderInput={() => (
               <select
-                className="block w-3/5 p-2 outline-none"
+                className="block w-9/12 p-2 outline-none"
                 id="inputPriceProduct"
               >
                 {listCategory.map((ele) => (
@@ -155,6 +154,52 @@ export const TableCustom = ({ listCategory }) => {
           />
         </div>
       </ModalFlowbite>
+
+      <ModalFlowbite
+        modalID={"modalAddProduct"}
+        titleModal={"Bạn đang thêm sản phẩm"}
+        // key={"modalAddProduct"}
+      >
+        <div className="form flex flex-col gap-3 my-5 w-4/5 mx-auto">
+          <Field
+            customField={{ display: "flex", justifyContent: "space-between" }}
+            style={{
+              width: "75%",
+              display: "block",
+              borderRadius: "0px",
+              padding: "10px",
+            }}
+            label="Tên sản phẩm"
+            placeholder="Nhập tên sản phẩm"
+          />
+          <Field
+            customField={{ display: "flex", justifyContent: "space-between" }}
+            style={{
+              width: "75%",
+              display: "block",
+              borderRadius: "0px",
+              padding: "10px",
+            }}
+            label="Giá"
+            placeholder="Nhập theo định dạng, ví dụ: 1.000.000 vnd"
+          />
+          <Field
+            customField={{ display: "flex", justifyContent: "space-between" }}
+            label="Loại"
+            renderInput={() => (
+              <select
+                className="block w-9/12 p-2 outline-none"
+                id="inputPriceProduct"
+              >
+                {listCategory.map((ele) => (
+                  <option value={ele.category}>{ele.category}</option>
+                ))}
+              </select>
+            )}
+          />
+        </div>
+      </ModalFlowbite>
+      
     </>
   );
 };
