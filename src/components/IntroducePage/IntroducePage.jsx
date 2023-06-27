@@ -1,8 +1,8 @@
 import React from "react";
 import "./IntroducePage.css";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import "../../assets/variables.css";
-import { Footer } from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import { Container } from "react-bootstrap";
 import tpsolar from "../../assets/introduce/den-nang-luong-mat-troi-tp-solar.webp";
 const IntroducePage = () => {
@@ -10,7 +10,7 @@ const IntroducePage = () => {
     <>
       {/* <Header /> */}
       {/* <Container className="m-auto"> */}
-     
+
       <div className="col-right position-relative container-introduce">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">

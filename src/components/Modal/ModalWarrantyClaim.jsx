@@ -118,7 +118,7 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-              placeholder="Tên khách hàng"
+              placeholder="Địa chỉ"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
@@ -129,7 +129,7 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-              placeholder="Tên khách hàng"
+              placeholder="Mô tả lỗi của sản phẩm"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
