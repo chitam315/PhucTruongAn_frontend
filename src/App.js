@@ -19,6 +19,8 @@ import InspectionPolicy from "./components/WarrantyPolicy/InspectionPolicy";
 import Project from "./components/Project/Project";
 import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
+import AdminUser from "./pages/AdminUser";
+import { VideoReview } from "./pages/VideoReview";
 
 function App() {
   return (
@@ -35,6 +37,10 @@ function App() {
         <Route index path="/Guest/intro" element={<WarrantyPolicyHome />} />
         <Route index path="/admin-page" element={<AdminPage />} />
         <Route index path="/introduce" element={<IntroducePage />} />
+        <Route index path="/admin-users" element={<AdminUser />} />
+        <Route index path="/video-review" element={<VideoReview />} />
+        
+
 
         <Route
           index

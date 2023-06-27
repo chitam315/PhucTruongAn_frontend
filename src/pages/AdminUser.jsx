@@ -3,26 +3,29 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
-  PlusCircleOutlined
+  ProfileOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar } from "antd";
-import { listCategory } from "../mockData";
-import { TableProduct } from '../components/TableProduct'
-import { useNavigate } from "react-router";
+import { listUsers } from "../mockData";
+import {  useNavigate } from "react-router";
+import { TableUser } from "../components/TableUser";
 
 
 const { Header, Sider, Content } = Layout;
 
-const AdminPage = () => {
+const AdminUser = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate()
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  const navigate = useNavigate()
-  const clickUser = () => {
-    navigate("/admin-users")
+
+  const clickProduct = () => {
+    navigate("/admin-page")
     window.location.reload(false)
   }
+
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -31,25 +34,24 @@ const AdminPage = () => {
           id="menuSideBarAdminPage"
           theme="dark"
           mode="inline"
-          // defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={["1"]}
 
           items={[
             {
               key: "1",
-              icon: <PlusCircleOutlined />,
-              label: "Add Product",
-              "data-modal-target": "modalAddProduct",
-              "data-modal-toggle": "modalAddProduct"
+              icon: <UserOutlined />,
+              label: "All Users",
+            //   "data-modal-target": "modalAddProduct",
+            //   "data-modal-toggle": "modalAddProduct"
             },
             {
-              key: "2",
-              icon: <UserOutlined/>,
-              label: "All Users",
-              onClick: clickUser
+                key: "2",
+                label: "All Product",
+                icon: <ProfileOutlined />,
+                onClick: clickProduct
             }
           ]}
         >
-
         </Menu>
       </Sider>
       <Layout>
@@ -80,11 +82,11 @@ const AdminPage = () => {
             background: colorBgContainer,
           }}
         >
-          <TableProduct listCategory={listCategory}/>
+          <TableUser listUsers={listUsers}/>
         </Content>
       </Layout>
     </Layout>
   );
 };
 
-export default AdminPage;
+export default AdminUser;
