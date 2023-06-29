@@ -22,24 +22,27 @@ import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
 import AdminUser from "./pages/AdminUser";
 import { VideoReview } from "./pages/VideoReview";
+import News from "./components/News/News";
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index path="" element={<HomePage />} />
-        <Route index path="/see-more" element={<SeeMorePage />} />
-        <Route index path="/detail" element={<DetailProductPage />} />
-        <Route index path="/baohanh" element={<Guarantee />}></Route>
-        <Route index path="/cart" element={<CartPage />} />
-        <Route index path="/paying" element={<PayingPage />} />
-        <Route index path="/project" element={<Project />} />
-        <Route index path="/Guest/Support" element={<WarrantyStation />} />
-        <Route index path="/Guest/intro" element={<WarrantyPolicyHome />} />
-        <Route index path="/admin-page" element={<AdminPage />} />
-        <Route index path="/introduce" element={<IntroducePage />} />
-        <Route index path="/admin-users" element={<AdminUser />} />
-        <Route index path="/video-review" element={<VideoReview />} />
+        <Route  path="/see-more" element={<SeeMorePage />} />
+        <Route  path="/detail" element={<DetailProductPage />} />
+        <Route  path="/baohanh" element={<Guarantee />}></Route>
+        <Route  path="/cart" element={<CartPage />} />
+        <Route  path="/paying" element={<PayingPage />} />
+        <Route  path="/project" element={<Project />} />
+        <Route  path="/news" element={<News/>} />
+        <Route  path="/Guest/Support" element={<WarrantyStation />} />
+        <Route  path="/Guest/intro" element={<WarrantyPolicyHome />} />
+        <Route  path="/admin-page" element={<AdminPage />} />
+        <Route  path="/introduce" element={<IntroducePage />} />
+        <Route  path="/admin-users" element={<AdminUser />} />
+        <Route  path="/video-review" element={<VideoReview />} />
         
 
 

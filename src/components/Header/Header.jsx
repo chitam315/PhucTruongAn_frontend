@@ -82,11 +82,10 @@ const Header = () => {
 
 
               <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="/introduce">Giới thiệu</a></span>
-              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="/guest/intro/chinh-sach-bao-hanh">Dự Án & Hoạt Động</a></span>
-              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="">Tin Tức</a></span>
-              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="">Tuyển Đại Lý</a></span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="/project">Dự Án & Hoạt Động</a></span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="/news">Tin Tức</a></span>
               <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="">Liên Hệ</a></span>
-              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="">Bảo Hành</a></span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100"><a href="/baohanh">Bảo Hành</a></span>
 
             </div>
 
