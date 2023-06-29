@@ -14,21 +14,8 @@ export default function ItemProductSale({ item }) {
           <AiOutlineShoppingCart />
         </div>
         <div className="tag-discount">Giảm 9%</div>
-<<<<<<< HEAD
         <ImageProduct item={item}/>
 
-=======
-        <Link
-          to="/detail"
-          className="overflow-hidden flex items-center justify-center h-[200px]"
-        >
-          <img
-            src={item.image}
-            alt=""
-            className="img-product h-full max-w-100"
-          />
-        </Link>
->>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
         <div className="tag-status-sold uppercase flex justify-center text-white select-none">
           <span className="z-[50] text-[0.8em]">Đã bán: 3996</span>
         </div>

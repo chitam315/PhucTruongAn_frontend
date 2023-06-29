@@ -118,17 +118,8 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-<<<<<<< HEAD
-
-              placeholder="Tên khách hàng"
-              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
               placeholder="Địa chỉ"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-
-=======
-              placeholder="Địa chỉ"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
->>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
             />
           </div>
           <div className="row w-full justify-between items-center">
@@ -138,13 +129,7 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-<<<<<<< HEAD
-              placeholder="Tên khách hàng"
-              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-              // placeholder="Mô tả lỗi của sản phẩm"
-=======
               placeholder="Mô tả lỗi của sản phẩm"
->>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>

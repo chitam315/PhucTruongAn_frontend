@@ -62,11 +62,7 @@ export const VideoReview = () => {
                                                             className="effect-ming open_video"
                                                         >
                                                             <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                                                <img
-                                                                    src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/giai-phap-an-toan-chong-chap-chay.png?v=1686106586927"
-                                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/giai-phap-an-toan-chong-chap-chay.png?v=1686106586927"
-                                                                    className="d-block img img-cover position-absolute lazy loaded"
-                                                                />
+                                                              
                                                                 <div
                                                                     className="position-absolute w-100 h-100 video_open lazy_bg loaded"
                                                                     data-video="wREirU---FA"

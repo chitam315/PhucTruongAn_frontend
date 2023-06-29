@@ -1,11 +1,11 @@
-/* .slidebar {
+.slidebar {
     padding-left: 20%;
     margin-bottom: 20px;
     
     
-} */
+} 
 
-/* .carousel {
+.carousel {
     display: flex;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -31,4 +31,4 @@
     border: none;
     cursor: pointer;
   }
-   */
+  
