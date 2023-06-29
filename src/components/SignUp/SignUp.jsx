@@ -5,7 +5,7 @@ export default function SignUp() {
     <>
       <section className="register-layout">
         <div className="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-[#f3f3f3] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-8">
+          <div className="w-full bg-[#f3f3f3] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-8 opacity-[0.9]">
             <div className="p-6 space-y-4 md:space-y-1 sm:px-8">
               <h1 className="text-[25px] mb-[0px] font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Đăng ký tài khoản
@@ -127,7 +127,7 @@ export default function SignUp() {
                   Bạn đã có tài khoản?{" "}
                   <a
                     href="/#"
-                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    className="font-medium text-primary-600 hover:underline dark:text-primary-500 text-[#d1c3c3]"
                   >
                     Login here
                   </a>
@@ -139,16 +139,39 @@ export default function SignUp() {
                     OR
                   </p>
                 </div>
-
-                {/* <!-- Social login buttons --> */}
-                <a
+                <div class="d-flex align-items-center justify-content-center">
+                  <a
+                    href="javascript:void(0)"
+                    className="social-login--facebook"
+                    onclick="loginFacebook()"
+                  >
+                    <img
+                      width="129px"
+                      height="37px"
+                      alt="facebook-login-button"
+                      src="//bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"
+                    />
+                  </a>
+                  <a
+                    href="javascript:void(0)"
+                    className="social-login--google"
+                    onclick="loginGoogle()"
+                  >
+                    <img
+                      width="129px"
+                      height="37px"
+                      alt="google-login-button"
+                      src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"
+                    />
+                  </a>
+                </div>
+                {/* <a
                   className="mb-3 flex w-full items-center justify-center rounded bg-primary px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                   href="#!"
                   role="button"
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  {/* <!-- Facebook --> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="mr-2 h-3.5 w-3.5"
@@ -174,8 +197,8 @@ export default function SignUp() {
                   >
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                   </svg>
-                  Continue with Twitter
-                </a>
+                  Continue with G
+                </a> */}
               </form>
             </div>
           </div>

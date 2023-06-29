@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage";
 import PayingPage from "./pages/PaymentPage";
 import WarrantyStation from "./components/WarrantyStation/WarrantyStation";
 import WarrantyPolicyHome from "./components/WarrantyPolicy/WarrantyPolicyHome";
+import AdminPage from "./pages/AdminPage";
 import WarrantyPolicy from "./components/WarrantyPolicy/WarrantyPolicy";
 import PrivacyPolicy from "./components/WarrantyPolicy/PrivacyPolicy";
 import ShippingPolicy from "./components/WarrantyPolicy/ShippingPolicy";
@@ -18,6 +19,9 @@ import PaymentPolicy from "./components/WarrantyPolicy/PaymentPolicy";
 import InspectionPolicy from "./components/WarrantyPolicy/InspectionPolicy";
 import Project from "./components/Project/Project";
 import SignUp from "./components/SignUp/SignUp";
+import IntroducePage from "./components/IntroducePage/IntroducePage";
+import AdminUser from "./pages/AdminUser";
+import { VideoReview } from "./pages/VideoReview";
 
 function App() {
   return (
@@ -31,36 +35,54 @@ function App() {
         <Route index path="/paying" element={<PayingPage />} />
         <Route index path="/project" element={<Project />} />
         <Route index path="/Guest/Support" element={<WarrantyStation />} />
+        <Route index path="/Guest/intro" element={<WarrantyPolicyHome />} />
+        <Route index path="/admin-page" element={<AdminPage />} />
+        <Route index path="/introduce" element={<IntroducePage />} />
+        <Route index path="/admin-users" element={<AdminUser />} />
+        <Route index path="/video-review" element={<VideoReview />} />
+        
+
+
         <Route
           index
-          path="/Guest/Intro/chinh-sach-bao-hanh"
+          path="/guest/intro/chinh-sach-bao-hanh"
           element={<WarrantyPolicy />}
         />
         <Route
           index
-          path="/Guest/Intro/chinh-sach-bao-mat"
+          path="/guest/intro/chinh-sach-bao-mat"
           element={<PrivacyPolicy />}
         />
         <Route
           index
-          path="/Guest/Intro/chinh-sach-van-chuyen"
+          path="/guest/intro/chinh-sach-van-chuyen"
           element={<ShippingPolicy />}
         />
         <Route
           index
-          path="/Guest/Intro/chinh-sach-doi-tra"
+          path="/guest/intro/chinh-sach-doi-tra"
           element={<ReturnPolicy />}
         />
-        <Route index path="/Guest/Intro/dieu-khoan" element={<Rules />} />
+        <Route index path="/guest/intro/dieu-khoan" element={<Rules />} />
         <Route
           index
-          path="/Guest/Intro/chinh-sach-thanh-toan"
+          path="/guest/intro/chinh-sach-kiem-hang"
+          element={<InspectionPolicy />}
+        />
+
+        <Route
+          index
+          path="/guest/intro/chinh-sach-thanh-toan"
           element={<PaymentPolicy />}
         />
         <Route index path="/signup" element={<SignUp />} />
         <Route index path="/baohanh" element={<Guarantee />} />
         <Route index path="/cart" element={<CartPage />} />
+<<<<<<< HEAD
         <Route index path="/Payment" element={<PayingPage />} />
+=======
+        <Route index path="/paying" element={<PayingPage />} />
+>>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
       </Routes>
     </BrowserRouter>
   );

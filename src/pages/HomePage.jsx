@@ -35,7 +35,10 @@ export default function HomePage() {
       <News />
       <Footer />
       <NavigationBottom />
+<<<<<<< HEAD
       
+=======
+>>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
     </div>
   );
 }

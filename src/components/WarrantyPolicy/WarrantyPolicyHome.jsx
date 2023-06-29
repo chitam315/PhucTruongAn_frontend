@@ -46,7 +46,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
           <ul className="list list-none uppercase text-[15px]">
             <li className="on">
               <NavLink
-                to="/Guest/Intro/chinh-sach-bao-hanh"
+                to="/guest/intro/chinh-sach-bao-hanh"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -58,7 +58,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/chinh-sach-bao-mat"
+                to="/guest/intro/chinh-sach-bao-mat"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -70,7 +70,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/chinh-sach-van-chuyen"
+                to="/guest/intro/chinh-sach-van-chuyen"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -82,7 +82,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/chinh-sach-doi-tra"
+                to="/guest/intro/chinh-sach-doi-tra"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -94,7 +94,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/dieu-khoan"
+                to="/guest/intro/dieu-khoan"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -106,7 +106,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/chinh-sach-thanh-toan"
+                to="/guest/intro/chinh-sach-thanh-toan"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"
@@ -118,7 +118,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
             </li>
             <li className="">
               <NavLink
-                to="/Guest/Intro/chinh-sach-kiem-hang"
+                to="/guest/intro/chinh-sach-kiem-hang"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold hover:underline hover:text-black"

@@ -28,7 +28,7 @@ const ModalTraCuuBaoHanh = ({ name, content }) => {
   return (
     <>
       <div
-        className="w-fit text-[black] uppercase hover:bg-translate"
+        className="w-fit text-[black] uppercase hover:bg-translate hover:text-[green]"
         type="primary"
         onClick={showModal}
       >
@@ -49,7 +49,7 @@ const ModalTraCuuBaoHanh = ({ name, content }) => {
           >
             <FaWindowClose />
           </div>
-          <h2 className="uppercase text-[26px] font-bold">Tra cứu bảo hành</h2>
+          <h2 className="uppercase text-[26px] font-bold ">Tra cứu bảo hành</h2>
           <p className="text-[16px] py-[12px] text-center">
             Tra cứu tình trạng yêu cầu bảo hành, sửa chữa bằng mã bảo hành
           </p>

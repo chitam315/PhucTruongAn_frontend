@@ -46,7 +46,7 @@ const HeaderGuarantee = () => {
       </div>
       <div className="menu ">
         <div className="container w-[1200px] ">
-          <ul className="flex justify-between h-[50px] items-center uppercase text-[16px] font-bold text-[#101C2C] list-none">
+          <ul className="flex justify-between h-[50px] items-center uppercase text-[16px] font-bold text-[#101C2C] list-none hover:text-[green]">
             <li>
               <a href="#0" data-type="warrantylookup">
                 <ModalTraCuuHanBaoHanh
@@ -58,7 +58,7 @@ const HeaderGuarantee = () => {
             <li>
               <a href="#0" data-type="warrantyactive">
                 <ModalActiveGuarantee
-                  name={"Tra cứu hạn bảo hành"}
+                  name={"Kích hoạt bảo hành"}
                   content={"test content"}
                 />
               </a>
@@ -80,12 +80,21 @@ const HeaderGuarantee = () => {
               </a>
             </li>
             <li>
-              <a href="/Guest/Support" onClick={WarrantyStation}>
+              <a
+                href="/guest/support"
+                onClick={WarrantyStation}
+                className="hover:text-[green]"
+              >
                 Trạm bảo hành
               </a>
             </li>
             <li>
-              <a href="/Guest/Intro">Chính sách và hướng dẫn</a>
+              <a
+                href="/guest/intro/chinh-sach-bao-hanh"
+                className="hover:text-[green]"
+              >
+                Chính sách và hướng dẫn
+              </a>
             </li>
           </ul>
         </div>
