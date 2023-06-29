@@ -20,8 +20,7 @@ import InspectionPolicy from "./components/WarrantyPolicy/InspectionPolicy";
 import Project from "./components/Project/Project";
 import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
-import AdminUser from "./pages/AdminUser";
-import { VideoReview } from "./pages/VideoReview";
+import News from "./components/News/News";
 
 function App() {
   return (
@@ -34,15 +33,11 @@ function App() {
         <Route index path="/cart" element={<CartPage />} />
         <Route index path="/paying" element={<PayingPage />} />
         <Route index path="/project" element={<Project />} />
-        <Route index path="/Guest/Support" element={<WarrantyStation />} />
-        <Route index path="/Guest/intro" element={<WarrantyPolicyHome />} />
+        <Route index path="/guest/support" element={<WarrantyStation />} />
+        <Route index path="/guest/intro" element={<WarrantyPolicyHome />} />
         <Route index path="/admin-page" element={<AdminPage />} />
         <Route index path="/introduce" element={<IntroducePage />} />
-        <Route index path="/admin-users" element={<AdminUser />} />
-        <Route index path="/video-review" element={<VideoReview />} />
-        
-
-
+        <Route index path="/news" element={<News />} />
         <Route
           index
           path="/guest/intro/chinh-sach-bao-hanh"

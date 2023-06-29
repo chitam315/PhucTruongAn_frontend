@@ -14,7 +14,7 @@ import CarouselSlice from "../components/Carousel/CarouselSlice";
 import Slidebar from "../components/Slidebar/Slidebar";
 import Banner from "../components/Banner/Banner";
 import Slidebarnew from "../components/Slidebar/Slidebarnew";
-import { CategoryHome } from "../components/CategoryHome/CategoryHome";
+import CategoryHome from "../components/CategoryHome/CategoryHome";
 import VideoReview from "../components/Home/VideoReview";
 
 
@@ -25,7 +25,7 @@ export default function HomePage() {
       <CarouselSlice />
       <Slidebarnew />
       <Banner />
-      <CategoryHome />
+    <CategoryHome/>
       <VideoReview/>
       <FlashSale />
       <Category />

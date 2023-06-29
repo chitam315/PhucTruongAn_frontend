@@ -77,6 +77,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
+<<<<<<< HEAD
 
 
           <div className="row w-full justify-between items-center">
@@ -175,6 +176,9 @@ const ModalActiveGuarantee = ({ name, content }) => {
                 </select>
 
                 {/* <select className="w-[160px]">
+=======
+=======
+>>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
           <div className="row">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
               Mã bảo hành *
@@ -231,8 +235,11 @@ const ModalActiveGuarantee = ({ name, content }) => {
               <option value="Camau">Cà Mau</option>
               <option value="Cantho">Cần Thơ</option>
             </select> */}
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
           </div>
           <div class="row w-full flex justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">

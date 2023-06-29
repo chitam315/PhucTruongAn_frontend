@@ -27,8 +27,12 @@ function VideoReview() {
 
 const arrayVideo = [
   {
+<<<<<<< HEAD
     url: "AvSTtFAPLRI",
     name: "Hướng dẫn kích hoạt Bảo hành điện tử - Cải tiến mới trong thời kỳ công nghệ số",
+=======
+    url: "Az",
+>>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
   },
   {
     url: "dnYy5jLOou4",
