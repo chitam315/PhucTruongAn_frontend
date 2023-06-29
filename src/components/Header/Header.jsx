@@ -8,11 +8,19 @@ const Header = () => {
           CÔNG TY TNHH ĐIỆN CÔNG NGHIỆP PHÚC TRƯỜNG AN
         </h2>
       </div>
+<<<<<<< HEAD
       <div className="bg-white">
         <div className="border ">
           <div className="flex justify-between">
             <div className="flex items-center w-[20%]">
               <span className="font-semibold w-full text-[#252C32]">
+=======
+      <div class="bg-white">
+        <div class="border ">
+          <div class="flex justify-between">
+            <div class="flex items-center w-[20%]">
+              <span class="font-semibold w-full text-[#252C32]">
+>>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
                 <img
                   className="w-full"
                   src="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo.png?1686880710266"
@@ -27,6 +35,7 @@ const Header = () => {
                 className="w-full h-[50px] rounded-md border border-[#DDE2E4] px-3 py-2 text-sm"
                 value="DJI phantom"
               />
+<<<<<<< HEAD
               <div class="bg-white">
                 <div class="border ">
                   <div class="flex justify-between">
@@ -39,6 +48,9 @@ const Header = () => {
                         />
                       </span>
                     </div>
+=======
+            </div>
+>>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
 
                     <div class="ml-6 py-[20px] flex flex-1 gap-x-3">
                       <input
@@ -48,6 +60,7 @@ const Header = () => {
                       />
                     </div>
 
+<<<<<<< HEAD
                     <div className="ml-2 flex">
                       <div className="flex cursor-pointer items-center gap-x-1 rounded-md py-2 px-4 hover:bg-gray-100">
                         <div>
@@ -70,6 +83,9 @@ const Header = () => {
                             3
                           </span>
                           {/* <div class="flex cursor-pointer items-center gap-x-1 rounded-md py-2 px-4 hover:bg-gray-100">
+=======
+              <div class="flex cursor-pointer items-center gap-x-1 rounded-md py-2 px-4 hover:bg-gray-100">
+>>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
                 <div class="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,10 +98,16 @@ const Header = () => {
                   <span class="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
                     3
                   </span>
+<<<<<<< HEAD
 >>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
                 </div> */}
                           <span className="text-sm font-medium">Cart</span>
                         </div>
+=======
+                </div>
+                <span className="text-sm font-medium">Cart</span>
+              </div>
+>>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
 
                         <div className="ml-2 flex cursor-pointer items-center gap-x-1 rounded-md border py-2 px-4 hover:bg-gray-100">
                           <span className="text-sm font-medium">Sign in</span>
@@ -103,6 +125,7 @@ const Header = () => {
               <sp   an className="text-sm font-medium">Đồng Nai</span>
             </div> */}
 
+<<<<<<< HEAD
                     <div className="flex gap-x-8  ">
                       <a
                         className="nav-link dropdown-toggle font-bold"
@@ -240,6 +263,84 @@ const Header = () => {
                   </div>
                 </div>
               </div>
+=======
+            <div class="flex gap-x-8  ">
+              <a
+                className="nav-link dropdown-toggle font-bold"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Danh mục sản phẩm
+              </a>
+              <ul className="dropdown-menu gap-3 ">
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn UFO năng lượng mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn đường liền thể mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn bàn chải năng lượng mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn pha năng lượng mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn trụ cổng & sân vườn
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn áp trần & Đèn thả hình loa
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Đèn cầm tay năng lượng mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Quạt năng lượng mặt trời
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item font-semibold p-2 m-2" href="#">
+                    Phụ kiện đèn năng lượng mặt trời
+                  </a>
+                </li>
+              </ul>
+
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Giới Thiệu
+              </span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Dự Án & Hoạt Động
+              </span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Tin Tức
+              </span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Tuyển Đại Lý
+              </span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Liên Hệ
+              </span>
+              <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
+                Bảo Hành
+              </span>
+>>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
             </div>
           </div>
         </div>
