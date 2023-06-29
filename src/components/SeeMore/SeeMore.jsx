@@ -22,6 +22,7 @@ export default function SeeMore() {
   const [dataDateOld, setDataDateOld] = useState([]);
 
   const [ar, setAr] = useState([]);
+  const [ar2, setA2r] = useState([]);
 
   useEffect(() => {
     setDataItem(arrayProduct);
@@ -162,7 +163,6 @@ export default function SeeMore() {
       setMaxPrice(j);
       const ij = dataItem.filter((p) => p.price >= i && p.price <= j);
       setDataItem(ij);
-      // console.log(originalArray);
     }
   };
 
@@ -289,7 +289,7 @@ export default function SeeMore() {
                           type="checkbox"
                           className="hidden id-check-model"
                           value={item.model}
-                          onChange={(e) => {
+                          onChange={async (e, a) => {
                             if (e.target.checked) {
                               const val = model;
                               setAddCategory(val.push(item.model));
@@ -299,13 +299,11 @@ export default function SeeMore() {
                               const arrFilter = originalArray.filter(
                                 (i) => i.model === item.model
                               );
-                              setAr(ar.concat(arrFilter))
-                              
-                              
+                              setAr(ar.concat(arrFilter));
+                              console.log(ar);
                             } else {
                               delItemModel(item.model);
                             }
-                            setDataItem(ar)
                           }}
                         />
                         <span className="btn-main text-capitalize flex">
@@ -348,7 +346,7 @@ export default function SeeMore() {
 
             <a
               className="py-[12px] px-[25px] text-center font-bold uppercase text-white text-[1.2em] bg-[var(--mainColor)] tag-trip relative w-fit"
-              href="#meohaychoban"
+              href="#m"
             >
               Mẹo hay cho bạn
             </a>

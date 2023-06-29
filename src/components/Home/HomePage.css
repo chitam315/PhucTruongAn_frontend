@@ -257,3 +257,40 @@ body:hover .cart-appear {
 .bg-flash .react-multiple-carousel__arrow--left::before {
   transform: rotate(310deg);
 }
+
+.hover-rotate-svg:hover span {
+  display: block;
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+.video-review-player svg polygon {
+  stroke: #fff;
+}
+
+.video-review-player-main:hover .video-review-player {
+  animation: scalerIconPlayer 2s infinite;
+  transition: 2s;
+}
+
+.video-review-player-main {
+  cursor: pointer;
+}
+
+@keyframes scalerIconPlayer {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  90%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: scale(1.2);
+  }
+}

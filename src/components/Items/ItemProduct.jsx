@@ -6,8 +6,8 @@ import CheckboxCompare from "./CheckboxCompare";
 import ProductInfo from "./ProductInfo";
 import ImageProduct from "./ImageProduct";
 
-export default function ItemProduct({ item, index, wth }) {
-  console.log(wth);
+export default function ItemProduct({ item, index }) {
+
   return (
     <div className="p-[5px] col-4w col-tbm-4 col-tbs-6" key={index}>
       <div className="shadow-10 rounded-10 bg-white rounded-[10px] h-100 relative p-[8px] block card-product">
@@ -15,16 +15,9 @@ export default function ItemProduct({ item, index, wth }) {
           <AiOutlineShoppingCart />
         </div>
         <div className="tag-discount">Giảm 9%</div>
-<<<<<<< HEAD
+
         <ImageProduct />
         <ProductInfo item={item} />
-=======
-        <ImageProduct/>
-        <div>
-          <ProductInfo item={item}/>
-          
-        </div>
->>>>>>> 4586fad322d7c1146896c750b80679f70bc29f4a
       </div>
     </div>
   );
