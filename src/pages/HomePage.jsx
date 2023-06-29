@@ -11,22 +11,22 @@ import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
 import SliderLeft from "../components/NavigationBottom/SliderLeft";
 import Header from "../components/Header/Header";
 import CarouselSlice from "../components/Carousel/CarouselSlice";
-
 import Slidebar from "../components/Slidebar/Slidebar";
 import Banner from "../components/Banner/Banner";
 import Slidebarnew from "../components/Slidebar/Slidebarnew";
-import { CategoryHome } from "../components/CategoryHome/CategoryHome";
+import CategoryHome from "../components/CategoryHome/CategoryHome";
+import VideoReview from "../components/Home/VideoReview";
 
 
 export default function HomePage() {
   return (
-    <div className="bg-main">
+    <div className="bg-main w-100">
       <Header />
       <CarouselSlice />
-      {/* <Slidebar /> */}
-      <Slidebarnew/>
-      <Banner/>
-<CategoryHome/>
+      <Slidebarnew />
+      <Banner />
+    <CategoryHome/>
+      <VideoReview/>
       <FlashSale />
       <Category />
       <Media />

@@ -371,3 +371,107 @@ export const listCategory = [
     }
 ]
 
+export const listUsers =[
+    {
+        id: 1,
+        full_name: "Nguyễn Văn A b c d",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 2,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 3,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 4,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 5,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 6,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 7,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 8,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 9,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 10,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 11,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 12,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 13,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 14,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 15,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 16,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+    {
+        id: 17,
+        full_name: "Nguyễn Văn A",
+        phone: "0123456789",
+        address: "Số 1 đường số 1 quận 1"
+    },
+]

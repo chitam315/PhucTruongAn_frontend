@@ -4,15 +4,18 @@ import "../../App.css";
 import ItemProductSale from "../Items/ItemProductSale";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { arrayProduct } from "../SeeMore/DataViDu";
 
 export default function FlashSale() {
-  const text1 = "miễn phí giao hàng tận nhà";
-  const text2 = "giảm ngay 100.000đ khi mua từ 2 đèn trở lên";
+  var texts = [
+    "miễn phí giao hàng tận nhà",
+    "giảm ngay 100.000đ khi mua từ 2 đèn trở lên",
+  ];
 
   return (
     <>
       <div>
-        <div className="container">
+        <div className="container-sm">
           <div className="bg-flash pb-[15px] rounded-[10px]">
             <div className="flex-center py-[10px] px-[15px] d-tbs-block text-center">
               <div className="flex items-center justify-center">
@@ -26,7 +29,10 @@ export default function FlashSale() {
                 </p>
               </div>
               <div className="flex-center banner-flash relative w-auto justify-center">
-                <p className="uppercase text-[1em] text-white">{text1}</p>
+                <p
+                  className="uppercase text-[1em] text-white"
+                  id="change-text"
+                ></p>
               </div>
               <div className="w-[200px]"></div>
             </div>
@@ -40,19 +46,10 @@ export default function FlashSale() {
                 renderButtonGroupOutside={true}
                 removeArrowOnDeviceType={["desktop"]}
               >
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
+                {arrayProduct.map((item, index) => (
+                  <ItemProductSale item={item} />
+                ))}
               </Carousel>
-              {/* <div className="flex flex-wrap">
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
-                <ItemProductSale />
-              </div> */}
             </div>
           </div>
         </div>
@@ -76,7 +73,11 @@ const responsive = {
     items: 3,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 771, min: 0 },
     items: 2,
+  },
+  mobileS: {
+    breakpoint: { max: 472, min: 0 },
+    items: 1,
   },
 };

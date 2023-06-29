@@ -1,8 +1,8 @@
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.css";
+
 import "../../assets/variables.css";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import  Footer  from "../Footer/Footer";
 import "../Project/Project.css";
 export default function News() {
   return (

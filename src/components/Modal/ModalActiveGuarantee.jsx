@@ -76,6 +76,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
+=======
           <div className="row">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
               Mã bảo hành *

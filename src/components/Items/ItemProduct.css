@@ -1,4 +1,4 @@
-.tag-discount2 {
+.tag-discount-relative {
   position: absolute;
   top: 10px;
   left: -5px;
@@ -13,7 +13,7 @@
   z-index: 1;
 }
 
-.tag-discount2::before {
+.tag-discount-relative::before {
   content: "";
   position: absolute;
   top: 29px;

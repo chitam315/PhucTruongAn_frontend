@@ -4,7 +4,12 @@ import CardMain from "../Card/CardMain";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { AiFillCheckCircle } from "react-icons/ai";
-import { BsPlusLg, BsPlusCircle, BsCheckCircleFill } from "react-icons/bs";
+import {
+  BsPlusLg,
+  BsPlusCircle,
+  BsCheckCircleFill,
+  BsGiftFill,
+} from "react-icons/bs";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
@@ -97,7 +102,7 @@ export default function DetailProduct() {
             </label>
           </div>
           <Row>
-            <div className="col-lg-4 col-tb-5 col-tbs-12 relative">
+            <div className="col-lg-4 col-tb-5 col-tbs-12 relative image-slick">
               <ModalVideo />
               <Carousel
                 showThumbs={true}
@@ -107,42 +112,35 @@ export default function DetailProduct() {
                 showArrows={true}
                 showStatus={false}
               >
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/5.jpg?v=1685090766457"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/u500-optimized-cefcccf4-29f7-41dc-ad9b-ce0f1536b919.png?v=1685090779840"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
-                    alt=""
-                  />
-                </div>
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/5.jpg?v=1685090766457"
+                  alt=""
+                />
+
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/u500-optimized-cefcccf4-29f7-41dc-ad9b-ce0f1536b919.png?v=1685090779840"
+                  alt=""
+                />
+
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
+                  alt=""
+                />
+
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
+                  alt=""
+                />
+
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
+                  alt=""
+                />
+
+                <img
+                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
+                  alt=""
+                />
               </Carousel>
             </div>
             <div className="col-lg-5 col-tb-7 col-tbs-12">
@@ -163,7 +161,7 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="text-[0.8em]">300W</p>
+                      <p className="text-[0.8em] p-0">300W</p>
                     </div>
                     <p className="text-[var(--red)] text-[0.8em]">1.390.000</p>
                   </div>
@@ -181,7 +179,7 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="text-[0.8em]">450W</p>
+                      <p className="text-[0.8em] p-0">450W</p>
                     </div>
                     <p className="text-[var(--red)] text-[0.8em]">1.690.000</p>
                   </div>
@@ -199,7 +197,7 @@ export default function DetailProduct() {
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="text-[0.8em]">600W</p>
+                      <p className="text-[0.8em] p-0">600W</p>
                     </div>
                     <p className="text-[var(--red)] text-[0.8em]">1.890.000</p>
                   </div>
@@ -261,7 +259,7 @@ export default function DetailProduct() {
                       className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
                       name="contact[Name]"
                       placeholder="Họ tên"
-                      required=""
+                      autocomplete="off"
                     />
                   </div>
                   <div className="col-12 mb-[20px]">
@@ -270,7 +268,7 @@ export default function DetailProduct() {
                       name="quantity"
                       className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
                       placeholder="Số điện thoại"
-                      required=""
+                      autocomplete="off"
                     />
                   </div>
                   <div className="flex">
@@ -308,23 +306,19 @@ export default function DetailProduct() {
                   Loại: <span className="text-[#00b907]">Đèn Đường</span>
                 </p>
               </div>
-              <div className="relative border-main-dashed rounded-[10px] mt-[35px] px-[20px] py-[30px]">
-                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-12%] left-[6%] py-[2px] px-[15px] text-[var(--mainColor)]">
-                  <img
-                    src="https://bizweb.dktcdn.net/thumb/icon/100/463/111/themes/889675/assets/gift.gif?1686880710266"
-                    className="w-[20px]"
-                    alt=""
-                  />
-                  <span className="text-capitalize text-[1em] font-medium ml-[10px]">
+              <div className="mt-[30px] relative border-main-dashed rounded-[10px] px-[15px] py-[15px]">
+                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-10%] left-[5%] py-[2px] px-[15px] text-[var(--mainColor)]">
+                  <BsGiftFill className="text-[#ff0000] text-[1.2em]" />
+                  <span className="text-capitalize text-[1em] font-bold ml-[10px]">
                     Mã giảm giá
                   </span>
                 </div>
                 <p className="text-[0.8em]">
                   Nhập mã <b className="uppercase">freeship</b> để được miễn phí
-                  ship đơn giản từ 200k
+                  vận chuyển cho đơn hàng từ 200k
                 </p>
                 <div
-                  className="select-none hover-border-main font-bold text-[1em] rounded-[30px] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
+                  className="select-none hover-border-main font-bold text-[1em] rounded-[30px] border-1 border-[var(--mainColor)] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
                   id="btnCopy"
                   onClick={changeTextBtnCopy}
                 >

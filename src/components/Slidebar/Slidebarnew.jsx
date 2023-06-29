@@ -28,8 +28,8 @@ class Carousel extends React.Component {
     const { currentSlide } = this.state;
 
     return (
-      <div className="carousel w-[60%]">
-        <div className="carousel-left">
+      <div className="carousel w-[60%] flex justify-center items-center ">
+        <div className="carousel-left ">
           <button className="carousel-control" onClick={this.handlePrevSlide}>
             &lt;
           </button>

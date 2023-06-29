@@ -21,7 +21,6 @@ export const ModalFlowbite = ({modalID,titleModal,children}) => {
 
   useEffect(() => {
     const modalEle = document.getElementById(modalID);
-    // console.log(modalEle);
     new Modal(modalEle, options);
   }, []);
   return (

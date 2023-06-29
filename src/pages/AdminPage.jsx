@@ -7,7 +7,8 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar } from "antd";
 import { listCategory } from "../mockData";
-import {TableCustom} from '../components/TableCustom'
+import { TableProduct } from '../components/TableProduct'
+import { useNavigate } from "react-router";
 
 
 const { Header, Sider, Content } = Layout;
@@ -17,10 +18,11 @@ const AdminPage = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-
-
-
-
+  const navigate = useNavigate()
+  const clickUser = () => {
+    navigate("/admin-users")
+    window.location.reload(false)
+  }
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -29,19 +31,8 @@ const AdminPage = () => {
           id="menuSideBarAdminPage"
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          // defaultSelectedKeys={["1"]}
 
-          // items={[
-          //   {
-          //     key: "1",
-          //     icon: <UserOutlined />,
-          //     label: "Product",
-          //     children: [
-          //       { label: "Add product" },
-          //       { label: "View all product" },
-          //     ],
-          //   },
-          // ]}
           items={[
             {
               key: "1",
@@ -49,9 +40,16 @@ const AdminPage = () => {
               label: "Add Product",
               "data-modal-target": "modalAddProduct",
               "data-modal-toggle": "modalAddProduct"
+            },
+            {
+              key: "2",
+              icon: <UserOutlined/>,
+              label: "All Users",
+              onClick: clickUser
             }
           ]}
         >
+
         </Menu>
       </Sider>
       <Layout>
@@ -82,7 +80,7 @@ const AdminPage = () => {
             background: colorBgContainer,
           }}
         >
-          <TableCustom listCategory={listCategory}/>
+          <TableProduct listCategory={listCategory}/>
         </Content>
       </Layout>
     </Layout>

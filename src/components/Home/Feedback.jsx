@@ -7,7 +7,7 @@ import { FaQuoteRight } from "react-icons/fa";
 export default function Feedback() {
   const arr = CustomerData;
   return (
-    <Container className="pt-[20px] ">
+    <div className="pt-[20px] container-sm">
       <div className=" bg-white rounded-[15px] p-[1.5em] mt-[25px]">
         <h2 className="uppercase font-bold relative text-[1.5em] mb-[15px]">
           <a
@@ -51,7 +51,7 @@ export default function Feedback() {
           ))}
         </Carousel>
       </div>
-    </Container>
+    </div>
   );
 }
 

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { ModalFlowbite } from "../ModalAndBtn/Modal";
 import { Btn } from "../ModalAndBtn/Btn";
 import Field from "../Field";
+import {Pagination} from "antd"
 
 // import './index.css'
 /**
@@ -24,7 +25,10 @@ import Field from "../Field";
  *  }
  * ]
  */
-export const TableCustom = ({ listCategory }) => {
+export const TableProduct = ({ listCategory }) => {
+  const [limit,setLimit] = useState(10)
+  const [currentPage,setCurrentPage] = useState(1)
+
   var dataSource = [],
     index = 1;
 
@@ -40,9 +44,14 @@ export const TableCustom = ({ listCategory }) => {
     });
   });
 
+  const changePage = (currentPage,pageSize) => {
+    setCurrentPage(currentPage)
+    setLimit(pageSize)
+  }
+
   return (
     <>
-      <div className="relative overflow-x-auto">
+      <div className="relative overflow-x-auto mb-4">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -54,7 +63,7 @@ export const TableCustom = ({ listCategory }) => {
             </tr>
           </thead>
           <tbody>
-            {dataSource.map((ele, i) => {
+            {dataSource.slice(limit * (currentPage - 1), limit * currentPage).map((ele, i) => {
               return (
                 <tr
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
@@ -101,6 +110,8 @@ export const TableCustom = ({ listCategory }) => {
           </tbody>
         </table>
       </div>
+
+      <Pagination defaultCurrent={1} total={dataSource.length} onChange={changePage} />
 
       <ModalFlowbite
         modalID={"modalDelete"}

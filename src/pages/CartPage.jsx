@@ -6,7 +6,7 @@ export default function CartPage() {
   return (
     <div className="bg-main">
       <Cart />
-      <NavigationBottom/>
+      <NavigationBottom />
     </div>
   );
 }
