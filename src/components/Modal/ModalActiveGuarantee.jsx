@@ -76,7 +76,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
-<<<<<<< HEAD
+
 
           <div className="row w-full justify-between items-center">
             {/* <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center"> */}
@@ -232,7 +232,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
               <option value="Camau">Cà Mau</option>
               <option value="Cantho">Cần Thơ</option>
             </select> */}
-<<<<<<< HEAD
+
               </div>
               <div className="row w-full flex justify-between items-center">
                 <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
@@ -263,8 +263,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
                 kích hoạt
               </button>
             </div>
-=======
->>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
+
           </div>
           <div class="row w-full flex justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">

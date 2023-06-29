@@ -118,13 +118,12 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-<<<<<<< HEAD
+
               placeholder="Tên khách hàng"
               className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-=======
               placeholder="Địa chỉ"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
->>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
+
             />
           </div>
           <div className="row w-full justify-between items-center">
@@ -134,13 +133,10 @@ const ModalWarrantyClaim = ({ name, content }) => {
             <input
               required
               type="text"
-<<<<<<< HEAD
               placeholder="Tên khách hàng"
               className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-=======
-              placeholder="Mô tả lỗi của sản phẩm"
+              // placeholder="Mô tả lỗi của sản phẩm"
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
->>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
             />
           </div>
           <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">

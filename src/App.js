@@ -78,11 +78,7 @@ function App() {
         <Route index path="/signup" element={<SignUp />} />
         <Route index path="/baohanh" element={<Guarantee />} />
         <Route index path="/cart" element={<CartPage />} />
-<<<<<<< HEAD
-        <Route index path="/Payment" element={<PayingPage />} />
-=======
         <Route index path="/paying" element={<PayingPage />} />
->>>>>>> 3dd8a64268824c9ae2c6c66258d35c50eea773d6
       </Routes>
     </BrowserRouter>
   );
