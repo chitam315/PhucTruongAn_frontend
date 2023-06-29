@@ -56,32 +56,12 @@ const ModalActiveGuarantee = ({ name, content }) => {
           <p className="text-[16px] py-[12px] text-center">
             Chức năng kích hoạt bảo hành từ mã bảo hành
           </p>
-          {/* <table className="table">
-            <tbody>
-              <tr className="border-bottom-none">
-                <td className="text-[14px] font-bold">Mã khách hàng *</td>
-                <td colSpan={3}>
-                  <input
-                    type="text"
-                    className="w-100 h-[40px]"
-                    placeholder="Nhập mã bảo hành"
-                    
-                  ></input>
-                </td>
-              </tr>
-              <tr>
-                <td>Mã khách hàng *</td>
-                <td colSpan={3}>
-                  <input type="text"></input>
-                </td>
-              </tr>
-            </tbody>
-          </table> */}
-<<<<<<< HEAD
+         
+          
 
 
           <div className="row w-full justify-between items-center">
-            {/* <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center"> */}
+            
             <div className="row">
               <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
                 Mã bảo hành *
@@ -90,7 +70,7 @@ const ModalActiveGuarantee = ({ name, content }) => {
                 type="text"
                 placeholder="Nhập mã bảo hành"
                 className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-                className="center w-[160px]"
+                
               />
             </div>
             <div className="row w-full justify-between items-center">
@@ -175,71 +155,6 @@ const ModalActiveGuarantee = ({ name, content }) => {
                   </option>{" "}
                 </select>
 
-                {/* <select className="w-[160px]">
-=======
-=======
->>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
-          <div className="row">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px] justify-start flex items-center">
-              Mã bảo hành *
-            </label>
-            <input
-              type="text"
-              placeholder="Nhập mã bảo hành"
-              className="center w-[160px]"
-            />
-          </div>
-          <div class="row w-full justify-between items-center">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Tên khách hàng *
-            </label>
-            <input
-              required
-              type="text"
-              placeholder="Tên khách hàng"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-            />
-          </div>
-          <div class="row w-full justify-between items-center">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Số điện thoại *
-            </label>
-            <input
-              required
-              type="number"
-              placeholder="Số điện thoại"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
-            />
-          </div>
-          <div class="row w-full flex justify-between items-center">
-            <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
-              Thành phố
-            </label>
-            <select
-              class="form-select form-select-sm mb-3 w-[calc(100%-190px)] m-[10px]"
-              id="city"
-              aria-label=".form-select-sm"
-            >
-              <option value="" selected>
-                Chọn tỉnh thành
-              </option>{" "}
-            </select>
-
-            {/* <select className="w-[160px]">
-              <option value="" selected>
-                Chọn thành phố
-              </option>
-              <option value="TPHCM">An Giang</option>
-              <option value="Hanoi">Hà Nội</option>
-              <option value="Danang">Đà Nẵng</option>
-              <option value="Camau">Cà Mau</option>
-              <option value="Cantho">Cần Thơ</option>
-            </select> */}
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
           </div>
           <div class="row w-full flex justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
@@ -272,6 +187,8 @@ const ModalActiveGuarantee = ({ name, content }) => {
         </div>
         </div>
         </div>
+        
+        
         
       </Modal>
     </>

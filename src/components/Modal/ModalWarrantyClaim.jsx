@@ -130,10 +130,6 @@ const ModalWarrantyClaim = ({ name, content }) => {
               required
               type="text"
               placeholder="Mô tả lỗi của sản phẩm"
-<<<<<<< HEAD
-
-=======
->>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
               class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>

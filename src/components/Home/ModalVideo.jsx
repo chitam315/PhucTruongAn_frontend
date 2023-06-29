@@ -7,6 +7,7 @@ import "./HomePage.css";
 
 const ModalVideo = ({ item, index }) => {
   const [open, setOpen] = useState(false);
+  const [isPlay, setIsPlay] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const handleOk = () => {
     setConfirmLoading(true);
@@ -18,7 +19,13 @@ const ModalVideo = ({ item, index }) => {
 
   return (
     <>
-      <div onClick={() => setOpen(true)} className="mr-1">
+      <div
+        onClick={() => {
+          setOpen(true);
+          setIsPlay(true);
+        }}
+        className="mr-1"
+      >
         <div className="rounded-[10px] overflow-hidden relative">
           <img
             src={`https://img.youtube.com/vi/${item.url}/hqdefault.jpg`}
@@ -27,11 +34,13 @@ const ModalVideo = ({ item, index }) => {
           />
           <div className="video-review-player-main absolute w-100 h-full top-0 left-0 bg-[#00000035] center">
             <div className="video-review-player center rounded-full border-3 border-solid border-white w-[60px] h-[60px]">
-                <GrPlay className="text-[1.8em] text-white"/>
+              <GrPlay className="text-[1.8em] text-white" />
             </div>
           </div>
         </div>
-        <span className="text-[1em] font-bold text-black px-[5px] block">{item.name}</span>
+        <span className="text-[1em] font-bold text-black px-[5px] block">
+          {item.name}
+        </span>
       </div>
       <Modal
         open={open}
@@ -44,7 +53,10 @@ const ModalVideo = ({ item, index }) => {
         <div className="relative">
           <div
             className="hover-rotate-svg absolute top-[-10%] right-[-9%] bg-white cursor-pointer rounded-full p-[5px] border-2 border-solid border-[#000]"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              setIsPlay(false);
+            }}
           >
             <span>
               <AiOutlineClose className="text-[1.5em]" />
@@ -53,8 +65,10 @@ const ModalVideo = ({ item, index }) => {
           <div className="">
             <ReactPlayer
               controls={true}
-              playing={false}
               width="100%"
+              stopOnUnmount={true}
+              playing={false}
+              pip={true}
               url={`https://www.youtube.com/watch?v=${item.url}`}
             />
           </div>

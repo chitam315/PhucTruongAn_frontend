@@ -1,4 +1,4 @@
-import CardHome from "../Card/CardHome";
+import CardMain from "../Card/CardMain";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
@@ -6,10 +6,12 @@ import { Modal } from "antd";
 import { AiOutlineClose } from "react-icons/ai";
 import ReactPlayer from "react-player";
 import ModalVideo from "./ModalVideo";
+import { Link } from "react-router-dom";
 
 function VideoReview() {
   return (
-    <CardHome title="Video review">
+    <CardMain title="Video review">
+      <Link className="font-bold text-[1.4em] uppercase text-black">Video review</Link>
       <Carousel
         swipeable={true}
         draggable={true}
@@ -21,18 +23,14 @@ function VideoReview() {
           <ModalVideo item={item} index={index}/>
         ))}
       </Carousel>
-    </CardHome>
+    </CardMain>
   );
 }
 
 const arrayVideo = [
   {
-<<<<<<< HEAD
     url: "AvSTtFAPLRI",
     name: "Hướng dẫn kích hoạt Bảo hành điện tử - Cải tiến mới trong thời kỳ công nghệ số",
-=======
-    url: "Az",
->>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
   },
   {
     url: "dnYy5jLOou4",

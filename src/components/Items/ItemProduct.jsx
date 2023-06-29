@@ -15,10 +15,6 @@ export default function ItemProduct({ item, index }) {
           <AiOutlineShoppingCart />
         </div>
         <div className="tag-discount">Giảm 9%</div>
-<<<<<<< HEAD
-
-=======
->>>>>>> a5e9ae18b6abadb378db550911095b18d4b9f9f0
         <ImageProduct />
         <ProductInfo item={item} />
       </div>
