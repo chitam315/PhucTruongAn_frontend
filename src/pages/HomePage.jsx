@@ -21,7 +21,7 @@ import VideoReview from "../components/Home/VideoReview";
 export default function HomePage() {
   return (
     <div className="bg-main w-100">
-      {/* <Header /> */}
+      <Header />
       <CarouselSlice />
       <Slidebarnew />
       <Banner />
