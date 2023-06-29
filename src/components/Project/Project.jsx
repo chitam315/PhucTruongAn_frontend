@@ -4,16 +4,16 @@ import "../../assets/variables.css";
 
 import Footer from "../Footer/Footer";
 import "./Project.css";
-
+import Header from "../Header/Header";
 export default function Project() {
   return (
     <>
-      {/* <Header></Header> */}
+      <Header />
       <div class="col-right position-relative content-project">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">
             <div className="container position-relative">
-              <ul className="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
+              <ul className="breadcrumbb flex items-center text-center m-0 pl-0 pr-0 small pt-2 pb-2">
                 <li className="home">
                   <a href="/" title="Trang chủ">
                     <svg width="12" height="10.633">
@@ -23,7 +23,7 @@ export default function Project() {
                   </a>
                   <span className="slash-divider ml-2 mr-2">/</span>
                 </li>
-                <li>Dự án &amp; Hoạt động</li>
+                <li className="pt-[8px]">Dự án &amp; Hoạt động</li>
               </ul>
             </div>
           </div>
