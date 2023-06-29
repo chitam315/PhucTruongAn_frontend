@@ -10,10 +10,10 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
   return (
     <>
       <HeaderGuarantee />
-      <div class="nav block bg-[#f9faf9]">
-        <div class="container">
+      <div className="nav block bg-[#f9faf9]">
+        <div className="container">
           <ul
-            class="breadcrumb uppercase text-[14px] gap-2 items-center p-[5px] "
+            className="breadcrumb uppercase text-[14px] gap-2 items-center p-[5px] "
             itemscope=""
             itemtype="http://schema.org/BreadcrumbList"
           >
@@ -41,10 +41,10 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
           </ul>
         </div>
       </div>
-      <div class="intro">
-        <div class="container">
-          <ul class="list list-none uppercase text-[15px]">
-            <li class="on">
+      <div className="intro">
+        <div className="container">
+          <ul className="list list-none uppercase text-[15px]">
+            <li className="on">
               <NavLink
                 to="/Guest/Intro/chinh-sach-bao-hanh"
                 className={({ isActive }) =>
@@ -56,7 +56,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Chính sách bảo hành
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/chinh-sach-bao-mat"
                 className={({ isActive }) =>
@@ -68,7 +68,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Chính sách bảo mật
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/chinh-sach-van-chuyen"
                 className={({ isActive }) =>
@@ -80,7 +80,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Chính sách vận chuyển
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/chinh-sach-doi-tra"
                 className={({ isActive }) =>
@@ -92,7 +92,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Chính sách đổi trả
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/dieu-khoan"
                 className={({ isActive }) =>
@@ -104,7 +104,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Điều khoản
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/chinh-sach-thanh-toan"
                 className={({ isActive }) =>
@@ -116,7 +116,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
                 Chính Sách Thanh Toán
               </NavLink>
             </li>
-            <li class="">
+            <li className="">
               <NavLink
                 to="/Guest/Intro/chinh-sach-kiem-hang"
                 className={({ isActive }) =>
@@ -129,7 +129,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
               </NavLink>
             </li>
           </ul>
-          <div class="detail">{children}</div>
+          <div className="detail">{children}</div>
         </div>
       </div>
 

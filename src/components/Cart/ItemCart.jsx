@@ -11,7 +11,7 @@ export default function ItemCart() {
         />
       </Link>
       <div className="w-100 flex flex-col justify-center ml-[15px] ">
-        <Link to="/detail" className="flex-center mb-[15px]">
+        <Link to="/detail" className="flex-center flex-block mb-[15px]">
           <p className="font-bold">
             [1000W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U1000 Chiếu Sáng 360 Độ
           </p>
@@ -32,6 +32,7 @@ export default function ItemCart() {
               value="1"
               size="2"
               type="text"
+              readOnly
             />
             <button className="cart-btn-plus">+</button>
           </div>

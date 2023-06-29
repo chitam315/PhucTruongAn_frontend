@@ -22,7 +22,7 @@ export default function Category() {
 
   return (
     <div className="mt-[25px]">
-      <div className="container pt-[20px] mt-[25px]">
+      <div className="container-sm pt-[20px] mt-[25px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">
@@ -83,7 +83,7 @@ export default function Category() {
         </div>
       </div>
       <div className="mt-[25px]"></div>
-      <div className="container pt-[20px]">
+      <div className="container-sm pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">
@@ -144,7 +144,7 @@ export default function Category() {
         </div>
       </div>
       <div className="mt-[25px]"></div>
-      <div className="container pt-[20px]">
+      <div className="container-sm pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">
@@ -180,7 +180,7 @@ export default function Category() {
         </div>
       </div>
       <div className="mt-[25px]"></div>
-      <div className="container pt-[20px]">
+      <div className="container-sm pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">
@@ -213,7 +213,7 @@ export default function Category() {
         </div>
       </div>
       <div className="mt-[25px]"></div>
-      <div className="container pt-[20px]">
+      <div className="container-sm pt-[20px]">
         <div className=" bg-white rounded-[15px] p-[1.5em]">
           <div className="flex-center">
             <h2 className="uppercase font-bold relative text-[1.5em]">

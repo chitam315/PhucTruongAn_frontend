@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
 
 export default function SeeMore() {
+  var arr = [];
+  var newArr = [];
+  var iii = [];
   const [dataItem, setDataItem] = useState([]);
   const [dataDefault, setDataDefault] = useState([]);
   const [dataAZ, setDataAZ] = useState([]);
@@ -17,6 +20,8 @@ export default function SeeMore() {
   const [dataGoDown, setDataGoDown] = useState([]);
   const [dataDateNew, setDataDateNew] = useState([]);
   const [dataDateOld, setDataDateOld] = useState([]);
+
+  const [ar, setAr] = useState([]);
 
   useEffect(() => {
     setDataItem(arrayProduct);
@@ -157,13 +162,14 @@ export default function SeeMore() {
       setMaxPrice(j);
       const ij = dataItem.filter((p) => p.price >= i && p.price <= j);
       setDataItem(ij);
+      // console.log(originalArray);
     }
   };
 
   return (
     <CardMain>
       <Row>
-        <div className="col-12 col-lg-3">
+        <div className="col-12 col-lg-3 block-none">
           <div className="">
             <div className="aside-filter mb-3 modal-open w-100 pr-0 pr-md-2 clearfix">
               <div className="filter-container row">
@@ -244,7 +250,6 @@ export default function SeeMore() {
                             type="text"
                             className="rounded-[10px] block w-100 p-[5px] border-gray bg-white focus:bg-white"
                             placeholder="Giá tối thiểu"
-                            // onChange={onChangeFilterPrice}
                             name="minP"
                             id="price-min"
                             required
@@ -289,9 +294,18 @@ export default function SeeMore() {
                               const val = model;
                               setAddCategory(val.push(item.model));
                               setModel(val);
+
+                              const originalArray = [...arrayProduct];
+                              const arrFilter = originalArray.filter(
+                                (i) => i.model === item.model
+                              );
+                              setAr(ar.concat(arrFilter))
+                              
+                              
                             } else {
                               delItemModel(item.model);
                             }
+                            setDataItem(ar)
                           }}
                         />
                         <span className="btn-main text-capitalize flex">
@@ -302,7 +316,9 @@ export default function SeeMore() {
                   </div>
                 </div>
                 <div>
-                  <div className="text-[1.2em] pb-[10px] font-bold">Loại</div>
+                  <div className="text-[1.2em] pb-[10px] font-bold mt-[20px]">
+                    Loại
+                  </div>
                   <div className="flex flex-wrap gap-2" id="card-category">
                     {arrayCategory.map((item, index) => (
                       <label key={index}>
@@ -340,12 +356,12 @@ export default function SeeMore() {
         </div>
         <div className="col-12 col-lg-9">
           <div className="pb-2 border-bottom">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 overflow-auto whitespace-nowrap">
               <span className="m-0 pt-2 pb-2 font-bold text-[1.1em]">
                 Sắp xếp:
               </span>
 
-              <label onClick={() => sortDefault()}>
+              <label onClick={() => sortDefault()} className="inline-block">
                 <input
                   type="radio"
                   name="sortBy"
@@ -353,7 +369,9 @@ export default function SeeMore() {
                   defaultChecked
                   id="check-default"
                 />
-                <span className="flex items-center btn-main">Mặc định</span>
+                <span className="flex items-center btn-main w-fit">
+                  Mặc định
+                </span>
               </label>
 
               <label onClick={() => sortAZ()}>

@@ -1,13 +1,11 @@
-<<<<<<< HEAD
+
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
-=======
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
   
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,6 +36,19 @@
   --green: #00b907;
   --font-name: "SVN-Circular";
 }
+::-webkit-scrollbar {
+  width: 8px; /* Độ rộng thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Màu nền của phần track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main); /* Màu của thanh cuộn */
+  border-radius: 4px; /* Độ cong góc của thanh cuộn */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -147,6 +158,11 @@ input:hover[type="text"] {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .flex-center {
   display: flex;
@@ -276,197 +292,4 @@ input:checked[type="checkbox"] + .btn-main,
   background: #fff;
 }
 
-.col-5w {
-  width: 20%;
-}
-<<<<<<< HEAD
-.col-4w {
-  width: 25%;
-}
-.col-6w {
-  width: calc(100% / 6);
-}
-=======
 
-
-
->>>>>>> d443b7b9f7887d0ce8f0e960801944bd7e1ed967
-@media only screen and (max-width: 1300px) {
-  .d-tb-none {
-    display: none;
-  }
-  .d-tb-show {
-    display: block;
-  }
-  .col-tb-1 {
-    width: 8.33%;
-  }
-  .col-tb-2 {
-    width: 16.66%;
-  }
-  .col-tb-3 {
-    width: 25%;
-  }
-  .col-tb-4 {
-    width: 33.33% !important;
-  }
-  .col-tb-5 {
-    width: 41.66%;
-  }
-  .col-tb-6 {
-    width: 50%;
-  }
-  .col-tb-7 {
-    width: 58.33%;
-  }
-  .col-tb-8 {
-    width: 66.66%;
-  }
-  .col-tb-9 {
-    width: 75%;
-  }
-  .col-tb-10 {
-    width: 83.33%;
-  }
-  .col-tb-11 {
-    width: 91.66%;
-  }
-  .col-tb-12 {
-    width: 100%;
-  }
-}
-.d-lg-none {
-  display: none;
-}
-
-@media only screen and (max-width: 1000px) {
-  .d-tbm-none {
-    display: none !important;
-  }
-  .col-tbm-1 {
-    width: 8.33%;
-  }
-  .col-tbm-2 {
-    width: 16.66%;
-  }
-  .col-tbm-3 {
-    width: 25%;
-  }
-  .col-tbm-4 {
-    width: 33.33% !important;
-  }
-  .col-tbm-5 {
-    width: 41.66%;
-  }
-  .col-tbm-6 {
-    width: 50%;
-  }
-  .col-tbm-7 {
-    width: 58.33%;
-  }
-  .col-tbm-8 {
-    width: 66.66%;
-  }
-  .col-tbm-9 {
-    width: 75%;
-  }
-  .col-tbm-10 {
-    width: 83.33%;
-  }
-  .col-tbm-11 {
-    width: 91.66%;
-  }
-  .col-tbm-12 {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .d-sm-flex {
-    display: flex;
-  }
-  .d-tbs-block {
-    display: block !important;
-  }
-  .d-tbs-none {
-    display: none !important;
-  }
-  .col-tbs-1 {
-    width: 8.33%;
-  }
-  .col-tbs-2 {
-    width: 16.66%;
-  }
-  .col-tbs-3 {
-    width: 25%;
-  }
-  .col-tbs-4 {
-    width: 33.33%;
-  }
-  .col-tbs-5 {
-    width: 41.66%;
-  }
-  .col-tbs-6 {
-    width: 50% !important;
-  }
-  .col-tbs-7 {
-    width: 58.33%;
-  }
-  .col-tbs-8 {
-    width: 66.66%;
-  }
-  .col-tbs-9 {
-    width: 75%;
-  }
-  .col-tbs-10 {
-    width: 83.33%;
-  }
-  .col-tbs-11 {
-    width: 91.66%;
-  }
-  .col-tbs-12 {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 577px) {
-  .d-sm-flex {
-    display: flex;
-  }
-  .col-sm-1 {
-    width: 8.33%;
-  }
-  .col-sm-2 {
-    width: 16.66%;
-  }
-  .col-sm-3 {
-    width: 25%;
-  }
-  .col-sm-4 {
-    width: 33.33%;
-  }
-  .col-sm-5 {
-    width: 41.66%;
-  }
-  .col-sm-6 {
-    width: 50%;
-  }
-  .col-sm-7 {
-    width: 58.33%;
-  }
-  .col-sm-8 {
-    width: 66.66%;
-  }
-  .col-sm-9 {
-    width: 75%;
-  }
-  .col-sm-10 {
-    width: 83.33%;
-  }
-  .col-sm-11 {
-    width: 91.66%;
-  }
-  .col-sm-12 {
-    width: 100%;
-  }
-}

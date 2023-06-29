@@ -8,9 +8,9 @@ export default function ItemProductRelative() {
     <div className="col-md-4 col-tb-6 col-tbs-12 p-0">
       <a
         href="#id"
-        className="border-gray p-[10px] block rounded-[10px] mx-[5px] mb-[10px] relative hover-scale-main overflow-hidden"
+        className="border-gray p-[10px] block rounded-[10px] mx-[5px] mb-[10px] relative hover-scale-main"
       >
-        <div className="tag-discount2">- 9%</div>
+        <div className="tag-discount-relative">- 9%</div>
         <div className="flex">
           <Link to="/detail" className="overflow-hidden w-[300px] block">
             <img
@@ -34,11 +34,11 @@ export default function ItemProductRelative() {
                 </p>
               </div>
             </Link>
-            <label className="flex items-center checkbox-compare relative cursor-pointer">
+            {/* <label className="flex items-center checkbox-compare relative cursor-pointer">
               <input type="checkbox" name="" id="" className=" cursor-pointer" />
               <AiFillCheckCircle className="absolute w-[17px] h-[17px] text-[#3246ff] hidden" />
               <p className="text-black p-0">So sánh</p>
-            </label>
+            </label> */}
           </div>
         </div>
       </a>

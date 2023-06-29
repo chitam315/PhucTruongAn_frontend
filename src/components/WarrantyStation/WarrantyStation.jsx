@@ -7,10 +7,10 @@ const WarrantyStation = () => {
   return (
     <>
       <HeaderGuarantee />
-      <div class="nav w-full h-[30px] bg-[#f9faf9]">
-        <div class="container">
+      <div className="nav w-full h-[30px] bg-[#f9faf9]">
+        <div className="container">
           <ul
-            class="breadcrumb uppercase h-[30px] text-[14px] items-center"
+            className="breadcrumb uppercase h-[30px] text-[14px] items-center"
             itemscope=""
             itemtype="http://schema.org/BreadcrumbList"
           >
@@ -40,12 +40,12 @@ const WarrantyStation = () => {
           </ul>
         </div>
       </div>
-      <div class="support">
-        <div class="container">
+      <div className="support">
+        <div className="container">
           <h1 className="text-[2em] font-bold mt-[0.67em] mb-[0.67em]">
             TRẠM BẢO HÀNH
           </h1>
-          <div class="filter">
+          <div className="filter">
             <select
               id="SupportCity"
               className="w-[220px] h-[40px] mr-[10px] bg-[#f5f5f5] border border-solid border-1 border-gray-300"
@@ -260,22 +260,22 @@ const WarrantyStation = () => {
             <li>
               <label>Trung tâm bảo hành miền Bắc - Trung</label>
               <span>
-                <i class="fal fa-map-marker-alt"></i> Số 40, lô C3, Khu đô thị
+                <i className="fal fa-map-marker-alt"></i> Số 40, lô C3, Khu đô thị
                 mới Geleximco Lê Trọng Tấn, Phường Dương Nội , Hà Đông, Hà Nội,
                 Việt Nam
               </span>
               <a href="tel:0345845444">
-                <i class="fal fa-phone-volume"></i>0345845444
+                <i className="fal fa-phone-volume"></i>0345845444
               </a>
             </li>
             <li className="w-[calc(33% - 52px)] ">
               <label>Trung tâm bảo hành miền Nam</label>
               <span>
-                <i class="fal fa-map-marker-alt"></i> 75 Võ Nguyên Giáp, Phường
+                <i className="fal fa-map-marker-alt"></i> 75 Võ Nguyên Giáp, Phường
                 Phước Tân , Biên Hòa, Đồng Nai, Việt Nam
               </span>
               <a href="tel:0395534333">
-                <i class="fal fa-phone-volume"></i>0395534333
+                <i className="fal fa-phone-volume"></i>0395534333
               </a>
             </li>
           </ul>

@@ -41,7 +41,7 @@ export default function WarrantyPolicy() {
             <a href="https://tpsolar.vn/Bao-hanh-dien-tu-tp-solar">
               <img
                 alt="Bao-hanh-dien-tu-tp-solar"
-                class="lazy loaded"
+                className="lazy loaded"
                 data-src="//bizweb.dktcdn.net/100/463/111/files/bao-hanh-dien-tu-tp-solar.png?v=1679299764324"
                 data-thumb="original"
                 decoding="async"
@@ -143,7 +143,7 @@ export default function WarrantyPolicy() {
             <a href="https://tpsolar.vn/Huong-dan-kich-hoat-bao-hanh-tp-solar">
               <img
                 alt="Huong-dan-kich-hoat-bao-hanh-tp-solar"
-                class="lazy loaded"
+                className="lazy loaded"
                 data-src="//bizweb.dktcdn.net/100/463/111/files/huong-dan-kich-hoat-bao-hanh-tp-solar.png?v=1679299861535"
                 data-thumb="original"
                 decoding="async"

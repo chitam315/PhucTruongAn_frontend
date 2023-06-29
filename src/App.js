@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
+import "./responsive.css";
 import HomePage from "./pages/HomePage";
 import SeeMorePage from "./pages/SeeMorePage";
 import DetailProductPage from "./pages/DetailProductPage";
 import Guarantee from "./components/Guarantee/Guarantee";
 import CartPage from "./pages/CartPage";
-import PayingPage from "./pages/PayingPage";
+import PayingPage from "./pages/PaymentPage";
 import WarrantyStation from "./components/WarrantyStation/WarrantyStation";
 import WarrantyPolicyHome from "./components/WarrantyPolicy/WarrantyPolicyHome";
 import WarrantyPolicy from "./components/WarrantyPolicy/WarrantyPolicy";
@@ -57,10 +58,9 @@ function App() {
           element={<PaymentPolicy />}
         />
         <Route index path="/signup" element={<SignUp />} />
-        <Route index path="/baohanh" element={<Guarantee />}/>
-        <Route index path="/cart" element={<CartPage/>} />
-        <Route index path="/paying" element={<PayingPage/>} />
-
+        <Route index path="/baohanh" element={<Guarantee />} />
+        <Route index path="/cart" element={<CartPage />} />
+        <Route index path="/Payment" element={<PayingPage />} />
       </Routes>
     </BrowserRouter>
   );

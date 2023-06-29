@@ -79,17 +79,17 @@ const ModalWarrantyClaim = ({ name, content }) => {
               </tr>
             </tbody>
           </table> */}
-          <div class="row w-full justify-between items-center">
+          <div className="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
               Mã bảo hành *
             </label>
             <input
               type="text"
               placeholder="Nhập mã bảo hành"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
-          <div class="row w-full justify-between items-center">
+          <div className="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
               Tên khách hàng *
             </label>
@@ -97,10 +97,10 @@ const ModalWarrantyClaim = ({ name, content }) => {
               required
               type="text"
               placeholder="Tên khách hàng"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
-          <div class="row w-full justify-between items-center">
+          <div className="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
               Số điện thoại *
             </label>
@@ -108,10 +108,10 @@ const ModalWarrantyClaim = ({ name, content }) => {
               required
               type="number"
               placeholder="Số điện thoại"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
-          <div class="row w-full justify-between items-center">
+          <div className="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
               Địa chi
             </label>
@@ -119,10 +119,10 @@ const ModalWarrantyClaim = ({ name, content }) => {
               required
               type="text"
               placeholder="Tên khách hàng"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
-          <div class="row w-full justify-between items-center">
+          <div className="row w-full justify-between items-center">
             <label className="font-bold text-[14px] text-[#000] w-[160px] h-[40px]  flex items-center">
               Mô tả lỗi
             </label>
@@ -130,7 +130,7 @@ const ModalWarrantyClaim = ({ name, content }) => {
               required
               type="text"
               placeholder="Tên khách hàng"
-              class="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
+              className="center w-[calc(100%-190px)] border rounded-[5px] m-[10px] text-center text-[16px] p-[5px]"
             />
           </div>
           <button className="uppercase m-[20px] px-[15px] h-[40px] text-[16px] rounded-[2px] bg-[#101C2C] border border-solid border-black text-white cursor-pointer block hover:bg-[#ff0000]">
