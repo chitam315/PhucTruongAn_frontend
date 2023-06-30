@@ -91,7 +91,7 @@ const Header = () => {
               <a href="/news">Tin Tức</a>
             </span>
             <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
-              <a href="">Liên Hệ</a>
+              <a href="/contact">Liên Hệ</a>
             </span>
             <span class="cursor-pointer rounded-sm py-1 px-2  font-bold text-lg hover:bg-gray-100">
               <a href="/baohanh">Bảo Hành</a>
