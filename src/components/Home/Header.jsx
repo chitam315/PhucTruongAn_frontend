@@ -6,6 +6,7 @@ import { BsBasket } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
+import CategoryProduct from "./CategoryProduct";
 
 function Header() {
   // window.addEventListener('scroll', function() {
@@ -74,7 +75,9 @@ function Header() {
       <div className="bg-[#ffb600] text-[1.1em] font-bold ">
         <ul className="container-sm flex-center text-none text-white list-none header-navbar-session">
           <li className="flex items-center cursor-pointer hover:text-[var(--mainColor)] duration-500">
-            Danh mục sản phẩm <AiFillCaretDown />
+
+            <CategoryProduct />
+
           </li>
           <li>
             <a href="#gioithieu">Giới thiệu</a>
