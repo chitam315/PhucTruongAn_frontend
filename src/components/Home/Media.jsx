@@ -6,7 +6,6 @@ import "react-multi-carousel/lib/styles.css";
 
 export default function Media() {
   const arr = MediaData;
-  console.log(arr[1]);
   return (
     <div className=" mt-[25px]">
       <div className="container-sm pt-[20px]">
