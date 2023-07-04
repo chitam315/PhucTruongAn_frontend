@@ -22,6 +22,7 @@ import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
 import News from "./components/News/News";
 import Contact from "./components/Contact/Contact";
+import Signin from "./components/Singin/Singin";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
           element={<PaymentPolicy />}
         />
         <Route index path="/signup" element={<SignUp />} />
+        <Route index path="/signin" element={<Signin />} />
         <Route index path="/baohanh" element={<Guarantee />} />
         <Route index path="/cart" element={<CartPage />} />
         <Route index path="/paying" element={<PayingPage />} />
