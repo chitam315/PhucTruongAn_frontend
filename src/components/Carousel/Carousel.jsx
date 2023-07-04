@@ -11,14 +11,14 @@ const Carousel = ({ images }) => {
     slidesToScroll: 1,
   };
 
-  return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div key={index}>
-          <img className="w-full h-[500px]" src={image} alt="Slide" />
-        </div>
-      ))}
-    </Slider>
+  return (<></>
+    // <Slider {...settings}>
+    //   {images.map((image, index) => (
+    //     <div key={index}>
+    //       <img className="w-full h-[500px]" src={image} alt="Slide" />
+    //     </div>
+    //   ))}
+    // </Slider>
   );
 };
 

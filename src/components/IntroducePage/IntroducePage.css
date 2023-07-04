@@ -3,6 +3,9 @@
 }
 .com_info {
   background: var(--lightLeftColBackground);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
 }
 
 .breadcrumbs {

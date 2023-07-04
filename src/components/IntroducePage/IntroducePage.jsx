@@ -5,11 +5,11 @@ import "../../assets/variables.css";
 import Footer from "../Footer/Footer";
 import { Container } from "react-bootstrap";
 import tpsolar from "../../assets/introduce/den-nang-luong-mat-troi-tp-solar.webp";
+import Header from "../Header/Header";
 const IntroducePage = () => {
   return (
     <>
-      {/* <Header /> */}
-      {/* <Container className="m-auto"> */}
+     <Header/>
 
       <div className="col-right position-relative container-introduce">
         <div className="contentWarp ">

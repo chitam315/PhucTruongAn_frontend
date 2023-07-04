@@ -18,7 +18,7 @@ function NavigationBottom() {
   }
   return (
     <div>
-      <div className="z-[200] sticky-bottom fixed bg-white d-lg-none d-sm-flex col-tb-12 shadow-top-10 radius-top">
+      <div className="z-[200] sticky-bottom fixed bg-white d-none-flex col-tb-12 shadow-top-10 radius-top">
         <div className="flex w-100">
           <div
             className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer"

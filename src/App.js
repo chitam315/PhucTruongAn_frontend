@@ -21,6 +21,7 @@ import Project from "./components/Project/Project";
 import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
 import News from "./components/News/News";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route index path="/admin-page" element={<AdminPage />} />
         <Route index path="/introduce" element={<IntroducePage />} />
         <Route index path="/news" element={<News />} />
+        <Route index path="/contact" element={<Contact />} />
         <Route
           index
           path="/guest/intro/chinh-sach-bao-hanh"
