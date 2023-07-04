@@ -102,7 +102,7 @@ export default function SignUp() {
                 <p className="text-sm text-black-500 dark:text-gray-400">
                   Bạn đã có tài khoản?{" "}
                   <a
-                    href="/#"
+                    href="/signin"
                     className=" text-black-600 hover:underline dark:text-primary-500 text-[#463f3f]"
                   >
                     Login here

@@ -23,6 +23,7 @@ import IntroducePage from "./components/IntroducePage/IntroducePage";
 import News from "./components/News/News";
 import Contact from "./components/Contact/Contact";
 import Signin from "./components/Singin/Singin";
+import ForgetPassword from "./components/Singin/ForgetPassword";
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
         />
         <Route index path="/signup" element={<SignUp />} />
         <Route index path="/signin" element={<Signin />} />
+        <Route index path="/forget-password" element={<ForgetPassword />} />
         <Route index path="/baohanh" element={<Guarantee />} />
         <Route index path="/cart" element={<CartPage />} />
         <Route index path="/paying" element={<PayingPage />} />
