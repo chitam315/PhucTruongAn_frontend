@@ -7,8 +7,20 @@ import ItemProduct from "../Items/ItemProduct";
 import "./SeeMore.css";
 import { useEffect, useState } from "react";
 import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
+import {useFetch} from '../../hooks/useFetch'
+import { api } from "../../config/api";
+// import { productService } from "../../service/product.service";
 
 export default function SeeMore() {
+  const { loading, data: listProduct } = useFetch(() => {
+    return api.get(`http://14.225.206.149:5600/v1/api/products/`)
+  })
+
+  if (!loading) {
+    console.log(listProduct);
+  }
+  // console.log(productService.getAllProducts());
+
   var arr = [];
   var newArr = [];
   var iii = [];

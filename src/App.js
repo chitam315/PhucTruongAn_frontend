@@ -22,8 +22,14 @@ import SignUp from "./components/SignUp/SignUp";
 import IntroducePage from "./components/IntroducePage/IntroducePage";
 import News from "./components/News/News";
 import Contact from "./components/Contact/Contact";
+// import dotenv from "dotenv"
+
+// dotenv.config();
 
 function App() {
+
+  console.log(process.env.REACT_APP_LOGIN_API);
+
   return (
     <BrowserRouter>
       <Routes>

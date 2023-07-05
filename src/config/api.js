@@ -1,10 +1,14 @@
 // import { authService } from "@/services/auth.service";
 // import { handleError } from "@/utils/handleError";
 import axios from "axios";
-import { getToken, setToken } from "../utils/token";
+import { getToken } from "../utils/token";
+// import dotenv from "dotenv";
+
+// dotenv.config({ path: ".env" });
 
 export const LOGIN_API = process.env.REACT_APP_LOGIN_API
 export const USER_API = process.env.REACT_APP_USER_API
+export const PRODUCT_API = process.env.REACT_APP_PRODUCT_API
 
 export const api = axios.create()
 // api.interceptors.response.use((res) => {
@@ -29,8 +33,9 @@ api.interceptors.request.use((config) => {
     const token = getToken()
     if (token) {
         config.headers['Authorization'] = `Bearer ${token.accessToken}`
-        config.headers['x-api-key'] = process.env.REACT_APP_API_KEY
-        config.headers['x-api-id'] = process.env.REACT_APP_API_ID
     }
+    config.headers['x-api-key'] = process.env.REACT_APP_API_KEY
+    config.headers['x-api-id'] = process.env.REACT_APP_API_ID
+    console.log(PRODUCT_API);
     return config
 })

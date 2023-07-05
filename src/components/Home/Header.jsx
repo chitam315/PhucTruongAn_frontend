@@ -7,6 +7,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
+import {useAuth} from '../AuthContext/index'
 
 function Header() {
   // window.addEventListener('scroll', function() {
@@ -19,6 +20,9 @@ function Header() {
   //     header.classList.remove('show');
   //   }
   // });
+  const {login} = useAuth()
+  
+
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -68,6 +72,7 @@ function Header() {
           </div>
         </div>
         <div className="flex-center gap-2">
+          <span>Username</span>
           <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
           <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
         </div>
