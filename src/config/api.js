@@ -36,6 +36,5 @@ api.interceptors.request.use((config) => {
     }
     config.headers['x-api-key'] = process.env.REACT_APP_API_KEY
     config.headers['x-api-id'] = process.env.REACT_APP_API_ID
-    console.log(PRODUCT_API);
     return config
 })

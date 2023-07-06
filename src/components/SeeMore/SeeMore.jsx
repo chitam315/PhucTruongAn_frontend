@@ -8,11 +8,12 @@ import { useEffect, useState } from "react";
 import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
 import { useFetch } from "../../hooks/useFetch";
 import { api } from "../../config/api";
+import { productService } from "../../service/product.service";
 
 export default function SeeMore() {
   const [dataItem, setDataItem] = useState([]);
   const { loading, data: listProduct } = useFetch(() => {
-    return api.get(`http://14.225.206.149:5600/v1/api/products/`);
+    return productService.getAllProducts();
   });
 
   useEffect(() => {
