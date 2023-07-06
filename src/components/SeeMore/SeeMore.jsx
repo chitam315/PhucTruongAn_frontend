@@ -1,30 +1,29 @@
 import { Row } from "react-bootstrap";
 import { GrClose } from "react-icons/gr";
 import { FaLongArrowAltRight } from "react-icons/fa";
-
 import CardMain from "../Card/CardMain";
 import ItemProduct from "../Items/ItemProduct";
 import "./SeeMore.css";
 import { useEffect, useState } from "react";
 import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
-import {useFetch} from '../../hooks/useFetch'
+import { useFetch } from "../../hooks/useFetch";
 import { api } from "../../config/api";
-// import { productService } from "../../service/product.service";
 
 export default function SeeMore() {
-  const { loading, data: listProduct } = useFetch(() => {
-    return api.get(`http://14.225.206.149:5600/v1/api/products/`)
-  })
-
-  if (!loading) {
-    console.log(listProduct);
-  }
-  // console.log(productService.getAllProducts());
-
-  var arr = [];
-  var newArr = [];
-  var iii = [];
   const [dataItem, setDataItem] = useState([]);
+  const { loading, data: listProduct } = useFetch(() => {
+    return api.get(`http://14.225.206.149:5600/v1/api/products/`);
+  });
+
+  useEffect(() => {
+    const fetch = async () => {
+      if (!loading) {
+        await setDataItem(listProduct.data.metadata);
+      }
+    };
+    fetch();
+  });
+
   const [dataDefault, setDataDefault] = useState([]);
   const [dataAZ, setDataAZ] = useState([]);
   const [dataZA, setDataZA] = useState([]);
@@ -34,15 +33,14 @@ export default function SeeMore() {
   const [dataDateOld, setDataDateOld] = useState([]);
 
   const [ar, setAr] = useState([]);
-  const [ar2, setA2r] = useState([]);
-
-  useEffect(() => {
-    setDataItem(arrayProduct);
-  }, []);
 
   function sortDefault() {
     var arr = dataItem.sort(function (a, b) {
-      return a.id === b.id ? 0 : a.id < b.id ? -1 : 1;
+      return a.product_id === b.product_id
+        ? 0
+        : a.product_id < b.product_id
+        ? -1
+        : 1;
     });
     setDataDefault(arr);
     setDataItem(dataDefault);
@@ -50,10 +48,10 @@ export default function SeeMore() {
 
   function sortAZ() {
     var arrAZ = dataItem.sort(function (a, b) {
-      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      if (a.product_name.toLowerCase() < b.product_name.toLowerCase()) {
         return -1;
       }
-      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      if (a.product_name.toLowerCase() > b.product_name.toLowerCase()) {
         return 1;
       }
       return 0;
@@ -63,10 +61,10 @@ export default function SeeMore() {
   }
   function sortZA() {
     var arrZA = dataItem.sort(function (a, b) {
-      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      if (a.product_name.toLowerCase() < b.product_name.toLowerCase()) {
         return 1;
       }
-      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      if (a.product_name.toLowerCase() > b.product_name.toLowerCase()) {
         return -1;
       }
       return 0;
@@ -76,8 +74,8 @@ export default function SeeMore() {
   }
   function sortPriceGoUp() {
     const arrPriceGoUp = dataItem.sort(function (a, b) {
-      if (a.price > b.price) return 1;
-      if (a.price < b.price) return -1;
+      if (a.product_price > b.product_price) return 1;
+      if (a.product_price < b.product_price) return -1;
       return 0;
     });
     setDataGoUp(arrPriceGoUp);
@@ -86,28 +84,38 @@ export default function SeeMore() {
 
   function sortPriceGoDown() {
     const arrPriceGoDown = dataItem.sort(function (a, b) {
-      return b.price - a.price;
+      return b.product_price - a.product_price;
     });
     setDataGoDown(arrPriceGoDown);
     setDataItem(dataGoDown);
   }
 
   function sortDateNew() {
-    var arrDateNew = dataItem.sort(
-      (a, b) =>
-        new Date(...b.date.split("/").reverse()) -
-        new Date(...a.date.split("/").reverse())
-    );
+    var arrDateNew = dataItem.sort((a, b) => {
+      const i = a.updatedAt.slice(0, 10).split("-");
+      const j = b.updatedAt.slice(0, 10).split("-");
+      const first = i[2] + "/" + i[1] + "/" + i[0];
+      const last = j[2] + "/" + j[1] + "/" + j[0];
+      return (
+        new Date(...last.split("/").reverse()) -
+        new Date(...first.split("/").reverse())
+      );
+    });
     setDataDateNew(arrDateNew);
     setDataItem(dataDateNew);
   }
 
   function sortDateOld() {
-    var arrDateOld = dataItem.sort(
-      (a, b) =>
-        new Date(...a.date.split("/").reverse()) -
-        new Date(...b.date.split("/").reverse())
-    );
+    var arrDateOld = dataItem.sort((a, b) => {
+      const i = a.updatedAt.slice(0, 10).split("-");
+      const j = b.updatedAt.slice(0, 10).split("-");
+      const first = i[2] + "/" + i[1] + "/" + i[0];
+      const last = j[2] + "/" + j[1] + "/" + j[0];
+      return (
+        new Date(...first.split("/").reverse()) -
+        new Date(...last.split("/").reverse())
+      );
+    });
     setDataDateOld(arrDateOld);
     setDataItem(dataDateOld);
   }
@@ -197,6 +205,7 @@ export default function SeeMore() {
                             <p
                               className="filter-result-item"
                               onClick={() => delItemModel(item)}
+                              key={index}
                             >
                               {item}
                               <span>
@@ -296,7 +305,7 @@ export default function SeeMore() {
                   </div>
                   <div className="gap-2 flex items-center">
                     {arrayModel.map((item, index) => (
-                      <label className="flex">
+                      <label className="flex" key={index}>
                         <input
                           type="checkbox"
                           className="hidden id-check-model"
