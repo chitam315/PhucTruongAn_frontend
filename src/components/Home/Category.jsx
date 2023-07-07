@@ -7,6 +7,7 @@ import ItemProduct6 from "../Items/ItemProduct6";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { api } from "../../config/api";
+import {productService} from "../../service/product.service"
 
 export default function Category() {
   const [dataItem, setDataItem] = useState([]);
@@ -14,7 +15,7 @@ export default function Category() {
   const [dataD_UFO, setDataD_UFO] = useState([]);
   const [dataDPha, setDataDPha] = useState([]);
   const { loading, data: listProduct } = useFetch(() => {
-    return api.get(`http://14.225.206.149:5600/v1/api/products/`);
+    return productService.getAllProducts()
   });
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Category() {
       }
     };
     fetch();
-  });
+  },[]);
   // console.log(dataItem)
   const arr1 = dataItem.filter((item) => {
     return (item.category_id = 1);
@@ -42,7 +43,7 @@ export default function Category() {
       setDataDPha(arr1.slice(0, 12));
     };
     fetchData();
-  });
+  },[]);
 
   return (
     <>

@@ -1,6 +1,33 @@
 import React from "react";
 import "../SignUp/SignUp.css";
+import { useAuth } from "../AuthContext";
+import { useAsync } from '../../hooks/useAsync'
+import Input from "../Input";
+import { useForm } from "../../hooks/useForm"
+import { minMax, regexp, required } from "../../utils/validate";
+import Button from "../Button";
+
 export default function Signin() {
+  const { user, login } = useAuth()
+  const { execute: loginService, loading} = useAsync(login)
+  const rules = {
+    username: [
+      required(),
+      // regexp('email')
+    ],
+    password: [
+      required(),
+      minMax(6)
+    ]
+  }
+  const form = useForm(rules)
+  const onLogin = (ev) => {
+    ev.preventDefault()
+    if (form.validate()) {
+      loginService(form.values)
+    }
+    // console.log(form.validate());
+  }
   return (
     <>
       <section className="register-layout">
@@ -11,7 +38,7 @@ export default function Signin() {
                 Đăng Nhập
               </h1>
               <form className="space-y-4  mt-[5px]" action="#">
-                
+
                 <div className="mt-[3px]">
                   <label
                     for="email"
@@ -19,14 +46,15 @@ export default function Signin() {
                   >
                     Your email
                   </label>
-                  <input
+                  <Input placeholder="Email" type="email" id="email" name="email" {...form.register('username')}></Input>
+                  {/* <input
                     type="email"
                     name="email"
                     id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Nhập email của bạn"
                     required=""
-                  />
+                  /> */}
                 </div>
                 <div className="mt-[3px]">
                   <label
@@ -35,23 +63,24 @@ export default function Signin() {
                   >
                     Password
                   </label>
-                  <input
+                  <Input placeholder="password" id="password" name="password" {...form.register('password')} type="password"></Input>
+                  {/* <input
                     type="password"
                     name="password"
                     id="password"
                     placeholder="Nhập vào mật khẩu của bạn"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
-                  />
+                  /> */}
                 </div>
 
-                
-                <button
+                <Button onClick={onLogin} Loading={loading}>Đăng nhập</Button>
+                {/* <button
                   type="submit"
                   className="w-full bg-[#0039a0] hover:bg-[#6293ee] text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Đăng Nhập
-                </button>
+                </button> */}
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   {/* Quên mật khẩu?{" "} */}
                   <a
@@ -65,7 +94,7 @@ export default function Signin() {
                 {/* <!-- Divider --> */}
                 <div className="my-2 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                   <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
-                Đăng nhập bằng
+                    Đăng nhập bằng
                   </p>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
@@ -96,25 +125,25 @@ export default function Signin() {
                 </div>
                 <p className="text-sm text-center text-black-600 dark:text-black-600">
                   Tạo khoản để quản lý nếu chưa có tài khoản
-                  
+
                 </p>
                 <div className="flex justify-center ">
-                <button
-                  type="submit"
-                  className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-                >
-                <a className="text-white" href="/signup">Tạo tài khoản</a>
-              
-                </button>
+                  <button
+                    type="submit"
+                    className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  >
+                    <a className="text-white" href="/signup">Tạo tài khoản</a>
+
+                  </button>
                 </div>
                 <div className="flex justify-center ">
-                <button
-                  type="submit"
-                  className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-                >
-                <a className="text-white" href="/#">Quay về trang chủ</a>
-              
-                </button>
+                  <button
+                    type="submit"
+                    className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  >
+                    <a className="text-white" href="/#">Quay về trang chủ</a>
+
+                  </button>
                 </div>
               </form>
             </div>

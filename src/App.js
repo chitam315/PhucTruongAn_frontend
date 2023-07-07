@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import {  Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import "./responsive.css";
 import HomePage from "./pages/HomePage";
@@ -26,11 +26,9 @@ import Signin from "./components/Singin/Singin";
 import ForgetPassword from "./components/Singin/ForgetPassword";
 
 function App() {
-
-  console.log(process.env.REACT_APP_LOGIN_API);
+  
 
   return (
-    <BrowserRouter>
       <Routes>
         <Route index path="" element={<HomePage />} />
         <Route index path="/see-more" element={<SeeMorePage />} />
@@ -84,7 +82,6 @@ function App() {
         <Route index path="/cart" element={<CartPage />} />
         <Route index path="/paying" element={<PayingPage />} />
       </Routes>
-    </BrowserRouter>
   );
 }
 

@@ -20,9 +20,9 @@ function Header() {
   //     header.classList.remove('show');
   //   }
   // });
-  const {login} = useAuth()
+  const {user} = useAuth()
   
-
+  console.log(user);
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -72,7 +72,7 @@ function Header() {
           </div>
         </div>
         <div className="flex-center gap-2">
-          <span>Username</span>
+          <span>{user ? user.full_name : "Username"}</span>
           <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
           <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
         </div>

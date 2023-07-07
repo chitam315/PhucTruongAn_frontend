@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { authService } from '../../service/auth.service'
 import { userService } from '../../service/user.service'
 import { clearToken, clearUser, getUser, setToken, setUser } from '../../utils/token'
+import { useNavigate } from 'react-router'
 
 const AuthContext = createContext({})
 /**
@@ -11,7 +12,9 @@ const AuthContext = createContext({})
  */
 const useAuth = () => useContext(AuthContext)
 
+
 const AuthProvider = ({ children }) => {
+    const navigate = useNavigate()
     const [user, _setUser] = useState(getUser)
 
     useEffect(() => {
@@ -21,12 +24,14 @@ const AuthProvider = ({ children }) => {
     const login = async (data) => {
         try {
             const res = await authService.login(data)
-            if (res.metadata) {
+            console.log(res);
+            if (res.status == 200) {
                 setToken({
-                    accessToken: res.metadata.accessToken,
-                    refreshToken: res.metadata.refreshToken
+                    accessToken: res.data.metadata.accessToken,
+                    refreshToken: res.data.metadata.refreshToken
                 })
-                getProfile(res.metadata.id)
+                await getProfile(res.data.metadata.id)
+                navigate("")
             }
         } catch (error) {
             console.error(error)
@@ -38,7 +43,7 @@ const AuthProvider = ({ children }) => {
 
     const getProfile = async (id) => {
         const user = await userService.getUserById({id})
-        _setUser(user.metadata)
+        _setUser(user.data.metadata)
         message.success('Log in successfully')
     }
 
