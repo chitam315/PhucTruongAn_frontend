@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ProductInfo({ item }) {
   return (
-    <Link to="/detail">
+    <Link to={`/detail/${item.product_id}`}>
       <p className="text-black text-[16px] font-bold h-[56px] name-product">
         {item.product_name}
       </p>

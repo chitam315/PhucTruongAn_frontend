@@ -287,15 +287,15 @@ export default function DetailProduct() {
                   alt=""
                   className="w-[50px] h-[50px]"
                 />
-                <p className="text-[0.9em] ml-[15px]">
+                <p className="text-[0.8em] ml-[15px]">
                   Gọi ngay{" "}
-                  <span className="text-[1.1em] font-bold text-[var(--mainColor)]">
+                  <span className="text-[1em] font-bold text-[var(--mainColor)]">
                     0363 993 993
                   </span>{" "}
                   để được tư vấn tốt nhất!
                 </p>
               </div>
-              <div className="border-gray rounded-[10px] p-[10px] text-[1em] mt-[20px]">
+              <div className="border-gray rounded-[10px] p-[10px] text-[0.8em] mt-[20px]">
                 <p>
                   Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
                 </p>

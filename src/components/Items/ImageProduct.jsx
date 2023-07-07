@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ImageProduct() {
   return (
     <Link
-      to="/detail"
+    to={`/detail/${item.product_id}`}
       className="overflow-hidden flex items-center justify-center h-[200px]"
     >
       <img

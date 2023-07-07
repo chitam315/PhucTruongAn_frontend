@@ -24,6 +24,7 @@ import News from "./components/News/News";
 import Contact from "./components/Contact/Contact";
 import Signin from "./components/Singin/Singin";
 import ForgetPassword from "./components/Singin/ForgetPassword";
+import AdminProduct from "./components/Admin/AdminProduct";
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
         <Route index path="/introduce" element={<IntroducePage />} />
         <Route index path="/news" element={<News />} />
         <Route index path="/contact" element={<Contact />} />
+        <Route index path="/admin/product" element={<AdminProduct />} />
         <Route
           index
           path="/guest/intro/chinh-sach-bao-hanh"
