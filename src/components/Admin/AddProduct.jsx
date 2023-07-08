@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import AdminHeader from "./AdminHeader";
+import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { FiChevronDown } from "react-icons/fi";
+import Dashboard from "./Dashboard";
+import "./Admin.css";
 
 const modules = {
   toolbar: [
@@ -21,12 +21,11 @@ const modules = {
     ["link", "image", "video"],
   ],
 };
-function AdminAddProduct() {
+function AddProduct() {
   const [value, setValue] = useState("");
-  const [valuePrice, setValuePrice] = useState("");
   return (
-    <AdminHeader>
-      <div className="flex flex-col w-[70%] col-admin-full">
+    <Dashboard>
+      <div className="col-full admin-full">
         <h1>Thêm sản phẩm mới</h1>
         <div htmlFor="" className="flex flex-col mb-2">
           <span>Mã sản phẩm</span>
@@ -50,43 +49,30 @@ function AdminAddProduct() {
         </label>
         <label htmlFor="" className="flex flex-col mb-2">
           <span>Phân loại</span>
-          <div className="cursor-pointer relative dropdown-ul">
-            <div className="border-1 border-solid border-[#3e3e3e] rounded-[5px] px-2 py-1 flex-center">
-              <span>Đèn đường liền thể</span>
-              <FiChevronDown />
-            </div>
-            <ul className="absolute w-100 overflow-hidden bg-white top-[50%] left-0 border-1 border-solid border-[#3e3e3e] rounded-[5px] z-[9999] pl-0">
-              <li className="list-none p-2 hover:bg-[#ededed]">
-                Đèn đường liền thể
-              </li>
-              <li className="list-none p-2 hover:bg-[#ededed]">
-                Đèn đường liền thể
-              </li>
-              <li className="list-none p-2 hover:bg-[#ededed]">
-                Đèn đường liền thể
-              </li>
-              <li className="list-none p-2 hover:bg-[#ededed]">
-                Đèn đường liền thể
-              </li>
-            </ul>
-          </div>
+          <select className="rounded-[5px] py-[5px] w-full">
+            <option value="">Đèn đường liền thể</option>
+            <option value="">Đèn đường liền thể</option>
+            <option value="">Đèn đường liền thể</option>
+            <option value="">Đèn đường liền thể</option>
+            <option value="">Đèn đường liền thể</option>
+          </select>
         </label>
 
-        <label htmlFor="" className="mb-2">
+        <label htmlFor="" className="mb-2 block">
           <span>Mô tả sản phẩm: </span>
           <ReactQuill
-            // theme="snow"
+            theme="snow"
             value={value}
             modules={modules}
             onChange={setValue}
           />
         </label>
-        <button className="btn btn-success">Thêm mới</button>
-        <p>KẾT QUẢ:</p>
-        <div dangerouslySetInnerHTML={{ __html: value }} />
+        <button className="btn btn-success block w-full">Thêm mới</button>
+        {/* <p>KẾT QUẢ:</p>
+        <div dangerouslySetInnerHTML={{ __html: value }} /> */}
       </div>
-    </AdminHeader>
+    </Dashboard>
   );
 }
 
-export default AdminAddProduct;
+export default AddProduct;

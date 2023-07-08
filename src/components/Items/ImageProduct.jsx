@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ImageProduct() {
+function ImageProduct({item}) {
   return (
     <Link
     to={`/detail/${item.product_id}`}

@@ -43,7 +43,9 @@
   background-color: var(--main); /* Màu của thanh cuộn */
   border-radius: 4px; /* Độ cong góc của thanh cuộn */
 }
-
+.scrollbar-style::-webkit-scrollbar {
+  height: 6px;
+}
 body {
   margin: 0;
   padding: 0;
@@ -83,19 +85,33 @@ body {
 label {
   user-select: none;
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  box-shadow: none;
+}
 input[type="checkbox"],
 input[type="radio"] {
   cursor: pointer;
 }
-input[type="text"] {
+/* input[type="text"] {
   border-radius: 10px;
-}
+} */
 
 input:focus[type="text"],
-input:hover[type="text"] {
+input:hover[type="text"],
+input:focus[type="number"],
+input:hover[type="number"],
+textarea:focus,
+textarea:hover,
+select:focus,
+select::selection {
   border: 1px solid #000;
   outline: none;
+  box-shadow: none;
 }
 .borders-see-more {
   border: 1px solid #f3f4f6;
