@@ -4,6 +4,7 @@ import { AiFillCheckCircle, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import CheckboxCompare from "./CheckboxCompare";
 import ProductInfo from "./ProductInfo";
+import ImageProduct from "./ImageProduct";
 
 export default function ItemProduct6({ item, index }) {
   return (
@@ -13,16 +14,7 @@ export default function ItemProduct6({ item, index }) {
           <AiOutlineShoppingCart />
         </div>
         <div className="tag-discount">Giảm 9%</div>
-        <Link
-          to="/detail"
-          className="overflow-hidden flex items-center justify-center h-[200px]"
-        >
-          <img
-            src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/d200.png?v=1686814625957"
-            alt=""
-            className="img-product h-full max-w-100"
-          />
-        </Link>
+        <ImageProduct item={item} />
         <ProductInfo item={item} />
       </div>
     </div>

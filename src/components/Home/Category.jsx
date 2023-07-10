@@ -7,7 +7,7 @@ import ItemProduct6 from "../Items/ItemProduct6";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { api } from "../../config/api";
-import {productService} from "../../service/product.service"
+import { productService } from "../../service/product.service";
 
 export default function Category() {
   const [dataItem, setDataItem] = useState([]);
@@ -15,7 +15,7 @@ export default function Category() {
   const [dataD_UFO, setDataD_UFO] = useState([]);
   const [dataDPha, setDataDPha] = useState([]);
   const { loading, data: listProduct } = useFetch(() => {
-    return productService.getAllProducts()
+    return productService.getAllProducts();
   });
 
   useEffect(() => {
@@ -25,8 +25,9 @@ export default function Category() {
       }
     };
     fetch();
-  },[]);
-  // console.log(dataItem)
+  });
+  console.log(dataItem);
+
   const arr1 = dataItem.filter((item) => {
     return (item.category_id = 1);
   });
@@ -36,14 +37,15 @@ export default function Category() {
   const arr3 = dataItem.filter((item) => {
     return (item.category_id = 3);
   });
+
   useEffect(() => {
     const fetchData = () => {
       setDataDDLT(arr1.slice(0, 8));
-      setDataD_UFO(arr1.slice(0, 8));
-      setDataDPha(arr1.slice(0, 12));
+      setDataD_UFO(arr2.slice(0, 8));
+      setDataDPha(arr3.slice(0, 12));
     };
     fetchData();
-  },[]);
+  });
 
   return (
     <>
@@ -231,7 +233,7 @@ export default function Category() {
               <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
                 {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
                 <Row>
-                  {arrayProduct.map((item, index) => (
+                  {dataD_UFO.map((item, index) => (
                     <ItemProduct6 item={item} index={index} />
                   ))}
                 </Row>
@@ -264,7 +266,7 @@ export default function Category() {
               <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
                 {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
                 <Row>
-                  {arrayProduct.map((item, index) => (
+                  {dataD_UFO.map((item, index) => (
                     <ItemProduct6 item={item} index={index} />
                   ))}
                 </Row>

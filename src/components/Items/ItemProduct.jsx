@@ -15,7 +15,7 @@ export default function ItemProduct({ item, index }) {
           <AiOutlineShoppingCart />
         </div>
         <div className="tag-discount">Giảm 9%</div>
-        <ImageProduct />
+        <ImageProduct  item={item} />
         <ProductInfo item={item} />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import {  Route, Router, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import "./responsive.css";
 import HomePage from "./pages/HomePage";
@@ -26,10 +26,11 @@ import Signin from "./components/Singin/Singin";
 import ForgetPassword from "./components/Singin/ForgetPassword";
 import AdminProduct from "./components/Admin/AdminProduct";
 import AdminUser from "./pages/AdminUser"
+import Product from "./components/Admin/Product";
+import AddProduct from "./components/Admin/AddProduct";
+import Dashboard from "./components/Admin/Dashboard";
 
 function App() {
-  
-
   return (
       <Routes>
         <Route index path="" element={<HomePage />} />
@@ -74,18 +75,18 @@ function App() {
           element={<InspectionPolicy />}
         />
 
-        <Route
-          index
-          path="/guest/intro/chinh-sach-thanh-toan"
-          element={<PaymentPolicy />}
-        />
-        <Route index path="/signup" element={<SignUp />} />
-        <Route index path="/signin" element={<Signin />} />
-        <Route index path="/forget-password" element={<ForgetPassword />} />
-        <Route index path="/baohanh" element={<Guarantee />} />
-        <Route index path="/cart" element={<CartPage />} />
-        <Route index path="/paying" element={<PayingPage />} />
-      </Routes>
+      <Route
+        index
+        path="/guest/intro/chinh-sach-thanh-toan"
+        element={<PaymentPolicy />}
+      />
+      <Route index path="/signup" element={<SignUp />} />
+      <Route index path="/signin" element={<Signin />} />
+      <Route index path="/forget-password" element={<ForgetPassword />} />
+      <Route index path="/baohanh" element={<Guarantee />} />
+      <Route index path="/cart" element={<CartPage />} />
+      <Route index path="/paying" element={<PayingPage />} />
+    </Routes>
   );
 }
 
