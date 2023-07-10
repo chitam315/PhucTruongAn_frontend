@@ -25,6 +25,7 @@ import Contact from "./components/Contact/Contact";
 import Signin from "./components/Singin/Singin";
 import ForgetPassword from "./components/Singin/ForgetPassword";
 import AdminProduct from "./components/Admin/AdminProduct";
+import AdminUser from "./pages/AdminUser"
 
 function App() {
   
@@ -41,6 +42,7 @@ function App() {
         <Route index path="/guest/support" element={<WarrantyStation />} />
         <Route index path="/guest/intro" element={<WarrantyPolicyHome />} />
         <Route index path="/admin-page" element={<AdminPage />} />
+        <Route index path="/admin-users" element={<AdminUser />} />
         <Route index path="/introduce" element={<IntroducePage />} />
         <Route index path="/news" element={<News />} />
         <Route index path="/contact" element={<Contact />} />

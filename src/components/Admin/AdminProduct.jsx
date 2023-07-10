@@ -13,9 +13,7 @@ import {
   HiChevronRight,
 } from "react-icons/hi";
 import AdminHeader from "./AdminHeader";
-import removeDiacritics from "remove-diacritics";
-import axios from "axios";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 
 function AdminProduct() {
   const [modalView, setModalView] = useState(false);

@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar } from "antd";
 import { listUsers } from "../mockData";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { TableUser } from "../components/TableUser";
 
 
@@ -22,7 +22,6 @@ const AdminUser = () => {
 
   const clickProduct = () => {
     navigate("/admin-page")
-    window.location.reload(false)
   }
 
 
@@ -31,27 +30,30 @@ const AdminUser = () => {
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
-          id="menuSideBarAdminPage"
+          // id="menuSideBarAdminPage"
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          style={{"display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent" : "center", "height": "100vh","gap": "50px"}}
 
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "All Users",
-            //   "data-modal-target": "modalAddProduct",
-            //   "data-modal-toggle": "modalAddProduct"
-            },
-            {
-                key: "2",
-                label: "All Product",
-                icon: <ProfileOutlined />,
-                onClick: clickProduct
-            }
-          ]}
+        // items={[
+        //   {
+        //     key: "1",
+        //     icon: <UserOutlined />,
+        //     label: "All Users",
+        //   //   "data-modal-target": "modalAddProduct",
+        //   //   "data-modal-toggle": "modalAddProduct"
+        //   },
+        //   {
+        //       key: "2",
+        //       label: "All Product",
+        //       icon: <ProfileOutlined />,
+        //       onClick: clickProduct
+        //   }
+        // ]}
         >
+          <Button type="primary" size="large" onClick={clickProduct}>
+            All products
+          </Button>
         </Menu>
       </Sider>
       <Layout>
@@ -70,7 +72,7 @@ const AdminUser = () => {
             }}
           />
           <div className="flex items-center">
-            <Avatar icon={<UserOutlined/>}/>
+            <Avatar icon={<UserOutlined />} />
             <p className="mx-3">Username</p>
           </div>
         </Header>
@@ -82,7 +84,7 @@ const AdminUser = () => {
             background: colorBgContainer,
           }}
         >
-          <TableUser listUsers={listUsers}/>
+          <TableUser listUsers={listUsers} />
         </Content>
       </Layout>
     </Layout>

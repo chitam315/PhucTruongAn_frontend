@@ -7,22 +7,10 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
-import {useAuth} from '../AuthContext/index'
+import { useAuth } from '../AuthContext/index'
 
 function Header() {
-  // window.addEventListener('scroll', function() {
-  //   var header = document.getElementById('fixed-header');
-  //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  //   if (scrollTop > 100) {
-  //     header.classList.add('show');
-  //   } else {
-  //     header.classList.remove('show');
-  //   }
-  // });
-  const {user} = useAuth()
-  
-  console.log(user);
+  const { user } = useAuth()
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -73,7 +61,9 @@ function Header() {
         </div>
         <div className="flex-center gap-2">
           <span>{user ? user.full_name : "Username"}</span>
-          <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
+          <Link to={user ? "admin-page" : "/signin"}>
+            <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
+          </Link>
           <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
         </div>
       </div>

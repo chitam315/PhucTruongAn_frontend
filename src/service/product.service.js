@@ -4,7 +4,12 @@ export const productService = {
     getAllProducts(data) {
         return api.get(`${PRODUCT_API}`)
     },
-    getProductById(data) {
-        
+    createProduct(data) {
+        console.log(data);
+        return api.post(`${PRODUCT_API}/create-product`,data)
+    },
+    deleteProductById(data){
+        console.log(data);
+        return api.delete(`${PRODUCT_API}/delete-product`,data)
     }
 }
