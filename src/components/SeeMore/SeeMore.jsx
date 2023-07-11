@@ -23,7 +23,7 @@ export default function SeeMore() {
       }
     };
     fetch();
-  });
+  },[]);
 
   const [dataDefault, setDataDefault] = useState([]);
   const [dataAZ, setDataAZ] = useState([]);
@@ -186,6 +186,10 @@ export default function SeeMore() {
       setDataItem(ij);
     }
   };
+
+  if (loading) {
+    return <h1>Loading ....</h1>
+  }
 
   return (
     <CardMain>

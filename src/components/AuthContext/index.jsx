@@ -32,9 +32,10 @@ const AuthProvider = ({ children }) => {
                 })
                 await getProfile(res.data.metadata.id)
                 navigate("")
-            }
+            } 
         } catch (error) {
             console.error(error)
+            message.error('Incorrect username or password')
             if (error?.response?.data?.message) {
                 message.error(error.response.data.message)
             }

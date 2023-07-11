@@ -5,6 +5,7 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
+<<<<<<< HEAD
 import {useAuth} from '../AuthContext/index'
 import Search from "../Search/Search";
 
@@ -13,6 +14,12 @@ function Header() {
   const {user} = useAuth()
   
   console.log(user);
+=======
+import { useAuth } from '../AuthContext/index'
+
+function Header() {
+  const { user } = useAuth()
+>>>>>>> cd9483ea5e025f0417dd27745efd318b00e28f79
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -52,7 +59,9 @@ function Header() {
         </div>
         <div className="flex-center gap-2">
           <span>{user ? user.full_name : "Username"}</span>
-          <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
+          <Link to={user ? "admin-page" : "/signin"}>
+            <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
+          </Link>
           <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
         </div>
       </div>
