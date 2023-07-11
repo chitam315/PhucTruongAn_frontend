@@ -1,7 +1,8 @@
 // import { authService } from "@/services/auth.service";
 // import { handleError } from "@/utils/handleError";
 import axios from "axios";
-import { getToken } from "../utils/token";
+import { getToken, setToken } from "../utils/token";
+import { authService } from "../service/auth.service";
 // import dotenv from "dotenv";
 
 // dotenv.config({ path: ".env" });
@@ -9,25 +10,32 @@ import { getToken } from "../utils/token";
 export const LOGIN_API = process.env.REACT_APP_LOGIN_API
 export const USER_API = process.env.REACT_APP_USER_API
 export const PRODUCT_API = process.env.REACT_APP_PRODUCT_API
+export const REFRESH_TOKEN_API = process.env.REACT_APP_REFRESH_TOKEN_API
+export const CATEGORY_API = process.env.REACT_APP_CATEGORIES_API
 
 export const api = axios.create()
-// api.interceptors.response.use((res) => {
-//     return res.data
-// }, async (err) => {
-//     console.log(err);
-//     if (err.response.status === 403 & err.response.data.error_code === "TOKEN_EXPIRED") {
-//         try {
-//             const res = await authService.refreshToken({
-//                 refreshToken: getToken().refreshToken
-//             })
-//             setToken(res.data)
-//             return api(err.config)
-//         } catch (error) {
-//             handleError(error)
-//         }
-//     }
-//     throw err
-// })
+api.interceptors.response.use((res) => {
+    return res
+}, async (err) => {
+    console.log(err);
+    if(err?.response?.data == "Token is not vaild"){
+        console.log("token expired");
+        try {
+            const res = await authService.refreshToken()
+            console.log(res);
+            if (res.data.metadata.accessToken) {
+                setToken({
+                    accessToken: res.data.metadata.accessToken,
+                    refreshToken: res.data.metadata.refreshToken
+                })
+            }
+            return api(err.config)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // throw err
+})
 
 api.interceptors.request.use((config) => {
     const token = getToken()

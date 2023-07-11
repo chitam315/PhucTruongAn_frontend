@@ -25,7 +25,7 @@ export default function Category() {
       }
     };
     fetch();
-  });
+  },[]);
   console.log(dataItem);
 
   const arr1 = dataItem.filter((item) => {
@@ -45,7 +45,7 @@ export default function Category() {
       setDataDPha(arr3.slice(0, 12));
     };
     fetchData();
-  });
+  },[]);
 
   return (
     <>

@@ -8,7 +8,7 @@ export const ErrorStyled = styled.span`
     left: 230px;
     bottom: -26px;
 `
-const Field = forwardRef(({ label, error, require, renderInput, type = 'text', customField, ...props }, ref) => {
+const Field = forwardRef(({ label, error, require, renderInput, type = 'text', customField,defaultValue, ...props }, ref) => {
     const inRef = useRef()
     useImperativeHandle(ref, () => {
         return {
@@ -26,7 +26,7 @@ const Field = forwardRef(({ label, error, require, renderInput, type = 'text', c
         }}>
             <p>{label}{require && <span>*</span>}</p>
             {
-                renderInput ? renderInput(error, props) : <input style={error ? { border: "1px solid red" } : undefined} ref={inRef} type={type} {...props} />
+                renderInput ? renderInput(error, props) : <input style={error ? { border: "1px solid red" } : undefined} ref={inRef} type={type} {...props} value={defaultValue} />
             }
             {
                 error && <ErrorStyled>{error}</ErrorStyled>
