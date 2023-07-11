@@ -12,7 +12,7 @@ function Dashboard({ children }) {
     <div className="flex relative">
       <input type="checkbox" id="menu" className="hidden" />
 
-      <div className="admin-sidebar">
+      <div className="admin-sidebar h-[100vh] bg-[var(--main)]">
         <label
           for="menu"
           className="relative justify-end pr-4 admin-none-flex cursor-pointer"
@@ -48,7 +48,7 @@ function Dashboard({ children }) {
           <BsBox2 />
           <span>Quản lý đơn hàng</span>
         </NavLink>
-        <div>
+        <div className="hover:bg-[#ff7676]">
           <BiLogOut />
           <span>Đăng xuất</span>
         </div>

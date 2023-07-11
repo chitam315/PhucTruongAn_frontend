@@ -1,25 +1,15 @@
 import { Link } from "react-router-dom";
-import { GrSearch } from "react-icons/gr";
 import { LuPhoneCall } from "react-icons/lu";
 import { VscAccount } from "react-icons/vsc";
 import { BsBasket } from "react-icons/bs";
-import { AiFillCaretDown } from "react-icons/ai";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
 import {useAuth} from '../AuthContext/index'
+import Search from "../Search/Search";
 
 function Header() {
-  // window.addEventListener('scroll', function() {
-  //   var header = document.getElementById('fixed-header');
-  //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  //   if (scrollTop > 100) {
-  //     header.classList.add('show');
-  //   } else {
-  //     header.classList.remove('show');
-  //   }
-  // });
+  
   const {user} = useAuth()
   
   console.log(user);
@@ -40,18 +30,7 @@ function Header() {
           />
         </Link>
 
-        <div className="flex-center">
-          <div className="flex border-1 border-solid border-[#ffb700] rounded-2">
-            <input
-              type="text"
-              placeholder="Tìm kiếm sản phẩm..."
-              className="w-[350px] rounded-1 border-none p-[20px] header-text-search"
-            />
-            <span className="bg-[#ff9419] h-full flex-center p-[11px] cursor-pointer">
-              <GrSearch className="text-[1.2em] text-white svg-white" />
-            </span>
-          </div>
-        </div>
+        <Search/>
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
             <LuPhoneCall className="svg-orange animate-shake" />

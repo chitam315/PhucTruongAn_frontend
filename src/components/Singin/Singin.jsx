@@ -26,7 +26,6 @@ export default function Signin() {
     if (form.validate()) {
       loginService(form.values)
     }
-    // console.log(form.validate());
   }
   return (
     <>

@@ -62,7 +62,6 @@
 }
 
 @media only screen and (max-width: 960px) {
-  
   .admin-none {
     display: block;
   }
@@ -74,3 +73,12 @@
     width: 100%;
   }
 }
+
+.transform-50 {
+  transform: translate(-50%, -50%);
+}
+
+.add-product-show-image:hover div:last-child {
+  display: flex;
+}
+

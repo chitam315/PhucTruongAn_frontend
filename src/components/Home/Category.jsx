@@ -26,7 +26,6 @@ export default function Category() {
     };
     fetch();
   });
-  console.log(dataItem);
 
   const arr1 = dataItem.filter((item) => {
     return (item.category_id = 1);

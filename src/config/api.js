@@ -9,6 +9,9 @@ import { getToken } from "../utils/token";
 export const LOGIN_API = process.env.REACT_APP_LOGIN_API
 export const USER_API = process.env.REACT_APP_USER_API
 export const PRODUCT_API = process.env.REACT_APP_PRODUCT_API
+export const PRODUCT_ID_API = process.env.REACT_APP_PRODUCT_ID_API
+export const PRODUCT_IMAGE = process.env.REACT_APP_IMAGE_API
+export const PRODUCT_DESC = process.env.REACT_APP_DESC_API
 
 export const api = axios.create()
 // api.interceptors.response.use((res) => {

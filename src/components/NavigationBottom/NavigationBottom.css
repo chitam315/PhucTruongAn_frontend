@@ -7,41 +7,17 @@
   height: 100%;
   z-index: 100;
   background: #000000b6;
-  transition: 0.5s;
+  transition: left 0.5s;
   padding-right: 50px;
+  transition: display 0.5s;
 }
 
 .slider-left-animation {
   position: absolute;
   top: 0;
-  left: -100%;
   width: 100%;
-  animation: sliderAnimate 0.5s;
-  animation-fill-mode: both;
-}
-.slider-left-close {
-  animation: sliderCLoseAnimate 0.5s;
-  animation-fill-mode: both;
-}
-@keyframes sliderAnimate {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-@keyframes sliderCLoseAnimate {
-  0% {
-    left: 0%;
-  }
-  90% {
-    left: -100%;
-  }
-  100% {
-    left: -100%;
-    display: none;
-  }
+  transition: left 2s;
+  display: flex;
 }
 
 .slider-left-scroll-vertical {

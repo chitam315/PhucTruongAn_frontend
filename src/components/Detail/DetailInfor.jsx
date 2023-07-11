@@ -26,7 +26,11 @@ export default function DetailInfor() {
             moreDetail === 0 ? "h-[500px]" : "h-fit"
           }`}
         >
-          <div className={`absolute w-100 bottom-0 p-[20px] ${ moreDetail === 0 ? "card-btn-seemore" : "h-[200px]" }`}>
+          <div
+            className={`absolute w-100 bottom-0 p-[20px] ${
+              moreDetail === 0 ? "card-btn-seemore" : "h-[200px]"
+            }`}
+          >
             {moreDetail === 0 ? (
               <div
                 className="btn-shadow relative h-fit w-fit bg-white btn-center"
@@ -44,13 +48,6 @@ export default function DetailInfor() {
                 <MdOutlineKeyboardDoubleArrowUp />
               </div>
             )}
-            {/* <div
-              className="btn-shadow relative h-fit w-fit bg-white btn-center"
-              onClick={showDetail}
-            >
-              <span className="pr-[30px]">Xem thêm</span>
-              <MdOutlineKeyboardDoubleArrowDown />
-            </div> */}
           </div>
 
           <p className="font-bold text-[1.1em]">
@@ -73,7 +70,7 @@ export default function DetailInfor() {
             <img
               src="https://bizweb.dktcdn.net/thumb/grande/100/463/111/files/quang-teo-20230426035518-6dxjr-optimized.png?v=1683256082011"
               alt=""
-              style={{ "vertical-align": "middle" }}
+              // style={{ "vertical-align": "middle" }}
             />
           </p>
           <p className="text-[1em]">
@@ -106,8 +103,6 @@ export default function DetailInfor() {
           <div className="rounded-[10px] overflow-hidden border-gray">
             <table
               border="1"
-              cellpadding="1"
-              cellspacing="1"
               className="text-[0.8em] width-100 table table-striped mb-0"
             >
               <tbody>
@@ -142,8 +137,7 @@ export default function DetailInfor() {
               </tbody>
             </table>
           </div>
-          <ModalSpecification/>
-          
+          <ModalSpecification />
         </div>
       </div>
     </Row>

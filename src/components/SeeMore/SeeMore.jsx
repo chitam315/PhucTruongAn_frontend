@@ -322,7 +322,7 @@ export default function SeeMore() {
                                 (i) => i.model === item.model
                               );
                               setAr(ar.concat(arrFilter));
-                              console.log(ar);
+                              
                             } else {
                               delItemModel(item.model);
                             }

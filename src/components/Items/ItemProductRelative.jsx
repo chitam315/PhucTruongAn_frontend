@@ -6,10 +6,7 @@ import { Link } from "react-router-dom";
 export default function ItemProductRelative() {
   return (
     <div className="col-md-4 col-tb-6 col-tbs-12 p-0">
-      <a
-        href="#id"
-        className="border-gray p-[10px] block rounded-[10px] mx-[5px] mb-[10px] relative hover-scale-main"
-      >
+      <div className="border-gray p-[10px] block rounded-[10px] mx-[5px] mb-[10px] relative hover-scale-main">
         <div className="tag-discount-relative">- 9%</div>
         <div className="flex">
           <Link to="/detail" className="overflow-hidden w-[300px] block">
@@ -22,8 +19,8 @@ export default function ItemProductRelative() {
           <div className="ml-[10px]">
             <Link to="/detail">
               <p className="font-bold text-[0.9em]">
-                [250W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U250 Chiếu Sáng 360
-                Độ
+                [250W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U250 Chiếu Sáng
+                360 Độ
               </p>
               <div className="flex items-center">
                 <p className="font-bold text-[0.9em] text-[var(--accentColor2)]">
@@ -36,7 +33,7 @@ export default function ItemProductRelative() {
             </Link>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }
