@@ -5,12 +5,29 @@ import ItemProductSale from "../Items/ItemProductSale";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { arrayProduct } from "../SeeMore/DataViDu";
+import { useFetch } from "../../hooks/useFetch";
+import { api } from "../../config/api";
+import { productService } from "../../service/product.service";
 
 export default function FlashSale() {
-  var texts = [
-    "miễn phí giao hàng tận nhà",
-    "giảm ngay 100.000đ khi mua từ 2 đèn trở lên",
-  ];
+  const [arrFlashSale, setArrFlashSale] = useState([]);
+  const { loading, data: listProduct } = useFetch(() => {
+    return productService.getAllProducts();
+  });
+
+  useEffect(() => {
+    const fetch = async () => {
+      if (!loading) {
+        await setArrFlashSale(
+          listProduct.data.metadata.filter((item) => {
+            return (item.flash_sale = true);
+          })
+        );
+      }
+    };
+    fetch();
+  });
+
 
   return (
     <>
@@ -46,7 +63,7 @@ export default function FlashSale() {
                 renderButtonGroupOutside={true}
                 removeArrowOnDeviceType={["desktop"]}
               >
-                {arrayProduct.map((item, index) => (
+                {arrFlashSale.slice(0, 5).map((item, index) => (
                   <ItemProductSale item={item} />
                 ))}
               </Carousel>

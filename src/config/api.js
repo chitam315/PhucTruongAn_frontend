@@ -12,25 +12,12 @@ export const PRODUCT_API = process.env.REACT_APP_PRODUCT_API
 export const PRODUCT_ID_API = process.env.REACT_APP_PRODUCT_ID_API
 export const PRODUCT_IMAGE = process.env.REACT_APP_IMAGE_API
 export const PRODUCT_DESC = process.env.REACT_APP_DESC_API
+export const GET_CART = process.env.REACT_APP_GET_CART
+export const ADD_CART = process.env.REACT_APP_ADD_CART
+export const DELETE_CART = process.env.REACT_APP_DELETE_CART
+export const UPDATE_CART = process.env.REACT_APP_UPDATE_CART
 
 export const api = axios.create()
-// api.interceptors.response.use((res) => {
-//     return res.data
-// }, async (err) => {
-//     console.log(err);
-//     if (err.response.status === 403 & err.response.data.error_code === "TOKEN_EXPIRED") {
-//         try {
-//             const res = await authService.refreshToken({
-//                 refreshToken: getToken().refreshToken
-//             })
-//             setToken(res.data)
-//             return api(err.config)
-//         } catch (error) {
-//             handleError(error)
-//         }
-//     }
-//     throw err
-// })
 
 api.interceptors.request.use((config) => {
     const token = getToken()

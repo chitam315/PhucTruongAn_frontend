@@ -28,13 +28,13 @@ export default function Category() {
   });
 
   const arr1 = dataItem.filter((item) => {
-    return (item.category_id = 1);
+    return (item.category_id === 1);
   });
   const arr2 = dataItem.filter((item) => {
-    return (item.category_id = 2);
+    return (item.category_id === 2);
   });
   const arr3 = dataItem.filter((item) => {
-    return (item.category_id = 3);
+    return (item.category_id === 3);
   });
 
   useEffect(() => {

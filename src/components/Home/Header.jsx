@@ -5,7 +5,6 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
-<<<<<<< HEAD
 import {useAuth} from '../AuthContext/index'
 import Search from "../Search/Search";
 
@@ -14,12 +13,7 @@ function Header() {
   const {user} = useAuth()
   
   console.log(user);
-=======
-import { useAuth } from '../AuthContext/index'
 
-function Header() {
-  const { user } = useAuth()
->>>>>>> cd9483ea5e025f0417dd27745efd318b00e28f79
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -73,28 +67,28 @@ function Header() {
 
           </li>
           <li>
-            <a href="#gioithieu">Giới thiệu</a>
+            <a href="/">Giới thiệu</a>
           </li>
           <li>
-            <a href="#gioithieu">Dự án & hoạt động</a>
+            <a href="/">Dự án & hoạt động</a>
           </li>
           <li>
-            <a href="#gioithieu">Tin tức</a>
+            <a href="/">Tin tức</a>
           </li>
           <li>
-            <a href="#gioithieu">Khách hàng</a>
+            <a href="/">Khách hàng</a>
           </li>
           <li>
-            <a href="#gioithieu">Tuyển đại lý</a>
+            <a href="/">Tuyển đại lý</a>
           </li>
           <li>
-            <a href="#gioithieu">Liên hệ</a>
+            <a href="/">Liên hệ</a>
           </li>
           <li>
-            <a href="#gioithieu">Bảo hành</a>
+            <a href="/">Bảo hành</a>
           </li>
           <li>
-            <a href="#gioithieu">Tuyển dụng</a>
+            <a href="/">Tuyển dụng</a>
           </li>
         </ul>
       </div>

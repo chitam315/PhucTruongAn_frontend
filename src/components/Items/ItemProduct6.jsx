@@ -13,7 +13,11 @@ export default function ItemProduct6({ item, index }) {
         <div className="cursor-pointer cart-appear z-[10] text-[1.8em] text-white absolute right-[-15%] top-[50%] rounded-[50%] bg-[var(--mainColor)] p-[8px]">
           <AiOutlineShoppingCart />
         </div>
-        <div className="tag-discount">Giảm 9%</div>
+        {item.product_discount !== 0 ? (
+          <div className="tag-discount">Giảm {item.product_discount}%</div>
+        ) : (
+          <></>
+        )}
         <ImageProduct item={item} />
         <ProductInfo item={item} />
       </div>
