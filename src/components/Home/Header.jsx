@@ -13,7 +13,10 @@ function Header() {
   const {user} = useAuth()
   
   console.log(user);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 158529a64367165d160e0565253d735896f1d4fc
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">

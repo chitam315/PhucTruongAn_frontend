@@ -25,17 +25,19 @@ const AuthProvider = ({ children }) => {
         try {
             const res = await authService.login(data)
             console.log(res);
-            if (res.status == 200) {
-                setToken({
+            if (res.data.metadata.status == 404) {
+                message.error('Incorrect username or password')
+            } else {
+                await setToken({
                     accessToken: res.data.metadata.accessToken,
                     refreshToken: res.data.metadata.refreshToken
                 })
-                await getProfile(res.data.metadata.id)
+                getProfile(res.data.metadata.id)
                 navigate("")
-            } 
+            }
         } catch (error) {
             console.error(error)
-            message.error('Incorrect username or password')
+            message.error('Server has the problem')
             if (error?.response?.data?.message) {
                 message.error(error.response.data.message)
             }
@@ -43,9 +45,15 @@ const AuthProvider = ({ children }) => {
     }
 
     const getProfile = async (id) => {
-        const user = await userService.getUserById({id})
-        _setUser(user.data.metadata)
-        message.success('Log in successfully')
+        try {
+            const user = await userService.getUserById({ id })
+            console.log(user);
+            _setUser(user.data.metadata)
+            message.success('Log in successfully')
+        } catch (error) {
+            throw error
+        }
+
     }
 
     const logout = () => {

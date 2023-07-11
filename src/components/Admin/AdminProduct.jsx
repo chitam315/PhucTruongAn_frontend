@@ -12,7 +12,7 @@ import {
   HiChevronDoubleRight,
   HiChevronRight,
 } from "react-icons/hi";
-import AdminHeader from "./AdminHeader";
+import Dashboard from "./Dashboard";
 import { Modal } from "antd";
 
 function AdminProduct() {
@@ -55,7 +55,7 @@ function AdminProduct() {
   };
 
   return (
-    <AdminHeader>
+    <Dashboard>
       <h1>Danh sách sản phẩm</h1>
       <button className="btn btn-success admin-header-block mb-[10px]">
         Thêm sản phẩm
@@ -251,7 +251,7 @@ function AdminProduct() {
           </div>
         </div>
       </Modal>
-    </AdminHeader>
+    </Dashboard>
   );
 }
 

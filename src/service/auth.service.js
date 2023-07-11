@@ -1,7 +1,14 @@
-import { LOGIN_API, api } from "../config/api";
+import axios from "axios";
+import { LOGIN_API, api, REFRESH_TOKEN_API } from "../config/api";
+import { getToken } from "../utils/token";
 
 export const authService = {
     login(data) {
         return api.post(`${LOGIN_API}`,data)
+    },
+    refreshToken(){
+        return api.post(`${REFRESH_TOKEN_API}`,{
+            refreshToken: getToken().refreshToken
+        })
     }
 }

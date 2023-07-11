@@ -13,13 +13,15 @@ import { useNavigate } from "react-router";
 import { useAuth } from "../components/AuthContext";
 import Field from "../components/Field";
 import { useForm } from "../hooks/useForm";
-import { required } from "../utils/validate";
+import { compare, regexp, required } from "../utils/validate";
 import { useAsync } from "../hooks/useAsync";
+import axios from "axios";
+import { api } from "../config/api";
 const { Header, Sider, Content } = Layout;
 
 const AdminPage = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { execute: addProductService, loading} = useAsync(productService.createProduct)
+  const { execute: addProductService, loading } = useAsync(productService.createProduct)
 
   const { user } = useAuth()
 
@@ -44,15 +46,18 @@ const AdminPage = () => {
     ],
     product_price: [
       required(),
+      regexp('vietnamCurency')
     ],
     product_discount: [
-      required()
+      required(),
+      regexp('vietnamCurency'),
+      compare("product_price","please input discount less than original price","smaller")
     ],
     flash_sale: [
       required()
     ],
     category_id: [
-      required()
+      required(),
     ]
   }
   const form = useForm(rules)
@@ -67,9 +72,17 @@ const AdminPage = () => {
     if (form.validate()) {
       setIsModalAddOpen(false);
       try {
-        const res = await addProductService(form.values)
+        const temp = {
+          "product_id": form.values.product_id,
+          "product_name": form.values.product_name,
+          "product_price": parseInt(form.values.product_price),
+          "product_discount": parseInt(form.values.product_discount),
+          "flash_sale": parseInt(form.values.flash_sale),
+          "category_id": parseInt(form.values.category_id),
+        }
+        const res = await addProductService(temp)
         message.success("Thêm sản phẩm thành công")
-        console.log(res);
+        window.location.reload()
       } catch (error) {
         message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
         console.log(error);
@@ -81,7 +94,7 @@ const AdminPage = () => {
     setIsModalAddOpen(false);
   };
 
-  
+
   return (
     <>
       <Layout>
@@ -166,7 +179,7 @@ const AdminPage = () => {
       >
         <div className="form flex flex-col gap-3 my-5 w-4/5 mx-auto">
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px"}}
+            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
             style={{
               width: "75%",
               display: "block",
@@ -222,15 +235,15 @@ const AdminPage = () => {
               padding: "10px",
             }}
             label="Flash sale"
-            renderInput={(_,props) => (
+            renderInput={(_, props) => (
               <select {...props}
                 className="block w-9/12 p-2 outline-none"
               // id="inputPriceProduct"
               >
                 {/* <option value="none" selected disabled hidden>Select an Option</option> */}
                 <option value="" selected disabled="disabled">Select an Option</option>
-                <option value={"1"}>Có</option>
-                <option value={"0"}>Không</option>
+                <option value={1}>Có</option>
+                <option value={0}>Không</option>
               </select>
             )}
             {...form.register("flash_sale")}
@@ -238,12 +251,12 @@ const AdminPage = () => {
           <Field
             customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
             label="Loại"
-            renderInput={(_,props) => (
+            renderInput={(_, props) => (
               <select {...props}
                 className="block w-9/12 p-2 outline-none"
               >
                 <option value="" selected disabled="disabled">Select an Option</option>
-                {listCategory.map((ele , index) => (
+                {listCategory.map((ele, index) => (
                   <option key={index} value={index}>{ele.category}</option>
                 ))}
               </select>

@@ -4,7 +4,10 @@ import { Button, Modal, Pagination, message } from "antd"
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 import { useForm } from "../../hooks/useForm";
-import { required } from "../../utils/validate";
+import { compare, regexp, required } from "../../utils/validate";
+import { useNavigate } from "react-router";
+import { useForceUpdate } from "../../hooks/useForceUpdate"
+import { useAsync } from "../../hooks/useAsync";
 
 // import './index.css'
 /**
@@ -27,32 +30,39 @@ import { required } from "../../utils/validate";
  *  }
  * ]
  */
-export const TableProduct = ({ listCategory }) => {
+export const TableProduct = ({ list }) => {
   const [limit, setLimit] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts()
   });
+  const { loadingCategories, data: listCategory } = useFetch(() => {
+    return productService.getAllCategories()
+  });
+  const { execute: editProductService } = useAsync(productService.updateProduct)
 
   const rules = {
     product_id: [
-      required(),
+      // required(),
     ],
     product_name: [
       required(),
     ],
     product_price: [
       required(),
+      regexp('vietnamCurency')
     ],
     product_discount: [
-      required()
+      required(),
+      regexp('vietnamCurency'),
+      compare("product_price","please input discount less than original price","smaller")
     ],
     flash_sale: [
       required()
     ],
     category_id: [
-      required()
+      required(),
     ]
   }
   const form = useForm(rules)
@@ -76,15 +86,34 @@ export const TableProduct = ({ listCategory }) => {
 
   const [isModalEditOpen, setIsModalEditOpen] = useState(false);
   const [idDelete, setIdDelete] = useState("")
+  const [idEdit, setIdEdit] = useState("")
 
-  const showModalEdit = () => {
+  const showModalEdit = (id) => {
+    setIdEdit(id)
     setIsModalEditOpen(true);
   };
 
-  const handleOkEdit = () => {
+  const handleOkEdit = async () => {
+
     if (form.validate()) {
       setIsModalEditOpen(false);
       console.log(form.values);
+      try {
+        const temp = {
+          "product_id": idEdit,
+          "product_name": form.values.product_name,
+          "product_price": parseInt(form.values.product_price),
+          "product_discount": parseInt(form.values.product_discount),
+          "flash_sale": parseInt(form.values.flash_sale),
+          "category_id": parseInt(form.values.category_id),
+        }
+        const res = await editProductService(temp)
+        message.success("Thêm sản phẩm thành công")
+        window.location.reload()
+      } catch (error) {
+        message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
+        console.log(error);
+      }
     }
   };
 
@@ -100,13 +129,11 @@ export const TableProduct = ({ listCategory }) => {
   const [isModalDelOpen, setIsModalDelOpen] = useState(false);
 
   const showModalDel = (id) => {
-    console.log("get id of product : ",id);
     setIsModalDelOpen(true);
     setIdDelete(id)
   };
 
   const handleOkDel = async () => {
-    console.log(idDelete);
     const temp = {
       product_id: idDelete
     }
@@ -114,7 +141,7 @@ export const TableProduct = ({ listCategory }) => {
     try {
       const res = await productService.deleteProductById(temp)
       message.success("Xoá sản phẩm thành công")
-      console.log(res);
+      window.location.reload()
     } catch (error) {
       message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
       console.log(error);
@@ -164,7 +191,7 @@ export const TableProduct = ({ listCategory }) => {
                   <td className="px-6 py-4 flex justify-between items-center">
                     <p>{ele.Tên}</p>
                     <div className="flex">
-                      <Button className="mx-2" type="primary" ghost onClick={showModalEdit}>
+                      <Button className="mx-2" type="primary" ghost onClick={() => showModalEdit(ele.ID)}>
                         Edit product
                       </Button>
                       <Button className="mx-2" type="primary" danger ghost onClick={() => {return showModalDel(ele.ID)}}>
@@ -183,7 +210,7 @@ export const TableProduct = ({ listCategory }) => {
 
       <Pagination defaultCurrent={1} total={dataSource.length} onChange={changePage} />
 
-      <Modal width={700} title="Điền thông tin sản phẩm cần thêm" open={isModalEditOpen} onOk={handleOkEdit} onCancel={handleCancelEdit}
+      <Modal width={700} title="Điền thông tin sản phẩm cần chỉnh sửa" open={isModalEditOpen} onOk={handleOkEdit} onCancel={handleCancelEdit}
         footer={[
           <Button key="back" onClick={handleCancelEdit}>
             Cancel
@@ -203,8 +230,9 @@ export const TableProduct = ({ listCategory }) => {
               padding: "10px",
             }}
             label="ID sản phẩm"
-            placeholder="ID sản phẩm"
-            {...form.register("product_id")}
+            defaultValue={idEdit}
+            disabled
+            {...form.register("product_id",idEdit)}
           />
           <Field
             customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
@@ -272,8 +300,8 @@ export const TableProduct = ({ listCategory }) => {
                 className="block w-9/12 p-2 outline-none"
               >
                 <option value="" selected disabled="disabled">Select an Option</option>
-                {listCategory.map((ele , index) => (
-                  <option key={index} value={index}>{ele.category}</option>
+                {listCategory.data.metadata.map((ele , index) => (
+                  <option key={index} value={ele.category_id}>{ele.category_name}</option>
                 ))}
               </select>
             )}
