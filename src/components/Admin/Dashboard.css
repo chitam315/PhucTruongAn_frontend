@@ -1,7 +1,5 @@
 .admin-sidebar {
   width: 400px;
-  height: 100vh;
-  background: var(--main);
   transition: width 300ms;
 }
 
@@ -19,6 +17,7 @@
   padding: 15px;
   padding-left: 10%;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .admin-sidebar a:hover {
@@ -28,9 +27,7 @@
 .admin-sidebar a.active span {
   color: #9e9e9e;
 }
-.admin-sidebar div:hover {
-  background: #ff7676;
-}
+
 .admin-sidebar svg {
   font-size: 1.5em;
   margin-right: 1em;
@@ -38,7 +35,7 @@
 }
 .admin-sidebar span {
   font-size: 1.1em;
-  transition: 1000ms;
+  transition: 1s;
 }
 
 #menu:checked ~ .admin-sidebar {

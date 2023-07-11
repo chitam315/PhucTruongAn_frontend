@@ -21,7 +21,7 @@ export default function ItemCart() {
         </Link>
         <div className="flex-center">
           <div className="flex-center">
-            <button className="cart-btn-minus" onClick={console.log("hello")}>
+            <button className="cart-btn-minus">
               -
             </button>
             <input

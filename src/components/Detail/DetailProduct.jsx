@@ -18,9 +18,45 @@ import DetailInfor from "./DetailInfor";
 import ModalVideo from "../Modal/ModalVideo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useParams } from "react-router";
+import axios from "axios";
+import { PRODUCT_ID_API } from "../../config/api";
+import { useFetch } from "../../hooks/useFetch";
+import { productService } from "../../service/product.service";
+import { Link } from "react-router-dom";
 
 export default function DetailProduct() {
-  //Increment & Decrement INPUT QUANTITY
+  //
+  const [product, setProduct] = useState({});
+  const [image, setImage] = useState([]);
+  const params = useParams();
+
+  const { loading, data: _product } = useFetch(() => {
+    return productService.getProductById(params.id);
+  });
+  useEffect(() => {
+    const fetch = async () => {
+      if (!loading) {
+        setProduct(_product.data.metadata);
+      }
+    };
+    fetch();
+  });
+
+  const { loading2, data: _image } = useFetch(() => {
+    return productService.getProductImage(params.id);
+  });
+
+  useEffect(() => {
+    const fetch = async () => {
+      if (!loading2) {
+        await setImage(_image?.data.metadata);
+      }
+    };
+    fetch();
+  });
+
+  // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);
   const decrementCount = () => {
     if (count > 1) setCount(count - 1);
@@ -29,8 +65,6 @@ export default function DetailProduct() {
   const incrementCount = () => {
     if (count < 99) setCount(count + 1);
   };
-  //Checkbox compare
-  const [checkboxCompare, setCheckboxCompare] = useState(0);
 
   //Handle button copy
   const [textCopy, setTextCopy] = useState("Sao chép");
@@ -70,36 +104,9 @@ export default function DetailProduct() {
       <CardMain>
         <Row>
           <div className="col-12 flex items-center gap-2">
-            <h1 className="font-medium mb-2 text-[1.1em]">
-              [600W] Đèn Đường Liền Thể Năng Lượng Mặt Trời TP Solar TP-D600N
-              Mẫu Mới Nhất 3 Mặt Đèn
+            <h1 className="font-bold mb-2 text-[1.1em]">
+              {product.product_name}
             </h1>
-            <label from="checkbox-compare">
-              <input
-                type="checkbox"
-                className="hidden detail-input-compare"
-                value="/"
-                id="checkbox-compare"
-                data-type=""
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setCheckboxCompare(1);
-                  } else {
-                    setCheckboxCompare(0);
-                  }
-                }}
-              />
-              <div className="rounded-[10px] flex items-center border-gray cursor-pointer gap-1 text-[var(--mainColor)] text-[1em] py-[3px] px-[5px]">
-                <span>
-                  {checkboxCompare === 0 ? (
-                    <BsPlusCircle />
-                  ) : (
-                    <BsCheckCircleFill />
-                  )}
-                </span>
-                <span>So sánh</span>
-              </div>
-            </label>
           </div>
           <Row>
             <div className="col-lg-4 col-tb-5 col-tbs-12 relative image-slick">
@@ -112,40 +119,29 @@ export default function DetailProduct() {
                 showArrows={true}
                 showStatus={false}
               >
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/5.jpg?v=1685090766457"
-                  alt=""
-                />
-
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/u500-optimized-cefcccf4-29f7-41dc-ad9b-ce0f1536b919.png?v=1685090779840"
-                  alt=""
-                />
-
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
-                  alt=""
-                />
-
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
-                  alt=""
-                />
-
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/1-u500.jpg?v=1685090785660"
-                  alt=""
-                />
-
-                <img
-                  src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/3-ip67.png?v=1685090992427"
-                  alt=""
-                />
+                {/* {image.length !==  0 ? (
+                  // image.map((item, index) => {
+                  //   <img
+                  //     src={() => {
+                  //       item.image_base64.split("");
+                  //       return item[1];
+                  //     }}
+                  //     alt=""
+                  //   />;
+                  // })
+                  <></>
+                ) : (
+                  <></>
+                )} */}
+                <img src="" alt="" />
               </Carousel>
             </div>
             <div className="col-lg-5 col-tb-7 col-tbs-12">
               <span className="font-bold text-[1.5em] text-[var(--mainColor)]">
-                1.690.000 <span>đ</span>
+                {Number(product.product_price)
+                  .toFixed(0)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                <span>₫</span>
               </span>
               <div className="flex flex-wrap mt-[15px]">
                 <label htmlFor="type">
@@ -259,7 +255,7 @@ export default function DetailProduct() {
                       className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
                       name="contact[Name]"
                       placeholder="Họ tên"
-                      autocomplete="off"
+                      autoComplete="off"
                     />
                   </div>
                   <div className="col-12 mb-[20px]">
@@ -268,7 +264,7 @@ export default function DetailProduct() {
                       name="quantity"
                       className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
                       placeholder="Số điện thoại"
-                      autocomplete="off"
+                      autoComplete="off"
                     />
                   </div>
                   <div className="flex">
@@ -338,10 +334,10 @@ export default function DetailProduct() {
           />
           <span className="font-bold text-[1.1em]">Liên hệ</span>
           <div className="flex justify-between absolute top-[-130%] left-[15%] gap-2  p-[10px] bg-white rounded-[10px] card-shadow">
-            <a href="/detail" className="btn-call">
+            <Link to="/detail" className="btn-call">
               <FiPhoneCall />
-            </a>
-            <a href="/detail" className="btn-call">
+            </Link>
+            <Link to="/detail" className="btn-call">
               <div className="bg-white rounded-[5px] w-fit overflow-hidden flex justify-center items-center">
                 <img
                   src={require("../../assets/Icon/zalo.png")}
@@ -349,7 +345,7 @@ export default function DetailProduct() {
                   className="w-[25px] h-[25px]"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col items-center w-100 uppercase bg-[var(--menuHover)] cursor-pointer rounded-[10px] py-[25px] hover-bdr-yellow">

@@ -47,7 +47,10 @@ function NavigationBottom() {
               </span>
             </div>
           </div>
-          <Link to="/cart" className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer">
+          <Link
+            to="/cart"
+            className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer"
+          >
             <div className="flex flex-col items-center relative">
               <GrBasket className="svg-nav-bot" />
               <span className="mt-[5px] text-[1em] font-semibold select-none">
@@ -60,13 +63,30 @@ function NavigationBottom() {
           </Link>
         </div>
       </div>
-      {sliderLeft ? (
+      {/* {sliderLeft ? (
         <div className="absolute">
           <SliderLeft />
         </div>
       ) : (
         <></>
-      )}
+      )} */}
+      <div
+        className={
+          sliderLeft ? "block slider-left-main z-9000" : "hidden slider-left-main"
+        }
+      >
+        <div className="relative">
+          <div
+            className={
+              sliderLeft
+                ? "slider-left-animation left-0"
+                : "slider-left-animation left-[-100%]"
+            }
+          >
+            <SliderLeft />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

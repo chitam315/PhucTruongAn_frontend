@@ -49,8 +49,6 @@ const ModalSpecification = ({ name, content }) => {
           <span className="w-100 h-[1px] block bg-[#ccc] my-[10px]"></span>
           <table
             border="1"
-            cellpadding="1"
-            cellspacing="1"
             className="text-[1.1em] width-100 table table-striped mb-0 rounded-[10px] overflow-hidden"
           >
             <tbody>
