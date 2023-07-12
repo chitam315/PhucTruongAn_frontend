@@ -1,15 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import CardMain from "../Card/CardMain";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { AiFillCheckCircle } from "react-icons/ai";
-import {
-  BsPlusLg,
-  BsPlusCircle,
-  BsCheckCircleFill,
-  BsGiftFill,
-} from "react-icons/bs";
+import { BsPlusLg, BsGiftFill } from "react-icons/bs";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
@@ -18,9 +13,7 @@ import DetailInfor from "./DetailInfor";
 import ModalVideo from "../Modal/ModalVideo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useParams } from "react-router";
-import axios from "axios";
-import { PRODUCT_ID_API } from "../../config/api";
+import { useNavigate, useParams } from "react-router";
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 import { Link } from "react-router-dom";
@@ -55,6 +48,25 @@ export default function DetailProduct() {
     };
     fetch();
   });
+
+  //List type product
+  const [arrLevel, setLevel] = useState([]);
+  const { loadingLevelProduct, data: listProduct } = useFetch(() => {
+    return productService.getAllProducts();
+  });
+  useEffect(() => {
+    const fetch = () => {
+      if (listProduct && !loadingLevelProduct) {
+        const arrLevelProduct = listProduct.data.metadata.filter(
+          (item) => item.category_id === product.category_id
+        );
+        setLevel(arrLevelProduct);
+      }
+    };
+    fetch();
+  });
+
+  const navigate = useNavigate();
 
   // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);
@@ -143,61 +155,33 @@ export default function DetailProduct() {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                 <span>₫</span>
               </span>
-              <div className="flex flex-wrap mt-[15px]">
-                <label htmlFor="type">
-                  <input
-                    type="radio"
-                    name="type"
-                    id="type"
-                    className="hidden"
-                  />
-                  <div className="btn-type-product">
+              <div className="flex flex-wrap mt-[15px] gap-2">
+                {arrLevel.map((item, index) => (
+                  <a
+                    className={
+                      item.product_id === product.product_id
+                        ? "btn-type-product btn-type-product-checked"
+                        : "btn-type-product"
+                    }
+                    href={"/detail/" + item.product_id}
+                  >
                     <div className="flex items-center relative">
                       <div className="relative w-[14px] h-[14px] mr-[7px]">
                         <span className="checkbox-type"></span>
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
-                      <p className="text-[0.8em] p-0">300W</p>
+                      <p className="text-[0.8em] p-0 font-bold">
+                        {item.product_id}
+                      </p>
                     </div>
-                    <p className="text-[var(--red)] text-[0.8em]">1.390.000</p>
-                  </div>
-                </label>
-                <label htmlFor="type2">
-                  <input
-                    type="radio"
-                    name="type"
-                    id="type2"
-                    className="hidden"
-                  />
-                  <div className="btn-type-product">
-                    <div className="flex items-center relative">
-                      <div className="relative w-[14px] h-[14px] mr-[7px]">
-                        <span className="checkbox-type"></span>
-                        <AiFillCheckCircle className="absolute icon-checkbox" />
-                      </div>
-                      <p className="text-[0.8em] p-0">450W</p>
-                    </div>
-                    <p className="text-[var(--red)] text-[0.8em]">1.690.000</p>
-                  </div>
-                </label>
-                <label htmlFor="type3">
-                  <input
-                    type="radio"
-                    name="type"
-                    id="type3"
-                    className="hidden"
-                  />
-                  <div className="btn-type-product">
-                    <div className="flex items-center relative">
-                      <div className="relative w-[14px] h-[14px] mr-[7px]">
-                        <span className="checkbox-type"></span>
-                        <AiFillCheckCircle className="absolute icon-checkbox" />
-                      </div>
-                      <p className="text-[0.8em] p-0">600W</p>
-                    </div>
-                    <p className="text-[var(--red)] text-[0.8em]">1.890.000</p>
-                  </div>
-                </label>
+                    <p className="text-[var(--red)] text-[0.8em] font-bold">
+                      {Number(item.product_price)
+                        .toFixed(0)
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                      <span>₫</span>
+                    </p>
+                  </a>
+                ))}
               </div>
               <div className="flex items-center gap-2 mt-[15px]">
                 <span className="text-[1.2em] font-bold mr-[30px]">

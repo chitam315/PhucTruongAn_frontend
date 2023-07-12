@@ -37,17 +37,17 @@ function Search() {
     setInput(value);
     fetchData(value);
   };
-  const navigate=useNavigate();
-  const clickSearch=()=>{
-    if(input!==""){
-      navigate('/search',{
-        state: { 
-            list: arrFilter,
-            input:input
-        }
-    });
+  const navigate = useNavigate();
+  const clickSearch = () => {
+    if (input !== "") {
+      navigate("/search", {
+        state: {
+          list: arrFilter,
+          input: input,
+        },
+      });
     }
-  }
+  };
   return (
     <div className="flex-center">
       <div className="flex border-1 border-solid border-[#ffb700] rounded-2 relative">
@@ -58,14 +58,21 @@ function Search() {
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
-        <div className="bg-[#ff9419] h-full flex-center p-[11px] cursor-pointer block" onClick={clickSearch}>
+        <div
+          className="bg-[#ff9419] h-full flex-center p-[11px] cursor-pointer block"
+          onClick={clickSearch}
+        >
           <GrSearch className="text-[1.2em] text-white svg-white" />
         </div>
         <div
-          className={`absolute left-0 top-[103%] w-full p-1 bg-white border-gray rounded-[5px] h-fit max-h-[360px] overflow-auto z-5000 ${
+          className={`absolute left-0 top-[103%] w-full overflow-hidden bg-white border-gray rounded-[5px] h-fit max-h-[385px] z-5000 ${
             input !== "" ? "block" : "hidden"
           }`}
         >
+          <div className="flex items-center justify-between rounded-[5px] bg-[var(--mainColor)] p-1 m-1">
+            <span className="text-white text-[0.9em]">Sản phẩm ({arrFilter.length})</span>
+
+          </div>
           {arrFilter.map((item, index) => (
             <Link
               to={`/detail/${item.product_id}`}

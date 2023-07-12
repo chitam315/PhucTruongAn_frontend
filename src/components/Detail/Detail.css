@@ -12,13 +12,12 @@
   align-items: center;
   padding: 8px 15px;
   border-radius: 10px;
-  margin-right: 10px;
   cursor: pointer;
   user-select: none;
   transition: 0.5s;
 }
 
-.btn-type-product:hover .relative p,
+/* .btn-type-product:hover .relative p,
 input:checked[type="radio"] + .btn-type-product .relative p {
   color: var(--mainColor);
 }
@@ -36,6 +35,26 @@ input:checked[type="radio"] + .btn-type-product .icon-checkbox {
 
 .btn-type-product:hover .checkbox-type,
 input:checked[type="radio"] + .btn-type-product .checkbox-type {
+  opacity: 0;
+} */
+
+.btn-type-product:hover .relative p,
+.btn-type-product-checked .relative p {
+  color: var(--mainColor);
+}
+
+.btn-type-product:hover,
+.btn-type-product-checked {
+  border-color: var(--mainColor);
+  background: #fdf7b5;
+}
+.btn-type-product:hover .icon-checkbox,
+.btn-type-product-checked .icon-checkbox {
+  opacity: 1;
+}
+
+.btn-type-product:hover .checkbox-type,
+.btn-type-product-checked .checkbox-type {
   opacity: 0;
 }
 
