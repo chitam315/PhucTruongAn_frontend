@@ -5,18 +5,14 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
-import {useAuth} from '../AuthContext/index'
+import { useAuth } from "../AuthContext/index";
 import Search from "../Search/Search";
 
 function Header() {
-  
-  const {user} = useAuth()
-  
-  console.log(user);
-<<<<<<< HEAD
+  const { user } = useAuth();
 
-=======
->>>>>>> 158529a64367165d160e0565253d735896f1d4fc
+  console.log(user);
+
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -34,7 +30,7 @@ function Header() {
           />
         </Link>
 
-        <Search/>
+        <Search />
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
             <LuPhoneCall className="svg-orange animate-shake" />
@@ -65,9 +61,7 @@ function Header() {
       <div className="bg-[#ffb600] text-[1.1em] font-bold ">
         <ul className="container-sm flex-center text-none text-white list-none header-navbar-session">
           <li className="flex items-center cursor-pointer hover:text-[var(--mainColor)] duration-500">
-
             <CategoryProduct />
-
           </li>
           <li>
             <a href="/">Giới thiệu</a>

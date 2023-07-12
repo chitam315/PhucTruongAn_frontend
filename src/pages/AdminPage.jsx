@@ -4,11 +4,11 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
-  PlusCircleOutlined
+  PlusCircleOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar, Modal, message } from "antd";
 import { listCategory } from "../mockData";
-import { TableProduct } from '../components/TableProduct'
+import { TableProduct } from "../components/TableProduct";
 import { useNavigate } from "react-router";
 import { useAuth } from "../components/AuthContext";
 import Field from "../components/Field";
@@ -21,46 +21,41 @@ const { Header, Sider, Content } = Layout;
 
 const AdminPage = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { execute: addProductService, loading } = useAsync(productService.createProduct)
+  const { execute: addProductService, loading } = useAsync(
+    productService.createProduct
+  );
 
-  const { user } = useAuth()
+  const { user } = useAuth();
 
   if (user.full_name != "admin") {
-    navigate("/")
+    navigate("/");
   }
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const clickUser = () => {
-    navigate("/admin-users")
-  }
+    navigate("/admin-users");
+  };
 
   const rules = {
-    product_id: [
-      required(),
-    ],
-    product_name: [
-      required(),
-    ],
-    product_price: [
-      required(),
-      regexp('vietnamCurency')
-    ],
+    product_id: [required()],
+    product_name: [required()],
+    product_price: [required(), regexp("vietnamCurency")],
     product_discount: [
       required(),
-      regexp('vietnamCurency'),
-      compare("product_price","please input discount less than original price","smaller")
+      regexp("vietnamCurency"),
+      compare(
+        "product_price",
+        "please input discount less than original price",
+        "smaller"
+      ),
     ],
-    flash_sale: [
-      required()
-    ],
-    category_id: [
-      required(),
-    ]
-  }
-  const form = useForm(rules)
+    flash_sale: [required()],
+    category_id: [required()],
+  };
+  const form = useForm(rules);
 
   const [isModalAddOpen, setIsModalAddOpen] = useState(false);
 
@@ -73,18 +68,18 @@ const AdminPage = () => {
       setIsModalAddOpen(false);
       try {
         const temp = {
-          "product_id": form.values.product_id,
-          "product_name": form.values.product_name,
-          "product_price": parseInt(form.values.product_price),
-          "product_discount": parseInt(form.values.product_discount),
-          "flash_sale": parseInt(form.values.flash_sale),
-          "category_id": parseInt(form.values.category_id),
-        }
-        const res = await addProductService(temp)
-        message.success("Thêm sản phẩm thành công")
-        window.location.reload()
+          product_id: form.values.product_id,
+          product_name: form.values.product_name,
+          product_price: parseInt(form.values.product_price),
+          product_discount: parseInt(form.values.product_discount),
+          flash_sale: parseInt(form.values.flash_sale),
+          category_id: parseInt(form.values.category_id),
+        };
+        const res = await addProductService(temp);
+        message.success("Thêm sản phẩm thành công");
+        window.location.reload();
       } catch (error) {
-        message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
+        message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau");
         console.log(error);
       }
     }
@@ -93,7 +88,6 @@ const AdminPage = () => {
   const handleCancelAdd = () => {
     setIsModalAddOpen(false);
   };
-
 
   return (
     <>
@@ -104,26 +98,39 @@ const AdminPage = () => {
             // id="menuSideBarAdminPage"
             theme="dark"
             mode="inline"
-            style={{ "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "height": "100vh", "gap": "50px" }}
-          // defaultSelectedKeys={["1"]}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              gap: "50px",
+            }}
+            // defaultSelectedKeys={["1"]}
 
-          // items={[
-          //   {
-          //     key: "1",
-          //     icon: <PlusCircleOutlined />,
-          //     label: "Add Product",
-          //   },
-          //   {
-          //     key: "2",
-          //     icon: <UserOutlined />,
-          //     label: "All Users",
-          //     onClick: clickUser
-          //   },
-          // ]}
+            // items={[
+            //   {
+            //     key: "1",
+            //     icon: <PlusCircleOutlined />,
+            //     label: "Add Product",
+            //   },
+            //   {
+            //     key: "2",
+            //     icon: <UserOutlined />,
+            //     label: "All Users",
+            //     onClick: clickUser
+            //   },
+            // ]}
           >
             {/* <Menu.Item key={1}>Add Product</Menu.Item>
           <Menu.Item key={2}>All Users</Menu.Item> */}
-            <Button type="primary" size="large" onClick={() => { navigate("/") }}>
+            <Button
+              type="primary"
+              size="large"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               Back to home
             </Button>
             <Button type="primary" size="large" onClick={showModalAdd}>
@@ -133,7 +140,7 @@ const AdminPage = () => {
               All users
             </Button>
           </Menu>
-        </Sider >
+        </Sider>
         <Layout>
           <Header
             className="flex justify-between"
@@ -165,21 +172,36 @@ const AdminPage = () => {
             <TableProduct listCategory={listCategory} />
           </Content>
         </Layout>
-      </Layout >
+      </Layout>
 
-      <Modal width={700} title="Điền thông tin sản phẩm cần thêm" open={isModalAddOpen} onOk={handleOkAdd} onCancel={handleCancelAdd}
+      <Modal
+        width={700}
+        title="Điền thông tin sản phẩm cần thêm"
+        open={isModalAddOpen}
+        onOk={handleOkAdd}
+        onCancel={handleCancelAdd}
         footer={[
           <Button key="back" onClick={handleCancelAdd}>
             Cancel
           </Button>,
-          <Button key="submit" type="primary" loading={loading} ghost onClick={handleOkAdd}>
+          <Button
+            key="submit"
+            type="primary"
+            loading={loading}
+            ghost
+            onClick={handleOkAdd}
+          >
             Submit
           </Button>,
         ]}
       >
         <div className="form flex flex-col gap-3 my-5 w-4/5 mx-auto">
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             style={{
               width: "75%",
               display: "block",
@@ -191,7 +213,11 @@ const AdminPage = () => {
             {...form.register("product_id")}
           />
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             style={{
               width: "75%",
               display: "block",
@@ -203,7 +229,11 @@ const AdminPage = () => {
             {...form.register("product_name")}
           />
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             style={{
               width: "75%",
               display: "block",
@@ -215,7 +245,11 @@ const AdminPage = () => {
             {...form.register("product_price")}
           />
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             style={{
               width: "75%",
               display: "block",
@@ -227,7 +261,11 @@ const AdminPage = () => {
             {...form.register("product_discount")}
           />
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             style={{
               width: "75%",
               display: "block",
@@ -236,12 +274,15 @@ const AdminPage = () => {
             }}
             label="Flash sale"
             renderInput={(_, props) => (
-              <select {...props}
+              <select
+                {...props}
                 className="block w-9/12 p-2 outline-none"
-              // id="inputPriceProduct"
+                // id="inputPriceProduct"
               >
                 {/* <option value="none" selected disabled hidden>Select an Option</option> */}
-                <option value="" selected disabled="disabled">Select an Option</option>
+                <option value="" selected disabled="disabled">
+                  Select an Option
+                </option>
                 <option value={1}>Có</option>
                 <option value={0}>Không</option>
               </select>
@@ -249,15 +290,21 @@ const AdminPage = () => {
             {...form.register("flash_sale")}
           />
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
+            customField={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "20px",
+            }}
             label="Loại"
             renderInput={(_, props) => (
-              <select {...props}
-                className="block w-9/12 p-2 outline-none"
-              >
-                <option value="" selected disabled="disabled">Select an Option</option>
+              <select {...props} className="block w-9/12 p-2 outline-none">
+                <option value="" selected disabled="disabled">
+                  Select an Option
+                </option>
                 {listCategory.map((ele, index) => (
-                  <option key={index} value={index}>{ele.category}</option>
+                  <option key={index} value={index}>
+                    {ele.category}
+                  </option>
                 ))}
               </select>
             )}
