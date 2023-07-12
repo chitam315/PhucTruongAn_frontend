@@ -5,18 +5,23 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
+<<<<<<< HEAD
 import { useAuth } from '../AuthContext/index'
 import Search from "../Search/Search";
 
 function Header() {
 
   const { user, logout } = useAuth()
+=======
+import { useAuth } from "../AuthContext/index";
+import Search from "../Search/Search";
+
+function Header() {
+  const { user } = useAuth();
+>>>>>>> e33d8c88fd4a8d04ce46ad908839c0ca90df8677
 
   console.log(user);
-<<<<<<< HEAD
 
-=======
->>>>>>> 158529a64367165d160e0565253d735896f1d4fc
   return (
     <div className="bg-white d-block-none">
       <div className="text-center bg-[var(--main)] text-white">
@@ -72,9 +77,7 @@ function Header() {
       <div className="bg-[#ffb600] text-[1.1em] font-bold ">
         <ul className="container-sm flex-center text-none text-white list-none header-navbar-session">
           <li className="flex items-center cursor-pointer hover:text-[var(--mainColor)] duration-500">
-
             <CategoryProduct />
-
           </li>
           <li>
             <a href="/">Giới thiệu</a>

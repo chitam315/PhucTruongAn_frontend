@@ -17,36 +17,27 @@ import { useNavigate, useParams } from "react-router";
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 import { Link } from "react-router-dom";
+import { useAsync } from "../../hooks/useAsync";
+import { useAuth } from "../AuthContext/index";
 
 export default function DetailProduct() {
-  //
-  const [product, setProduct] = useState({});
-  const [image, setImage] = useState([]);
+  //Lấy thông tin sản phẩm
   const params = useParams();
-
-  const { loading, data: _product } = useFetch(() => {
+  const [product, setProduct] = useState({});
+  const { loadingData, data: _product } = useFetch(() => {
     return productService.getProductById(params.id);
   });
   useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
+    const fetch = () => {
+      if (_product && !loadingData) {
         setProduct(_product.data.metadata);
       }
     };
     fetch();
   });
 
-  const { loading2, data: _image } = useFetch(() => {
+  const { loadingImage, data: listImage } = useFetch(() => {
     return productService.getProductImage(params.id);
-  });
-
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading2) {
-        await setImage(_image?.data.metadata);
-      }
-    };
-    fetch();
   });
 
   //List type product
@@ -65,8 +56,6 @@ export default function DetailProduct() {
     };
     fetch();
   });
-
-  const navigate = useNavigate();
 
   // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);
@@ -89,6 +78,7 @@ export default function DetailProduct() {
   };
 
   //Add to cart
+  const navigate = useNavigate();
   const toastOptions = {
     position: "top-center",
     autoClose: 1500,
@@ -96,10 +86,19 @@ export default function DetailProduct() {
     draggable: true,
     theme: "dark",
   };
+  const { user } = useAuth();
+  const { execute: addCart, loadingAddToCart } = useAsync(
+    productService.createAddCart
+  );
 
-  const addToCart = async (event) => {
-    event.preventDefault();
+  const addToCart = async () => {
     try {
+      const field = {
+        product_id: params.id,
+        quantity: count,
+        user_id: user.id,
+      };
+      await addCart(field);
       toast.success("Thêm sản phẩm vào giỏ hàng thành công", toastOptions);
     } catch (error) {
       console.log(error);
@@ -131,21 +130,13 @@ export default function DetailProduct() {
                 showArrows={true}
                 showStatus={false}
               >
-                {/* {image.length !==  0 ? (
-                  // image.map((item, index) => {
-                  //   <img
-                  //     src={() => {
-                  //       item.image_base64.split("");
-                  //       return item[1];
-                  //     }}
-                  //     alt=""
-                  //   />;
-                  // })
-                  <></>
+                {listImage ? (
+                  listImage.data.metadata.map((item, index) => (
+                    <img src={item.image_base64} alt="" key={index} />
+                  ))
                 ) : (
-                  <></>
-                )} */}
-                <img src="" alt="" />
+                  <img src="" alt="" />
+                )}
               </Carousel>
             </div>
             <div className="col-lg-5 col-tb-7 col-tbs-12">
@@ -164,6 +155,7 @@ export default function DetailProduct() {
                         : "btn-type-product"
                     }
                     href={"/detail/" + item.product_id}
+                    key={index}
                   >
                     <div className="flex items-center relative">
                       <div className="relative w-[14px] h-[14px] mr-[7px]">
@@ -214,7 +206,13 @@ export default function DetailProduct() {
                 />
               </div>
               <div className="flex items-center justify-center gap-3 mt-[20px]">
-                <div className="w-[70%] col-tb-6 flex items-center flex-col bg-[var(--mainColor)] text-white py-[10px] rounded-[15px] cursor-pointer relative hover-overlay-main">
+                <div
+                  className="w-[70%] col-tb-6 flex items-center flex-col bg-[var(--mainColor)] text-white py-[10px] rounded-[15px] cursor-pointer relative hover-overlay-main"
+                  onClick={() => {
+                    addToCart();
+                    navigate("/paying");
+                  }}
+                >
                   <div className="hover-overlay"></div>
                   <p className="uppercase font-bold">mua ngay</p>
                   <p>(Giao hàng miễn phí tận nơi)</p>

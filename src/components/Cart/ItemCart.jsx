@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch";
+import { productService } from "../../service/product.service";
 
-export default function ItemCart() {
+export default function ItemCart({ item }) {
   return (
     <div className="flex border-gray rounded-[10px] overflow-hidden p-[10px] mb-[15px] bg-[#fdfdfd]">
       <Link to="/detail">
@@ -12,28 +14,18 @@ export default function ItemCart() {
       </Link>
       <div className="w-100 flex flex-col justify-center ml-[15px] ">
         <Link to="/detail" className="flex-center flex-block mb-[15px]">
-          <p className="font-bold">
-            [1000W] Đèn UFO Năng Lượng Mặt Trời TP Solar TP-U1000 Chiếu Sáng 360 Độ
-          </p>
+          <p className="font-bold">{item.product.product_name}</p>
           <span className="font-bold text-right text-[var(--accentColor2)]">
-            2.150.000₫
+            {Number(item.product.product_price)
+              .toFixed(0)
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+            <span>₫</span>
           </span>
         </Link>
         <div className="flex-center">
           <div className="flex-center">
-            <button className="cart-btn-minus">
-              -
-            </button>
-            <input
-              className="cart-text-quantity"
-              readonly=""
-              min="1"
-              name="number"
-              value="1"
-              size="2"
-              type="text"
-              readOnly
-            />
+            <button className="cart-btn-minus">-</button>
+            <span className="cart-text-quantity">{item.quantity}</span>
             <button className="cart-btn-plus">+</button>
           </div>
           <button className="btn btn-outline-danger text-[0.8em]">Xoá</button>

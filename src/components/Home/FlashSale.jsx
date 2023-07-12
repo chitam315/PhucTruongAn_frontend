@@ -28,7 +28,6 @@ export default function FlashSale() {
     fetch();
   });
 
-
   return (
     <>
       <div>
@@ -64,7 +63,7 @@ export default function FlashSale() {
                 removeArrowOnDeviceType={["desktop"]}
               >
                 {arrFlashSale.slice(0, 5).map((item, index) => (
-                  <ItemProductSale item={item} />
+                  <ItemProductSale item={item} key={index} />
                 ))}
               </Carousel>
             </div>

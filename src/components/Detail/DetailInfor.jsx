@@ -70,7 +70,6 @@ export default function DetailInfor() {
             <img
               src="https://bizweb.dktcdn.net/thumb/grande/100/463/111/files/quang-teo-20230426035518-6dxjr-optimized.png?v=1683256082011"
               alt=""
-              // style={{ "vertical-align": "middle" }}
             />
           </p>
           <p className="text-[1em]">
