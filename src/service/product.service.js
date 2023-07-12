@@ -1,5 +1,4 @@
-import { CATEGORY_API, PRODUCT_API, api } from "../config/api";
-import { PRODUCT_API, PRODUCT_ID_API, PRODUCT_IMAGE, PRODUCT_DESC, api } from "../config/api";
+import { PRODUCT_API, PRODUCT_ID_API, PRODUCT_IMAGE, PRODUCT_DESC, api, CATEGORY_API } from "../config/api";
 
 export const productService = {
   getAllProducts(data) {

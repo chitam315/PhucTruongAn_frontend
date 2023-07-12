@@ -46,11 +46,11 @@ const AdminPage = () => {
     ],
     product_price: [
       required(),
-      regexp('vietnamCurency')
+      regexp('vietnamConcurrency')
     ],
     product_discount: [
       required(),
-      regexp('vietnamCurency'),
+      regexp('vietnamConcurrency'),
       compare("product_price","please input discount less than original price","smaller")
     ],
     flash_sale: [

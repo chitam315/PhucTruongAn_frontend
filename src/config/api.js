@@ -8,6 +8,7 @@ import { authService } from "../service/auth.service";
 // dotenv.config({ path: ".env" });
 
 export const LOGIN_API = process.env.REACT_APP_LOGIN_API
+export const REGISTER_API = process.env.REACT_APP_REGISTER_API
 export const USER_API = process.env.REACT_APP_USER_API
 export const PRODUCT_API = process.env.REACT_APP_PRODUCT_API
 export const REFRESH_TOKEN_API = process.env.REACT_APP_REFRESH_TOKEN_API

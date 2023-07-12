@@ -6,6 +6,7 @@ import Input from "../Input";
 import { useForm } from "../../hooks/useForm"
 import { minMax, regexp, required } from "../../utils/validate";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 
 export default function Signin() {
   const { user, login } = useAuth()
@@ -36,7 +37,7 @@ export default function Signin() {
               <h1 className="text-[25px] mb-[0px] font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Đăng Nhập
               </h1>
-              <form className="space-y-4  mt-[5px]" action="#">
+              <div className="space-y-4  mt-[5px]">
 
                 <div className="mt-[3px]">
                   <label
@@ -80,23 +81,22 @@ export default function Signin() {
                 >
                   Đăng Nhập
                 </button> */}
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  {/* Quên mật khẩu?{" "} */}
-                  <a
+                {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <Link
                     href="/forget-password"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500 text-gray-600 text-center"
                   >
                     Quên mật khẩu.
-                  </a>
-                </p>
+                  </Link>
+                </p> */}
 
                 {/* <!-- Divider --> */}
                 <div className="my-2 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                  <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                  {/* <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
                     Đăng nhập bằng
-                  </p>
+                  </p> */}
                 </div>
-                <div class="d-flex align-items-center justify-content-center">
+                {/* <div class="d-flex align-items-center justify-content-center">
                   <a
                     href="#/"
                     className="social-login--facebook"
@@ -121,30 +121,26 @@ export default function Signin() {
                       src="//bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"
                     />
                   </a>
-                </div>
+                </div> */}
                 <p className="text-sm text-center text-black-600 dark:text-black-600">
                   Tạo khoản để quản lý nếu chưa có tài khoản
 
                 </p>
                 <div className="flex justify-center ">
-                  <button
-                    type="submit"
+                  <Link to="/signup"
                     className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
-                    <a className="text-white" href="/signup">Tạo tài khoản</a>
-
-                  </button>
+                    Tạo tài khoản
+                  </Link>
                 </div>
                 <div className="flex justify-center ">
-                  <button
-                    type="submit"
+                  <Link to="/"
                     className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
-                    <a className="text-white" href="/#">Quay về trang chủ</a>
-
-                  </button>
+                    Quay về trang chủ
+                  </Link>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

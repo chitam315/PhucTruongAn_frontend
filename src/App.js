@@ -34,7 +34,6 @@ import SearchPage from "./components/Search/SearchPage";
 
 function App() {
   return (
-<<<<<<< HEAD
     <Routes>
       <Route index path="" element={<HomePage />} />
       <Route path="/see-more" element={<SeeMorePage />} />
@@ -74,50 +73,6 @@ function App() {
         path="/guest/intro/chinh-sach-kiem-hang"
         element={<InspectionPolicy />}
       />
-=======
-      <Routes>
-        <Route index path="" element={<HomePage />} />
-        <Route index path="/see-more" element={<SeeMorePage />} />
-        <Route index path="/detail" element={<DetailProductPage />} />
-        <Route index path="/baohanh" element={<Guarantee />}></Route>
-        <Route index path="/cart" element={<CartPage />} />
-        <Route index path="/paying" element={<PayingPage />} />
-        <Route index path="/project" element={<Project />} />
-        <Route index path="/guest/support" element={<WarrantyStation />} />
-        <Route index path="/guest/intro" element={<WarrantyPolicyHome />} />
-        <Route index path="/admin-page" element={<AdminPage />} />
-        <Route index path="/admin-users" element={<AdminUser />} />
-        <Route index path="/introduce" element={<IntroducePage />} />
-        <Route index path="/news" element={<News />} />
-        <Route index path="/contact" element={<Contact />} />
-        <Route index path="/admin/product" element={<AdminProduct />} />
-        <Route
-          index
-          path="/guest/intro/chinh-sach-bao-hanh"
-          element={<WarrantyPolicy />}
-        />
-        <Route
-          index
-          path="/guest/intro/chinh-sach-bao-mat"
-          element={<PrivacyPolicy />}
-        />
-        <Route
-          index
-          path="/guest/intro/chinh-sach-van-chuyen"
-          element={<ShippingPolicy />}
-        />
-        <Route
-          index
-          path="/guest/intro/chinh-sach-doi-tra"
-          element={<ReturnPolicy />}
-        />
-        <Route index path="/guest/intro/dieu-khoan" element={<Rules />} />
-        <Route
-          index
-          path="/guest/intro/chinh-sach-kiem-hang"
-          element={<InspectionPolicy />}
-        />
->>>>>>> cd9483ea5e025f0417dd27745efd318b00e28f79
 
       <Route
         path="/guest/intro/chinh-sach-thanh-toan"

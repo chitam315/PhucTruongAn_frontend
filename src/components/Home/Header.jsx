@@ -5,13 +5,13 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
-import {useAuth} from '../AuthContext/index'
+import { useAuth } from '../AuthContext/index'
 import Search from "../Search/Search";
 
 function Header() {
-  
-  const {user} = useAuth()
-  
+
+  const { user, logout } = useAuth()
+
   console.log(user);
   return (
     <div className="bg-white d-block-none">
@@ -30,7 +30,7 @@ function Header() {
           />
         </Link>
 
-        <Search/>
+        <Search />
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
             <LuPhoneCall className="svg-orange animate-shake" />
@@ -51,7 +51,14 @@ function Header() {
           </div>
         </div>
         <div className="flex-center gap-2">
-          <span>{user ? user.full_name : "Username"}</span>
+          {
+            user ?
+              <div className="flex flex-col gap-1">
+                <span> {user.full_name} </span>
+                <span onClick={logout} className="cursor-pointer">Đăng xuất</span>
+              </div> :
+              <></>
+          }
           <Link to={user ? "admin-page" : "/signin"}>
             <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
           </Link>

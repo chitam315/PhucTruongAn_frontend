@@ -28,7 +28,7 @@ export const validate = (rules, form) => {
         website: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
         facebook: /(?:https?:\/\/)?(?:www\.)?(mbasic.facebook|m\.facebook|facebook|fb)\.(com|me)\/(?:(?:\w\.)*#!\/)?(?:pages\/)?(?:[\w\-\.]*\/)*([\w\-\.]*)/,
         concurrency: /^\d{1,3}(?:\.\d{3})*(?:,\d+)?\s+vnd$/i,
-        vietnamCurency: /^[1-9][0-9]{3,}$/
+        vietnamConcurrency: /^[1-9][0-9]{3,}$/
     }
     for (const name in rules) {
         for (const rule of rules[name]) {
@@ -92,7 +92,7 @@ export const required = (message) => ({
 
 /**
  * 
- * phone,email,website,facebook
+ * phone,email,website,facebook,concurrency,vietnamConcurrency
  */
 export const regexp = (pattern, message) => ({
     message,
