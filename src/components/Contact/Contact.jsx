@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header/Header";
+import Header from "../Home/Header";
 import Footer from "../Footer/Footer";
 import "../../components/IntroducePage/IntroducePage.css"
 export default function Contact() {

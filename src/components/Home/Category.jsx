@@ -9,51 +9,67 @@ import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 
 export default function Category() {
-  const [dataItem, setDataItem] = useState([]);
-  const [dataDDLT, setDataDDLT] = useState([]);
-  const [dataD_UFO, setDataD_UFO] = useState([]);
-  const [dataDPha, setDataDPha] = useState([]);
-  const [dataDBChai, setDataDBChai] = useState([]);
-  const [dataDVuon, setDataDVuon] = useState([]);
+  // const [dataItem, setDataItem] = useState([]);
+  // const [dataDDLT, setDataDDLT] = useState([]);
+  // const [dataD_UFO, setDataD_UFO] = useState([]);
+  // const [dataDPha, setDataDPha] = useState([]);
+  // const [dataDBChai, setDataDBChai] = useState([]);
+  // const [dataDVuon, setDataDVuon] = useState([]);
+  var dataDDLT = [], dataD_UFO = [], dataDPha = [] , dataDBChai = [] , dataDVuon = []
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts();
   });
 
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
-        await setDataItem(listProduct.data.metadata);
-      }
-    };
-    fetch();
-  });
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     if (!loading) {
+  //       await setDataItem(listProduct.data.metadata);
+  //     }
+  //   };
+  //   fetch();
+  // }, []);
+  var arr1 = [], arr2 = [], arr3 = [], arr4 = [], arr5 = []
 
-  const arr1 = dataItem.filter((item) => {
-    return item.category_id === 1;
-  });
-  const arr2 = dataItem.filter((item) => {
-    return item.category_id === 2;
-  });
-  const arr3 = dataItem.filter((item) => {
-    return item.category_id === 3;
-  });
-  const arr4 = dataItem.filter((item) => {
-    return item.category_id === 4;
-  });
-  const arr5 = dataItem.filter((item) => {
-    return item.category_id === 5;
-  });
+  if (!loading) {
+    arr1 = listProduct.data.metadata.filter((item) => {
+      return item.category_id === 1;
+    });
+    dataDDLT = arr1.slice(0, 8);
 
-  useEffect(() => {
-    const fetchData = () => {
-      setDataDDLT(arr1.slice(0, 8));
-      setDataD_UFO(arr2.slice(0, 8));
-      setDataDPha(arr4.slice(0, 12));
-      setDataDBChai(arr3.slice(0, 12));
-      setDataDVuon(arr5.slice(0, 6));
-    };
-    fetchData();
-  });
+    arr2 = listProduct.data.metadata.filter((item) => {
+      return item.category_id === 2;
+    });
+    dataD_UFO = arr2.slice(0, 8)
+
+    arr3 = listProduct.data.metadata.filter((item) => {
+      return item.category_id === 3;
+    });
+    dataDBChai = arr3.slice(0,12)
+
+    arr4 = listProduct.data.metadata.filter((item) => {
+      return item.category_id === 4;
+    });
+    dataDPha = arr4.slice(0,12)
+
+    arr5 = listProduct.data.metadata.filter((item) => {
+      return item.category_id === 5;
+    });
+    dataDVuon = arr5.slice(0,6)
+  }
+
+
+
+
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     setDataDDLT(arr1.slice(0, 8));
+  //     setDataD_UFO(arr2.slice(0, 8));
+  //     setDataDPha(arr4.slice(0, 12));
+  //     setDataDBChai(arr3.slice(0, 12));
+  //     setDataDVuon(arr5.slice(0, 6));
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <>

@@ -4,7 +4,7 @@ import "../../assets/variables.css";
 
 import Footer from "../Footer/Footer";
 import "./Project.css";
-import Header from "../Header/Header";
+import Header from "../Home/Header";
 export default function Project() {
   return (
     <>

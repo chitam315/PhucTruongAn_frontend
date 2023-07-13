@@ -35,7 +35,7 @@ function App() {
   return (
     <Routes>
       <Route index path="" element={<HomePage />} />
-      <Route index path="/see-more" element={<SeeMorePage />} />
+      <Route index path="/see-more/:id" element={<SeeMorePage />} />
       <Route index path="/detail/:id" element={<DetailProductPage />} />
       <Route index path="/baohanh" element={<Guarantee />}></Route>
       <Route index path="/cart" element={<CartPage />} />

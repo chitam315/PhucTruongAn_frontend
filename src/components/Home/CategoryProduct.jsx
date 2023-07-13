@@ -1,70 +1,65 @@
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, message, Space } from 'antd';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 const onClick = ({ key }) => {
   message.info(`Click on item ${key}`);
 };
 const items = [
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
-      Đèn UFO năng lượng mặt trời
-    </a>,
+    label: <Link to="/see-more/1" className="dropdown-item font-semibold p-2 m-2" >
+      Đèn đường liền thể năng lượng mặt trời
+    </Link>,
     key: '1',
 
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
-      Đèn đường liền thể mặt trời
-    </a>,
+    label: <Link to="/see-more/2" className="dropdown-item font-semibold p-2 m-2" >
+      Đèn UFO năng lượng mặt trời
+    </Link>,
     key: '2',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/3" className="dropdown-item font-semibold p-2 m-2" >
       Đèn bàn chải năng lượng mặt trời
-    </a>,
+    </Link>,
     key: '3',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/4" className="dropdown-item font-semibold p-2 m-2" >
       Đèn pha năng lượng mặt trời
-    </a>,
+    </Link>,
     key: '4',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/5" className="dropdown-item font-semibold p-2 m-2" >
       Đèn trụ cổng & sân vườn
-    </a>,
+    </Link>,
     key: '5',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/6" className="dropdown-item font-semibold p-2 m-2" >
       Đèn áp trần & Đèn thả hình loa
-    </a>,
+    </Link>,
     key: '6',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/7" className="dropdown-item font-semibold p-2 m-2" >
       Đèn cầm tay năng lượng mặt trời
-    </a>,
+    </Link>,
     key: '7',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
-      Đèn áp trần & Đèn thả hình loa
-    </a>,
+    label: <Link to="/see-more/8" className="dropdown-item font-semibold p-2 m-2" >
+      Quạt năng lượng mặt trời
+    </Link>,
     key: '8',
   },
   {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
-      Quạt năng lượng mặt trời
-    </a>,
-    key: '9',
-  },
-  {
-    label: <a className="dropdown-item font-semibold p-2 m-2" href="see-more">
+    label: <Link to="/see-more/9" className="dropdown-item font-semibold p-2 m-2" >
       Phụ kiện đèn năng lượng mặt trời
-    </a>,
-    key: '10',
+    </Link>,
+    key: '9',
   },
 ];
 const CategoryProduct = () => (

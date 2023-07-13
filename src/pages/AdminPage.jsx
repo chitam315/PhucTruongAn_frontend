@@ -7,7 +7,7 @@ import {
   PlusCircleOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar, Modal, message } from "antd";
-import { listCategory } from "../mockData";
+// import { listCategory } from "../mockData";
 import { TableProduct } from "../components/TableProduct";
 import { useNavigate } from "react-router";
 import { useAuth } from "../components/AuthContext";
@@ -17,6 +17,7 @@ import { compare, regexp, required } from "../utils/validate";
 import { useAsync } from "../hooks/useAsync";
 import axios from "axios";
 import { api } from "../config/api";
+import { useFetch } from "../hooks/useFetch";
 const { Header, Sider, Content } = Layout;
 
 const AdminPage = () => {
@@ -25,16 +26,25 @@ const AdminPage = () => {
     productService.createProduct
   );
 
+  const { loadingCategory, data: listCategory } = useFetch(() => {
+    return productService.getAllCategories()
+  })
+  
   const { user } = useAuth();
 
-  if (user.full_name != "admin") {
-    navigate("/");
-  }
+  const navigate = useNavigate();
+
+  
+  useEffect(() => {
+    if (user?.full_name != "admin") {
+      console.log("Unauthorization");
+      navigate("/");
+    }
+  },[])
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  const navigate = useNavigate();
   const clickUser = () => {
     navigate("/admin-users");
   };
@@ -79,6 +89,7 @@ const AdminPage = () => {
           category_id: parseInt(form.values.category_id),
         };
         const res = await addProductService(temp);
+        console.log(res);
         message.success("Thêm sản phẩm thành công");
         window.location.reload();
       } catch (error) {
@@ -91,6 +102,9 @@ const AdminPage = () => {
   const handleCancelAdd = () => {
     setIsModalAddOpen(false);
   };
+  if (loadingCategory) {
+    return <h1>Loading ...</h1>
+  }
 
   return (
     <>
@@ -304,9 +318,9 @@ const AdminPage = () => {
                 <option value="" selected disabled="disabled">
                   Select an Option
                 </option>
-                {listCategory.map((ele, index) => (
-                  <option key={index} value={index}>
-                    {ele.category}
+                {listCategory.data.metadata.map((ele, index) => (
+                  <option key={index} value={ele.category_id}>
+                    {ele.category_name}
                   </option>
                 ))}
               </select>

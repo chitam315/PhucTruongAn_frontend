@@ -15,8 +15,11 @@ export default function Cart() {
   const { loadingCart, data: listCart } = useFetch(() => {
     return productService.getCartById(user.id);
   });
-  console.log(user.id);
-  console.log(listCart);
+  var sumOfPrice = 0
+  if(!loadingCart){
+    console.log(listCart);
+    listCart?.data?.metadata.map((e) => sumOfPrice+=e.product.product_price*e.quantity)
+  }
   //Handle button copy
   const [textCopy, setTextCopy] = useState("Sao chép");
   const changeTextBtnCopy = () => {
@@ -26,6 +29,10 @@ export default function Cart() {
       setTextCopy("Sao chép");
     }, 1500);
   };
+
+  if (loadingCart) {
+    return <h1>Loading ...</h1>
+  }
 
   return (
     <CardMain>
@@ -41,7 +48,7 @@ export default function Cart() {
         <Row>
           <div className="col-9 col-tb-12">
             {listCart?.data.metadata.map((item, index) => (
-              <ItemCart item={item} key={index}/>
+              <ItemCart idProduct={item.id} item={item} key={index}/>
             ))}
           </div>
           <div className="col-3 col-tb-12">
@@ -67,7 +74,7 @@ export default function Cart() {
             <div className="flex-center font-bold text-[1.1em] my-[15px] border-1 border-[var(--mainColor)] rounded-[10px] p-[5px]">
               <p className="">Tổng tiền</p>
               <p className="text-[1.3em] text-[var(--accentColor2)] font-bold">
-                35.300.000 ₫
+                {sumOfPrice} ₫
               </p>
             </div>
             <Link to="/paying" className="btn-blue">

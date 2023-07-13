@@ -16,7 +16,7 @@ function ScrollToTop() {
       } else {
         setOnTop(false);
       }
-  });
+  },[]);
 
   return (
     <div

@@ -5,7 +5,7 @@ import "../../assets/variables.css";
 import Footer from "../Footer/Footer";
 import { Container } from "react-bootstrap";
 import tpsolar from "../../assets/introduce/den-nang-luong-mat-troi-tp-solar.webp";
-import Header from "../Header/Header";
+import Header from "../Home/Header";
 const IntroducePage = () => {
   return (
     <>

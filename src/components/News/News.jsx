@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../assets/variables.css";
-import Header from "../Header/Header";
+import Header from "../Home/Header";
 import  Footer  from "../Footer/Footer";
 import "../Project/Project.css";
 export default function News() {

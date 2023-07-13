@@ -1,20 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { PRODUCT_API, PRODUCT_ID_API, PRODUCT_IMAGE, PRODUCT_DESC, api, CATEGORY_API } from "../config/api";
-=======
-<<<<<<< HEAD
-import { PRODUCT_API, PRODUCT_ID_API, PRODUCT_IMAGE, PRODUCT_DESC, GET_CART, ADD_CART, api } from "../config/api";
 
-export const productService = {
-
-=======
-import { CATEGORY_API, PRODUCT_API, api } from "../config/api";
-import { PRODUCT_API, PRODUCT_ID_API, PRODUCT_IMAGE, PRODUCT_DESC, api } from "../config/api";
->>>>>>> e517a349484fc8d1bdc7d3b8af56f087a25215cc
-
-export const productService = {
->>>>>>> 158529a64367165d160e0565253d735896f1d4fc
-=======
 import {
   PRODUCT_API,
   PRODUCT_ID_API,
@@ -29,9 +13,14 @@ import {
 } from "../config/api";
 
 export const productService = {
->>>>>>> e33d8c88fd4a8d04ce46ad908839c0ca90df8677
+
   getAllProducts(data) {
     return api.get(`${PRODUCT_API}`);
+  },
+  getProductByCategory(id) {
+    return api.post(`${PRODUCT_API}/get-product-by-category`,{
+        category_id: parseInt(id)
+    })
   },
   getProductById(data) {
     return api.post(`${PRODUCT_ID_API}`, { product_id: data });
@@ -59,9 +48,12 @@ export const productService = {
     console.log(data);
     return api.post(`${PRODUCT_API}/create-product`, data);
   },
-  deleteProductById(id) {
+  deleteProductById(data) {
+    console.log(data);
     return api.delete(`${PRODUCT_API}/delete-product`, {
-      data: id,
+      data: {
+        product_id: data
+      }
     });
   },
   updateProduct(data) {

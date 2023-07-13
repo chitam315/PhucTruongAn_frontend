@@ -38,7 +38,7 @@ function Product() {
       }
     };
     fetch();
-  });
+  },[]);
 
   //Pagination table data
   const [currentPage, setCurrentPage] = useState(1);

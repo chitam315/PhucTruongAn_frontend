@@ -17,7 +17,7 @@ function Search() {
       }
     };
     fetch();
-  });
+  },[]);
 
   const [input, setInput] = useState("");
   const fetchData = (value) => {

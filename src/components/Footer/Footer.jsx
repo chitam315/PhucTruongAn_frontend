@@ -7,57 +7,43 @@ import "./Footer.css";
 import { BsFillTelephoneFill } from "react-icons/bs";
 // Import các biểu tượng cần thiết
 // library.add(faUser, faEnvelope);
+import logo from "../../logo.jpg"
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="col-right position-relative mt-[30px]">
-      <footer className="bg-white pt-5">
+    // <div className="col-right position-relative mt-[30px]">
+      <footer className="bg-white pt-5 mt-[30px]">
         <div className="foo_mid mb-4">
           <div className="container-sm">
             <div className="row">
               <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-left">
-                <a
-                  href="/"
-                  title="TP Solar - Đèn Năng Lượng Mặt Trời Chính Hãng"
+                <Link
+                  to="/"
+                  title="Công ty TNHH thiết bị điện Phúc Trường An"
                   className="logo_foo d-block mb-2"
                 >
                   <img
-                    alt="Logo TP Solar - Đèn Năng Lượng Mặt Trời Chính Hãng"
+                    alt="Công ty TNHH thiết bị điện Phúc Trường An"
                     className="lazy loaded max-w-[215px]"
-                    src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo_foo.png?1685679333702"
-                    data-src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo_foo.png?1685679333702"
+                    src={logo}
+                  // data-src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo_foo.png?1685679333702"
                   />
-                </a>
+                </Link>
                 <p className="adr">
-                  <b>CÔNG TY CỔ PHẦN TP SOLAR </b>
-                </p>
-                <p className="adr">
-                  Giấy chứng nhận Đăng ký Kinh doanh số 0109008737 do Sở Kế
-                  hoạch và Đầu tư Thành phố Hà Nội cấp ngày 29/11/2019
+                  <b>CÔNG TY TNHH THIẾT BỊ ĐIỆN PHÚC TRƯỜNG AN </b>
                 </p>
 
                 <p className="adr">
                   <i className="fa fa-envelope-o" aria-hidden="true"></i> Email:{" "}
-                  <a href="mailto:hotro@tpsolar.vn" title="hotro@tpsolar.vn">
-                    hotro@tpsolar.vn
+                  <a href="mailto:23011987truong@gmail.com" title="23011987truong@gmail.com">
+                    23011987truong@gmail.com
                   </a>
                 </p>
 
                 <p className="adr">
                   <i className="fa fa-home" aria-hidden="true"></i> Trụ sở:
-                  C61-20, KĐT Geleximco, Đường Lê Trọng Tấn, Phường Dương Nội,
-                  Quận Hà Đông, Thành Phố Hà Nội, Việt Nam
-                </p>
-
-                <p className="adr">
-                  <i className="fa fa-home" aria-hidden="true"></i> Cơ sở Miền
-                  Bắc: C03-40, KĐT Geleximco, Đường Lê Trọng Tấn, Phường Dương
-                  Nội, Quận Hà Đông, Thành Phố Hà Nội, Việt Nam
-                </p>
-
-                <p className="adr">
-                  <i className="fa fa-home" aria-hidden="true"></i> Cơ sở Miền
-                  Nam: 75 Võ Nguyên Giáp, Phước Tân, Biên Hòa, Đồng Nai
+                  224 ấp Tân Thành, huyện Bắc Sơn, Trảng Bom, ĐN
                 </p>
               </div>
               <div className="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 footer-left">
@@ -66,26 +52,13 @@ export default function Footer() {
                   <br />
                   <a
                     className="phone flex items-center"
-                    href="tel:0363993993"
-                    title="0363 993 993"
+                    href="tel:0933819292"
+                    title="0933819292"
                   >
-                    <BsFillTelephoneFill className="text-red pr-[7px]" /> 0363
-                    993 993
+                    <BsFillTelephoneFill className="text-red pr-[7px]" /> 0933819292
                   </a>
                 </p>
                 <br />
-                <p>
-                  <b>TỔNG ĐÀI MIỄN PHÍ: </b>
-                  <br />
-                  <a
-                    className="phone flex items-center"
-                    href="tel:1800646450"
-                    title="1800 64 64 50"
-                  >
-                    <BsFillTelephoneFill className="text-red pr-[7px]" /> 1800
-                    64 64 50
-                  </a>
-                </p>
               </div>
               <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
                 <h3 className="footer-title mb-2 position-relative font-weight-bold">
@@ -187,7 +160,7 @@ export default function Footer() {
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                     data-src="//bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo_bct.png?1685679333702"
                     alt="bct"
-                    //   style="max-width:60%; margin-top:20px"
+                  //   style="max-width:60%; margin-top:20px"
                   />
                 </a>
               </div>
@@ -340,14 +313,14 @@ export default function Footer() {
             <div className="row bgk align-items-center">
               <div className="col-12">
                 <div className="coppyright">
-                  Bản quyền thuộc về CÔNG TY CỔ PHẦN TP SOLAR.{" "}
-                  <span>Cung cấp bởi Sapo.</span>
+                  Bản quyền thuộc về CÔNG TY TNHH THIẾT BỊ ĐIỆN PHÚC TRƯỜNG AN.{" "}
+                  <span>Cung cấp bởi công ty Asia Business Insider.</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </footer>
-    </div>
+    // </div>
   );
 }

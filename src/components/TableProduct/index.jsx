@@ -30,7 +30,7 @@ import { useAsync } from "../../hooks/useAsync";
  *  }
  * ]
  */
-export const TableProduct = ({ list }) => {
+export const TableProduct = () => {
   const [limit, setLimit] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -56,7 +56,7 @@ export const TableProduct = ({ list }) => {
     product_discount: [
       required(),
       regexp('vietnamConcurrency'),
-      compare("product_price","please input discount less than original price","smaller")
+      compare("product_price", "please input discount less than original price", "smaller")
     ],
     flash_sale: [
       required()
@@ -134,13 +134,11 @@ export const TableProduct = ({ list }) => {
   };
 
   const handleOkDel = async () => {
-    const temp = {
-      product_id: idDelete
-    }
-    setIsModalDelOpen(false);
     try {
-      const res = await productService.deleteProductById(temp)
+      const res = await productService.deleteProductById(idDelete)
+      setIsModalDelOpen(false);
       message.success("Xoá sản phẩm thành công")
+      console.log(res);
       window.location.reload()
     } catch (error) {
       message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
@@ -194,7 +192,7 @@ export const TableProduct = ({ list }) => {
                       <Button className="mx-2" type="primary" ghost onClick={() => showModalEdit(ele.ID)}>
                         Edit product
                       </Button>
-                      <Button className="mx-2" type="primary" danger ghost onClick={() => {return showModalDel(ele.ID)}}>
+                      <Button className="mx-2" type="primary" danger ghost onClick={() => { return showModalDel(ele.ID) }}>
                         Delte product
                       </Button>
                     </div>
@@ -222,7 +220,7 @@ export const TableProduct = ({ list }) => {
       >
         <div className="form flex flex-col gap-3 my-5 w-4/5 mx-auto">
           <Field
-            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px"}}
+            customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
             style={{
               width: "75%",
               display: "block",
@@ -232,7 +230,7 @@ export const TableProduct = ({ list }) => {
             label="ID sản phẩm"
             defaultValue={idEdit}
             disabled
-            {...form.register("product_id",idEdit)}
+            {...form.register("product_id", idEdit)}
           />
           <Field
             customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
@@ -279,7 +277,7 @@ export const TableProduct = ({ list }) => {
               padding: "10px",
             }}
             label="Flash sale"
-            renderInput={(_,props) => (
+            renderInput={(_, props) => (
               <select {...props}
                 className="block w-9/12 p-2 outline-none"
               // id="inputPriceProduct"
@@ -295,12 +293,12 @@ export const TableProduct = ({ list }) => {
           <Field
             customField={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}
             label="Loại"
-            renderInput={(_,props) => (
+            renderInput={(_, props) => (
               <select {...props}
                 className="block w-9/12 p-2 outline-none"
               >
                 <option value="" selected disabled="disabled">Select an Option</option>
-                {listCategory.data.metadata.map((ele , index) => (
+                {listCategory.data.metadata.map((ele, index) => (
                   <option key={index} value={ele.category_id}>{ele.category_name}</option>
                 ))}
               </select>

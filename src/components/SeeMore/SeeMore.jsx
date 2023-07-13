@@ -9,21 +9,19 @@ import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
 import { useFetch } from "../../hooks/useFetch";
 import { api } from "../../config/api";
 import { productService } from "../../service/product.service";
+import { useParams } from "react-router";
 
 export default function SeeMore() {
-  const [dataItem, setDataItem] = useState([]);
-  const { loading, data: listProduct } = useFetch(() => {
-    return productService.getAllProducts();
-  });
 
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
-        await setDataItem(listProduct.data.metadata);
-      }
-    };
-    fetch();
-  },[]);
+  const {id} = useParams()
+
+  const { loading, data: listProduct } = useFetch(() => {
+    return productService.getProductByCategory(id);
+  },[id]);
+  var dataItem = []
+  if (!loading) {
+    dataItem=listProduct.data.metadata
+  }
 
   const [dataDefault, setDataDefault] = useState([]);
   const [dataAZ, setDataAZ] = useState([]);
@@ -43,8 +41,8 @@ export default function SeeMore() {
         ? -1
         : 1;
     });
-    setDataDefault(arr);
-    setDataItem(dataDefault);
+    // setDataDefault(arr);
+    dataItem = arr
   }
 
   function sortAZ() {
@@ -58,7 +56,7 @@ export default function SeeMore() {
       return 0;
     });
     setDataAZ(arrAZ);
-    setDataItem(dataAZ);
+    // setDataItem(dataAZ);
   }
   function sortZA() {
     var arrZA = dataItem.sort(function (a, b) {
@@ -71,7 +69,7 @@ export default function SeeMore() {
       return 0;
     });
     setDataZA(arrZA);
-    setDataItem(dataZA);
+    // setDataItem(dataZA);
   }
   function sortPriceGoUp() {
     const arrPriceGoUp = dataItem.sort(function (a, b) {
@@ -80,7 +78,7 @@ export default function SeeMore() {
       return 0;
     });
     setDataGoUp(arrPriceGoUp);
-    setDataItem(dataGoUp);
+    // setDataItem(dataGoUp);
   }
 
   function sortPriceGoDown() {
@@ -88,7 +86,7 @@ export default function SeeMore() {
       return b.product_price - a.product_price;
     });
     setDataGoDown(arrPriceGoDown);
-    setDataItem(dataGoDown);
+    // setDataItem(dataGoDown);
   }
 
   function sortDateNew() {
@@ -103,7 +101,7 @@ export default function SeeMore() {
       );
     });
     setDataDateNew(arrDateNew);
-    setDataItem(dataDateNew);
+    // setDataItem(dataDateNew);
   }
 
   function sortDateOld() {
@@ -118,7 +116,7 @@ export default function SeeMore() {
       );
     });
     setDataDateOld(arrDateOld);
-    setDataItem(dataDateOld);
+    // setDataItem(dataDateOld);
   }
 
   const [minPrice, setMinPrice] = useState("");
@@ -183,7 +181,7 @@ export default function SeeMore() {
       setMinPrice(i);
       setMaxPrice(j);
       const ij = dataItem.filter((p) => p.price >= i && p.price <= j);
-      setDataItem(ij);
+      // setDataItem(ij);
     }
   };
 

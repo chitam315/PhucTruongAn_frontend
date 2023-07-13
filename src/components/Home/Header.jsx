@@ -5,22 +5,12 @@ import { BsBasket } from "react-icons/bs";
 import { TbMap2 } from "react-icons/tb";
 import "./HomePage.css";
 import CategoryProduct from "./CategoryProduct";
-<<<<<<< HEAD
 import { useAuth } from '../AuthContext/index'
 import Search from "../Search/Search";
-
+import logo from "../../logo.jpg"
 function Header() {
 
   const { user, logout } = useAuth()
-=======
-import { useAuth } from "../AuthContext/index";
-import Search from "../Search/Search";
-
-function Header() {
-  const { user } = useAuth();
->>>>>>> e33d8c88fd4a8d04ce46ad908839c0ca90df8677
-
-  console.log(user);
 
   return (
     <div className="bg-white d-block-none">
@@ -29,13 +19,13 @@ function Header() {
       </div>
       <div className="flex-center container-sm ">
         <Link
-          to="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo.png?1686880710266"
+          to="/"
           className="p-0 block"
         >
           <img
-            src="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo.png?1686880710266"
+            src={logo}
             alt=""
-            className="w-[200px] h-full"
+            className="w-[100px] h-full"
           />
         </Link>
 
@@ -46,7 +36,7 @@ function Header() {
           </div>
           <div className="text-[var(--mainColor)]  hover:text-[#ff9419] font-bold ml-[10px]">
             Hotline: <br />
-            0363 993 993
+            0933 819 292
           </div>
         </div>
         <div className="flex-center cursor-pointer">
@@ -68,10 +58,12 @@ function Header() {
               </div> :
               <></>
           }
-          <Link to={user ? "admin-page" : "/signin"}>
+          <Link to={user ? "/admin-page" : "/signin"}>
             <VscAccount className="svg-main cursor-pointer text-[var(--mainColor)] text-[1.5em] block" />
           </Link>
-          <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
+          <Link to="/cart">
+            <BsBasket className="svg-main cursor-pointer  text-[var(--mainColor)] text-[1.5em] block" />
+          </Link>
         </div>
       </div>
       <div className="bg-[#ffb600] text-[1.1em] font-bold ">
@@ -80,29 +72,29 @@ function Header() {
             <CategoryProduct />
           </li>
           <li>
-            <a href="/">Giới thiệu</a>
+            <Link to="/introduce">Giới thiệu</Link>
           </li>
           <li>
-            <a href="/">Dự án & hoạt động</a>
+            <Link to="/project">Dự án & hoạt động</Link>
           </li>
           <li>
-            <a href="/">Tin tức</a>
+            <Link to="/news">Tin tức</Link>
           </li>
-          <li>
+          {/* <li>
             <a href="/">Khách hàng</a>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <a href="/">Tuyển đại lý</a>
+          </li> */}
+          <li>
+            <Link to="/contact">Liên hệ</Link>
           </li>
           <li>
-            <a href="/">Liên hệ</a>
+            <Link to="/baohanh">Bảo hành</Link>
           </li>
-          <li>
-            <a href="/">Bảo hành</a>
-          </li>
-          <li>
+          {/* <li>
             <a href="/">Tuyển dụng</a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

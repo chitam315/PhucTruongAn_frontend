@@ -12,7 +12,7 @@ function ImageProduct({ item }) {
       to={`/detail/${item.product_id}`}
       className="overflow-hidden flex items-center justify-center h-[180px]"
     >
-      {_product && _product.data.metadata[0] ? (
+      {_product && _product.data.metadata[0] && _product.data.metadata[0].image_base64? (
         <img
           src={_product.data.metadata[0].image_base64}
           alt=""

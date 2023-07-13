@@ -10,23 +10,16 @@ import { api } from "../../config/api";
 import { productService } from "../../service/product.service";
 
 export default function FlashSale() {
-  const [arrFlashSale, setArrFlashSale] = useState([]);
+  var arrFlashSale = []
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts();
   });
 
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
-        await setArrFlashSale(
-          listProduct.data.metadata.filter((item) => {
-            return (item.flash_sale = true);
-          })
-        );
-      }
-    };
-    fetch();
-  });
+  if (!loading) {
+    arrFlashSale = listProduct.data.metadata.filter((item) => {
+      return (item.flash_sale = true);
+    })
+  }
 
   return (
     <>

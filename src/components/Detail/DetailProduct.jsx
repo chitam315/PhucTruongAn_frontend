@@ -34,7 +34,7 @@ export default function DetailProduct() {
       }
     };
     fetch();
-  });
+  },[]);
 
   const { loadingImage, data: listImage } = useFetch(() => {
     return productService.getProductImage(params.id);
@@ -55,7 +55,7 @@ export default function DetailProduct() {
       }
     };
     fetch();
-  });
+  },[]);
 
   // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);

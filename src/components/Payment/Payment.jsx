@@ -12,8 +12,15 @@ import { province } from "../../json/province";
 import { district } from "../../json/district";
 import { ward } from "../../json/ward";
 import { Modal } from "antd";
+import {ItemInPayment} from "./ItemInPayment"
+import { useFetch } from "../../hooks/useFetch";
+import { productService } from "../../service/product.service";
+import { useAuth } from "../AuthContext";
+import logo from "../../logo.jpg"
+import QR from "../../QR_banking.jpg"
 
 function Payment() {
+  const { user } = useAuth()
   const containerRef = useRef(null);
   const [dropdownCity, setDropdownCity] = useState(false);
   const [dropdownDistrict, setDropdownDistrict] = useState(false);
@@ -31,6 +38,15 @@ function Payment() {
   const [openQRCode, setOpenQRCode] = useState(false);
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
+  const { loadingCart, data: listCart } = useFetch(() => {
+    return productService.getCartById(user.id);
+  });
+
+  var sumOfPrice = 0
+  if(!loadingCart){
+    console.log(listCart);
+    listCart?.data?.metadata.map((e) => sumOfPrice+=e.product.product_price*e.quantity)
+  }
 
   //SẮP XẾP LIST TỈNH THÀNH QUẬN HUYỆN PHƯỜNG XÃ THEO BẢNG CHỮ CÁI
   province.sort(function (a, b) {
@@ -45,7 +61,6 @@ function Payment() {
     }
   );
 
-  console.log(district);
   ward.sort(function (a, b) {
     return a.name
       .toLowerCase()
@@ -140,6 +155,10 @@ function Payment() {
     }, 2000);
   };
 
+  if (loadingCart) {
+    return <h1>Loading ...</h1>
+  }
+
   return (
     <div className="bg-[#fff] w-100 h_100vh-fit mlr_auto-0">
       <div className="flex-block w-100">
@@ -147,9 +166,9 @@ function Payment() {
           <div className="w-fit">
             <Link to="/">
               <img
-                src="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/logo.png?1686880710266"
+                src={logo}
                 alt=""
-                className="w-[250px]"
+                className="w-[150px]"
               />
             </Link>
           </div>
@@ -159,13 +178,6 @@ function Payment() {
                 <p className="pt-0 font-bold text-[1.2em] text-black">
                   Thông tin nhận hàng
                 </p>
-                <Link
-                  to="#dang-nhap"
-                  className="flex items-center text-[#2a9dcc] hover:text-[#116687]"
-                >
-                  <BsPersonCircle className="mr-[5px] text-[1.2em]" />
-                  Đăng nhập
-                </Link>
               </div>
               <label className="paying-input-animation">
                 <input type="text" required spellcheck="false" />
@@ -388,11 +400,14 @@ function Payment() {
                   {openQRCode === true ? (
                     <div className="paying-qrcode">
                       <img
-                        src={require("../../assets/Icon/qrcode.png")}
+                        src={QR}
                         alt=""
                       />
                       <span className="text-[1em] text-[#262626] text-center">
-                        Mời quý khách quét mã <b>QR Code</b> để thanh toán
+                        Nguyễn Anh Trường
+                      </span>
+                      <span className="text-[1em] text-[#262626] text-center">
+                        0121002557771 - Vietcombank
                       </span>
                     </div>
                   ) : (
@@ -431,13 +446,17 @@ function Payment() {
             </div>
           </div>
         </div>
-        <div className="col-4-12 bg-[#fff7f7] p-[15px] h_100vh-fit">
+        <div className="col-4-12 bg-[#fff7f7] overflow-auto p-[15px] h_100vh-fit">
           <div className="container-sm">
             <p className="pt-0 font-bold text-[1.2em] text-black block pb-[15px] border-b-[1px] border-b-[#ccc]">
               Đơn hàng (19 sản phẩm)
             </p>
 
-            <div className="flex py-[10px] border-b-[1px] border-b-[#ccc]">
+            {/* List sản phẩm */}
+            {
+              listCart?.data?.metadata.map((ele,index) => <ItemInPayment key={index} product={ele}/>)
+            }
+            {/* <div className="flex py-[10px] border-b-[1px] border-b-[#ccc]">
               <img
                 src="https://bizweb.dktcdn.net/thumb/large/100/463/111/products/4.jpg?v=1685090490210"
                 alt=""
@@ -484,7 +503,7 @@ function Payment() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="flex pt-[20px] border-b-[1px] border-b-[#ccc]">
               <label className="paying-input-animation">
                 <input type="text" required spellcheck="false" />
@@ -495,7 +514,7 @@ function Payment() {
 
             <div className="flex-center mt-[15px]">
               <span className="text-[1em] text-[#1c1c1c]">Tạm tính</span>
-              <span className="text-[1em] text-[#1c1c1c]">4000000₫</span>
+              <span className="text-[1em] text-[#1c1c1c]">{sumOfPrice}</span>
             </div>
             <div className="flex-center my-[10px]">
               <span className="text-[1em] text-[#1c1c1c]">Phí vận chuyển</span>
@@ -504,7 +523,7 @@ function Payment() {
             <div className="flex-center mt-[10px] pb-[20px] border-b-[1px] border-b-[#ccc">
               <span className="text-[1.1em] text-[#1c1c1c]">Tổng cộng</span>
               <span className="text-[1.3em] font-bold text-[var(--mainColor)]">
-                4000000₫
+                {sumOfPrice}
               </span>
             </div>
             <div className="flex-center mt-[15px]">

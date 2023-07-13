@@ -5,42 +5,44 @@ import ModalTraCuuBaoHanh from "../Modal/ModalTraCuuBaoHanh";
 import ModalActiveGuarantee from "../Modal/ModalActiveGuarantee";
 import ModalWarrantyClaim from "../Modal/ModalWarrantyClaim";
 import WarrantyStation from "../WarrantyStation/WarrantyStation";
+import { Link } from "react-router-dom";
+import logo from "../../logo.jpg"
 const HeaderGuarantee = () => {
   return (
     <>
       <div className="header max-w-[100%] bg-[#f2f2f4]">
         <div className="container w-[1200px] flex-center flex">
           <div className="logo h-[80px] w-[250px]  flex justify-start items-center">
-            <a href="http://tpsolar.vn" title="TP Solar">
+            <Link to="/" title="TP Solar">
               <img
                 className="max-h-[50px] max-w-[250px]"
-                src="https://cdn.phanmembaohanh.vn/data/Organization/D1C0182A-0F28-43F3-99D9-9E73BC31CE9F/tpsolar.png?h=100"
-                title="TP Solar"
-                alt="TP Solar"
+                src={logo}
+                title=""
+                alt=""
               />
-            </a>
+            </Link>
           </div>
           <h2 className="text-[32px] font-bold hover:underline ">
-            <a href="/" className="hover:text-current">
+            <p className="hover:text-current">
               TRUNG TÂM BẢO HÀNH
-            </a>
+            </p>
           </h2>
 
           <div
             style={{ border: "1px solid black" }}
             className="phone hover:underline text-[18px] font-bold p-[10px] rounded-[10px]"
           >
-            <a href="tel:1800 64 64 50" className="hover:text-current">
-              Hotline: 1800 64 64 50
+            <a href="tel:0933 819 292" className="hover:text-current">
+              Hotline: 0933 819 292
             </a>
           </div>
           <div
             style={{ border: "1px solid black" }}
             className="login text-[18px] font-bold hover:underline p-[10px] rounded-[10px]"
           >
-            <a href="/?c=login" className="hover:text-current">
+            <Link to="/signin" className="hover:text-current">
               Đăng nhập
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -80,21 +82,21 @@ const HeaderGuarantee = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/guest/support"
+              <Link
+                to="/guest/support"
                 onClick={WarrantyStation}
                 className="hover:text-[green]"
               >
                 Trạm bảo hành
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/guest/intro/chinh-sach-bao-hanh"
+              <Link
+                to="/guest/intro/chinh-sach-bao-hanh"
                 className="hover:text-[green]"
               >
                 Chính sách và hướng dẫn
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

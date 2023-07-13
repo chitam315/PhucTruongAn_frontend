@@ -77,7 +77,7 @@ function Banner() {
             renderButtonGroupOutside={true}
             infinite={true}
           >
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/1" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-1.webp")}
@@ -87,7 +87,7 @@ function Banner() {
           
               <span>Đèn đường liền thể năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/2" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-2.webp")}
@@ -96,7 +96,7 @@ function Banner() {
               </div>
               <span>Đèn UFO năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/3" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-3.webp")}
@@ -105,7 +105,7 @@ function Banner() {
               </div>
               <span>Đèn bàn chải năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/4" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-4.webp")}
@@ -114,7 +114,7 @@ function Banner() {
               </div>
               <span>Đèn pha năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/5" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-5.webp")}
@@ -123,7 +123,7 @@ function Banner() {
               </div>
               <span>Đèn trụ cổng và sân vườn</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/6" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-6.webp")}
@@ -132,7 +132,7 @@ function Banner() {
               </div>
               <span>Đèn áp trần và đèn thả hình loa</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/7" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-7.webp")}
@@ -141,7 +141,7 @@ function Banner() {
               </div>
               <span>Đèn cầm tay năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/8" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-8.webp")}
@@ -150,7 +150,7 @@ function Banner() {
               </div>
               <span>Quạt năng lượng mặt trời</span>
             </Link>
-            <Link to="" className="home-category-item">
+            <Link to="/see-more/9" className="home-category-item">
               <div className="relative">
                 <img
                   src={require("../../assets/Category/ic-9.webp")}
