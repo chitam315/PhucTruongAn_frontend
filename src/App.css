@@ -101,6 +101,19 @@ input[type="radio"] {
   border-radius: 10px;
 } */
 
+.z-500 {
+  z-index: 500 !important;
+}
+.z-8000 {
+  z-index: 8000 !important;
+}
+.z-9000 {
+  z-index: 600 !important;
+}
+.z-700 {
+  z-index: 700 !important;
+}
+
 input:focus[type="text"],
 input:hover[type="text"],
 input:focus[type="number"],
