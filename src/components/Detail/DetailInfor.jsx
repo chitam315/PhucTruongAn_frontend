@@ -3,11 +3,9 @@ import {
   MdOutlineKeyboardDoubleArrowDown,
   MdOutlineKeyboardDoubleArrowUp,
 } from "react-icons/md";
-import ItemProductRelative from "../Items/ItemProductRelative";
 import { useState } from "react";
-import ModalSpecification from "../Modal/ModalSpecification";
 
-export default function DetailInfor() {
+export default function DetailInfor({ Infor, Image }) {
   const [moreDetail, setMoreDetail] = useState(0);
 
   const showDetail = () => {
@@ -22,14 +20,12 @@ export default function DetailInfor() {
     <Row className="mt-[30px]">
       <div className={`col-md-9 col-tb-12 ${moreDetail === 0 ? "h-fit" : ""}`}>
         <div
-          className={`card-shadow w-100 rounded-[10px] pb-[100px] p-[15px] relative overflow-hidden ${
-            moreDetail === 0 ? "h-[500px]" : "h-fit"
-          }`}
+          className={`card-shadow w-100 rounded-[10px] pb-[100px] p-[15px] relative overflow-hidden ${moreDetail === 0 ? "h-[500px]" : "h-fit"
+            }`}
         >
           <div
-            className={`absolute w-100 bottom-0 p-[20px] ${
-              moreDetail === 0 ? "card-btn-seemore" : "h-[200px]"
-            }`}
+            className={`absolute w-100 bottom-0 p-[20px] ${moreDetail === 0 ? "card-btn-seemore" : "h-[200px]"
+              }`}
           >
             {moreDetail === 0 ? (
               <div
@@ -56,35 +52,54 @@ export default function DetailInfor() {
             <br />
           </p>
           <p className="font-bold text-[1.3em] text-[var(--mainColor)]">
-            Đặc điểm nổi bật của đèn đường liền thể năng lượng mặt trời 600w của
-            TP Solar Mẫu Mới Nhất 3 Mặt Đèn
+            Đặc điểm nổi bật của {Infor?.product_name} của
+            Phúc Trường An Mẫu Mới Nhất
             <br />
             <br />
           </p>
           <p className="text-[1em]">
-            Đèn đường liền thể năng lượng mặt trời 600w là một sản phẩm thông
+            {Infor?.product_name} là một sản phẩm thông
             minh. Đồng thời sở hữu những tính năng vô cùng vượt trội tạo nên sức
             hút rất lớn trên thị trường hiện nay.
           </p>
           <p className="flex justify-center">
             <img
-              src="https://bizweb.dktcdn.net/thumb/grande/100/463/111/files/quang-teo-20230426035518-6dxjr-optimized.png?v=1683256082011"
+              src={ Image && Image[0].image_base64}
               alt=""
             />
           </p>
           <p className="text-[1em]">
-            Đèn TP Solar có chính sách bảo hành điện tử phân biệt hàng chính
+            {Infor?.product_name} có chính sách bảo hành điện tử phân biệt hàng chính
             hãng và giúp khách hàng tra cứu thông tin bảo hành bất kì thời điểm
             nào.
           </p>
-          <p className="flex justify-center">
+          {
+            Image?.length > 1 ? (
+              Image.map((ele , index) => {
+                if (index == 0) {
+                  return <></>
+                }
+                return (
+                  <p className="flex justify-center">
+                    <img
+                      src={ele.image_base64}
+                      alt=""
+                    />
+                  </p>
+                )
+              })
+            ) : (
+              <></>
+            )
+          }
+          {/* <p className="flex justify-center">
             <img
-              src="https://bizweb.dktcdn.net/thumb/grande/100/463/111/files/903de247b7d76a8933c6-20230324091501-8e8zx.jpg?v=1683256533480"
+              src={Image[1].image_base64}
               alt=""
             />
-          </p>
+          </p> */}
         </div>
-        <div className="card-shadow w-100 rounded-[10px] p-[15px] relative">
+        {/* <div className="card-shadow w-100 rounded-[10px] p-[15px] relative">
           <p className="font-bold text-[1.1em]">Sản phẩm liên quan</p>
           <div className="p-15px">
             <Row className=" m-0">
@@ -94,9 +109,9 @@ export default function DetailInfor() {
               <ItemProductRelative />
             </Row>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="col-md-3 col-tb-12 h-fit">
+      {/* <div className="col-md-3 col-tb-12 h-fit">
         <div className="card-shadow w-100 rounded-[10px] p-[8px]">
           <p className="font-bold text-[1.1em] p-[10px]">Thông số kĩ thuật</p>
           <div className="rounded-[10px] overflow-hidden border-gray">
@@ -138,7 +153,7 @@ export default function DetailInfor() {
           </div>
           <ModalSpecification />
         </div>
-      </div>
+      </div> */}
     </Row>
   );
 }

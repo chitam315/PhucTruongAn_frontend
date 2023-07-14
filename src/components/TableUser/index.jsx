@@ -1,16 +1,38 @@
 import React, { useState } from 'react'
-import { Btn } from '../ModalAndBtn/Btn';
-import { ModalFlowbite } from '../ModalAndBtn/Modal';
-import {Pagination} from "antd"
+import { Button, Modal, Pagination } from "antd"
 
 export const TableUser = ({ listUsers }) => {
-  const [limit,setLimit] = useState(10)
-  const [currentPage,setCurrentPage] = useState(1)
+  const [limit, setLimit] = useState(10)
+  const [currentPage, setCurrentPage] = useState(1)
 
-  const changePage = (currentPage,pageSize) => {
+  const changePage = (currentPage, pageSize) => {
     setCurrentPage(currentPage)
     setLimit(pageSize)
   }
+
+  const [isModalDelOpen, setIsModalDelOpen] = useState(false);
+
+  const showModalDel = (id) => {
+    setIsModalDelOpen(true);
+    // setIdDelete(id)
+  };
+
+  const handleOkDel = async () => {
+    setIsModalDelOpen(false);
+    // try {
+    //   const res = await productService.deleteProductById(idDelete)
+    //   message.success("Xoá sản phẩm thành công")
+    //   console.log(res);
+    //   window.location.reload()
+    // } catch (error) {
+    //   message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
+    //   console.log(error);
+    // }
+  };
+
+  const handleCancelDel = () => {
+    setIsModalDelOpen(false);
+  };
   return (
     <>
       <div className="relative overflow-x-auto mb-4">
@@ -40,17 +62,9 @@ export const TableUser = ({ listUsers }) => {
                   <td className="px-6 py-4 flex justify-between items-center">
                     <p className='text-lg pl-4'>{ele.full_name}</p>
                     <div className="flex">
-                      <Btn
-                        style={{
-                          backgroundColor: "red",
-                          width: "80px",
-                          textAlign: "center",
-                          height: "40px",
-                        }}
-                        modalID={"modalDelete"}
-                      >
-                        Delete
-                      </Btn>
+                      <Button className="mx-2" type="primary" danger ghost onClick={() => { return showModalDel(ele.ID) }}>
+                        Delte user
+                      </Button>
                     </div>
                   </td>
                   <td className="px-6 py-4 text-center">{ele.phone}</td>
@@ -64,12 +78,18 @@ export const TableUser = ({ listUsers }) => {
 
       <Pagination defaultCurrent={1} total={listUsers.length} onChange={changePage} />
 
-      <ModalFlowbite
-        modalID={"modalDelete"}
-        titleModal={"Bạn có chắc chắn muốn xoá người dùng này"}
+      <Modal title="Bạn có chắc muốn xoá người dùng này" open={isModalDelOpen} onOk={handleOkDel} onCancel={handleCancelDel}
+        footer={[
+          <Button key="back" onClick={handleCancelDel}>
+            Cancel
+          </Button>,
+          <Button key="submit" type="primary" ghost danger onClick={handleOkDel}>
+            Submit
+          </Button>,
+        ]}
       >
         <h3 className="p-4">Nếu bạn đồng ý thì người dùng này sẽ được xoá vĩnh viễn</h3>
-      </ModalFlowbite>
+      </Modal>
     </>
   )
 }

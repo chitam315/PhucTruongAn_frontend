@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { Button, Modal } from "antd";
+import {  Modal } from "antd";
 import { FaWindowClose } from "react-icons/fa";
 
 const ModalActiveGuarantee = ({ name, content }) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState(content);
 
   const showModal = () => {
     setOpen(true);
   };
 
   const handleOk = () => {
-    setModalText("The modal will be closed after two seconds");
     setConfirmLoading(true);
     setTimeout(() => {
       setOpen(false);
@@ -20,10 +18,10 @@ const ModalActiveGuarantee = ({ name, content }) => {
     }, 2000);
   };
 
-  const handleCancel = () => {
-    console.log("Clicked cancel button");
-    setOpen(false);
-  };
+  // const handleCancel = () => {
+  //   console.log("Clicked cancel button");
+  //   setOpen(false);
+  // };
 
   return (
     <>

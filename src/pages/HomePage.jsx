@@ -10,11 +10,13 @@ import NavigationBottom from "../components/NavigationBottom/NavigationBottom";
 import Header from "../components/Home/Header";
 import Banner from "../components/Home/Banner";
 import VideoReview from "../components/Home/VideoReview";
+import HeaderResponsive from "../components/Home/HeaderResponsive"
 
 
 export default function HomePage() {
   return (
     <div className="bg-main w-100">
+      <HeaderResponsive/>
       <Header />
       <Banner />
       <VideoReview />

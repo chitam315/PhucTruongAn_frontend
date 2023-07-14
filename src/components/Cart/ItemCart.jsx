@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
-import { productService } from "../../service/product.service";
 import { useAsync } from "../../hooks/useAsync";
 import {cartService} from "../../service/cart.service"
 
 export default function ItemCart({ item , idProduct }) {
-  const {loading,execute: deleteProductCart} = useAsync(() => {
+  const {execute: deleteProductCart} = useAsync(() => {
     return cartService.deleteCartById(idProduct)
   })
   const clickDelete = async () => {
     console.log(idProduct);
     try {
-      const res = await deleteProductCart()
+      await deleteProductCart()
       window.location.reload()
     } catch (error) {
       console.log(error);

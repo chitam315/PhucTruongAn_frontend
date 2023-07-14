@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./responsive.css";
 import HomePage from "./pages/HomePage";
@@ -26,9 +26,6 @@ import Signin from "./components/Singin/Singin";
 import ForgetPassword from "./components/Singin/ForgetPassword";
 import AdminUser from "./pages/AdminUser";
 import Product from "./components/Admin/Product";
-import AddProduct from "./components/Admin/AddProduct";
-import Dashboard from "./components/Admin/Dashboard";
-import AddImage from "./components/Admin/AddImage";
 import SearchPage from "./components/Search/SearchPage";
 
 function App() {

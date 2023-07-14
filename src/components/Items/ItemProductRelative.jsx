@@ -7,7 +7,7 @@ export default function ItemProductRelative({ item }) {
         {/* <div className="tag-discount-relative">- 9%</div> */}
         <div className="flex">
           <a
-            href={`/detail/${item.product_id}`}
+            href={`/detail/${item?.product_id}`}
             className="overflow-hidden w-[100px] h-[100px]"
           >
             <img
@@ -17,11 +17,11 @@ export default function ItemProductRelative({ item }) {
             />
           </a>
           <div className="ml-[10px] w-[calc(100%-100px)] h-full">
-            <a href={`/detail/${item.product_id}`}>
-              <p className="font-bold text-[0.9em]">{item.product_name}</p>
+            <a href={`/detail/${item?.product_id}`}>
+              <p className="font-bold text-[0.9em]">{item?.product_name}</p>
               <div className="flex items-center">
                 <p className="font-bold text-[0.9em] text-[var(--accentColor2)]">
-                  {Number(item.product_price)
+                  {Number(item?.product_price)
                     .toFixed(0)
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                   <span>₫</span>

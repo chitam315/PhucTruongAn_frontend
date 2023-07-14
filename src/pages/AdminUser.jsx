@@ -3,7 +3,6 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
-  ProfileOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar } from "antd";
 import { listUsers } from "../mockData";

@@ -1,27 +1,21 @@
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GrSearch } from "react-icons/gr";
-import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
+import { useState } from "react";
+import ItemSearch from "./ItemSearch";
 
 function Search() {
-  const [arrProduct, setArrProduct] = useState([]);
   const [arrFilter, setArrFilter] = useState([]);
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts();
   });
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
-        await setArrProduct(listProduct.data.metadata);
-      }
-    };
-    fetch();
-  },[]);
 
   const [input, setInput] = useState("");
-  const fetchData = (value) => {
-    const result = arrProduct.filter((product) => {
+
+  const handleChange = (value) => {
+    setInput(value);
+    const result = listProduct?.data.metadata.filter((product) => {
       return (
         value &&
         product &&
@@ -32,10 +26,6 @@ function Search() {
     setTimeout(() => {
       setArrFilter(result);
     }, 800);
-  };
-  const handleChange = (value) => {
-    setInput(value);
-    fetchData(value);
   };
   const navigate = useNavigate();
   const clickSearch = () => {
@@ -69,33 +59,13 @@ function Search() {
             input !== "" ? "block" : "hidden"
           }`}
         >
-          <div className="flex items-center justify-between rounded-[5px] bg-[var(--mainColor)] p-1 m-1">
-            <span className="text-white text-[0.9em]">Sản phẩm ({arrFilter.length})</span>
-
+          <div className="flex items-center justify-between rounded-[5px] bg-[var(--mainColor)] p-1 m-1 z-8000">
+            <span className="text-white text-[0.9em]">
+              Sản phẩm ({arrFilter.length})
+            </span>
           </div>
           {arrFilter.map((item, index) => (
-            <Link
-              to={`/detail/${item.product_id}`}
-              className="flex items-center hover:bg-[#ebebeb] rounded-[5px]"
-              key={index}
-            >
-              <img
-                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=-1&s=1"
-                alt=""
-                className="w-[70px] h-[70px]"
-              />
-              <div className="w-[calc(100%-70px)]">
-                <span className="block w-full font-bold line-2 text-black text-[0.8em]">
-                  {item.product_name}
-                </span>
-                <span className="block w-full font-bold text-[var(--menuHover)] text-[0.8em]">
-                  {Number(item.product_price)
-                    .toFixed(0)
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                  <span>₫</span>
-                </span>
-              </div>
-            </Link>
+            <ItemSearch item={item} loading={loading} key={index} />
           ))}
         </div>
       </div>

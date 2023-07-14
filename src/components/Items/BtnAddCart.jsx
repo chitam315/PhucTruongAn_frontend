@@ -6,7 +6,7 @@ import { message } from "antd";
 
 function BtnAddCart({ item }) {
   const { user } = useAuth();
-  const { execute: addToCart, loading } = useAsync(
+  const { execute: addToCart } = useAsync(
     productService.createAddCart
   );
   const addCart = async () => {

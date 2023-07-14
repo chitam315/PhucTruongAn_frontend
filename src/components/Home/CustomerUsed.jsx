@@ -1,4 +1,3 @@
-import { Col, Container, Row } from "react-bootstrap";
 import CardHome from "../Card/CardHome";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

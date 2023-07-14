@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Row } from "react-bootstrap";
 import CardMain from "../Card/CardMain";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -23,39 +23,33 @@ import { useAuth } from "../AuthContext/index";
 export default function DetailProduct() {
   //Lấy thông tin sản phẩm
   const params = useParams();
-  const [product, setProduct] = useState({});
-  const { loadingData, data: _product } = useFetch(() => {
+  // const [product, setProduct] = useState({});
+  const { loadingData, data: product } = useFetch(() => {
     return productService.getProductById(params.id);
   });
-  useEffect(() => {
-    const fetch = () => {
-      if (_product && !loadingData) {
-        setProduct(_product.data.metadata);
-      }
-    };
-    fetch();
-  },[]);
+  // useEffect(() => {
+  //   const fetch = () => {
+  //     if (_product && !loadingData) {
+  //       setProduct(_product.data.metadata);
+  //     }
+  //   };
+  //   fetch();
+  // },[]);
 
   const { loadingImage, data: listImage } = useFetch(() => {
     return productService.getProductImage(params.id);
   });
 
   //List type product
-  const [arrLevel, setLevel] = useState([]);
   const { loadingLevelProduct, data: listProduct } = useFetch(() => {
     return productService.getAllProducts();
   });
-  useEffect(() => {
-    const fetch = () => {
-      if (listProduct && !loadingLevelProduct) {
-        const arrLevelProduct = listProduct.data.metadata.filter(
-          (item) => item.category_id === product.category_id
-        );
-        setLevel(arrLevelProduct);
-      }
-    };
-    fetch();
-  },[]);
+  var arrLevel = []
+  if (!loadingLevelProduct) {
+    arrLevel = listProduct?.data.metadata.filter(
+      (item) => item.category_id === product.category_id
+    );
+  }
 
   // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);
@@ -87,7 +81,7 @@ export default function DetailProduct() {
     theme: "dark",
   };
   const { user } = useAuth();
-  const { execute: addCart, loadingAddToCart } = useAsync(
+  const { execute: addCart } = useAsync(
     productService.createAddCart
   );
 
@@ -109,6 +103,10 @@ export default function DetailProduct() {
     }
   };
 
+  if (loadingData && loadingImage) {
+    return <h1>Loading ...</h1>
+  }
+
   return (
     <>
       <ToastContainer />
@@ -116,7 +114,7 @@ export default function DetailProduct() {
         <Row>
           <div className="col-12 flex items-center gap-2">
             <h1 className="font-bold mb-2 text-[1.1em]">
-              {product.product_name}
+              {product?.data.metadata.product_name}
             </h1>
           </div>
           <Row>
@@ -141,20 +139,20 @@ export default function DetailProduct() {
             </div>
             <div className="col-lg-5 col-tb-7 col-tbs-12">
               <span className="font-bold text-[1.5em] text-[var(--mainColor)]">
-                {Number(product.product_price)
+                {Number(product?.data.metadata.product_price)
                   .toFixed(0)
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                 <span>₫</span>
               </span>
               <div className="flex flex-wrap mt-[15px] gap-2">
-                {arrLevel.map((item, index) => (
+                {arrLevel?.map((item, index) => (
                   <a
                     className={
-                      item.product_id === product.product_id
+                      item?.product_id === product?.product_id
                         ? "btn-type-product btn-type-product-checked"
                         : "btn-type-product"
                     }
-                    href={"/detail/" + item.product_id}
+                    href={"/detail/" + item?.product_id}
                     key={index}
                   >
                     <div className="flex items-center relative">
@@ -163,11 +161,11 @@ export default function DetailProduct() {
                         <AiFillCheckCircle className="absolute icon-checkbox" />
                       </div>
                       <p className="text-[0.8em] p-0 font-bold">
-                        {item.product_id}
+                        {item?.product_id}
                       </p>
                     </div>
                     <p className="text-[var(--red)] text-[0.8em] font-bold">
-                      {Number(item.product_price)
+                      {Number(item?.product_price)
                         .toFixed(0)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                       <span>₫</span>
@@ -278,11 +276,11 @@ export default function DetailProduct() {
                   Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
                 </p>
                 <p>
-                  Thương hiệu: <span className="text-[#00b907]">TP Solar</span>
+                  Thương hiệu: <span className="text-[#00b907]">Phúc Trường An</span>
                 </p>
-                <p>
+                {/* <p>
                   Loại: <span className="text-[#00b907]">Đèn Đường</span>
-                </p>
+                </p> */}
               </div>
               <div className="mt-[30px] relative border-main-dashed rounded-[10px] px-[15px] py-[15px]">
                 <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-10%] left-[5%] py-[2px] px-[15px] text-[var(--mainColor)]">
@@ -305,12 +303,12 @@ export default function DetailProduct() {
               </div>
             </div>
           </Row>
-          <DetailInfor />
+          <DetailInfor Infor={product?.data.metadata} Image={listImage?.data?.metadata} />
         </Row>
       </CardMain>
-      <div className="justify-between items-center gap-2 sticky-bottom p-[10px] d-lg-none d-sm-flex">
+      {/* <div className="justify-between items-center gap-2 sticky-bottom p-[10px] d-lg-none d-sm-flex">
         <div className="border-red cursor-pointer rounded-[10px] py-[3px] w-[35%] flex flex-col items-center relative">
-          <img
+          <img className="w-[40px]"
             src="https://bizweb.dktcdn.net/thumb/small/100/463/111/themes/889675/assets/hotline.png?1686880710266"
             alt=""
           />
@@ -338,7 +336,7 @@ export default function DetailProduct() {
         <div className="flex flex-col items-center w-[55%] uppercase bg-[var(--mainColor)] cursor-pointer rounded-[10px] py-[25px] hover-bdr-blue">
           <span className="font-bold text-[1.1em] text-white">Mua ngay</span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

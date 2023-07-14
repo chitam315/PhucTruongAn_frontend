@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import HeaderGuarantee from "../HeaderGuarantee/HeaderGuarantee";
 import FooterGuarantee from "../FooterGuarantee/FooterGuarantee";
 import "./WarrantyPolicyHome.css";
-import WarrantyPolicy from "./WarrantyPolicy";
-import PrivacyPolicy from "./PrivacyPolicy";
 import { NavLink, Link } from "react-router-dom";
 
 const WarrantyPolicyHome = ({ children, name, url }) => {

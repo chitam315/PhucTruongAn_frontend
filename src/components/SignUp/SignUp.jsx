@@ -34,7 +34,7 @@ export default function SignUp() {
   const form = useForm(rules)
   const navigate = useNavigate()
 
-  const {execute: register, loading} = useAsync(authService.register)
+  const {execute: register} = useAsync(authService.register)
 
   const onSignup = async () => {
     if (form.validate()) {

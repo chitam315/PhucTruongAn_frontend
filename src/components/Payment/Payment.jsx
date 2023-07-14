@@ -1,17 +1,14 @@
-import { Container } from "react-bootstrap";
-import { BsPersonCircle, BsChevronLeft } from "react-icons/bs";
+import {  BsChevronLeft } from "react-icons/bs";
 import { BiCreditCard } from "react-icons/bi";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { ImTruck } from "react-icons/im";
-import CardMain from "../Card/CardMain";
 import { Link } from "react-router-dom";
 import "./Payment.css";
 import React, { useState, useEffect, useRef } from "react";
 import { province } from "../../json/province";
 import { district } from "../../json/district";
 import { ward } from "../../json/ward";
-import { Modal } from "antd";
 import {ItemInPayment} from "./ItemInPayment"
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
@@ -36,8 +33,8 @@ function Payment() {
   const [onDistrict, setOnDistrict] = useState(false);
   const [onWard, setOnWard] = useState(false);
   const [openQRCode, setOpenQRCode] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [confirmLoading, setConfirmLoading] = useState(false);
+  // const [open, setOpen] = useState(false);
+  // const [confirmLoading, setConfirmLoading] = useState(false);
   const { loadingCart, data: listCart } = useFetch(() => {
     return productService.getCartById(user.id);
   });
@@ -147,13 +144,13 @@ function Payment() {
   };
 
   //CỦA MODAL PAYMENT BANKING
-  const handleOk = () => {
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setOpen(false);
-      setConfirmLoading(false);
-    }, 2000);
-  };
+  // const handleOk = () => {
+  //   setConfirmLoading(true);
+  //   setTimeout(() => {
+  //     setOpen(false);
+  //     setConfirmLoading(false);
+  //   }, 2000);
+  // };
 
   if (loadingCart) {
     return <h1>Loading ...</h1>

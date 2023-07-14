@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 
 export default function CardMain({ children }) {
   return (

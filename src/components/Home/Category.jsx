@@ -4,7 +4,6 @@ import poster2 from "../../assets/Poster/poster2.png";
 import ItemProduct from "../Items/ItemProduct";
 import { Link } from "react-router-dom";
 import ItemProduct6 from "../Items/ItemProduct6";
-import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 

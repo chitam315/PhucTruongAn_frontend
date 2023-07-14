@@ -155,6 +155,7 @@ export default function Footer() {
                 <a
                   href="http://online.gov.vn/Home/WebDetails/99177"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -172,6 +173,7 @@ export default function Footer() {
                   <a
                     href="https://shopee.vn/tpsolar_vn"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -185,6 +187,7 @@ export default function Footer() {
                   <a
                     href="https://www.lazada.vn/shop/tpsolar/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -198,6 +201,7 @@ export default function Footer() {
                   <a
                     href="https://www.sendo.vn/shop/tp-solar"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -211,6 +215,7 @@ export default function Footer() {
                   <a
                     href="https://tiki.vn/cua-hang/thien-phu-solar"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -224,6 +229,7 @@ export default function Footer() {
                   <a
                     href="https://www.facebook.com/tpsolarvietnam88"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -237,6 +243,7 @@ export default function Footer() {
                   <a
                     href="https://zalo.me/381692685563842179"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -251,6 +258,7 @@ export default function Footer() {
                   <a
                     href="https://www.tiktok.com/@tpsolar68"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
                   >
                     <img
@@ -267,7 +275,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container-sm">
           <div className="foo_mid border-top pt-4 pb-4">
             <ul className="links_sm list-unstyled row mb-0">
               <li className="col-6 col-sm-4 col-md-3 col-lg-2 m-0 text-[14px]">
@@ -309,7 +317,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="foo_bot pt-2 pb-2 border-top">
-          <div className="container">
+          <div className="container-sm">
             <div className="row bgk align-items-center">
               <div className="col-12">
                 <div className="coppyright">

@@ -1,9 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import { Link } from "react-router-dom";
-import CardHome from "../Card/CardHome";
 import CardMain from "../Card/CardMain";
 
 function Banner() {

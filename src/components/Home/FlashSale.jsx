@@ -1,12 +1,8 @@
-import { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
 import "../../App.css";
 import ItemProductSale from "../Items/ItemProductSale";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { arrayProduct } from "../SeeMore/DataViDu";
 import { useFetch } from "../../hooks/useFetch";
-import { api } from "../../config/api";
 import { productService } from "../../service/product.service";
 
 export default function FlashSale() {

@@ -1,10 +1,7 @@
 import CardMain from "../Card/CardMain";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import React, { useState } from "react";
-import { Modal } from "antd";
-import { AiOutlineClose } from "react-icons/ai";
-import ReactPlayer from "react-player";
+import React from "react";
 import ModalVideo from "./ModalVideo";
 import { Link } from "react-router-dom";
 

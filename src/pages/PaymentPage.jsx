@@ -1,4 +1,3 @@
-import Cart from "../components/Cart/Cart";
 import "../components/Home/HomePage.css";
 import Payment from "../components/Payment/Payment";
 

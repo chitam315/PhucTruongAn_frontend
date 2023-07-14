@@ -5,8 +5,6 @@ import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 import { useForm } from "../../hooks/useForm";
 import { compare, regexp, required } from "../../utils/validate";
-import { useNavigate } from "react-router";
-import { useForceUpdate } from "../../hooks/useForceUpdate"
 import { useAsync } from "../../hooks/useAsync";
 
 // import './index.css'
@@ -37,7 +35,7 @@ export const TableProduct = () => {
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts()
   });
-  const { loadingCategories, data: listCategory } = useFetch(() => {
+  const {  data: listCategory } = useFetch(() => {
     return productService.getAllCategories()
   });
   const { execute: editProductService } = useAsync(productService.updateProduct)
@@ -107,7 +105,7 @@ export const TableProduct = () => {
           "flash_sale": parseInt(form.values.flash_sale),
           "category_id": parseInt(form.values.category_id),
         }
-        const res = await editProductService(temp)
+        await editProductService(temp)
         message.success("Thêm sản phẩm thành công")
         window.location.reload()
       } catch (error) {

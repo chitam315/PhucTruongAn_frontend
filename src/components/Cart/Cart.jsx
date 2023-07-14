@@ -11,13 +11,11 @@ import { useAuth } from "../AuthContext/index";
 
 export default function Cart() {
   const { user } = useAuth();
-  const [arrCart, setArrCart] = useState([]);
   const { loadingCart, data: listCart } = useFetch(() => {
     return productService.getCartById(user.id);
   });
   var sumOfPrice = 0
   if(!loadingCart){
-    console.log(listCart);
     listCart?.data?.metadata.map((e) => sumOfPrice+=e.product.product_price*e.quantity)
   }
   //Handle button copy

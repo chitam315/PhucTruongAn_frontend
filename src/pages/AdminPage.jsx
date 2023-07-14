@@ -4,10 +4,8 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
-  PlusCircleOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Avatar, Modal, message } from "antd";
-// import { listCategory } from "../mockData";
 import { TableProduct } from "../components/TableProduct";
 import { useNavigate } from "react-router";
 import { useAuth } from "../components/AuthContext";
@@ -15,8 +13,6 @@ import Field from "../components/Field";
 import { useForm } from "../hooks/useForm";
 import { compare, regexp, required } from "../utils/validate";
 import { useAsync } from "../hooks/useAsync";
-import axios from "axios";
-import { api } from "../config/api";
 import { useFetch } from "../hooks/useFetch";
 const { Header, Sider, Content } = Layout;
 

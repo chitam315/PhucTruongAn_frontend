@@ -1,6 +1,5 @@
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, message, Space } from 'antd';
-import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 const onClick = ({ key }) => {
   message.info(`Click on item ${key}`);
@@ -71,12 +70,12 @@ const CategoryProduct = () => (
   
     }}
   >
-    <a onClick={(e) => e.preventDefault()}>
+    <p onClick={(e) => e.preventDefault()}>
       <Space className=' p-1 '>
   <span className='font-extrabold text-xl'> Danh mục sản phẩm</span>
         <DownOutlined />
       </Space>
-    </a>
+    </p>
   </Dropdown>
 
   

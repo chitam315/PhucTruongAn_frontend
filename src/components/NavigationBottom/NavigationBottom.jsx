@@ -18,7 +18,7 @@ function NavigationBottom() {
   }
   return (
     <div>
-      <div className="z-[200] sticky-bottom fixed bg-white d-none-flex col-tb-12 shadow-top-10 radius-top">
+      <div className="sticky-bottom fixed bg-white d-none-flex col-tb-12 shadow-top-10 radius-top z-700">
         <div className="flex w-100">
           <div
             className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer"
@@ -57,7 +57,7 @@ function NavigationBottom() {
                 Giỏ hàng
               </span>
               <span className="block w-[20px] h-[20px] text-center absolute top-[-19%] right-[0%] rounded-[50%] bg-[#ff0000] text-[0.8em] text-white">
-                20
+                {/* 20 */}
               </span>
             </div>
           </Link>
@@ -72,15 +72,17 @@ function NavigationBottom() {
       )} */}
       <div
         className={
-          sliderLeft ? "block slider-left-main z-9000" : "hidden slider-left-main"
+          sliderLeft
+            ? "d-none-block slider-left-main z-9000"
+            : "hidden slider-left-main"
         }
       >
-        <div className="relative">
+        <div className="relative z-9000">
           <div
             className={
               sliderLeft
-                ? "slider-left-animation left-0"
-                : "slider-left-animation left-[-100%]"
+                ? "slider-left-animation left-0 "
+                : "slider-left-animation left-[-100%] z-9000"
             }
           >
             <SliderLeft />

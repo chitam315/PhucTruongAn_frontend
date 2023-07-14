@@ -4,10 +4,9 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import CardMain from "../Card/CardMain";
 import ItemProduct from "../Items/ItemProduct";
 import "./SeeMore.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { arrayCategory, arrayModel, arrayProduct } from "./DataViDu";
 import { useFetch } from "../../hooks/useFetch";
-import { api } from "../../config/api";
 import { productService } from "../../service/product.service";
 import { useParams } from "react-router";
 

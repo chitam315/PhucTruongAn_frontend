@@ -1,4 +1,3 @@
-import axios from "axios";
 import { LOGIN_API, api, REFRESH_TOKEN_API, REGISTER_API } from "../config/api";
 import { getToken } from "../utils/token";
 

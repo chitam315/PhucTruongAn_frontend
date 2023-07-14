@@ -3,7 +3,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 
 function ImageProduct({ item }) {
-  const { loading, data: _product } = useFetch(() => {
+  const {  data: _product } = useFetch(() => {
     return productService.getProductImage(item.product_id);
   });
 

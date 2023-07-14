@@ -4,12 +4,12 @@ import { useAuth } from "../AuthContext";
 import { useAsync } from '../../hooks/useAsync'
 import Input from "../Input";
 import { useForm } from "../../hooks/useForm"
-import { minMax, regexp, required } from "../../utils/validate";
+import { minMax, required } from "../../utils/validate";
 import Button from "../Button";
 import { Link } from "react-router-dom";
 
 export default function Signin() {
-  const { user, login } = useAuth()
+  const {  login } = useAuth()
   const { execute: loginService, loading} = useAsync(login)
   const rules = {
     username: [

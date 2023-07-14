@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { GrTrash } from "react-icons/gr";
 import { TfiPencilAlt } from "react-icons/tfi";
 import { FaRegEye } from "react-icons/fa";
@@ -26,19 +26,19 @@ function Product() {
   };
 
   //Load data
-  const [dataItem, setDataItem] = useState([]);
-  const { loading, data: listProduct } = useFetch(() => {
+  // const [dataItem, setDataItem] = useState([]);
+  const { loading, data: dataItem } = useFetch(() => {
     return productService.getAllProducts();
   });
 
-  useEffect(() => {
-    const fetch = async () => {
-      if (!loading) {
-        await setDataItem(listProduct.data.metadata);
-      }
-    };
-    fetch();
-  },[]);
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     if (!loading) {
+  //       await setDataItem(listProduct.data.metadata);
+  //     }
+  //   };
+  //   fetch();
+  // },[]);
 
   //Pagination table data
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,6 +64,10 @@ function Product() {
       item.product_name.toLowerCase().includes(query)
     );
   };
+
+  if (loading) {
+    return <h1>Loading ...</h1>
+  }
 
   return (
     <Dashboard>

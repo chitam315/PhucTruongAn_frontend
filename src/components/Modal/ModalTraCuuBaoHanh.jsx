@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { Button, Modal } from "antd";
+import {  Modal } from "antd";
 import { FaWindowClose } from "react-icons/fa";
 
 const ModalTraCuuBaoHanh = ({ name, content }) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState(content);
 
   const showModal = () => {
     setOpen(true);
   };
 
   const handleOk = () => {
-    setModalText("The modal will be closed after two seconds");
     setConfirmLoading(true);
     setTimeout(() => {
       setOpen(false);
