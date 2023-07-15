@@ -13,7 +13,7 @@ const IntroducePage = () => {
       <div className="col-right position-relative container-introduce">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">
-            <div className="container position-relative">
+            <div className="container-sm position-relative">
               <ul className="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
                 <li className="home">
                   <a href="/" title="Trang chủ">
@@ -29,7 +29,7 @@ const IntroducePage = () => {
             </div>
           </div>
           <div className="com_info">
-            <div className="container mt-3 mb-3">
+            <div className="container-sm mt-3 mb-3">
               <div className="rounded p-2 p-md-3 bg-white col-main page-title">
                 <h1 className="font-weight-bold pt-2 pt-lg-0 mt-0 mb-3 page_name">
                   Giới thiệu

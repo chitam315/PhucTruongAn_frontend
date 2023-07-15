@@ -1,20 +1,20 @@
 import React from "react";
 import Header from "../Home/Header";
 import Footer from "../Footer/Footer";
-import "../../components/IntroducePage/IntroducePage.css"
+import "../../components/IntroducePage/IntroducePage.css";
 export default function Contact() {
   return (
     <>
       <Header />
       <div className="com_info">
-        <div className="container mt-[15px] mb-[15px]">
+        <div className="container-sm mt-[15px] mb-[15px]">
           <div className="rounded p-2 p-md-3 bg-white col-main page-title">
             <h1 className="font-weight-bold pt-2 pt-lg-0 mb-2 mb-lg-3 mt-0">
               Liên hệ
             </h1>
-            <div className="m-auto bg-white d-block">
+            <div className="m-auto bg-white flex flex-wrap">
               <div className="row flex">
-                <div className="md:col-span-6 col-6 pr-[10px]">
+                <div className="col-6 col-sm-12 pr-[10px]">
                   <address className="vcard mb-4">
                     <p className="adr mb-1">
                       <b>Trụ sở chính: </b>Trụ sở: C61-20, KĐT Geleximco, Đường
@@ -90,7 +90,7 @@ export default function Contact() {
                       <span className="require d-block mb-3">
                         <em className="required">* </em>Thông tin bắt buộc
                       </span>
-                      <div >
+                      <div>
                         <button
                           type="submit"
                           title="Submit"
@@ -102,7 +102,7 @@ export default function Contact() {
                     </form>{" "}
                   </div>
                 </div>
-                <div className="md:col-span-6 col-6">
+                <div className="col-6 col-sm-12">
                   <div className="google-map pl-[10px]">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1260371072844!2d105.7371297153318!3d20.987584294557813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453d35428fd75%3A0x935b648a44164124!2sTP%20Solar%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1671522717034!5m2!1svi!2s"

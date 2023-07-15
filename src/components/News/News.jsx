@@ -11,7 +11,7 @@ export default function News() {
       <div className="col-right position-relative content-project">
         <div className="contentWarp ">
           <div className="breadcrumbs bg-white">
-            <div className="container position-relative">
+            <div className="container-sm position-relative">
               <ul className="breadcrumbb flex items-center m-0 pl-0 pr-0 small pt-2 pb-2">
                 <li className="home">
                   <a href="/" title="Trang chủ">
@@ -34,7 +34,7 @@ export default function News() {
             <meta itemprop="name" content="Dự án &amp; Hoạt động" />
             <meta itemprop="description" content="" />
 
-            <div className="container mt-3 mb-3 lastest-articles">
+            <div className="container-sm mt-3 mb-3 lastest-articles">
               <div className="rounded p-3 bg-white">
                 <div className="row">
                   <div className="col-md-7 col-12">
@@ -281,7 +281,7 @@ export default function News() {
                           </span>
                         </a>
                       </div>
-                      <div className="blogs-rights col-8 col-lg-9">
+                      <div className="blogs-rights col-8 col-lg-9 p-[15px]">
                         <h3 className="blog-item-name font-weight-bold mb-1 title_blo">
                           <a
                             className="line_1"
@@ -312,7 +312,7 @@ export default function News() {
               </div>
             </div>
             {/* Chu de hot */}
-            <div className="container mt-3 mb-3">
+            <div className="container-sm mt-3 mb-3">
               <div className="blog-list b_mew_cate rounded p-lg-3 pl-2 pr-2 bg-white">
                 <h3 className="align-items-center blog-name d-flex font-weight-bold pt-2 pt-lg-0">
                   <img
@@ -364,7 +364,7 @@ export default function News() {
               </div>
             </div>
             {/* Thong tin huu ich */}
-            <div className="container mt-3 mb-3 ">
+            <div className="container-sm mt-3 mb-3 ">
               <div className="col-main rounded m_white_bg_module p-lg-3 pl-2 pr-2 pt-3 pb-3">
                 <h1 className="blog-name font-weight-bold pb-3 pt-2 pt-lg-0">
                   Dự án &amp; Hoạt động

@@ -389,3 +389,10 @@ svg.svg-main path {
 .home-carousel-category .react-multiple-carousel__arrow--right {
   background: #0000000e !important;
 }
+
+.show-dropdown {
+  display: none;
+}
+.hover-show-dropdown:hover .show-dropdown {
+  display: block;
+}

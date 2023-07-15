@@ -21,34 +21,13 @@
 }
 
 /* *********** */
-.intro {
-  width: 100%;
-  min-height: calc(100vh - 240px);
-}
-.intro .list {
-  width: 300px;
-  margin: 0;
-  padding: 10px 0 0;
-  display: inline-block;
-  vertical-align: top;
-  list-style: none;
-}
 .intro .list li.on {
   font-weight: bold;
 }
 .intro .list li {
-  height: 32px;
   line-height: 35px;
   border-bottom: 1px solid #e1e1e1;
-  margin: 3px 0 0;
-  padding: 0 15px;
+  padding: 5px 0;
   color: #101c2c;
   text-transform: uppercase;
-  position: relative;
-}
-.intro .detail {
-  width: calc(100% - 350px);
-  margin: 10px 0 10px 30px;
-  display: inline-block;
-  vertical-align: top;
 }
