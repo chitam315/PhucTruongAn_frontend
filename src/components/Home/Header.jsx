@@ -90,7 +90,7 @@ function Header() {
             <Link to="/contact">Liên hệ</Link>
           </li>
           <li>
-            <Link to="/baohanh">Bảo hành</Link>
+            <Link to="/guest/intro/chinh-sach-bao-hanh">Chính sách & hướng dẫn</Link>
           </li>
           {/* <li>
             <a href="/">Tuyển dụng</a>

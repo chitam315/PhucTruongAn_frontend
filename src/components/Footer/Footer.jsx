@@ -171,7 +171,7 @@ export default function Footer() {
                 </h3>
                 <div className="onut pb-2">
                   <a
-                    href="https://shopee.vn/tpsolar_vn"
+                    // href="https://shopee.vn/tpsolar_vn"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -185,7 +185,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://www.lazada.vn/shop/tpsolar/"
+                    // href="https://www.lazada.vn/shop/tpsolar/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -199,7 +199,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://www.sendo.vn/shop/tp-solar"
+                    // href="https://www.sendo.vn/shop/tp-solar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -213,7 +213,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://tiki.vn/cua-hang/thien-phu-solar"
+                    // href="https://tiki.vn/cua-hang/thien-phu-solar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -227,7 +227,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://www.facebook.com/tpsolarvietnam88"
+                    // href="https://www.facebook.com/tpsolarvietnam88"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -241,7 +241,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://zalo.me/381692685563842179"
+                    // href="https://zalo.me/381692685563842179"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -256,7 +256,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@tpsolar68"
+                    // href="https://www.tiktok.com/@tpsolar68"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="position-relative iso sitdown modal-open d-inline-block mr-[10px]"
@@ -274,48 +274,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="container-sm">
-          <div className="foo_mid border-top pt-4 pb-4">
-            <ul className="links_sm list-unstyled row mb-0">
-              <li className="col-6 col-sm-4 col-md-3 col-lg-2 m-0 text-[14px]">
-                <a
-                  href="https://tpsolar.vn/huong-dan"
-                  title="Hướng dẫn mua hàng"
-                >
-                  Hướng dẫn mua hàng
-                </a>
-              </li>
-
-              <li className="col-6 col-sm-4 col-md-3 col-lg-2 m-0 text-[14px]">
-                <a
-                  href="https://tpsolar.vn/huong-dan"
-                  title="Hướng dẫn thanh toán"
-                >
-                  Hướng dẫn thanh toán
-                </a>
-              </li>
-
-              <li className="col-6 col-sm-4 col-md-3 col-lg-2 m-0 text-[14px]">
-                <a
-                  href="https://tpsolar.vn/huong-dan"
-                  title="Hướng dẫn giao nhận"
-                >
-                  Hướng dẫn giao nhận
-                </a>
-              </li>
-
-              <li className="col-6 col-sm-4 col-md-3 col-lg-2 m-0 text-[14px]">
-                <a
-                  href="https://tpsolar.vn/dieu-khoan"
-                  title="Điều khoản dịch vụ"
-                >
-                  Điều khoản dịch vụ
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </div>  
+ 
         <div className="foo_bot pt-2 pb-2 border-top">
           <div className="container-sm">
             <div className="row bgk align-items-center">

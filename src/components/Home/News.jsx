@@ -83,7 +83,7 @@ export default function News() {
 
           <div className="text-center w-100">
             <a
-              href="#thongtin"
+              href="/project"
               title="Xem thêm"
               className="font-bold btn-home block"
             >

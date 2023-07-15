@@ -43,7 +43,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
       </div>
       <div className="intro">
         <div className="container-sm flex flex-wrap px-0 w-full">
-          <ul className="col-3 col-sm-12 list style-none pl-0 pr-[30px] list-none uppercase text-[15px]">
+          <ul className="col-3 col-tbs-12 list style-none pl-0 pr-[30px] list-none uppercase text-[15px]">
             <li className="on">
               <NavLink
                 to="/guest/intro/chinh-sach-bao-hanh"
@@ -129,7 +129,7 @@ const WarrantyPolicyHome = ({ children, name, url }) => {
               </NavLink>
             </li>
           </ul>
-          <div className="col-8 col-sm-12 detail overflow-hidden pl-[15px]">
+          <div className="col-9 col-tbs-12 detail overflow-hidden pl-[15px]">
             {children}
           </div>
         </div>

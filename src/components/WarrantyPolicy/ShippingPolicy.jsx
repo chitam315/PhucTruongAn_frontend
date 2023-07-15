@@ -9,7 +9,7 @@ function ShippingPolicy() {
       <h1>Chính sách vận chuyển</h1>
 
       <p>
-        Công ty TP Solar thực hiện dịch vụ bán hàng &amp; thu tiền tại nhà trên
+        Công ty Điện Công Nghiệp Phúc Trường An thực hiện dịch vụ bán hàng &amp; thu tiền tại nhà trên
         toàn lãnh thổ Việt Nam.
       </p>
 
@@ -24,10 +24,10 @@ function ShippingPolicy() {
       </p>
 
       <p>
-        - Quý khách lưu ý:&nbsp;Tất cả các sản phẩm TP Solar bán ra đều có đầy
+        - Quý khách lưu ý:&nbsp;Tất cả các sản phẩm Điện Công Nghiệp Phúc Trường An bán ra đều có đầy
         đủ chứng từ như: Hóa đơn bán hàng và thẻ bảo hành. Do vậy khách hàng có
         quyền từ chối nhận hàng khi không có 1 trong 2 loại chứng từ trên, việc
-        này nhằm đảm bảo chất lượng sản phẩm, mua đúng hàng của TP Solar, đồng
+        này nhằm đảm bảo chất lượng sản phẩm, mua đúng hàng của Điện Công Nghiệp Phúc Trường An, đồng
         thời đảm bảo quyền lợi của Quý khách trong việc Đổi/Trả hàng.
       </p>
 
@@ -43,7 +43,7 @@ function ShippingPolicy() {
         - Thời gian giao hàng có thể chậm hơn dự kiến vì một số lý do như: Địa
         chỉ khách hàng không đúng, Khách hàng không có ở nhà, Nhân viên giao
         hàng không liên hệ được với khách hàng, thiên tai, hỏa hoạn,... Nếu vì
-        lý do của TP Solar, chúng tôi sẽ liên hệ với Quý khách để sắp xếp lại
+        lý do của Điện Công Nghiệp Phúc Trường An, chúng tôi sẽ liên hệ với Quý khách để sắp xếp lại
         thời gian giao hàng hợp lý.
       </p>
 
@@ -52,7 +52,7 @@ function ShippingPolicy() {
         hàng, vui lòng phản hồi lại để chúng tôi có biện pháp khắc phục nhanh
         nhất. Trong thời gian chờ hàng nếu Quý khách muốn thay đổi đơn hàng
         (Thay đổi sản phẩm, Không muốn nhận hàng nữa,...) mà bên dịch vụ chưa
-        phát khách hàng, vui lòng thông báo lại TP Solar để chúng tôi giải quyết
+        phát khách hàng, vui lòng thông báo lại Điện Công Nghiệp Phúc Trường An để chúng tôi giải quyết
         với bên dịch vụ chuyển phát.
       </p>
 
@@ -75,7 +75,7 @@ function ShippingPolicy() {
       </p>
 
       <p>
-        <b>1. Nhận hàng trực tiếp tại TP Solar</b>
+        <b>1. Nhận hàng trực tiếp tại Điện Công Nghiệp Phúc Trường An</b>
       </p>
 
       <p>
@@ -90,19 +90,19 @@ function ShippingPolicy() {
       </p>
 
       <p>
-        <strong>2. Nhân viên TP Solar giao hàng tại nhà khách hàng</strong>
+        <strong>2. Nhân viên Điện Công Nghiệp Phúc Trường An giao hàng tại nhà khách hàng</strong>
       </p>
 
       <p>
         - Với những khách hàng thuộc khu vực&nbsp;nội thành TP. Hà
-        Nội&nbsp;và&nbsp;TP. Biên Hòa, nhân viên TP Solar sẽ giao hàng tại nhà
+        Nội&nbsp;và&nbsp;TP. Biên Hòa, nhân viên Điện Công Nghiệp Phúc Trường An sẽ giao hàng tại nhà
         Quý khách<em>&nbsp;(nếu khách hàng yêu cầu)</em>.
       </p>
 
       <p>
         - Một số trường hợp khách hàng đặt mua sản phẩm cần lắp đặt hoặc giá trị
         lớn và có địa chỉ ở các tỉnh lân cận xa TP. Hà Nội và TP. Biên
-        Hòa,&nbsp;nhân viên TP Solar sẽ giao hàng tại nhà Quý khách
+        Hòa,&nbsp;nhân viên Điện Công Nghiệp Phúc Trường An sẽ giao hàng tại nhà Quý khách
         <em>
           &nbsp;(nếu khách hàng yêu cầu, nhân viên công ty sẽ liên hệ thỏa thuận
           trước với khách hàng)
@@ -131,12 +131,12 @@ function ShippingPolicy() {
 
       <p>
         - Trường hợp hàng hóa phải chuyển từ kho chứa hàng ở xa về kho tại công
-        ty và chi nhánh của TP Solar, nhân viên bán hàng sẽ liên hệ với Quý
+        ty và chi nhánh của Điện Công Nghiệp Phúc Trường An, nhân viên bán hàng sẽ liên hệ với Quý
         khách để thương thảo lại về thời gian giao hàng.
       </p>
 
       <p>
-        - Trường hợp vì một lý do nào đó nhân viên TP Solar không thể giao hàng
+        - Trường hợp vì một lý do nào đó nhân viên Điện Công Nghiệp Phúc Trường An không thể giao hàng
         kịp thời, chúng tôi sẽ liên hệ lại và thông báo cho Quý khách được biết.
       </p>
 
@@ -148,7 +148,7 @@ function ShippingPolicy() {
 
       <p>
         - Với những khách hàng thuộc các huyện tỉnh ở xa, trường hợp nhân viên
-        TP Solar không thể giao hàng được,&nbsp;TP Solar sẽ ủy quyền cho 1 số
+        Điện Công Nghiệp Phúc Trường An không thể giao hàng được,&nbsp;Điện Công Nghiệp Phúc Trường An sẽ ủy quyền cho 1 số
         đơn vị chuyển phát&nbsp;như Viettel Post, GHTK, GHN, J&amp;T hoặc 1 số
         đơn vị chuyển phát có uy tín khác.
       </p>
@@ -188,7 +188,7 @@ function ShippingPolicy() {
       </p>
 
       <p>
-        - TP Solar sẽ thực hiện giao hàng cho Quý khách&nbsp;qua xe chở khách
+        - Điện Công Nghiệp Phúc Trường An sẽ thực hiện giao hàng cho Quý khách&nbsp;qua xe chở khách
         theo đúng yêu cầu của khách hàng.
       </p>
 
@@ -202,7 +202,7 @@ function ShippingPolicy() {
         - Quý khách vui lòng thanh toán toàn bộ giá trị đơn hàng trước khi TP
         Solar chuyển hàng hoặc chủ (nhà) của xe khách sẽ thanh toán toàn bộ giá
         trị đơn hàng trước khi nhận. Đồng thời, Quý khách nên yêu cầu chủ xe
-        (người nhận hàng từ TP Solar) kiểm tra kỹ hàng hóa trước khi nhận.
+        (người nhận hàng từ Điện Công Nghiệp Phúc Trường An) kiểm tra kỹ hàng hóa trước khi nhận.
       </p>
 
       <p>
@@ -214,7 +214,7 @@ function ShippingPolicy() {
       </p>
 
       <p>
-        TP Solar hiện đang có chính sách&nbsp;<strong>miễn phí</strong>
+        Điện Công Nghiệp Phúc Trường An hiện đang có chính sách&nbsp;<strong>miễn phí</strong>
         &nbsp;vận chuyển với mọi đơn hàng
       </p>
 
