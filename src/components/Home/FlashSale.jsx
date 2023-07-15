@@ -12,12 +12,13 @@ export default function FlashSale() {
   });
 
   if (!loading) {
+    console.log(listProduct);
     arrFlashSale = listProduct?.data.metadata.filter((item) => {
       return (item.flash_sale = true);
     })
   }
 
-  if (!loading) {
+  if (loading) {
     return <h1>Loading ...</h1>
   }
 

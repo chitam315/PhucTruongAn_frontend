@@ -25,11 +25,12 @@ export const useFetch = (promise, dependencies = []) => {
             const res = await promise();
             setData(res)
             setStatus('success')
+            setLoading(false)
         } catch (error) {
             setError(error)
             setStatus('error')
-        } finally {
             setLoading(false)
+        } finally {
         }
     }
 
