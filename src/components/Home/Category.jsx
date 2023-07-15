@@ -33,27 +33,27 @@ export default function Category() {
     arr1 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 1;
     });
-    dataDDLT = arr1.slice(0, 8);
+    dataDDLT = arr1?.slice(0, 8);
 
     arr2 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 2;
     });
-    dataD_UFO = arr2.slice(0, 8)
+    dataD_UFO = arr2?.slice(0, 8)
 
     arr3 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 3;
     });
-    dataDBChai = arr3.slice(0,12)
+    dataDBChai = arr3?.slice(0,12)
 
     arr4 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 4;
     });
-    dataDPha = arr4.slice(0,12)
+    dataDPha = arr4?.slice(0,12)
 
     arr5 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 5;
     });
-    dataDVuon = arr5.slice(0,6)
+    dataDVuon = arr5?.slice(0,6)
   }
 
 
@@ -96,7 +96,7 @@ export default function Category() {
             <div className="row items-center">
               <div className="col-xl-9 col-lg-8 col-12 order-lg-2">
                 <Row>
-                  {dataDDLT.map((item, index) => (
+                  {dataDDLT?.map((item, index) => (
                     <ItemProduct item={item} index={index} key={index} />
                   ))}
                 </Row>
@@ -157,7 +157,7 @@ export default function Category() {
               <div className="col-xl-9 col-lg-8 col-12 order-lg-1">
                 {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
                 <Row>
-                  {dataD_UFO.map((item, index) => (
+                  {dataD_UFO?.map((item, index) => (
                     <ItemProduct item={item} index={index} key={index} />
                   ))}
                 </Row>
@@ -217,7 +217,7 @@ export default function Category() {
             <div className="row items-center ">
               <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
                 <Row>
-                  {dataDPha.map((item, index) => (
+                  {dataDPha?.map((item, index) => (
                     <ItemProduct6 item={item} index={index} key={index} />
                   ))}
                 </Row>
@@ -254,7 +254,7 @@ export default function Category() {
               <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
                 {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
                 <Row>
-                  {dataDBChai.map((item, index) => (
+                  {dataDBChai?.map((item, index) => (
                     <ItemProduct6 item={item} index={index} key={index} />
                   ))}
                 </Row>
@@ -287,7 +287,7 @@ export default function Category() {
               <div className="col-xl-12 col-lg-12 col-12 order-lg-1">
                 {/* <div classNamex flex-wrap p-[-5px] flex-row"> */}
                 <Row>
-                  {dataDVuon.map((item, index) => (
+                  {dataDVuon?.map((item, index) => (
                     <ItemProduct6 item={item} index={index} key={index} />
                   ))}
                 </Row>

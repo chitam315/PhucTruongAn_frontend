@@ -56,7 +56,7 @@ export default function FlashSale() {
                 renderButtonGroupOutside={true}
                 removeArrowOnDeviceType={["desktop"]}
               >
-                {arrFlashSale.slice(0, 5).map((item, index) => (
+                {arrFlashSale?.slice(0, 5).map((item, index) => (
                   <ItemProductSale item={item} key={index} />
                 ))}
               </Carousel>
