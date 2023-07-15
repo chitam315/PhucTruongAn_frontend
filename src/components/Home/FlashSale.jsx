@@ -17,6 +17,10 @@ export default function FlashSale() {
     })
   }
 
+  if (!loading) {
+    return <h1>Loading ...</h1>
+  }
+
   return (
     <>
       <div>
