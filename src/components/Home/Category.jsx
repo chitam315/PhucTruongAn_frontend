@@ -30,27 +30,27 @@ export default function Category() {
   var arr1 = [], arr2 = [], arr3 = [], arr4 = [], arr5 = []
 
   if (!loading) {
-    arr1 = listProduct.data.metadata.filter((item) => {
+    arr1 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 1;
     });
     dataDDLT = arr1.slice(0, 8);
 
-    arr2 = listProduct.data.metadata.filter((item) => {
+    arr2 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 2;
     });
     dataD_UFO = arr2.slice(0, 8)
 
-    arr3 = listProduct.data.metadata.filter((item) => {
+    arr3 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 3;
     });
     dataDBChai = arr3.slice(0,12)
 
-    arr4 = listProduct.data.metadata.filter((item) => {
+    arr4 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 4;
     });
     dataDPha = arr4.slice(0,12)
 
-    arr5 = listProduct.data.metadata.filter((item) => {
+    arr5 = listProduct?.data.metadata.filter((item) => {
       return item.category_id === 5;
     });
     dataDVuon = arr5.slice(0,6)

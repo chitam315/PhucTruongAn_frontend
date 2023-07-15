@@ -12,7 +12,7 @@ export default function FlashSale() {
   });
 
   if (!loading) {
-    arrFlashSale = listProduct.data.metadata.filter((item) => {
+    arrFlashSale = listProduct?.data.metadata.filter((item) => {
       return (item.flash_sale = true);
     })
   }
