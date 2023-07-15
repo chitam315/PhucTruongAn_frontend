@@ -44,7 +44,7 @@ export default function DetailProduct() {
   const { loadingLevelProduct, data: listProduct } = useFetch(() => {
     return productService.getAllProducts();
   });
-  var arrLevel = []
+  var arrLevel = [];
   if (!loadingLevelProduct) {
     arrLevel = listProduct?.data.metadata.filter(
       (item) => item.category_id === product.category_id
@@ -81,9 +81,7 @@ export default function DetailProduct() {
     theme: "dark",
   };
   const { user } = useAuth();
-  const { execute: addCart } = useAsync(
-    productService.createAddCart
-  );
+  const { execute: addCart } = useAsync(productService.createAddCart);
 
   const addToCart = async () => {
     try {
@@ -97,14 +95,14 @@ export default function DetailProduct() {
     } catch (error) {
       console.log(error);
       toast.error(
-        "Lỗi server, vui lòng liên hệ phòng chăm sóc khách hàng",
+        "Bạn chưa đăng nhập . Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng",
         toastOptions
       );
     }
   };
 
   if (loadingData && loadingImage) {
-    return <h1>Loading ...</h1>
+    return <h1>Loading ...</h1>;
   }
 
   return (
@@ -223,38 +221,7 @@ export default function DetailProduct() {
                   <p className="text-white">Thêm vào giỏ</p>
                 </div>
               </div>
-              <div className="bg-[var(--main)] p-[30px] mt-[20px]">
-                <p className="text-white font-bold text-[1.2em] mb-[10px]">
-                  Đặt hàng nhanh
-                </p>
-
-                <div className="customer-name row">
-                  <div className="col-12 mb-[20px]">
-                    <input
-                      type="text"
-                      className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
-                      name="contact[Name]"
-                      placeholder="Họ tên"
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div className="col-12 mb-[20px]">
-                    <input
-                      type="text"
-                      name="quantity"
-                      className="text p-[10px] w-100 border border-solid border-[#4d4d4d]"
-                      placeholder="Số điện thoại"
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div className="flex">
-                    <div className="relative w-100 font-bold text-[1.2em] text-white text-center py-[10px] cursor-pointer bg-[#ed9301] box-border relative hover-overlay-main">
-                      Đặt hàng
-                      <div className="hover-overlay"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
             <div className="col-lg-3 col-tb-12 col-tbs-12">
               <div className="flex items-center border-main rounded-[10px] p-[10px]">
@@ -276,34 +243,20 @@ export default function DetailProduct() {
                   Tình trạng: <span className="text-[#00b907]">Còn hàng</span>
                 </p>
                 <p>
-                  Thương hiệu: <span className="text-[#00b907]">Phúc Trường An</span>
+                  Thương hiệu:{" "}
+                  <span className="text-[#00b907]">Phúc Trường An</span>
                 </p>
                 {/* <p>
                   Loại: <span className="text-[#00b907]">Đèn Đường</span>
                 </p> */}
               </div>
-              <div className="mt-[30px] relative border-main-dashed rounded-[10px] px-[15px] py-[15px]">
-                <div className="border-main rounded-[30px] bg-[#ffeaea] flex items-center w-fit absolute top-[-10%] left-[5%] py-[2px] px-[15px] text-[var(--mainColor)]">
-                  <BsGiftFill className="text-[#ff0000] text-[1.2em]" />
-                  <span className="text-capitalize text-[1em] font-bold ml-[10px]">
-                    Mã giảm giá
-                  </span>
-                </div>
-                <p className="text-[0.8em]">
-                  Nhập mã <b className="uppercase">freeship</b> để được miễn phí
-                  vận chuyển cho đơn hàng từ 200k
-                </p>
-                <div
-                  className="select-none hover-border-main font-bold text-[1em] rounded-[30px] border-1 border-[var(--mainColor)] bg-[var(--mainColor)] text-white w-fit px-[10px] py-[5px] cursor-pointer mt-[10px]"
-                  id="btnCopy"
-                  onClick={changeTextBtnCopy}
-                >
-                  {textCopy}
-                </div>
-              </div>
+             
             </div>
           </Row>
-          <DetailInfor Infor={product?.data.metadata} Image={listImage?.data?.metadata} />
+          <DetailInfor
+            Infor={product?.data.metadata}
+            Image={listImage?.data?.metadata}
+          />
         </Row>
       </CardMain>
       {/* <div className="justify-between items-center gap-2 sticky-bottom p-[10px] d-lg-none d-sm-flex">
