@@ -39,6 +39,8 @@ function Payment() {
     return productService.getCartById(user.id);
   });
 
+
+
   var sumOfPrice = 0
   if(!loadingCart){
     console.log(listCart);
@@ -355,22 +357,9 @@ function Payment() {
             </div>
             <div className="col-6-12">
               <div className="px-[5px]">
-                <p className="flex items-center pt-0 font-bold text-[1.2em] text-black mb-[15px]">
-                  <ImTruck className="transform scale-x-[-1] mr-[8px] text-[1.1em] none-block" />
-                  Vận chuyển
-                </p>
-                <div className="py-[12px] px-[25px]  text-[1em] rounded-[5px] bg-[#d1ecf1] text-[#0c5460;]">
-                  Vui lòng nhập thông tin giao hàng
-                </div>
-                <div className="flex-center py-[12px] px-[25px] border-gray rounded-[5px] cursor-pointer">
-                  <div className="flex items-center">
-                    <span className="block rounded-full w-[20px] h-[20px] border-[8px] border-solid border-[#197bbd] mr-[10px]"></span>
-                    <span className="font-medium text-[1em]">
-                      Giao hàng tận nơi
-                    </span>
-                  </div>
-                  <span className="font-medium text-[1em]">Liên hệ</span>
-                </div>
+             
+               
+                
                 <p className="flex items-center pt-0 font-bold text-[1.2em] text-black mb-[15px] mt-[30px]">
                   <BiCreditCard className="transform scale-x-[-1] mr-[8px] text-[1.1em] none-block" />
                   Thanh toán
@@ -446,7 +435,7 @@ function Payment() {
         <div className="col-4-12 bg-[#fff7f7] overflow-auto p-[15px] h_100vh-fit">
           <div className="container-sm">
             <p className="pt-0 font-bold text-[1.2em] text-black block pb-[15px] border-b-[1px] border-b-[#ccc]">
-              Đơn hàng (19 sản phẩm)
+              Đơn hàng ({listCart?.data?.metadata.length} sản phẩm)
             </p>
 
             {/* List sản phẩm */}
@@ -501,17 +490,14 @@ function Payment() {
                 </div>
               </div>
             </div> */}
-            <div className="flex pt-[20px] border-b-[1px] border-b-[#ccc]">
-              <label className="paying-input-animation">
-                <input type="text" required spellcheck="false" />
-                <span>Nhập mã giảm giá</span>
-              </label>
-              <div className="paying-btn-apply">Áp dụng</div>
-            </div>
+    
 
             <div className="flex-center mt-[15px]">
               <span className="text-[1em] text-[#1c1c1c]">Tạm tính</span>
-              <span className="text-[1em] text-[#1c1c1c]">{sumOfPrice}</span>
+              <span className="text-[1em] text-[#1c1c1c]">{Number(sumOfPrice)
+            .toFixed(0)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+          ₫</span>
             </div>
             <div className="flex-center my-[10px]">
               <span className="text-[1em] text-[#1c1c1c]">Phí vận chuyển</span>
@@ -520,7 +506,11 @@ function Payment() {
             <div className="flex-center mt-[10px] pb-[20px] border-b-[1px] border-b-[#ccc">
               <span className="text-[1.1em] text-[#1c1c1c]">Tổng cộng</span>
               <span className="text-[1.3em] font-bold text-[var(--mainColor)]">
-                {sumOfPrice}
+              {Number(sumOfPrice)
+            .toFixed(0)
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+          ₫
+              
               </span>
             </div>
             <div className="flex-center mt-[15px]">

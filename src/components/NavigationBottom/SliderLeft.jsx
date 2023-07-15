@@ -25,9 +25,9 @@ function SliderLeft() {
           <img src={require("../../assets/Icon/lienhe.png")} alt="" />
           <span>Liên hệ</span>
         </Link>
-        <Link to="/baohanh" className="slider-left-scroll-item">
+        <Link to="/guest/intro/chinh-sach-bao-hanh" className="slider-left-scroll-item">
           <img src={require("../../assets/Icon/baohanh.png")} alt="" />
-          <span>Bảo hành</span>
+          <span>Chính sách</span>
         </Link>
       </div>
 

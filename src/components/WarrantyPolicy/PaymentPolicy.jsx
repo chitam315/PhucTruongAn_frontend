@@ -15,8 +15,8 @@ export default function PaymentPolicy() {
       </p>
 
       <p>
-        - Sau khi quý khách đặt hang thành công tại website Tpsolar.vn&nbsp;–
-        Nhân viên của TP Solar sẽ tiến hành xác nhận và gửi hàng&nbsp;cho quý
+        - Sau khi quý khách đặt hang thành công tại website dienphuctruongan.com&nbsp;–
+        Nhân viên của Điện Công Nghiệp Phúc Trường An sẽ tiến hành xác nhận và gửi hàng&nbsp;cho quý
         khách đến tận nhà.
       </p>
 
@@ -31,7 +31,7 @@ export default function PaymentPolicy() {
       </p>
 
       <p>
-        Quý khách đặt hang xong tại Website của TP Solar&nbsp;– Nếu quý khách
+        Quý khách đặt hang xong tại Website của Điện công nghiệp Phúc Trường An&nbsp;– Nếu quý khách
         chọn hình thức chuyển tiền trước qua tài khoản ngân hàng - Quý khách có
         thể thanh toán thông qua chuyển khoản qua tài khoản Techcombank sau:
       </p>
@@ -40,15 +40,15 @@ export default function PaymentPolicy() {
         <tbody>
           <tr>
             <td>Ngân hàng</td>
-            <td>Techcombank</td>
+            <td>Vietcombank</td>
           </tr>
           <tr>
             <td>Tài khoản</td>
-            <td>19032924565012</td>
+            <td>0121002557771</td>
           </tr>
           <tr>
             <td>Chủ tài khoản</td>
-            <td>Lê Văn Phú</td>
+            <td>Nguyễn Anh Trường </td>
           </tr>
         </tbody>
       </table>
@@ -63,19 +63,19 @@ export default function PaymentPolicy() {
 
       <p>
         – Sau khi nhận được Mã giao dịch hoặc Lệnh chuyển khoản của quý khách,
-        nhân viên TPSOLAR&nbsp;sẽ liên hệ xác nhận với quý khách&nbsp;và đơn
+        nhân viên Điện công nghiệp Phúc Trường An&nbsp;sẽ liên hệ xác nhận với quý khách&nbsp;và đơn
         hàng sẽ được giao đến cho quý khách từ 2&nbsp;-5&nbsp;ngày làm việc tính
         từ ngày xác nhận đơn hàng.
       </p>
 
       <p>
         – Mọi thắc mắc về &nbsp;tình trạng đơn hàng, quý khách có thể gọi đến bộ
-        phận chăm sóc khách hàng của chúng tôi&nbsp;0363.993.993&nbsp;để được tư
+        phận chăm sóc khách hàng của chúng tôi&nbsp;0933 819 292&nbsp;để được tư
         vấn trực tiếp
       </p>
 
       <p data-mce-style="text-align: right;">
-        TP Solar xin chân thành cảm ơn quý khách!
+        Điện Công Nghiệp Phúc Trường An xin chân thành cảm ơn quý khách!
       </p>
     </WarrantyPolicyHome>
   );

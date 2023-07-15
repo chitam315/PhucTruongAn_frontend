@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { useAsync } from "../../hooks/useAsync";
 import {cartService} from "../../service/cart.service"
+import { useFetch } from "../../hooks/useFetch";
+import { productService } from "../../service/product.service";
 
 export default function ItemCart({ item , idProduct }) {
   const {execute: deleteProductCart} = useAsync(() => {
     return cartService.deleteCartById(idProduct)
   })
+
+const {  data: _product } = useFetch(() => {
+    return productService.getProductImage(item.product_id);
+  });
+
   const clickDelete = async () => {
     console.log(idProduct);
     try {
@@ -18,11 +25,16 @@ export default function ItemCart({ item , idProduct }) {
   return (
     <div className="flex border-gray rounded-[10px] overflow-hidden p-[10px] mb-[15px] bg-[#fdfdfd]">
       <Link to="/detail">
+       {_product && _product.data.metadata[0] && _product.data.metadata[0].image_base64? (
         <img
-          src="https://bizweb.dktcdn.net/thumb/small/100/463/111/products/3.jpg?v=1685091066897"
-          className=""
-          alt="undefined"
+          src={_product.data.metadata[0].image_base64}
+          alt=""
+             className=" h-full w-[80px] p-0"
+     
         />
+      ) : (
+        <></>
+      )}
       </Link>
       <div className="w-100 flex flex-col justify-center ml-[15px] ">
         <Link to="/detail" className="flex-center flex-block mb-[15px]">

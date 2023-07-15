@@ -86,7 +86,7 @@ export default function Category() {
               </h2>
               <Link
                 className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-                to="/see-more"
+                to="/see-more/1"
                 title="Xem thêm"
               >
                 Xem thêm
@@ -146,7 +146,7 @@ export default function Category() {
               </h2>
               <Link
                 className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-                to="/see-more"
+                to="/see-more/2"
                 title="Xem thêm"
               >
                 Xem thêm
@@ -207,7 +207,7 @@ export default function Category() {
               </h2>
               <Link
                 className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-                to="/see-more"
+                to="/see-more/4"
                 title="Xem thêm"
               >
                 Xem thêm
@@ -243,7 +243,7 @@ export default function Category() {
               </h2>
               <Link
                 className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-                to="/see-more"
+                to="/see-more/3"
                 title="Xem thêm"
               >
                 Xem thêm
@@ -276,7 +276,7 @@ export default function Category() {
               </h2>
               <Link
                 className="borders-see-more block bg-[#ebebeb] rounded-[10px] text-[0.8em] font-bold px-[10px] py-[10px] hover:border-[#007bff] hover:bg-white"
-                to="/see-more"
+                to="/see-more/5"
                 title="Xem thêm"
               >
                 Xem thêm

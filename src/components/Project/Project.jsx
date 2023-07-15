@@ -1031,11 +1031,7 @@ export default function Project() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex justify-center">
-                      <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                        Xem thêm bài viết
-                      </button>
-                    </div>
+                    
                   </div>
                 </article>
               </div>

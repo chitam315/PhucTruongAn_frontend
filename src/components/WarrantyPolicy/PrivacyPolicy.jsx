@@ -7,10 +7,10 @@ export default function PrivacyPolicy() {
       <h1>Chính sách bảo mật</h1>
 
       <p>
-        Khi truy cập hệ thống Website của TP Solar nghĩa là quý khách đồng ý
+        Khi truy cập hệ thống Website của Điện Công Nghiệp Phúc Trường An nghĩa là quý khách đồng ý
         chấp nhận thực hiện những mô tả trong Chính sách bảo mật thông tin. Nếu
         quý khách không đồng ý với các điều khoản của Chính sách bảo mật thông
-        tin, vui lòng không sử dụng hệ thống Website TP Solar. Chính sách bảo
+        tin, vui lòng không sử dụng hệ thống Website Điện Công Nghiệp Phúc Trường An. Chính sách bảo
         mật này được đưa ra để thể hiện vai trò của chúng tôi trong vấn đề bảo
         mật trực tuyến và dịch vụ khách hàng.
       </p>
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        Việc thu thập thông tin qua Website TP Solar&nbsp;sẽ giúp chúng tôi:
+        Việc thu thập thông tin qua Website Điện Công Nghiệp Phúc Trường An&nbsp;sẽ giúp chúng tôi:
       </p>
 
       <p>
@@ -29,11 +29,11 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        Giúp khách hàng cập nhật các chương trình khuyến mại, giảm giá … của TP
-        Solar. Hỗ trợ nhanh nhất khi có khiếu nại từ phía khách hàng.
+        Giúp khách hàng cập nhật các chương trình khuyến mại, giảm giá … của Điện công nghiệp Phúc Trường An
+      . Hỗ trợ nhanh nhất khi có khiếu nại từ phía khách hàng.
       </p>
 
-      <p>Thông tin khách hàng TP Solar thu thập gồm:</p>
+      <p>Thông tin khách hàng Điện Công Nghiệp Phúc Trường An thu thập gồm:</p>
 
       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Họ tên</p>
 
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        TP Solar sẽ lưu trữ các thông tin cá nhân do khách hàng cung cấp trên hệ
+        Điện Công Nghiệp Phúc Trường An sẽ lưu trữ các thông tin cá nhân do khách hàng cung cấp trên hệ
         thống nội bộ của chúng tôi trong quá trình cung cấp dịch vụ cho khách
         hàng hoặc cho đến khi hoàn thành mục đích thu thập thông tin hoặc khi
         khách hàng có yêu cầu hủy các thông tin đã cung cấp.
@@ -87,8 +87,8 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        Địa chỉ: Số 19, lô C5, Khu C, Khu đô thị mới Geleximco Lê Trọng Tấn,
-        Phường Dương Nội, Quận Hà Đông, TP Hà Nội
+        Địa chỉ: 224 ấp Tân Thành, huyện Bắc Sơn, Trảng Bom, 
+        thành phố Đồng Nai .
       </p>
 
       <p>
@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
       <p>
         Khách hàng có thể thực hiện các quyền tiếp cận và chỉnh sửa dữ liệu cá
         nhân bằng cách truy cập vào Website hoặc liên hệ với chúng tôi qua email
-        hoặc địa chỉ liên lạc được công bố trên Website&nbsp;TP Solar
+        hoặc địa chỉ liên lạc được công bố trên Website&nbsp;Điện Công Nghiệp Phúc Trường An
       </p>
 
       <p>
@@ -119,7 +119,7 @@ export default function PrivacyPolicy() {
 
       <p>
         - Chúng tôi cam kết đảm bảo an toàn thông tin cho quý khách hàng khi
-        đăng ký thông tin cá nhân trên website của TP Solar. TP Solar cam kết
+        đăng ký thông tin cá nhân trên website của Điện Công Nghiệp Phúc Trường An. Điện Công Nghiệp Phúc Trường An cam kết
         không trao đổi mua bán thông tin khách hàng vì mục đích thương mại.
       </p>
 
@@ -134,7 +134,7 @@ export default function PrivacyPolicy() {
 
       <p>
         - Chính sách bảo mật chỉ áp dụng khi khách hàng đăng ký trên Website
-        chính thức của&nbsp;TP Solar. Mọi thông tin quý khách hàng đăng ký tài
+        chính thức của&nbsp;Điện Công Nghiệp Phúc Trường An. Mọi thông tin quý khách hàng đăng ký tài
         những Website khác đều không thuộc phạm vi hiệu lực của chính sách bảo
         mật thông tin này.
       </p>

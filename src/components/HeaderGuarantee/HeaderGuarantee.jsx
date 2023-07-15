@@ -35,7 +35,7 @@ const HeaderGuarantee = () => {
               Đăng nhập
             </Link>
           </div>
-          <div className="d-none-block relative hover-show-dropdown">
+          {/* <div className="d-none-block relative hover-show-dropdown">
             <GiHamburgerMenu className="text-[1.3em] cursor-pointer " />
             <div className="absolute top-[100%] right-0 bg-white border-gray w-[250px] cursor-pointer rounded-[10px] p-2 gap-2 show-dropdown">
               <ModalTraCuuHanBaoHanh
@@ -68,10 +68,10 @@ const HeaderGuarantee = () => {
                 Chính sách và hướng dẫn
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="d-block-none">
+      {/* <div className="d-block-none">
         <div className="container-sm">
           <ul className="flex justify-between h-[50px] items-center uppercase text-[16px] font-bold text-[#101C2C] list-none hover:text-[green]">
             <li>
@@ -125,7 +125,7 @@ const HeaderGuarantee = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -11,9 +11,9 @@ export default function InspectionPolicy() {
       </p>
 
       <p>
-        TP Solar cam kết tất cả sản phẩm được bán ra đều đạt chuẩn chất lượng từ
+       Điện Công Nghiệp Phúc Trường An cam kết tất cả sản phẩm được bán ra đều đạt chuẩn chất lượng từ
         nhà sản xuất. Đồng thời, các sản phẩm khi khách hàng nhận được đều
-        nguyên mới và đúng với thông tin mô tả trên Website TP Solar
+        nguyên mới và đúng với thông tin mô tả trên Website Điện Công Nghiệp Phúc Trường An
       </p>
 
       <p>
@@ -55,7 +55,7 @@ export default function InspectionPolicy() {
       <p>
         Quý khách hàng có quyền từ chối nhận hàng và gọi ngay đến Hotline&nbsp;
         <strong>
-          <a href="http://tel:%201800.646.450/">1800.646.450</a>
+          <a href="http://tel:%200933 819 292/">0933 819 292</a>
         </strong>
         &nbsp;để được hỗ trợ nhanh nhất.
       </p>
