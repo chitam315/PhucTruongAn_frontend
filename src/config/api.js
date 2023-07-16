@@ -20,6 +20,7 @@ export const GET_CART = process.env.REACT_APP_GET_CART
 export const ADD_CART = process.env.REACT_APP_ADD_CART
 export const DELETE_CART = process.env.REACT_APP_DELETE_CART
 export const UPDATE_CART = process.env.REACT_APP_UPDATE_CART
+export const ORDER_API = process.env.REACT_APP_ORDER_API
 
 export const api = axios.create();
 

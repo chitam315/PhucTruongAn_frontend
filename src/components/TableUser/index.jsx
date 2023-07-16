@@ -1,9 +1,21 @@
 import React, { useState } from 'react'
 import { Button, Modal, Pagination } from "antd"
+import { useFetch } from "../../hooks/useFetch";
+import { userService } from "../../service/user.service";
 
-export const TableUser = ({ listUsers }) => {
+export const TableUser = ( ) => {
   const [limit, setLimit] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
+
+  const { loading , data: listUsers} = useFetch(() => {
+    return userService.getAllUser()
+  })
+
+  
+
+  if (!loading) {
+    console.log(listUsers);
+  }
 
   const changePage = (currentPage, pageSize) => {
     setCurrentPage(currentPage)
@@ -33,6 +45,10 @@ export const TableUser = ({ listUsers }) => {
   const handleCancelDel = () => {
     setIsModalDelOpen(false);
   };
+
+  if (loading) {
+    return <h1>Loading ...</h1>
+  }
   return (
     <>
       <div className="relative overflow-x-auto mb-4">
@@ -47,7 +63,7 @@ export const TableUser = ({ listUsers }) => {
             </tr>
           </thead>
           <tbody>
-            {listUsers.slice(limit * (currentPage - 1), limit * currentPage).map((ele, i) => {
+            {listUsers.data.metadata.slice(limit * (currentPage - 1), limit * currentPage).map((ele, i) => {
               return (
                 <tr
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
@@ -76,7 +92,7 @@ export const TableUser = ({ listUsers }) => {
         </table>
       </div>
 
-      <Pagination defaultCurrent={1} total={listUsers.length} onChange={changePage} />
+      <Pagination defaultCurrent={1} total={listUsers.data.metadata.length} onChange={changePage} />
 
       <Modal title="Bạn có chắc muốn xoá người dùng này" open={isModalDelOpen} onOk={handleOkDel} onCancel={handleCancelDel}
         footer={[
