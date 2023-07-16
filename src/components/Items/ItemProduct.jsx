@@ -9,7 +9,14 @@ export default function ItemProduct({ item, index }) {
       <div className="shadow-10 rounded-10 bg-white rounded-[10px] h-100 relative p-[8px] block card-product">
         <BtnAddCart item={item} />
         {item.product_discount !== 0 ? (
-          <div className="tag-discount">Giảm {item.product_discount}%</div>
+          <div className="tag-discount">
+            Giảm{" "}
+            {Math.floor(
+              ((item.product_price - item.product_discount) * 100) /
+                item.product_price
+            )}
+            %
+          </div>
         ) : (
           <></>
         )}
