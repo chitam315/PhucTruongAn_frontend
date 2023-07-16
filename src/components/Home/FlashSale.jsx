@@ -12,7 +12,6 @@ export default function FlashSale() {
   });
 
   if (!loading) {
-    console.log(listProduct);
     arrFlashSale = listProduct?.data.metadata.filter((item) => {
       return (item.flash_sale = true);
     })
@@ -50,7 +49,6 @@ export default function FlashSale() {
               <Carousel
                 swipeable={true}
                 draggable={true}
-                // showDots={true}
                 responsive={responsive}
                 keyBoardControl={true}
                 renderButtonGroupOutside={true}

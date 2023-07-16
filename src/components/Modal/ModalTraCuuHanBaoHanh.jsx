@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import { FaWindowClose } from "react-icons/fa";
 
 const ModalTraCuuHanBaoHanh = ({ name, content }) => {
@@ -16,11 +16,6 @@ const ModalTraCuuHanBaoHanh = ({ name, content }) => {
       setOpen(false);
       setConfirmLoading(false);
     }, 2000);
-  };
-
-  const handleCancel = () => {
-    console.log("Clicked cancel button");
-    setOpen(false);
   };
 
   return (

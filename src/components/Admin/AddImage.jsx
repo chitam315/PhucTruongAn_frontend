@@ -31,9 +31,7 @@ function AddImage() {
       const formData = new FormData();
       formData.append("file", file);
       const base64 = await convertBase64(file)
-      console.log(base64);
-      // const {data}=await axios.post(apiUploadImage, formData);
-      // setUploadImage(data);
+      
     }
   };
 

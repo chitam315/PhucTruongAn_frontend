@@ -43,7 +43,7 @@ export default function Footer() {
 
                 <p className="adr">
                   <i className="fa fa-home" aria-hidden="true"></i> Trụ sở:
-                  224 ấp Tân Thành, huyện Bắc Sơn, Trảng Bom, ĐN
+                  224 ấp Tân Thành, huyện Bắc Sơn, Trảng Bom, Đồng Nai
                 </p>
               </div>
               <div className="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12 footer-left">

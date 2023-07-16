@@ -32,44 +32,39 @@ function App() {
   return (
     <Routes>
       <Route index path="" element={<HomePage />} />
-      <Route index path="/see-more/:id" element={<SeeMorePage />} />
-      <Route index path="/detail/:id" element={<DetailProductPage />} />
-      <Route index path="/baohanh" element={<Guarantee />}></Route>
-      <Route index path="/cart" element={<CartPage />} />
-      <Route index path="/paying" element={<PayingPage />} />
-      <Route index path="/project" element={<Project />} />
-      <Route index path="/guest/support" element={<WarrantyStation />} />
-      <Route index path="/guest/intro" element={<WarrantyPolicyHome />} />
-      <Route index path="/admin-page" element={<AdminPage />} />
-      <Route index path="/admin-users" element={<AdminUser />} />
-      <Route index path="/introduce" element={<IntroducePage />} />
-      <Route index path="/news" element={<News />} />
-      <Route index path="/contact" element={<Contact />} />
-      <Route index path="/search" element={<SearchPage />} />
-      <Route index path="/admin/product" element={<Product />} />
+      <Route path="/see-more/:id" element={<SeeMorePage />} />
+      <Route path="/detail/:id" element={<DetailProductPage />} />
+      <Route path="/baohanh" element={<Guarantee />}></Route>
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/paying" element={<PayingPage />} />
+      <Route path="/project" element={<Project />} />
+      <Route path="/guest/support" element={<WarrantyStation />} />
+      <Route path="/guest/intro" element={<WarrantyPolicyHome />} />
+      <Route path="/admin-page" element={<AdminPage />} />
+      <Route path="/admin-users" element={<AdminUser />} />
+      <Route path="/introduce" element={<IntroducePage />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/search" element={<SearchPage />} />
+      <Route path="/admin/product" element={<Product />} />
       <Route
-        index
         path="/guest/intro/chinh-sach-bao-hanh"
         element={<WarrantyPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-bao-mat"
         element={<PrivacyPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-van-chuyen"
         element={<ShippingPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-doi-tra"
         element={<ReturnPolicy />}
       />
-      <Route index path="/guest/intro/dieu-khoan" element={<Rules />} />
+      <Route path="/guest/intro/dieu-khoan" element={<Rules />} />
       <Route
-        index
         path="/guest/intro/chinh-sach-kiem-hang"
         element={<InspectionPolicy />}
       />

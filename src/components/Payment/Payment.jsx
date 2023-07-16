@@ -2,7 +2,6 @@ import {  BsChevronLeft } from "react-icons/bs";
 import { BiCreditCard } from "react-icons/bi";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { ImTruck } from "react-icons/im";
 import { Link } from "react-router-dom";
 import "./Payment.css";
 import React, { useState, useEffect, useRef } from "react";

@@ -13,7 +13,7 @@ export default function Feedback() {
             href="den-duong-lien-the-nang-luong-mat-troi"
             title="Đèn đường liền thể"
           >
-            Khách hàng với TP Solar
+            Khách hàng với Điện Phúc Trường An
           </a>
         </h2>
         <Carousel
