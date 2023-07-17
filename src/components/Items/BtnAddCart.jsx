@@ -2,14 +2,17 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useAsync } from "../../hooks/useAsync";
 import { useAuth } from "../AuthContext/index";
 import { productService } from "../../service/product.service";
-import { message } from "antd";
+import { message, Spin } from "antd";
+import { useNavigate } from "react-router";
 
 function BtnAddCart({ item }) {
   const { user } = useAuth();
-  const { execute: addToCart } = useAsync(
+  const { execute: addToCart , loading } = useAsync(
     productService.createAddCart
   );
+  const navigate = useNavigate()
   const addCart = async () => {
+    // navigate(`/detail/${item.product_id}`)
     try {
       const field = {
         product_id: item.product_id,
@@ -23,6 +26,9 @@ function BtnAddCart({ item }) {
       message.error("Bạn phải đăng nhập");
     }
   };
+  if (loading) {
+    return <Spin/>
+  }
   return (
     <div
       onClick={addCart}

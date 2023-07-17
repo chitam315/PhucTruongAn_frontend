@@ -202,7 +202,7 @@ export default function DetailProduct() {
                 />
               </div>
               <div className="flex items-center justify-center gap-3 mt-[20px]">
-                <div
+                {/* <div
                   className="w-[70%] col-tb-6 flex items-center flex-col bg-[var(--mainColor)] text-white py-[10px] rounded-[15px] cursor-pointer relative hover-overlay-main"
                   onClick={() => {
                     addToCart();
@@ -212,7 +212,7 @@ export default function DetailProduct() {
                   <div className="hover-overlay"></div>
                   <p className="uppercase font-bold">mua ngay</p>
                   <p>(Giao hàng miễn phí tận nơi)</p>
-                </div>
+                </div> */}
                 <div
                   className="w-[30%] col-tb-6 bg-[var(--menuHover)] border-2 flex items-center flex-col border-solid py-[10px] border-[var(--mainColor)] text-[var(--mainColor)] cursor-pointer rounded-[15px] hover-blue-white"
                   onClick={addToCart}

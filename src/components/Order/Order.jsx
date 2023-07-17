@@ -1,22 +1,33 @@
-import {  BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 import { BiCreditCard } from "react-icons/bi";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { ImTruck } from "react-icons/im";
-import { Link } from "react-router-dom";
-import "./Payment.css";
+import { Link, useNavigate } from "react-router-dom";
+import "./Order.css";
 import React, { useState, useEffect, useRef } from "react";
 import { province } from "../../json/province";
 import { district } from "../../json/district";
 import { ward } from "../../json/ward";
-import {ItemInPayment} from "./ItemInPayment"
+import { ItemInOrder } from "./ItemInOrder"
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
-import { useAuth } from "../AuthContext";
+// import { useAuth } from "../AuthContext";
 import logo from "../../logo.jpg"
 import QR from "../../QR_banking.jpg"
+import { useForm } from "../../hooks/useForm";
+import { required, regexp } from "../../utils/validate"
+import Input from "../Input"
+import InputOrder from "./InputOrder.jsx"
+import { useAuth } from '../AuthContext/index'
+import { useAsync } from '../../hooks/useAsync'
+import { orderService } from "../../service/order.service";
+import { message } from "antd";
+import Header from "../Home/Header";
+import Footer from "../Footer/Footer";
 
-function Payment() {
+
+function Order() {
   const { user } = useAuth()
   const containerRef = useRef(null);
   const [dropdownCity, setDropdownCity] = useState(false);
@@ -39,12 +50,28 @@ function Payment() {
     return productService.getCartById(user.id);
   });
 
+  const rules = {
+    fullname: [
+      required()
+    ],
+    phone: [
+      required(),
+      regexp('phone')
+    ],
+    address: [
+      required()
+    ],
+    email: [
+      required(),
+      regexp('email')
+    ]
+  }
 
+  const form = useForm(rules)
 
   var sumOfPrice = 0
-  if(!loadingCart){
-    console.log(listCart);
-    listCart?.data?.metadata.map((e) => sumOfPrice+=e.product.product_price*e.quantity)
+  if (!loadingCart) {
+    listCart?.data?.metadata.map((e) => sumOfPrice += e.product.product_price * e.quantity)
   }
 
   //SẮP XẾP LIST TỈNH THÀNH QUẬN HUYỆN PHƯỜNG XÃ THEO BẢNG CHỮ CÁI
@@ -54,10 +81,10 @@ function Payment() {
       .localeCompare(b.name.toLowerCase(), "vi", { sensitivity: "base" });
   });
   district.sort(function (a, b) {
-     return a.name
-       .toLowerCase()
-       .localeCompare(b.name.toLowerCase(), "vi", { sensitivity: "base" });
-    }
+    return a.name
+      .toLowerCase()
+      .localeCompare(b.name.toLowerCase(), "vi", { sensitivity: "base" });
+  }
   );
 
   ward.sort(function (a, b) {
@@ -154,6 +181,45 @@ function Payment() {
   //   }, 2000);
   // };
 
+  // const {user} = useAuth()
+  const navigate = useNavigate()
+  const { loading, execute: createOrder } = useAsync(orderService.createOrder)
+
+  const clickOrder = async () => {
+    
+    if (form.validate() && valCity !== "---" && valDistrict !== "---" && valWard !== "---") {
+      const listProducts = []
+      listCart?.data?.metadata.map((ele) => {
+        listProducts.push({
+          product_id: ele.product_id,
+          product_name: ele.product.product_name,
+          quantity: ele.quantity
+        })
+      })
+      const temp = {
+        user_id: parseInt(user.id),
+        order_total: parseInt(sumOfPrice),
+        order_status: "pending",
+        products: listProducts,
+        name: form.values.fullname,
+        phone: form.values.phone,
+        email: form.values.email,
+        address: `${form.values.address}, ${valWard}, ${valDistrict}, ${valCity}`
+      }
+      try {
+        const res = await createOrder(temp)
+        console.log(res);
+        message.success('Tạo đơn hàng thành công, hãy đi đến bước thanh toán')
+        navigate(`/payment/${res.data.metadata.order_id}`)
+      } catch (error) {
+        console.log(error);
+        message.error('Xảy ra lỗi, vui lòng thử lại sau')
+      }
+    } else {
+      message.warning("Bạn vui lòng điền đầy đủ thông tin")
+    }
+  }
+
   if (loadingCart) {
     return <h1>Loading ...</h1>
   }
@@ -172,24 +238,28 @@ function Payment() {
             </Link>
           </div>
           <div className="flex-block w-100">
-            <div className="col-6-12" ref={containerRef}>
+            <div className="col-8-12" ref={containerRef}>
               <div className="flex-center mb-[15px]">
                 <p className="pt-0 font-bold text-[1.2em] text-black">
                   Thông tin nhận hàng
                 </p>
               </div>
-              <label className="paying-input-animation">
-                <input type="text" required spellcheck="false" />
-                <span>Họ và tên</span>
-              </label>
-              <label className="paying-input-animation">
-                <input type="text" required spellcheck="false" />
-                <span>Số điện thoại</span>
-              </label>
-              <label className="paying-input-animation">
-                <input type="text" required spellcheck="false" />
-                <span>Địa chỉ</span>
-              </label>
+              {/* <label className="paying-input-animation"> */}
+              {/* <input type="text" required spellcheck="false" /> */}
+              <InputOrder placeholder={"Họ và tên"} {...form.register('fullname')} />
+              {/* <span>Họ và tên</span> */}
+              {/* </label> */}
+              {/* <label className="paying-input-animation"> */}
+              {/* <input type="text" required spellcheck="false" /> */}
+              <InputOrder placeholder={"Số điện thoại"} {...form.register('phone')} />
+              {/* <span>Số điện thoại</span> */}
+              {/* </label> */}
+              {/* <label className="paying-input-animation"> */}
+              {/* <input type="text" required spellcheck="false" /> */}
+              <InputOrder placeholder={"Địa chỉ"} {...form.register('address')} />
+              {/* <span>Địa chỉ</span> */}
+              {/* </label> */}
+              <InputOrder placeholder={"Email"} {...form.register('email')} />
 
               <div className="relative">
                 {dropdownCity === true ? (
@@ -350,16 +420,13 @@ function Payment() {
                 </div>
               </div>
 
-              <label className="paying-input-animation">
+              {/* <label className="paying-input-animation">
                 <textarea rows="3" spellcheck="false" required></textarea>
                 <span>Ghi chú (tùy chọn)</span>
-              </label>
+              </label> */}
             </div>
-            <div className="col-6-12">
+            {/* <div className="col-6-12">
               <div className="px-[5px]">
-             
-               
-                
                 <p className="flex items-center pt-0 font-bold text-[1.2em] text-black mb-[15px] mt-[30px]">
                   <BiCreditCard className="transform scale-x-[-1] mr-[8px] text-[1.1em] none-block" />
                   Thanh toán
@@ -429,7 +496,7 @@ function Payment() {
                   )}
                 </label>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-4-12 bg-[#fff7f7] overflow-auto p-[15px] h_100vh-fit">
@@ -440,7 +507,7 @@ function Payment() {
 
             {/* List sản phẩm */}
             {
-              listCart?.data?.metadata.map((ele,index) => <ItemInPayment key={index} product={ele}/>)
+              listCart?.data?.metadata.map((ele, index) => <ItemInOrder key={index} product={ele} />)
             }
             {/* <div className="flex py-[10px] border-b-[1px] border-b-[#ccc]">
               <img
@@ -490,14 +557,14 @@ function Payment() {
                 </div>
               </div>
             </div> */}
-    
+
 
             <div className="flex-center mt-[15px]">
               <span className="text-[1em] text-[#1c1c1c]">Tạm tính</span>
               <span className="text-[1em] text-[#1c1c1c]">{Number(sumOfPrice)
-            .toFixed(0)
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-          ₫</span>
+                .toFixed(0)
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                ₫</span>
             </div>
             <div className="flex-center my-[10px]">
               <span className="text-[1em] text-[#1c1c1c]">Phí vận chuyển</span>
@@ -506,11 +573,11 @@ function Payment() {
             <div className="flex-center mt-[10px] pb-[20px] border-b-[1px] border-b-[#ccc">
               <span className="text-[1.1em] text-[#1c1c1c]">Tổng cộng</span>
               <span className="text-[1.3em] font-bold text-[var(--mainColor)]">
-              {Number(sumOfPrice)
-            .toFixed(0)
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-          ₫
-              
+                {Number(sumOfPrice)
+                  .toFixed(0)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                ₫
+
               </span>
             </div>
             <div className="flex-center mt-[15px]">
@@ -521,7 +588,14 @@ function Payment() {
                 <BsChevronLeft />
                 <span>Quay về giỏ hàng</span>
               </Link>
-              <button className="paying-btn-apply uppercase">Đặt hàng</button>
+              {
+                listCart?.data?.metadata.length !== 0 ? (
+                  <button onClick={clickOrder} className="paying-btn-apply uppercase">Đặt hàng</button>
+                ) : (
+                  <button onClick={() => navigate("/")} className="paying-btn-apply uppercase">Trang chủ</button>
+                )
+              }
+              
             </div>
           </div>
         </div>
@@ -530,4 +604,4 @@ function Payment() {
   );
 }
 
-export default Payment;
+export default Order;

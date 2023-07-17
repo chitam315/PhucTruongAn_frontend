@@ -11,27 +11,34 @@ import { useAuth } from "../AuthContext/index";
 
 export default function Cart() {
   const { user } = useAuth();
+  const [ update, setUpdate] = useState(0)
   const { loadingCart, data: listCart } = useFetch(() => {
     return productService.getCartById(user.id);
-  });
+  },[update]);
+  const updateCart = () => {
+    setUpdate(update + 1)
+  }
   var sumOfPrice = 0
   if(!loadingCart){
     listCart?.data?.metadata.map((e) => sumOfPrice+=e.product.product_price*e.quantity)
   }
   //Handle button copy
   const [textCopy, setTextCopy] = useState("Sao chép");
-  const changeTextBtnCopy = () => {
-    navigator.clipboard.writeText("FREESHIP");
-    setTextCopy("Đã lưu");
-    setTimeout(() => {
-      setTextCopy("Sao chép");
-    }, 1500);
-  };
+  // const changeTextBtnCopy = () => {
+  //   navigator.clipboard.writeText("FREESHIP");
+  //   setTextCopy("Đã lưu");
+  //   setTimeout(() => {
+  //     setTextCopy("Sao chép");
+  //   }, 1500);
+  // };
 
   if (loadingCart) {
-    return <h1>Loading ...</h1>
+    return <h1 className="text-center">Loading ...</h1>
+  } else {
+    if (listCart?.data.metadata.length == 0) {
+      return <h1 className="text-center">Không có sản phẩm nào trong giỏ hàng</h1>
+    }
   }
-
   return (
     <CardMain>
       <div className="mb-[100px]">
@@ -46,7 +53,7 @@ export default function Cart() {
         <Row>
           <div className="col-9 col-tb-12">
             {listCart?.data.metadata.map((item, index) => (
-              <ItemCart idProduct={item.id} item={item} key={index}/>
+              <ItemCart idProduct={item.id} item={item} key={index} setUpdate={updateCart}/>
             ))}
           </div>
           <div className="col-3 col-tb-12">
@@ -57,8 +64,8 @@ export default function Cart() {
                 {sumOfPrice} ₫
               </p>
             </div>
-            <Link to="/paying" className="btn-blue">
-              Thanh toán
+            <Link to="/order" className="btn-blue">
+              Đặt hàng
             </Link>
           </div>
         </Row>

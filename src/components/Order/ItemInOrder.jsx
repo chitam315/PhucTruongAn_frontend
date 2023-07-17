@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { productService } from "../../service/product.service";
 
-export const ItemInPayment = ({ product }) => {
+export const ItemInOrder = ({ product }) => {
   const { data: _product } = useFetch(() => {
     return productService.getProductImage(product.product_id);
   });

@@ -55,6 +55,7 @@ function Header() {
               <div className="flex flex-col gap-1">
                 <span> {user.full_name} </span>
                 <span onClick={logout} className="cursor-pointer">Đăng xuất</span>
+                <Link to={"/list-order"}>Đơn hàng của bạn</Link>
               </div> :
               <></>
           }

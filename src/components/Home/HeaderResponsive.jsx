@@ -44,11 +44,11 @@ function HeaderResponsive() {
   var header = document.getElementById("myHeader");
 
   function myFunction() {
-    if (window.pageYOffset > header.offsetTop) {
-      header.classList.add("fixed");
-    } else {
-      header.classList.remove("fixed");
-    }
+    // if (window.pageYOffset > header.offsetTop) {
+    //   header.classList.add("fixed");
+    // } else {
+    //   header.classList.remove("fixed");
+    // }
   }
   return (
     <header

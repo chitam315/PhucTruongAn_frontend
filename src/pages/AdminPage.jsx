@@ -33,7 +33,6 @@ const AdminPage = () => {
   
   useEffect(() => {
     if (user?.full_name != "admin") {
-      console.log("Unauthorization");
       navigate("/");
     }
   },[])
@@ -149,8 +148,11 @@ const AdminPage = () => {
             <Button type="primary" size="large" onClick={showModalAdd}>
               Add Product
             </Button>
-            <Button type="primary" size="large" onClick={clickUser}>
+            <Button type="primary" size="large" onClick={() => navigate("/admin-users")}>
               All users
+            </Button>
+            <Button type="primary" size="large" onClick={() => navigate("/admin-orders")}>
+              All orders
             </Button>
           </Menu>
         </Sider>

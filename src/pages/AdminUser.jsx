@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -8,6 +8,7 @@ import { Layout, Menu, Button, theme, Avatar } from "antd";
 import { listUsers } from "../mockData";
 import { useNavigate } from "react-router";
 import { TableUser } from "../components/TableUser";
+import { useAuth } from "../components/AuthContext";
 
 
 const { Header, Sider, Content } = Layout;
@@ -18,6 +19,14 @@ const AdminUser = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user?.full_name != "admin") {
+      navigate("/");
+    }
+  },[])
 
   const clickProduct = () => {
     navigate("/admin-page")
@@ -50,8 +59,14 @@ const AdminUser = () => {
         //   }
         // ]}
         >
-          <Button type="primary" size="large" onClick={clickProduct}>
+          <Button type="primary" size="large" onClick={() => navigate("/")}>
+            Back to home
+          </Button>
+          <Button type="primary" size="large" onClick={() => navigate("/admin-page")}>
             All products
+          </Button>
+          <Button type="primary" size="large" onClick={() => navigate("/admin-orders")}>
+            All orders
           </Button>
         </Menu>
       </Sider>

@@ -4,7 +4,7 @@ import { validate } from "../utils/validate";
 /**
  * This hook use to validate form
  * @param {object} rules
- * @return values, error, register, validate
+ * @return { values: valuesForm, errors, register, validate, resetValue, setValuesForm, setValueSelectInForm }
  */
 export const useForm = (rules) => {
     const [valuesForm, setValuesForm] = useState({});
