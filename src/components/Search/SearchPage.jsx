@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import "./Search.css";
 import { useState } from "react";
 import Header from "../Home/Header";
+import HeaderResponsive from "../Home/HeaderResponsive";
 
 function SearchPage() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function SearchPage() {
   const numbers = [...Array(nPage + 1).keys()].slice(1);
   return (
     <div>
+      <HeaderResponsive/>
       <Header />
       <div className="bg-main w-100">
         <CardMain>

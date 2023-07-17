@@ -54,28 +54,23 @@ function App() {
       <Route index path="/admin/product" element={<Product />} />
       <Route index path="/list-order" element={<ListOrderPage />} />
       <Route
-        index
         path="/guest/intro/chinh-sach-bao-hanh"
         element={<WarrantyPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-bao-mat"
         element={<PrivacyPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-van-chuyen"
         element={<ShippingPolicy />}
       />
       <Route
-        index
         path="/guest/intro/chinh-sach-doi-tra"
         element={<ReturnPolicy />}
       />
-      <Route index path="/guest/intro/dieu-khoan" element={<Rules />} />
+      <Route path="/guest/intro/dieu-khoan" element={<Rules />} />
       <Route
-        index
         path="/guest/intro/chinh-sach-kiem-hang"
         element={<InspectionPolicy />}
       />

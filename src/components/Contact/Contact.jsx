@@ -1,10 +1,12 @@
 import React from "react";
 import Header from "../Home/Header";
+import HeaderResponsive from "../Home/HeaderResponsive";
 import Footer from "../Footer/Footer";
 import "../../components/IntroducePage/IntroducePage.css";
 export default function Contact() {
   return (
     <>
+      <HeaderResponsive />
       <Header />
       <div className="com_info">
         <div className="container-sm mt-[15px] mb-[15px]">
@@ -17,9 +19,8 @@ export default function Contact() {
                 <div className="col-6 col-sm-12 pr-[10px]">
                   <address className="vcard mb-4">
                     <p className="adr mb-1">
-                      <b>Trụ sở chính: </b>Trụ sở: C61-20, KĐT Geleximco, Đường
-                      Lê Trọng Tấn, Phường Dương Nội, Quận Hà Đông, Thành Phố Hà
-                      Nội, Việt Nam
+                      <b>Trụ sở chính: </b>224 ấp Tân Thành, huyện Bắc Sơn,
+                      Trảng Bom, Đồng Nai
                     </p>
 
                     <p className="mb-1">
@@ -28,23 +29,23 @@ export default function Contact() {
                         href="mailto:hotro@tpsolar.vn"
                         title="hotro@tpsolar.vn"
                       >
-                        hotro@tpsolar.vn
+                        23011987truong@gmail.com
                       </a>
                     </p>
 
                     <p className="mb-1">
                       <b>Hotline: </b>
                       <a href="tel:0363993993" title="0363 993 993">
-                        0363 993 993
+                        0933819292
                       </a>
                     </p>
 
                     <p className="mb-1">
-                      Giấy chứng nhận Đăng ký Kinh doanh số 0109008737 do Sở Kế
+                      Giấy chứng nhận Đăng ký Kinh doanh số 3603829836 do Sở Kế
                       hoạch và Đầu tư Thành phố Hà Nội cấp ngày 29/11/2019
                     </p>
                   </address>
-                  <div className="mt-3">
+                  {/* <div className="mt-3">
                     <form
                       method="post"
                       action="/postcontact"
@@ -100,12 +101,12 @@ export default function Contact() {
                         </button>
                       </div>
                     </form>{" "}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-6 col-sm-12">
                   <div className="google-map pl-[10px]">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1260371072844!2d105.7371297153318!3d20.987584294557813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453d35428fd75%3A0x935b648a44164124!2sTP%20Solar%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1671522717034!5m2!1svi!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15668.571333294527!2d106.9587759!3d10.9525814!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e785ec1ab281%3A0x405563cecdca91d7!2zQ8OUTkcgVFkgVE5ISCDEkEnhu4ZOIEPDlE5HIE5HSEnhu4ZQIFBIw5pDIFRSxq_hu5xORyBBTg!5e0!3m2!1sen!2s!4v1689391345325!5m2!1sen!2s"
                       width="100%"
                       height="350"
                       allowfullscreen=""

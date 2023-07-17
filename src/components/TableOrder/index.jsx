@@ -14,11 +14,11 @@ export const TableOrder = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const { user } = useAuth()
 
-  const [update,setUpdate] = useState(0)
+  const [update, setUpdate] = useState(0)
 
   const { loading, data: listOrder } = useFetch(() => {
     return orderService.getAllOrder()
-  },[])
+  }, [update])
 
   const { loadingPayment, data: listPayment } = useFetch(() => {
     return paymentService.getAllPayment()
@@ -34,7 +34,8 @@ export const TableOrder = () => {
         ...dataPayment,
         payment_status: "done"
       })
-
+      setUpdate(update + 1)
+      handleCancelDel()
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +47,8 @@ export const TableOrder = () => {
         ...dataPayment,
         payment_status: "fail"
       })
-      console.log(res);
+      setUpdate(update + 1)
+      handleCancelDel()
     } catch (error) {
       console.log(error);
     }
@@ -92,7 +94,6 @@ export const TableOrder = () => {
   const showModalDel = (orderData) => {
     console.log(listPayment);
     const payment = listPayment.data.metadata.find(pay => pay.order_id == orderData.order_id)
-    console.log(payment);
     orderData.products.map((product, index) => {
       dataSource.push({
         key: index + 1,
@@ -157,19 +158,43 @@ export const TableOrder = () => {
                   <td className="px-6 py-4 text-center">{ele.address}</td>
                   <td className="px-6 py-4 text-center">{ele.order_total}</td>
                   {
-                    ele.order_status == "pending" ? (
+                    ele.order_status == "pending" && (
                       <td className="px-6 py-4 text-center">
-                        <Button className="mx-2" type="primary" danger ghost onClick={() => { return showModalDel(ele) }}>
+                        <Button className="mx-2" type="primary" danger ghost /*onClick={() => { return showModalDel(ele) }}*/>
                           Chưa thanh toán
                         </Button>
                       </td>
-                    ) : (
-                      <td className="px-6 py-4 text-center">
-                        <Button className="mx-2" type="primary" ghost onClick={() => { return showModalDel(ele) }}>
-                          Chờ xác nhận
-                        </Button>
-                      </td>
                     )
+                  }
+                  {
+                    ele.order_status == "done" &&
+                      (
+                        <td className="px-6 py-4 text-center">
+                          <Button className="mx-2" type="primary" ghost onClick={() => { return showModalDel(ele) }}>
+                            Chờ xác nhận
+                          </Button>
+                        </td>
+                      )
+                  }
+                  {
+                    ele.order_status == "shipped" &&
+                      (
+                        <td className="px-6 py-4 text-center">
+                          <Button className="mx-2" type="primary" ghost style={{background: "green", color: "white"}} onClick={() => { return showModalDel(ele) }}>
+                            Đã giao hàng
+                          </Button>
+                        </td>
+                      )
+                  }
+                  {
+                    ele.order_status == "fail" &&
+                      (
+                        <td className="px-6 py-4 text-center">
+                          <Button className="mx-2" type="danger" ghost onClick={() => { return showModalDel(ele) }}>
+                            Đã huỷ
+                          </Button>
+                        </td>
+                      )
                   }
                 </tr>
               );

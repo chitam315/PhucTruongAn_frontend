@@ -32,18 +32,18 @@ function Header() {
         <Search />
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
-            <LuPhoneCall className="svg-orange animate-shake" />
+            <LuPhoneCall className="svg-main animate-shake" />
           </div>
-          <div className="text-[var(--mainColor)]  hover:text-[#ff9419] font-bold ml-[10px]">
+          <div className="text-[var(--mainColor)]  hover:text-[#00c6ee] font-bold ml-[10px]">
             Hotline: <br />
             0933 819 292
           </div>
         </div>
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
-            <TbMap2 className="text-[#ff9419]" />
+            <TbMap2 className="text-[#00c6ee]" />
           </div>
-          <div className="text-[var(--mainColor)] hover:text-[#ff9419] font-bold ml-[10px]">
+          <div className="text-[var(--mainColor)] hover:text-[#00c6ee] font-bold ml-[10px]">
             Hệ thống
             <br />
             Đại lý
@@ -67,7 +67,7 @@ function Header() {
           </Link>
         </div>
       </div>
-      <div className="bg-[#ffb600] text-[1.1em] font-bold ">
+      <div className="bg-[#00c6ee] text-[1.1em] font-bold ">
         <ul className="container-sm flex-center text-none text-white list-none header-navbar-session">
           <li className="flex items-center cursor-pointer hover:text-[var(--mainColor)] duration-500">
             <CategoryProduct />

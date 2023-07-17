@@ -133,59 +133,23 @@ img {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-/* ************* */
-@media (min-width: 1500px) {
-  .container {
-    max-width: 1370px;
-  }
-}
-.m_white_bg_module {
-  background: #fff;
-}
-.blog-name {
-  font-size: 24px;
-}
-.custom-article-item .custom-article-item_info .tags {
-  gap: 5px;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.custom-article-item .custom-article-item_info .item_tags {
-  color: #854d0e;
-  transition: all 0.3s ease;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  font-size: 12px;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  transition: all 0.3s ease;
-}
-.item_tags {
-  background-color: #f5c013;
-}
-.custom-article-item_info {
-  margin-top: 12px;
-}
-/* Thiết lập thanh cuộn cho một phần tử có lớp tên "scrollable-container" */
-.tags {
-  overflow: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá kích thước của phần tử */
-  max-height: 300px; /* Thiết lập chiều cao tối đa cho phần tử */
-}
 
-/* Tùy chỉnh kiểu dáng của thanh cuộn dọc */
-.tags::-webkit-scrollbar {
+.project-tags::-webkit-scrollbar {
   height: 3px;
-  width: 6px; /* Độ rộng của thanh cuộn */
+  width: 6px;
 }
 
-.tags::-webkit-scrollbar-thumb {
-  background-color: #2d0cc4; /* Màu nền của thanh cuộn */
-  border-radius: 4px; /* Bo tròn góc của thanh cuộn */
+.project-tags::-webkit-scrollbar-thumb {
+  background-color: #2d0cc4;
+  border-radius: 4px;
 }
 
-.tags::-webkit-scrollbar-track {
-  background-color: #c5bfbf; /* Màu nền của phần nằm ngoài thanh cuộn */
+.project-tags::-webkit-scrollbar-track {
+  background-color: #c5bfbf;
+}
+
+@media only screen and (max-width:650px){
+  .col-project-full {
+    width: 100%;
+  }
 }

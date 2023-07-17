@@ -324,8 +324,8 @@ svg.svg-white path {
 svg.svg-orange path {
   stroke: #ff9419;
 }
-svg.svg-main path {
-  stroke: var(--mainColor);
+svg.  path {
+  stroke: #00c6ee;
 }
 .center-img {
   display: flex;

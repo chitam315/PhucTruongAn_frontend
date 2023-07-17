@@ -27,7 +27,7 @@ export default function News() {
               <h3 className="font-bold  my-[0.8em] text-[1.2em] ">
                 <a
                   className="line-1"
-                  href="/nhung-yeu-to-nao-anh-huong-den-hieu-suat-chieu-sang-cua-den-nang-luong-mat-troi"
+                  href="https://tpsolar.vn/nhung-yeu-to-nao-anh-huong-den-hieu-suat-chieu-sang-cua-den-nang-luong-mat-troi"
                   title="Những yếu tố nào ảnh hưởng đến hiệu suất chiếu sáng của đèn năng lượng mặt trời?"
                 >
                   Những yếu tố nào ảnh hưởng đến hiệu suất chiếu sáng của đèn
@@ -51,12 +51,15 @@ export default function News() {
         <div className="col-6 col-tbm-12">
           {NewsData.map((item, index) => (
             <div className="flex" id={index}>
-              <a className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"  href="#news">
+              <a
+                className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"
+                href={item.url}
+              >
                 <img
-                    src={item.image}
-                    alt=""
-                    className="w-100 h-fit zoom-image"
-                  />
+                  src={item.image}
+                  alt=""
+                  className="w-100 h-fit zoom-image"
+                />
               </a>
               {/* <div className="col-9 py-[10px] pr-[10px]">
                 <h3 className="font-bold text-[1.1em]">

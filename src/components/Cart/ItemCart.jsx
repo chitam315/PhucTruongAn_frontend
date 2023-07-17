@@ -52,10 +52,17 @@ export default function ItemCart({ item, idProduct,setUpdate }) {
         <div className="flex-center">
           <div className="flex-center">
             {/* <button className="cart-btn-minus">-</button> */}
-            <span className=" border-gray cart-text-quantity">{item.quantity}</span>
+            <span className=" border-gray cart-text-quantity">
+              {item.quantity}
+            </span>
             {/* <button className="cart-btn-plus">+</button> */}
           </div>
-          <button onClick={clickDelete} className="btn btn-outline-danger text-[0.8em]">Xoá</button>
+          <button
+            onClick={clickDelete}
+            className="btn btn-outline-danger text-[0.8em]"
+          >
+            Xoá
+          </button>
         </div>
       </div>
     </div>
