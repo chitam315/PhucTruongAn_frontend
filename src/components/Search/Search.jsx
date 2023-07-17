@@ -40,7 +40,7 @@ function Search() {
   };
   return (
     <div className="flex-center">
-      <div className="flex border-1 border-solid border-[#ffb700] rounded-2 relative">
+      <div className="flex border-1 border-solid border-[#00c6ee] rounded-2 relative">
         <input
           type="text"
           placeholder="Tìm kiếm sản phẩm..."
@@ -49,7 +49,7 @@ function Search() {
           onChange={(e) => handleChange(e.target.value)}
         />
         <div
-          className="bg-[#ff9419] h-full flex-center p-[11px] cursor-pointer block"
+          className="bg-[#00c6ee] h-full flex-center p-[11px] cursor-pointer block"
           onClick={clickSearch}
         >
           <GrSearch className="text-[1.2em] text-white svg-white" />

@@ -1,10 +1,12 @@
 import React from "react";
 import Header from "../Home/Header";
+import HeaderResponsive from "../Home/HeaderResponsive";
 import Footer from "../Footer/Footer";
 import "../../components/IntroducePage/IntroducePage.css";
 export default function Contact() {
   return (
     <>
+      <HeaderResponsive />
       <Header />
       <div className="com_info">
         <div className="container-sm mt-[15px] mb-[15px]">

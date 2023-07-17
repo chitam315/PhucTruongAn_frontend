@@ -31,7 +31,7 @@ import SearchPage from "./components/Search/SearchPage";
 function App() {
   return (
     <Routes>
-      <Route index path="" element={<HomePage />} />
+      <Route index path="*" element={<HomePage />} />
       <Route path="/see-more/:id" element={<SeeMorePage />} />
       <Route path="/detail/:id" element={<DetailProductPage />} />
       <Route path="/baohanh" element={<Guarantee />}></Route>

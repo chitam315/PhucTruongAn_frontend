@@ -32,7 +32,7 @@ function Header() {
         <Search />
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
-            <LuPhoneCall className="svg-orange animate-shake" />
+            <LuPhoneCall className="svg-main animate-shake" />
           </div>
           <div className="text-[var(--mainColor)]  hover:text-[#00c6ee] font-bold ml-[10px]">
             Hotline: <br />
@@ -41,7 +41,7 @@ function Header() {
         </div>
         <div className="flex-center cursor-pointer">
           <div className="border-gray rounded-full w-[40px] h-[40px] center-img">
-            <TbMap2 className="text-[#e29e31]" />
+            <TbMap2 className="text-[#00c6ee]" />
           </div>
           <div className="text-[var(--mainColor)] hover:text-[#00c6ee] font-bold ml-[10px]">
             Hệ thống

@@ -23,9 +23,9 @@ export default function ItemProductSale({ item }) {
 
         <ImageProduct item={item} />
 
-        <div className="tag-status-sold uppercase flex justify-center text-white select-none">
+        {/* <div className="tag-status-sold uppercase flex justify-center text-white select-none">
           <span className="z-[50] text-[0.8em]">Đã bán: 2300</span>
-        </div>
+        </div> */}
         <ProductInfo item={item} />
       </div>
     </div>

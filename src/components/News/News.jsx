@@ -2,7 +2,7 @@ import React from "react";
 
 import "../../assets/variables.css";
 import Header from "../Home/Header";
-import  Footer  from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import "../Project/Project.css";
 export default function News() {
   return (
@@ -363,893 +363,62 @@ export default function News() {
                 </ul>
               </div>
             </div>
-            {/* Thong tin huu ich */}
-            <div className="container-sm mt-3 mb-3 ">
-              <div className="col-main rounded m_white_bg_module p-lg-3 pl-2 pr-2 pt-3 pb-3">
-                <h1 className="blog-name font-weight-bold pb-3 pt-2 pt-lg-0">
-                  Dự án &amp; Hoạt động
-                </h1>
-                <article>
-                  <div className="grid_article">
-                    <div className="row" id="AjaxinateContainer">
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
+            {/* Du an va hoat dong */}
+            <div className="container-sm my-3 bg-white p-3 rounded-[10px] w-full">
+              <h1 className="text-[1.8em]">Thông tin hữu ích</h1>
+
+              <div className="flex flex-wrap w-full">
+                {arrProject.map((item, index) => (
+                  <div
+                    className="col-4 col-tb-6 col-project-full p-2"
+                    key={index}
+                  >
+                    <div className="border-gray rounded-[8px] overflow-hidden w-full">
+                      <a
+                        href={item.url}
+                        title={item.title}
+                        className="block w-full h-[220px]"
+                      >
+                        <img
+                          src={item.image}
+                          className="h-full w-full p-0 "
+                          alt={item.title}
+                        />
+                      </a>
+                      <div className="p-2">
+                        <div className="overflow-x-auto whitespace-nowrap py-2 project-tags h-[45px]">
+                          {item.item.map((i, index2) => (
+                            <a
+                              className="rounded-[20px] bg-[#f5c013] p-[5px] font-medium text-[#854d0e] mr-[10px]"
+                              href={i.url}
+                              title={i.title}
+                              key={index2}
+                            >
+                              {i.title}
+                            </a>
+                          ))}
+                        </div>
+
+                        <h3 className="mt-2">
                           <a
-                            href="https://tpsolar.vn/tiet-kiem-dien-giua-mua-nang-nong"
-                            title="Tiết kiệm điện giữa mùa nắng nóng"
-                            className="effect-ming"
+                            className="line-2 font-bold"
+                            href={item.url}
+                            title={item.title}
                           >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/tiet-kiem-dien-mua-nang-nong.png?v=1685758283087"
-                                className="lazy d-block img img-cover position-absolute"
-                                alt="Tiết kiệm điện giữa mùa nắng nóng"
-                              />
-                            </div>
+                            {item.title}
                           </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
+                        </h3>
+                        <span className="text-[0.8em] text-[#3c3c3c]">
+                          {item.date}
+                        </span>
 
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/tiet-kiem-dien-giua-mua-nang-nong"
-                                title="Tiết kiệm điện giữa mùa nắng nóng"
-                              >
-                                Tiết kiệm điện giữa mùa nắng nóng
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              03-06-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Điều hòa - công nghệ hiện đại giúp chúng ta giải
-                              nhiệt nhanh hơn, mang đến sự thoải mái trong cuộc
-                              sống nhưng cùng lúc đó sẽ “nung” nóng Trái Đất.
-                              Theo ước tính thì đến trước cuối thập kỷ này thế
-                              giới sẽ có thêm 1 tỉ chiếc điều hòa. Thị trường
-                              được dự đoán tăng gần gấp đôi trước năm 2024. Sức
-                              nóng từ điều hòa Thời tiết ngày càng nóng bức như
-                              để thử thách giới hạn sinh tồn của con người. Với
-                              vô vàn những tiện ích, đủ các công suất, mức giá
-                              khác nhau thì điều hòa không khí...
-                            </div>
-                          </div>
+                        <div className="line-2 text-[0.9em] text-justify">
+                          {item.description}
                         </div>
                       </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/gia-dien-tang-co-anh-huong-den-doi-song-sinh-hoat-hoat-dong-kinh-doanh-cua-doanh-nghiep"
-                            title="Giá điện tăng có ảnh hưởng đến đời sống sinh hoạt, hoạt động kinh doanh của doanh nghiệp?"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/gia-dien-tang-cao.png?v=1685346494333"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/gia-dien-tang-cao.png?v=1685346494333"
-                                className="lazy d-block img img-cover position-absolute"
-                                alt="Giá điện tăng có ảnh hưởng đến đời sống sinh hoạt, hoạt động kinh doanh của doanh nghiệp?"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/gia-dien-tang-co-anh-huong-den-doi-song-sinh-hoat-hoat-dong-kinh-doanh-cua-doanh-nghiep"
-                                title="Giá điện tăng có ảnh hưởng đến đời sống sinh hoạt, hoạt động kinh doanh của doanh nghiệp?"
-                              >
-                                Giá điện tăng có ảnh hưởng đến đời sống sinh
-                                hoạt, hoạt động kinh doanh của doanh nghiệp?
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              29-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Theo quyết định của Bộ Công Thương và Tập đoàn
-                              Điện lực Việt Nam, kể từ ngày 4/5/2023 giá điện
-                              bán lẻ bình quân tăng 3% (1.920 đồng/kWh) so với
-                              mức giá điện cũ. Việc giá điện tăng có ảnh hưởng
-                              quan trọng đến đời sống sinh hoạt của người dân
-                              cũng như hoạt động sản xuất kinh doanh của doanh
-                              nghiệp. Tuy nhiên, với mức tăng như hiện nay được
-                              đánh giá là mức tăng hợp lý và giá điện bán lẻ tại
-                              Việt Nam vẫn thấp hơn rất nhiều so với các quốc
-                              gia trên thế giới (Trung Quốc là 2.780...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/thoi-gian-sang-cua-den-nang-luong-mat-troi-la-bao-lau"
-                            title="Thời gian sáng của đèn năng lượng mặt trời là bao lâu?"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/thoi-gian-chieu-sang-cua-den-nang-luong-mat-troi-la-bao-lau.png?v=1684895182710"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/thoi-gian-chieu-sang-cua-den-nang-luong-mat-troi-la-bao-lau.png?v=1684895182710"
-                                className="lazy d-block img img-cover position-absolute"
-                                alt="Thời gian sáng của đèn năng lượng mặt trời là bao lâu?"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/thoi-gian-sang-cua-den-nang-luong-mat-troi-la-bao-lau"
-                                title="Thời gian sáng của đèn năng lượng mặt trời là bao lâu?"
-                              >
-                                Thời gian sáng của đèn năng lượng mặt trời là
-                                bao lâu?
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              24-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Thời gian sáng của đèn năng lượng mặt trời là bao
-                              lâu? Được xem là một trong những sản phẩm chất
-                              lượng, có thể tận dụng tốt ánh sáng mặt trời và
-                              chuyển hóa thành năng lượng để chiếu sáng. Vậy
-                              thời gian chiếu sáng của đèn năng lượng mặt trời
-                              có bền và lâu dài không? Thời gian sạc đầy đèn
-                              năng lượng mặt trời? Việc sử dụng đèn năng lượng
-                              mặt trời để chiếu sáng đã trở thành một trong
-                              những lựa chọn hàng đầu của rất nhiều hộ gia đình,
-                              các doanh nghiệp,... Bởi đèn hấp thụ tối đa ánh
-                              sáng...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/90-cac-thuong-hieu-quang-cao-den-nang-luong-mat-troi-chat-luong-dang-lua-dao"
-                            title="90% các thương hiệu quảng cáo đèn năng lượng mặt trời chất lượng đang lừa đảo"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/90-percentage-cac-thuong-hieu-dang-lua-dao-khach-hang.png?v=1684463700533"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/90-percentage-cac-thuong-hieu-dang-lua-dao-khach-hang.png?v=1684463700533"
-                                alt="90% các thương hiệu quảng cáo đèn năng lượng mặt trời chất lượng đang lừa đảo"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/90-cac-thuong-hieu-quang-cao-den-nang-luong-mat-troi-chat-luong-dang-lua-dao"
-                                title="90% các thương hiệu quảng cáo đèn năng lượng mặt trời chất lượng đang lừa đảo"
-                              >
-                                90% các thương hiệu quảng cáo đèn năng lượng mặt
-                                trời chất lượng đang lừa đảo
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              19-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Bạn thích cuộc sống xanh, bạn muốn sử dụng đèn
-                              năng lượng mặt trời và muốn tìm thương hiệu cung
-                              cấp đèn năng lượng mặt trời uy tín và bạn chưa
-                              biết lựa chọn đơn vị nào để mua. Nỗi lo về vấn nạn
-                              lừa đảo, trong khi không phải tất cả các thương
-                              hiệu đèn năng lượng mặt trời đều bán hàng chất
-                              lượng như quảng cáo. Nhiều tổ chức đã thống kê
-                              rằng thực trạng những đơn vị cung cấp đèn năng
-                              lượng mặt trời có đến trên 69% đang lừa dối khách
-                              hàng. Khi tham gia cuộc khảo sát thực tế các...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/tp-solar-chinh-phuc-niem-tin-nguoi-tieu-dung"
-                            title="TP Solar chinh phục niềm tin người tiêu dùng"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-nang-luong-mat-troi-tp-solar.png?v=1684211780647"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-nang-luong-mat-troi-tp-solar.png?v=1684211780647"
-                                className="lazy d-block img img-cover position-absolute"
-                                alt="TP Solar chinh phục niềm tin người tiêu dùng"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/tp-solar-chinh-phuc-niem-tin-nguoi-tieu-dung"
-                                title="TP Solar chinh phục niềm tin người tiêu dùng"
-                              >
-                                TP Solar chinh phục niềm tin người tiêu dùng
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              15-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Niềm tin của khách hàng chính là động lực lớn nhất
-                              để thúc đẩy sự phát triển của TP Solar, xây dựng
-                              niềm tin đã khó giữ vững niềm tin còn khó hơn. Vì
-                              vậy, TP Solar luôn đặt đạo đức kinh doanh, trách
-                              nhiệm doanh nghiệp lên hàng đầu. Bên cạnh đó, TP
-                              Solar áp dụng những trang thiết bị công nghệ cao
-                              để khẳng định vị thế thương hiệu quốc gia xứng
-                              đáng với sự tin yêu của người tiêu dùng. Nỗ lực
-                              trong từng sản phẩm, phát triển theo hướng công
-                              nghệ cao Với hơn 60 mẫu đèn năng lượng...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/top-5-cac-loai-den-nang-luong-mat-troi-pho-bien-nhat-hien-nay"
-                            title="Top 5 các loại đèn năng lượng mặt trời phổ biến nhất hiện nay"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/noi-dung-doan-van-ban-cua-ban-2.jpg?v=1683973577910"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/noi-dung-doan-van-ban-cua-ban-2.jpg?v=1683973577910"
-                                className="lazy d-block img img-cover position-absolute"
-                                alt="Top 5 các loại đèn năng lượng mặt trời phổ biến nhất hiện nay"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="/khai-truong-dai-ly-tp-solar-phuc-loc-tai-vinh-cuu-dong-nai"
-                                title="Top 5 các loại đèn năng lượng mặt trời phổ biến nhất hiện nay"
-                              >
-                                Top 5 các loại đèn năng lượng mặt trời phổ biến
-                                nhất hiện nay
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              12-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Các loại đèn năng lượng mặt trời vẫn luôn là một
-                              trong những “từ khóa” được rất nhiều người dùng
-                              tìm kiếm trong vài năm trở lại đây. Thiết bị này
-                              không chỉ giúp chúng ta tiết kiệm đáng kể số tiền
-                              điện mỗi tháng, mà còn góp phần bảo vệ môi trường
-                              cũng như đem lại sự an toàn tuyệt đối cho người sử
-                              dụng. Tuy nhiên, khi đi tìm mua đèn năng lượng mặt
-                              trời, nhiều khách hàng lại băn khoăn không biết
-                              chọn loại đèn nào có giá cả hợp lý cũng như đảm
-                              bảo chất lượng...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/top-7-tieu-chi-danh-gia-den-nang-luong-mat-troi-tot-ma-ai-cung-nen-biet"
-                            title="Top 7 tiêu chí đánh giá đèn năng lượng mặt trời tốt mà ai cũng nên biết"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/7-plus-tieu-chi-danh-gia-den-nang-luong-mat-troi-tot.png?v=1684118322567"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/7-plus-tieu-chi-danh-gia-den-nang-luong-mat-troi-tot.png?v=1684118322567"
-                                className="lazy d-block img img-cover position-absolute loaded"
-                                alt="Top 7 tiêu chí đánh giá đèn năng lượng mặt trời tốt mà ai cũng nên biết"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/top-7-tieu-chi-danh-gia-den-nang-luong-mat-troi-tot-ma-ai-cung-nen-biet"
-                                title="Top 7 tiêu chí đánh giá đèn năng lượng mặt trời tốt mà ai cũng nên biết"
-                              >
-                                Top 7 tiêu chí đánh giá đèn năng lượng mặt trời
-                                tốt mà ai cũng nên biết
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              13-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Đã từ lâu đèn năng lượng mặt trời trở thành sản
-                              phẩm quen thuộc được xuất hiện ở rất nhiều thành
-                              tỉnh thành trên đất nước Việt Nam. Tuy nhiên,
-                              nhiều người vẫn chưa biết được dựa vào tiêu chí
-                              nào để đánh giá một chiếc đèn năng lượng mặt trời
-                              tốt, nhất là khi thị trường hiện nay xuất hiện rất
-                              nhiều thương hiệu với mẫu mã và giá cả đa dạng. Để
-                              hiểu rõ hơn về vấn đề này, mời quý vị và các bạn
-                              cùng tham khảo bài viết: “ Top 7 tiêu chí đánh giá
-                              đèn...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/7-ly-do-khien-den-nang-luong-mat-troi-soan-ngoi-den-truyen-thong"
-                            title="7 lý do khiến đèn năng lượng mặt trời “soán ngôi” đèn truyền thống"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/7-ly-do-nen-su-dung-den-nang-luong-mat-troi.png?v=1684464216503"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/7-ly-do-nen-su-dung-den-nang-luong-mat-troi.png?v=1684464216503"
-                                className="lazy d-block img img-cover position-absolute loaded"
-                                alt="Khai trương đại lý TP Solar - Bình Anh tại Phủ Lý, Hà Nam"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/7-ly-do-khien-den-nang-luong-mat-troi-soan-ngoi-den-truyen-thong"
-                                title="7 lý do khiến đèn năng lượng mặt trời “soán ngôi” đèn truyền thống"
-                              >
-                                7 lý do khiến đèn năng lượng mặt trời “soán
-                                ngôi” đèn truyền thống
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              12-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Lý do khiến đèn năng lượng mặt trời “soán ngôi”
-                              đèn truyền thống là gì? Mặc dù chi phí ban đầu
-                              phải bỏ ra khá cao so với các loại đèn sợi đốt,
-                              đèn huỳnh quang nhưng việc sử dụng đèn năng lượng
-                              mặt trời để thay thế cho các loại đèn chiếu sáng
-                              thông thường rất được khách hàng quan tâm. Hãy
-                              cùng tìm hiểu những lợi ích mà đèn năng lượng mặt
-                              trời mang lại là gì nhé! 7 lý do nên sử dụng đèn
-                              năng lượng mặt trời 1. Thân thiện với môi trường
-                              Khác với các loại đèn truyền...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/top-4-mau-den-nang-luong-mat-troi-san-vuon-cao-cap-gia-re"
-                            title="Top 4 mẫu đèn năng lượng mặt trời sân vườn cao cấp, giá rẻ"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/top-4-mau-den-san-vuon-nang-luong-mat-troi-cao-cap-gia-re.png?v=1683776801740"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/top-4-mau-den-san-vuon-nang-luong-mat-troi-cao-cap-gia-re.png?v=1683776801740"
-                                className="lazy d-block img img-cover position-absolute loaded"
-                                alt="Top 4 mẫu đèn năng lượng mặt trời sân vườn cao cấp, giá rẻ"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/top-4-mau-den-nang-luong-mat-troi-san-vuon-cao-cap-gia-re"
-                                title="Top 4 mẫu đèn năng lượng mặt trời sân vườn cao cấp, giá rẻ"
-                              >
-                                Top 4 mẫu đèn năng lượng mặt trời sân vườn cao
-                                cấp, giá rẻ
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              10-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Với thiết kế đơn giản, dễ dàng sử dụng mà không
-                              cần dây điện, thì các mẫu đèn năng lượng mặt trời
-                              sân vườn chính là giải pháp mới, hiện đại vừa giúp
-                              chiếu sáng sân vườn, lối đi lại vừa có thêm ánh
-                              sáng trang trí cảnh quan cho gia đình. Hãy cùng TP
-                              Solar tìm hiểu xem những mẫu mã, kiểu dáng được
-                              quan tâm nhiều nhất nhé! Những mẫu đèn năng lượng
-                              mặt trời sân vườn tốt nhất hiện nay 1. Đèn trụ
-                              cổng năng lượng mặt trời Đèn trụ cổng năng lượng
-                              mặt trời với nhiều kích thước, nhiều mẫu mã và...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/co-nen-su-dung-den-nang-luong-mat-troi-de-chieu-sang-san-van-dong-san-bong-da"
-                            title="Có nên sử dụng đèn năng lượng mặt trời để chiếu sáng sân vận động, sân bóng đá?"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-chieu-sang-san-bong.png?v=1685529322937"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-chieu-sang-san-bong.png?v=1685529322937"
-                                className="lazy d-block img img-cover position-absolute loaded"
-                                alt="Có nên sử dụng đèn năng lượng mặt trời để chiếu sáng sân vận động, sân bóng đá?"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/co-nen-su-dung-den-nang-luong-mat-troi-de-chieu-sang-san-van-dong-san-bong-da"
-                                title="Có nên sử dụng đèn năng lượng mặt trời để chiếu sáng sân vận động, sân bóng đá?"
-                              >
-                                Có nên sử dụng đèn năng lượng mặt trời để chiếu
-                                sáng sân vận động, sân bóng đá?
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              08-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Hiện nay, sử dụng đèn năng lượng mặt trời để chiếu
-                              sáng sân vận động, sân bóng đá trở nên ngày càng
-                              phổ biến vì nhu cầu giải trí ngày càng cao. Đèn
-                              năng lượng mặt trời cho ánh sáng phân bổ đồng đều,
-                              chân thực, an toàn, không nhấp nháy,... vượt trội
-                              hơn hẳn so với các loại đèn chiếu sáng khác. Tại
-                              sao nên sử dụng đèn năng lượng mặt trời để chiếu
-                              sáng sân bóng đá? Khả năng chiếu sáng tốt Lợi ích
-                              đầu tiên và rõ ràng nhất của đèn năng lượng chính
-                              là khả năng chiếu sáng đủ rộng, đủ lớn...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/theo-khoa-hoc-anh-sang-vang-hay-anh-sang-trang-tot-cho-mat"
-                            title="Theo khoa học ánh sáng vàng hay ánh sáng trắng tốt cho mắt?"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/anh-sang-vang-hay-anh-sang-trang-tot-cho-mat.png?v=1683084203127"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/anh-sang-vang-hay-anh-sang-trang-tot-cho-mat.png?v=1683084203127"
-                                alt="Theo khoa học ánh sáng vàng hay ánh sáng trắng tốt cho mắt?"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/theo-khoa-hoc-anh-sang-vang-hay-anh-sang-trang-tot-cho-mat"
-                                title="Theo khoa học ánh sáng vàng hay ánh sáng trắng tốt cho mắt?"
-                              >
-                                Theo khoa học ánh sáng vàng hay ánh sáng trắng
-                                tốt cho mắt?
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              03-05-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Hiện nay, trẻ em bị cận sớm không chỉ do các yếu
-                              tố: di truyền, sử dụng điện thoại, xem TV quá
-                              nhiều,... mà ánh sáng cũng có thể là nguyên nhân
-                              khiến đôi mắt bị suy giảm nhanh về thị lực. Vậy
-                              bạn đã biết ánh sáng vàng hay ánh sáng trắng tốt
-                              cho mắt chưa? Dưới đây là những lý giải khoa học
-                              tốt nhất cho bạn. Đặc điểm, tính chất của ánh sáng
-                              vàng Ánh sáng vàng (the warm light), màu sắc trên
-                              thang nhiệt độ màu từ khoảng 2700K - 3000K, cho
-                              ánh sáng tỏa ra màu hơi vàng và...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-sm-6 col-md-6 col-lg-4 its">
-                        <div className="custom-article-item border mb-4 modal-open rounded-10">
-                          <a
-                            href="https://tpsolar.vn/1001-nhung-dieu-thu-vi-ve-cam-bien-anh-sang"
-                            title="1001 điều thú vị về cảm biến ánh sáng!"
-                            className="effect-ming"
-                          >
-                            <div className="position-relative w-100 m-0 be_opa modal-open ratio3by2 aspect ">
-                              <img
-                                src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/cam-bien-anh-sang-hien-dai.png?v=1682481585153"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/463/111/articles/cam-bien-anh-sang-hien-dai.png?v=1682481585153"
-                                alt="1001 điều thú vị về cảm biến ánh sáng!"
-                              />
-                            </div>
-                          </a>
-                          <div className="custom-article-item_info">
-                            <div className="tags d-flex list-unstyled mb-1">
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/kinh-doanh-den-nang-luong"
-                                title="kinh doanh đèn năng lượng"
-                              >
-                                kinh doanh đèn năng lượng
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/tp-solar"
-                                title="TP Solar"
-                              >
-                                TP Solar
-                              </a>
-
-                              <a
-                                className="item_tags small font-weight-bold badge badge-pill badge-warning py-1"
-                                href="du-an-hoat-dong/den-nang-luong-mat-troi"
-                                title="đèn năng lượng mặt trời"
-                              >
-                                đèn năng lượng mặt trời
-                              </a>
-                            </div>
-
-                            <h3 className="title_blo font-weight-bold mb-2">
-                              <a
-                                className="line_2"
-                                href="https://tpsolar.vn/1001-nhung-dieu-thu-vi-ve-cam-bien-anh-sang"
-                                title="1001 điều thú vị về cảm biến ánh sáng!"
-                              >
-                                1001 điều thú vị về cảm biến ánh sáng!
-                              </a>
-                            </h3>
-                            <span className="d-block text-gray small">
-                              26-04-2023
-                            </span>
-
-                            <div className="sum line_1 line_2 h-auto text-justify">
-                              Cảm biến ánh sáng là thiết bị thông minh không thể
-                              thiếu trong các sản phẩm đèn năng lượng mặt trời.
-                              Thay vì phải bật/tắt đèn thủ công, thì việc sử
-                              dụng cảm biến ánh sáng sẽ mang lại nhiều tiện ích
-                              trong cuộc sống. Cùng TP Solar tìm hiểu rõ hơn về
-                              vấn đề này nhé! Cảm biến ánh sáng là gì? Cảm biến
-                              ánh sáng còn được gọi là “Thiết bị quang điện”
-                              hoặc “Cảm biến ảnh” bởi vì năng lượng ánh sáng
-                              chuyển đổi (photon) thành điện (electron). Nó có
-                              khả năng nhận biết các biến đổi của môi trường
-                              thông...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex justify-center">
-                      <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                        Xem thêm bài viết
-                      </button>
                     </div>
                   </div>
-                </article>
+                ))}
               </div>
             </div>
           </section>
@@ -1259,3 +428,150 @@ export default function News() {
     </>
   );
 }
+
+const arrProject = [
+  {
+    image:
+      "//bizweb.dktcdn.net/thumb/large/100/463/111/articles/tro-thanh-dai-ly-den-nang-luong-mat-troi-cuc-de.png?v=1683777841857",
+    url: "https://tpsolar.vn/chuyen-gi-xay-ra-neu-tro-thanh-dai-ly-den-nang-luong-mat-troi",
+    title: "Ai có thể trở thành đại lý đèn năng lượng mặt trời?",
+    date: "03-06-2023",
+    description:
+      "Bạn yêu thích kinh doanh các sản phẩm đèn năng lượng mặt trời đi đầu xu hướng hiện nay. Nhưng bạn còn nhiều băn khoăn: Ai có thể trở thành đại lý đèn năng" +
+      "lượng mặt trời? Không biết khi nào thì có thể bắt đầu? Nhập hàng ở đâu đảm bảo chất lượng? Cùng TPSolar giải đáp những thắc mắc đó qua bài viết dưới đây nhé! Ai có thể trở thành đại lý đèn năng lượng" +
+      "mặt trời? Làm đại lý đèn năng lượng mặt trời là: Bên giao đại lý tức là Công ty Cổ phần TP Solar sẽ...",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+  {
+    image:
+      "https://bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-nang-luong-mat-troi-loai-nao-tot-1.png?v=1686646962557",
+    url: "https://tpsolar.vn/lua-chon-den-nang-luong-mat-troi-phu-hop-cho-gia-dinh-hoac-doanh-nghiep",
+    title:
+      "Lựa chọn đèn năng lượng mặt trời phù hợp cho gia đình hoặc doanh nghiệp",
+    date: "13-06-2023",
+    description:
+      "Giá bán lẻ điện bình quân tăng 3%, việc này gây ảnh hưởng nghiêm trọng đến hoạt động sản xuất kinh doanh của doanh nghiệp và đời sống người dân khi mùa nắng nóng đã tới. Vậy giải pháp nào cho người dân và doanh nghiệp khi giá điện ngày một tăng cao?" +
+      "Năng lượng mặt trời - nguồn năng lượng miễn phí, giúp mọi người có thể tiết kiệm điện, giảm chi phí hóa đơn tiền điện hàng tháng. Ma trận” đèn năng lượng mặt trời trên thị trường hiện nay",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+  {
+    image:
+      "https://bizweb.dktcdn.net/thumb/large/100/463/111/articles/top5-mau-den-nang-luong-mat-troi-chat-luong-gia-re.png?v=1686389538487",
+    url: "https://tpsolar.vn/5-mau-den-nang-luong-mat-troi-tot-nhat-duoc-nhieu-nguoi-chon-mua",
+    title: "5 mẫu đèn năng lượng mặt trời tốt nhất được nhiều người chọn mua",
+    date: "10-06-2023",
+    description:
+      "Ban đang cân nhắc không biết nên chọn đèn năng lượng mặt trời loại nào tốt? Dưới đây là danh sách top 5 mẫu đèn năng lượng mặt trời tốt nhất được người tiêu dùng tin tưởng đặt mua nhiều trong vòng 3 năm trở lại đây. Hãy cùng tham khảo ngay bài viết dưới đây để lựa chọn cho mình loại đèn phù hợp nhé!" +
+      "Top 5 mẫu đèn trong bài được đánh giá dựa trên những tiêu chí khắt khe cả về giá thành, mức độ hiệu quả, thời gian sử dụng của đèn. 5 mẫu đèn năng lượng mặt...",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+  {
+    image:
+      "https://bizweb.dktcdn.net/thumb/large/100/463/111/articles/uu-diem-vuot-troi-cua-den-nang-luong-mat-troi.png?v=1686275762837",
+    url: "https://tpsolar.vn/uu-diem-cua-den-nang-luong-mat-troi-so-voi-cac-loai-den-co-mat-tren-thi-truong",
+    title:
+      "Ưu điểm của đèn năng lượng mặt trời so với các loại đèn có mặt trên thị trường",
+    date: "07-06-2023",
+    description:
+      "Trong bối cảnh giá điện ngày một tăng cao như hiện nay, thì đèn năng lượng mặt trời là một giải pháp hữu hiệu về mặt kinh tế cho người sử dụng, giảm áp lực lên điện lưới quốc gia và góp phần bảo vệ môi trường.&nbsp; Nguyên lý hoạt động của đèn năng lượng mặt trời. Đèn năng lượng mặt trời là loại đèn sử dụng ánh sáng mặt trời chuyển hóa thành điện năng để đáp ứng nhu cầu chiếu sáng. Đèn năng lượng mặt trời còn được gọi bằng nhiều cái tên khác nhau như: Đèn Led năng lượng...",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+  {
+    image:
+      "https://bizweb.dktcdn.net/thumb/large/100/463/111/articles/den-nang-luong-mat-troi-sang-yeu.png?v=1685952044387",
+    url: "https://tpsolar.vn/nhung-nguyen-nhan-khien-den-nang-luong-mat-troi-sang-yeu",
+    title: "Những nguyên nhân khiến đèn năng lượng mặt trời sáng yếu",
+    date: "03-06-2023",
+    description:
+      "Đèn năng lượng mặt trời đã trở thành sản phẩm không còn quá xa lạ gì với mọi người. Đôi khi trong quá trình sử dụng bạn có thể sẽ gặp phải trường hợp đèn sáng yếu hay sau một thời gian sáng lại mờ đi hoặc tắt hẳn không sáng. Vậy tại sao lại có hiện tượng đèn năng lượng mặt trời sáng yếu? Cách xử lý ra sao? Cùng TP Solar giải đáp trong bài viết dưới đây nhé! Hiện tượng đèn năng lượng mặt trời sáng yếu Hiện tượng đèn năng lượng mặt trời sáng yếu là hiện tượng...",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+  {
+    image:
+      "https://bizweb.dktcdn.net/thumb/large/100/463/111/articles/tiet-kiem-dien-mua-nang-nong.png?v=1685758283087",
+    url: "https://tpsolar.vn/tiet-kiem-dien-giua-mua-nang-nong",
+    title: "Tiết kiệm điện giữa mùa nắng nóng",
+    date: "03-06-2023",
+    description:
+      "Điều hòa - công nghệ hiện đại giúp chúng ta giải nhiệt nhanh hơn, mang đến sự thoải mái trong cuộc sống nhưng cùng lúc đó sẽ “nung” nóng Trái Đất. Theo ước tính thì đến trước cuối thập kỷ này thế giới sẽ có thêm 1 tỉ chiếc điều hòa. Thị trường được dự đoán tăng gần gấp đôi trước năm 2024. Sức nóng từ điều hòa Thời tiết&nbsp;ngày càng nóng bức như để thử thách giới hạn sinh tồn của con người. Với vô vàn những tiện ích, đủ các công suất, mức giá khác nhau thì điều hòa không khí...",
+    item: [
+      {
+        title: "kinh doanh đèn năng lượng",
+        url: "/",
+      },
+      {
+        title: "TP Solar",
+        url: "/",
+      },
+      {
+        title: "đèn năng lượng mặt trời",
+        url: "/",
+      },
+    ],
+  },
+];
