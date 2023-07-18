@@ -65,7 +65,7 @@ export default function SignUp() {
   return (
     <>
       <section className="register-layout">
-        <div className="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0">
+        <div className="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0 signup-respon">
           <div className="w-full bg-[#f3f3f3] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-8 opacity-[0.9]">
             <div className="p-6 space-y-4 md:space-y-1 sm:px-8">
               <h1 className="text-[25px] mb-[0px] font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
