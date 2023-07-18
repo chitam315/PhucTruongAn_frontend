@@ -217,8 +217,8 @@ export default function DetailProduct() {
             </div>
           </Row>
           <DetailInfor
-            Infor={product.data.metadata}
-            Image={listImage.data.metadata}
+            Infor={product?.data.metadata}
+            Image={listImage?.data.metadata}
           />
         </Row>
       </CardMain>
