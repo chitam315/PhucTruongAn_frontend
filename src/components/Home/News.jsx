@@ -50,7 +50,7 @@ export default function News() {
         </div>
         <div className="col-6 col-tbm-12">
           {NewsData.map((item, index) => (
-            <div className="flex" id={index}>
+            <div className="flex" key={index}>
               <a
                 className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"
                 href={item.url}

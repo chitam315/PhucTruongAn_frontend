@@ -7,7 +7,7 @@ import CardMain from "../Card/CardMain";
 function Banner() {
   return (
     <div>
-      <div>
+      <div className="flex justify-center items-center">
         <img
           src="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/big_bn_slide.png?1686880710266"
           alt=""
