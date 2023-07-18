@@ -29,12 +29,13 @@ import { useAsync } from "../../hooks/useAsync";
  * ]
  */
 export const TableProduct = () => {
+  const [update,setUpdate] = useState(0)
   const [limit, setLimit] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
   const { loading, data: listProduct } = useFetch(() => {
     return productService.getAllProducts()
-  });
+  },[update]);
   const {  data: listCategory } = useFetch(() => {
     return productService.getAllCategories()
   });
@@ -107,7 +108,7 @@ export const TableProduct = () => {
         }
         await editProductService(temp)
         message.success("Thêm sản phẩm thành công")
-        window.location.reload()
+        setUpdate(update + 1)
       } catch (error) {
         message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
         console.log(error);
@@ -137,7 +138,9 @@ export const TableProduct = () => {
       setIsModalDelOpen(false);
       message.success("Xoá sản phẩm thành công")
       console.log(res);
-      window.location.reload()
+      // window.location.reload()
+      setUpdate(update + 1)
+
     } catch (error) {
       message.error("Đã xảy ra lỗi mạng, vui lòng thử lại sau")
       console.log(error);

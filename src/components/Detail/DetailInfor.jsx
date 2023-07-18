@@ -92,68 +92,8 @@ export default function DetailInfor({ Infor, Image }) {
               <></>
             )
           }
-          {/* <p className="flex justify-center">
-            <img
-              src={Image[1].image_base64}
-              alt=""
-            />
-          </p> */}
         </div>
-        {/* <div className="card-shadow w-100 rounded-[10px] p-[15px] relative">
-          <p className="font-bold text-[1.1em]">Sản phẩm liên quan</p>
-          <div className="p-15px">
-            <Row className=" m-0">
-              <ItemProductRelative />
-              <ItemProductRelative />
-              <ItemProductRelative />
-              <ItemProductRelative />
-            </Row>
-          </div>
-        </div> */}
       </div>
-      {/* <div className="col-md-3 col-tb-12 h-fit">
-        <div className="card-shadow w-100 rounded-[10px] p-[8px]">
-          <p className="font-bold text-[1.1em] p-[10px]">Thông số kĩ thuật</p>
-          <div className="rounded-[10px] overflow-hidden border-gray">
-            <table
-              border="1"
-              className="text-[0.8em] width-100 table table-striped mb-0"
-            >
-              <tbody>
-                <tr>
-                  <td>Mã sản phẩm:</td>
-                  <td>TP - D450N</td>
-                </tr>
-                <tr>
-                  <td>Thương hiệu:</td>
-                  <td>TP Solar</td>
-                </tr>
-                <tr>
-                  <td>Công suất:</td>
-                  <td>450W</td>
-                </tr>
-                <tr>
-                  <td>Kích thước đèn:</td>
-                  <td>600*345mm</td>
-                </tr>
-                <tr>
-                  <td>Chức năng đèn:</td>
-                  <td>Kiểm soát ánh sáng + Cảm ứng</td>
-                </tr>
-                <tr>
-                  <td>Tấm pin silicon poly:</td>
-                  <td>6V/28W</td>
-                </tr>
-                <tr>
-                  <td>Dung lượng:</td>
-                  <td>30000 mAh</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <ModalSpecification />
-        </div>
-      </div> */}
     </Row>
   );
 }
