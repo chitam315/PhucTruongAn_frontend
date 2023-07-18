@@ -8,7 +8,13 @@ export default function News() {
         <div className="col-6 col-tbm-12">
           <div className="item_grid mb-3 mb-md-0">
             <div className="relative">
-              <a href="/" title="" className="">
+              <a
+                href="https://tpsolar.vn/nhung-yeu-to-nao-anh-huong-den-hieu-suat-chieu-sang-cua-den-nang-luong-mat-troi"
+                title=""
+                target="_blank"
+                rel="noreferrer"
+                className=""
+              >
                 <div className="w-100 px-[25px]">
                   <img
                     src="https://bizweb.dktcdn.net/100/463/111/articles/do-sang-cua-den-nang-luong-mat-troi.png?v=1686814248947"
@@ -28,6 +34,8 @@ export default function News() {
                 <a
                   className="line-1"
                   href="https://tpsolar.vn/nhung-yeu-to-nao-anh-huong-den-hieu-suat-chieu-sang-cua-den-nang-luong-mat-troi"
+                  target="_blank"
+                  rel="noreferrer"
                   title="Những yếu tố nào ảnh hưởng đến hiệu suất chiếu sáng của đèn năng lượng mặt trời?"
                 >
                   Những yếu tố nào ảnh hưởng đến hiệu suất chiếu sáng của đèn
@@ -50,27 +58,14 @@ export default function News() {
         </div>
         <div className="col-6 col-tbm-12">
           {NewsData.map((item, index) => (
-            <div className="flex" id={index}>
-              <a
-                className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"
-                href={item.url}
-              >
+            <a href={item.url} className="flex" id={index}>
+              <div className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]">
                 <img
                   src={item.image}
                   alt=""
                   className="w-100 h-fit zoom-image"
                 />
-              </a>
-              {/* <div className="col-9 py-[10px] pr-[10px]">
-                <h3 className="font-bold text-[1.1em]">
-                  <a className="line-1 block" href="#title" title="">
-                    {item.title}
-                  </a>
-                </h3>
-                <div className="text-[1em] text-[#5e5e5e] ">{item.date}</div>
-
-                <div className="line-2 h-auto text-justify">{item.content}</div>
-              </div> */}
+              </div>
               <div className="w-[calc(100%-150px)] py-[10px]">
                 <h3 className="font-bold text-[1.1em]">
                   <a className="line-1" href="#title" title="">
@@ -81,7 +76,7 @@ export default function News() {
 
                 <div className="line-2">{item.content}</div>
               </div>
-            </div>
+            </a>
           ))}
 
           <div className="text-center w-100">

@@ -1,52 +1,54 @@
 import React from "react";
 import "../SignUp/SignUp.css";
 import { useAuth } from "../AuthContext";
-import { useAsync } from '../../hooks/useAsync'
+import { useAsync } from "../../hooks/useAsync";
 import Input from "../Input";
-import { useForm } from "../../hooks/useForm"
+import { useForm } from "../../hooks/useForm";
 import { minMax, required } from "../../utils/validate";
 import Button from "../Button";
 import { Link } from "react-router-dom";
 
 export default function Signin() {
-  const {  login } = useAuth()
-  const { execute: loginService, loading} = useAsync(login)
+  const { login } = useAuth();
+  const { execute: loginService, loading } = useAsync(login);
   const rules = {
     username: [
       required(),
       // regexp('email')
     ],
-    password: [
-      required(),
-      minMax(6)
-    ]
-  }
-  const form = useForm(rules)
+    password: [required(), minMax(6)],
+  };
+  const form = useForm(rules);
   const onLogin = (ev) => {
-    ev.preventDefault()
+    ev.preventDefault();
     if (form.validate()) {
-      loginService(form.values)
+      loginService(form.values);
     }
-  }
+  };
   return (
     <>
       <section className="register-layout">
-        <div className="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-[#f3f3f3] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-8 opacity-[0.9]">
+        <div className="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0 signup-respon">
+          <div className="w-full bg-[#f3f3f3] rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 pt-8 opacity-[0.9] ">
             <div className="p-6 space-y-4 md:space-y-1 sm:px-8">
               <h1 className="text-[25px] mb-[0px] font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Đăng Nhập
               </h1>
               <div className="space-y-4  mt-[5px]">
-
                 <div className="mt-[3px]">
                   <label
                     for="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your email
+                User Name
                   </label>
-                  <Input placeholder="Email" type="email" id="email" name="email" {...form.register('username')}></Input>
+                  <Input
+                    placeholder="Email"
+                    type="email"
+                    id="email"
+                    name="email"
+                    {...form.register("username")}
+                  ></Input>
                   {/* <input
                     type="email"
                     name="email"
@@ -63,7 +65,13 @@ export default function Signin() {
                   >
                     Password
                   </label>
-                  <Input placeholder="password" id="password" name="password" {...form.register('password')} type="password"></Input>
+                  <Input
+                    placeholder="password"
+                    id="password"
+                    name="password"
+                    {...form.register("password")}
+                    type="password"
+                  ></Input>
                   {/* <input
                     type="password"
                     name="password"
@@ -74,7 +82,9 @@ export default function Signin() {
                   /> */}
                 </div>
 
-                <Button onClick={onLogin} Loading={loading}>Đăng nhập</Button>
+                <Button onClick={onLogin} Loading={loading}>
+                  Đăng nhập
+                </Button>
                 {/* <button
                   type="submit"
                   className="w-full bg-[#0039a0] hover:bg-[#6293ee] text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -124,17 +134,18 @@ export default function Signin() {
                 </div> */}
                 <p className="text-sm text-center text-black-600 dark:text-black-600">
                   Tạo khoản để quản lý nếu chưa có tài khoản
-
                 </p>
                 <div className="flex justify-center ">
-                  <Link to="/signup"
+                  <Link
+                    to="/signup"
                     className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
                     Tạo tài khoản
                   </Link>
                 </div>
                 <div className="flex justify-center ">
-                  <Link to="/"
+                  <Link
+                    to="/"
                     className="w-8/12  bg-gray-700 hover:bg-[#0039a0] hover:text-black text-white bg-primary-600  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
                     Quay về trang chủ
@@ -148,4 +159,3 @@ export default function Signin() {
     </>
   );
 }
-

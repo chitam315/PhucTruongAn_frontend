@@ -52,7 +52,7 @@ function HeaderResponsive() {
   }
   return (
     <header
-      className="d-none-flex items-center p-[5px] fixed top-0 left-0 bg-white w-full z-500"
+      className="d-none-flex items-center p-[5px] top-0 left-0 bg-white w-full z-500"
       id="myHeader"
     >
       <Link to="/" className="p-0 h-full">

@@ -18,7 +18,7 @@ export default function ItemCartCus({ product_name, product_id, quantity }) {
           <img
             src={_product?.data.metadata[0].image_base64}
             alt=""
-            className=" h-full w-[80px] p-0"
+            className=" h-[80px] w-[80px] p-0"
           />
         )}
       </Link>
