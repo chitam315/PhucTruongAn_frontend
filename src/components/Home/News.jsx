@@ -58,16 +58,10 @@ export default function News() {
         </div>
         <div className="col-6 col-tbm-12">
           {NewsData.map((item, index) => (
-<<<<<<< HEAD
             <a href={item.url} className="flex" id={index}>
-              <div className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]">
-=======
+              
             <div className="flex" key={index}>
-              <a
-                className="w-[150px] mr-0 p-0  overflow-hidden rounded-[10px]"
-                href={item.url}
-              >
->>>>>>> c69c36b4f3e726fa57a362cfd3028ddd9c810c20
+              
                 <img
                   src={item.image}
                   alt=""
