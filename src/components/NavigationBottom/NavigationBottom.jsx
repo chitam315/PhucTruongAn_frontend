@@ -1,6 +1,9 @@
 import { GrMenu } from "react-icons/gr";
 import { BiLogOut } from "react-icons/bi";
+<<<<<<< HEAD
 import { BsBoxSeam } from "react-icons/bs";
+=======
+>>>>>>> c69c36b4f3e726fa57a362cfd3028ddd9c810c20
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrBasket } from "react-icons/gr";
 import "./NavigationBottom.css";
@@ -50,6 +53,7 @@ function NavigationBottom() {
               </span> */}
             </div>
           </Link>
+<<<<<<< HEAD
           {user && (
             <Link
               to="/list-order"
@@ -70,6 +74,15 @@ function NavigationBottom() {
             >
               <div className="flex flex-col items-center">
                 <BiLogOut className="svg-nav-bot  text-[var(--mainColor)]" />
+=======
+          {user ? (
+            <div
+              onClick={logout}
+              className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer"
+            >
+              <div className="flex flex-col items-center">
+                <BiLogOut className="svg-nav-bot" />
+>>>>>>> c69c36b4f3e726fa57a362cfd3028ddd9c810c20
                 <span className="mt-[5px] text-[1em] font-semibold select-none">
                   Đăng xuất
                 </span>
@@ -78,10 +91,17 @@ function NavigationBottom() {
           ) : (
             <Link
               to="/signin"
+<<<<<<< HEAD
               className="p-[15px] w-[calc(100%/3)] flex items-center justify-center cursor-pointer"
             >
               <div className="flex flex-col items-center">
                 <FaRegUserCircle className="svg-nav-bot text-[var(--mainColor)]" />
+=======
+              className="p-[15px] w-[25%] flex items-center justify-center cursor-pointer"
+            >
+              <div className="flex flex-col items-center">
+                <FaRegUserCircle className="svg-nav-bot" />
+>>>>>>> c69c36b4f3e726fa57a362cfd3028ddd9c810c20
                 <span className="mt-[5px] text-[1em] font-semibold select-none">
                   Đăng nhập
                 </span>

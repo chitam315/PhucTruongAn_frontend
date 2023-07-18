@@ -7,7 +7,11 @@ import CardMain from "../Card/CardMain";
 function Banner() {
   return (
     <div>
+<<<<<<< HEAD
       <div className="flex items-center justify-center">
+=======
+      <div className="flex justify-center items-center">
+>>>>>>> c69c36b4f3e726fa57a362cfd3028ddd9c810c20
         <img
           src="https://bizweb.dktcdn.net/100/463/111/themes/889675/assets/big_bn_slide.png?1686880710266"
           alt=""

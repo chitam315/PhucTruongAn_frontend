@@ -64,7 +64,7 @@ export default function DetailInfor({ Infor, Image }) {
           </p>
           <p className="flex justify-center">
             <img
-              src={ Image && Image[0].image_base64}
+              src={ Image && Image[0]?.image_base64}
               alt=""
             />
           </p>

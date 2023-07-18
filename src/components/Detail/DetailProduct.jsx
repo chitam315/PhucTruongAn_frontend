@@ -41,15 +41,6 @@ export default function DetailProduct() {
   });
 
   //List type product
-  const { loadingLevelProduct, data: listProduct } = useFetch(() => {
-    return productService.getAllProducts();
-  });
-  var arrLevel = [];
-  if (!loadingLevelProduct) {
-    arrLevel = listProduct?.data.metadata.filter(
-      (item) => item.category_id === product.category_id
-    );
-  }
 
   // //Increment & Decrement INPUT QUANTITY
   const [count, setCount] = useState(1);
@@ -101,7 +92,7 @@ export default function DetailProduct() {
     }
   };
 
-  if (loadingData && loadingImage) {
+  if (loadingData || loadingImage) {
     return <h1>Loading ...</h1>;
   }
 
@@ -112,7 +103,7 @@ export default function DetailProduct() {
         <Row>
           <div className="col-12 flex items-center gap-2">
             <h1 className="font-bold mb-2 text-[1.1em]">
-              {product?.data.metadata.product_name}
+              {product?.data?.metadata?.product_name}
             </h1>
           </div>
           <Row>
@@ -142,35 +133,7 @@ export default function DetailProduct() {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                 <span>₫</span>
               </span>
-              <div className="flex flex-wrap mt-[15px] gap-2">
-                {arrLevel?.map((item, index) => (
-                  <a
-                    className={
-                      item?.product_id === product?.product_id
-                        ? "btn-type-product btn-type-product-checked"
-                        : "btn-type-product"
-                    }
-                    href={"/detail/" + item?.product_id}
-                    key={index}
-                  >
-                    <div className="flex items-center relative">
-                      <div className="relative w-[14px] h-[14px] mr-[7px]">
-                        <span className="checkbox-type"></span>
-                        <AiFillCheckCircle className="absolute icon-checkbox" />
-                      </div>
-                      <p className="text-[0.8em] p-0 font-bold">
-                        {item?.product_id}
-                      </p>
-                    </div>
-                    <p className="text-[var(--red)] text-[0.8em] font-bold">
-                      {Number(item?.product_price)
-                        .toFixed(0)
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                      <span>₫</span>
-                    </p>
-                  </a>
-                ))}
-              </div>
+              
               <div className="flex items-center gap-2 mt-[15px]">
                 <span className="text-[1.2em] font-bold mr-[30px]">
                   Số lượng
@@ -255,7 +218,7 @@ export default function DetailProduct() {
           </Row>
           <DetailInfor
             Infor={product?.data.metadata}
-            Image={listImage?.data?.metadata}
+            Image={listImage?.data.metadata}
           />
         </Row>
       </CardMain>
