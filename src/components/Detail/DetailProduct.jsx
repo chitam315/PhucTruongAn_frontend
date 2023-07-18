@@ -103,7 +103,7 @@ export default function DetailProduct() {
         <Row>
           <div className="col-12 flex items-center gap-2">
             <h1 className="font-bold mb-2 text-[1.1em]">
-              {product?.data.metadata.product_name}
+              {product?.data?.metadata?.product_name}
             </h1>
           </div>
           <Row>
@@ -217,8 +217,8 @@ export default function DetailProduct() {
             </div>
           </Row>
           <DetailInfor
-            Infor={product?.data.metadata}
-            Image={listImage?.data?.metadata}
+            Infor={product.data.metadata}
+            Image={listImage.data.metadata}
           />
         </Row>
       </CardMain>
